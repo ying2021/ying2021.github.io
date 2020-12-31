@@ -17,9 +17,25 @@
   <meta name="description" content="保持很多的热爱和一点点野心">
   <meta name="author" content="欧阳珈樱">
   <meta name="keywords" content="">
-  <title>标签 - 樱花味猫猫</title>
+  <title>$\sin x$ 和 $\cos x$ 的无穷乘积 - 樱花味猫猫</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
 
 
 
@@ -47,7 +63,7 @@
 
 
 <body>
-  <header style="height: 80vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -141,22 +157,55 @@
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('https://pic3.zhimg.com/80/v2-fe87068edb075c617040021995182566_720w.jpg?source=1940ef5c') no-repeat center center;
+         style="background: url('https://pic4.zhimg.com/80/v2-53414f0e6f72b4706420974b075239e4_720w.jpg?source=1940ef5c') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="标签">
+            <span class="h2" id="subtitle" title="$\sin x$ 和 $\cos x$ 的无穷乘积">
               
             </span>
 
             
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-12-31 22:51" pubdate>
+        2020年12月31日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      277 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      5
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
           </div>
 
-          
-            <div class="scroll-down-bar">
-              <i class="iconfont icon-arrowdown"></i>
-            </div>
           
         </div>
       </div>
@@ -165,24 +214,74 @@
 
   <main>
     
-      <div class="container nopadding-x-md">
-        <div class="py-5" id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
+      
 
-<div class="text-center tagcloud">
-  
-</div>
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">$\sin x$ 和 $\cos x$ 的无穷乘积</h1>
+            
+            <div class="markdown-body">
+              <p>利用</p>
+<p>$$<br>\Gamma(x)\Gamma(1-x)=\frac{\pi}{\sin \pi x}<br>$$</p>
+<p>​        得到<br>$$<br>\sin \pi x=\frac{\pi}{-x\Gamma(x)\Gamma(-x)}<br>$$<br>​        由<strong>Weierstrass公式</strong>易得<br>$$<br>\frac1{\Gamma(x)}=xe^{\gamma x}\prod_{n=1}^\infty\left(1+\frac xn\right)e^{-\frac xn}<br>$$<br>​        易知<br>$$<br>\sin \pi x=\pi x\prod_{n=1}^{\infty}\left(1-\frac{x^2}{n^2}\right)<br>$$<br>​        于是<br>$$<br>\frac{\sin x}{x}=\prod\limits_{n=1}^\infty\left(1-\frac{x^2}{\pi^2 n^2}\right)<br>$$<br>​        注意到<br>$$<br>\cos \pi x=\frac{\sin 2 \pi x}{2 \sin \pi x}=\frac{2 \pi x \cdot \prod\limits_{n=1}^{\infty}\left(1-\frac{4 x^{2}}{n^{2}}\right)}{2 \pi x \cdot \prod\limits_{n=1}^{\infty}\left(1-\frac{x^{2}}{n^{2}}\right)}=\frac{\prod\limits_{n=1}^{\infty}\left(1-\frac{4 x^{2}}{n^{2}}\right)}{\prod\limits_{n=1}^{\infty}\left(1-\frac{x^{2}}{n^{2}}\right)}\<br>\prod_{n=1}^{\infty}\left(1-\frac{4 x^{2}}{(2 n-1)^{2}}\right) \prod_{n=1}^{\infty}\left(1-\frac{4 x^{2}}{(2 n)^{2}}\right)=\prod_{n=1}^{\infty}\left(1-\frac{4 x^{2}}{(2 n-1)^{2}}\right) \prod_{n=1}^{\infty}\left(1-\frac{x^{2}}{n^{2}}\right)<br>$$<br>​        于是<br>$$<br>\cos \pi x=\prod_{n=1}^{\infty}\left(1-\frac{4 x^{2}}{(2 n-1)^{2}}\right)\<br>\cos  x=\prod_{n=1}^{\infty}\left(1-\frac{4 x^{2}}{\pi^2(2 n-1)^{2}}\right)<br>$$<br>​        <a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/mathematics/18-104-seminar-in-analysis-applications-to-number-theory-fall-2006/projects/chan.pdf">参考资料1</a>  <a target="_blank" rel="noopener" href="http://people.math.binghamton.edu/dikran/478/Ch6.pdf">参考资料2</a>  <a target="_blank" rel="noopener" href="https://math.stackexchange.com/questions/157372/proving-frac-sin-xx-left1-fracx2-pi2-right-left1-fracx22">参考资料3</a></p>
+<p>​        </p>
 
-              </div>
             </div>
-          </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/12/31/hello-world/">
+                        <span class="hidden-mobile">Hello World</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
         </div>
       </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
     
 
     
@@ -262,9 +361,15 @@
 
 
 
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
 
 
 
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
 
 
 
