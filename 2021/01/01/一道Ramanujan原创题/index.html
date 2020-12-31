@@ -17,9 +17,25 @@
   <meta name="description" content="保持很多的热爱和一点点野心">
   <meta name="author" content="欧阳珈樱">
   <meta name="keywords" content="">
-  <title>分类 - Math - 樱花味猫猫</title>
+  <title>一道Ramanujan原创题 - 樱花味猫猫</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
 
 
 
@@ -47,7 +63,7 @@
 
 
 <body>
-  <header style="height: 60vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -141,14 +157,51 @@
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('https://pic1.zhimg.com/80/v2-1391294d761b2c604d4a131662196703_720w.jpg?source=1940ef5c') no-repeat center center;
+         style="background: url('https://pic4.zhimg.com/80/v2-53414f0e6f72b4706420974b075239e4_720w.jpg?source=1940ef5c') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="分类 - Math">
+            <span class="h2" id="subtitle" title="一道Ramanujan原创题">
               
             </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-01-01 01:39" pubdate>
+        2021年1月1日 凌晨
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      39 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      1
+       分钟
+    </span>
+  
+
+  
+  
+</div>
 
             
           </div>
@@ -161,49 +214,104 @@
 
   <main>
     
-      <div class="container nopadding-x-md">
-        <div class="py-5" id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">共计 2 篇文章</p>
-  <hr>
-  
-  
-    
       
-      <p class="h5">2021</p>
-    
-    <a href="/2021/01/01/%E4%B8%80%E9%81%93Ramanujan%E5%8E%9F%E5%88%9B%E9%A2%98/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">一道Ramanujan原创题</span>
-      <time style="float: right;">01-01</time>
-    </a>
-  
-    
-      
-      <p class="h5">2020</p>
-    
-    <a href="/2020/12/31/sinx%E5%92%8Ccosx%E7%9A%84%E6%97%A0%E7%A9%B7%E4%B9%98%E7%A7%AF/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">sin x 和 cos x 的无穷乘积</span>
-      <time style="float: right;">12-31</time>
-    </a>
-  
-</div>
 
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">一道Ramanujan原创题</h1>
+            
+            <div class="markdown-body">
+              <p><strong>问题：</strong>解方程组</p>
+<p><img src="https://www.zhihu.com/equation?tex=%5Cbegin%7Bcases%7D++x_%7B1%7D%2Bx_%7B2%7D%3D8%5C%5C++x_%7B1%7Dy_%7B1%7D%2Bx_%7B2%7Dy_%7B2%7D%3D-11+%5C%5C++x_%7B1%7Dy_%7B1%7D%5E2%2Bx_%7B2%7Dy_%7B2%7D%5E2%3D17%5C%5C+x_%7B1%7Dy_%7B1%7D%5E3%2Bx_%7B2%7Dy_%7B2%7D%5E3%3D-29+%5Cend%7Bcases%7D+" srcset="/img/loading.gif" alt="[公式]"></p>
+<p><strong>解:</strong></p>
+<p>引入参数 <img src="https://www.zhihu.com/equation?tex=t" srcset="/img/loading.gif" alt="[公式]"></p>
+<p>设 <img src="https://www.zhihu.com/equation?tex=f%28t%29%3D%5Cfrac%7Bx_%7B1%7D%7D%7B1-ty_%7B1%7D%7D%2B%5Cfrac%7Bx_%7B2%7D%7D%7B1-ty_%7B2%7D%7D" srcset="/img/loading.gif" alt="[公式]"></p>
+<p><img src="https://www.zhihu.com/equation?tex=f%28t%29%3D%5Csum_%7Bn%3D0%7D%5E%7B%5Cinfty%7D%28x_%7B1%7Dy_%7B1%7D%5E%7Bn%7D%2Bx_%7B2%7Dy_%7B2%7D%5E%7Bn%7D%29t%5En%3D8-11t%2B17t%5E2-29t%5E3%2B%5Ccdots" srcset="/img/loading.gif" alt="[公式]"></p>
+<p>注意到 <img src="https://www.zhihu.com/equation?tex=f%28t%29" srcset="/img/loading.gif" alt="[公式]"> 也可表示为如下形式:</p>
+<p><img src="https://www.zhihu.com/equation?tex=%5Cfrac%7BA_%7B0%7D%2BA_%7B1%7Dt%7D%7B1%2BB_%7B1%7Dt%2BB_%7B2%7Dt%5E2%7D" srcset="/img/loading.gif" alt="[公式]"></p>
+<p>由</p>
+<p><img src="https://www.zhihu.com/equation?tex=%5Cfrac%7BA_%7B0%7D%2BA_%7B1%7Dt%7D%7B1%2BB_%7B1%7Dt%2BB_%7B2%7Dt%5E2%7D%3D8-11t%2B17t%5E2-29t%5E3%2B%5Ccdots" srcset="/img/loading.gif" alt="[公式]"></p>
+<p>可得:</p>
+<p><img src="https://www.zhihu.com/equation?tex=A_%7B0%7D%3D8%2C+A_%7B1%7D%3D8B_%7B1%7D-11" srcset="/img/loading.gif" alt="[公式]"></p>
+<p><img src="https://www.zhihu.com/equation?tex=-11B_%7B1%7D%2B8B_%7B2%7D%3D-17%2C17B_%7B1%7D-11B_%7B2%7D%3D29" srcset="/img/loading.gif" alt="[公式]"></p>
+<p>解得: <img src="https://www.zhihu.com/equation?tex=%5Cbegin%7Bcases%7D++A_%7B0%7D%3D8%5C%5C++A_%7B1%7D%3D13+%5C%5C++B_%7B1%7D%3D3%5C%5C+B_%7B2%7D%3D2+%5Cend%7Bcases%7D+" srcset="/img/loading.gif" alt="[公式]"></p>
+<p>于是</p>
+<p><img src="https://www.zhihu.com/equation?tex=f%28t%29%3D%5Cfrac%7B8%2B13t%7D%7B1%2B3t%2B2t%5E2%7D%3D%5Cfrac%7B5%7D%7B1%2Bt%7D%2B%5Cfrac%7B3%7D%7B1%2B2t%7D" srcset="/img/loading.gif" alt="[公式]"></p>
+<p>故原方程的解为:</p>
+<p><img src="https://www.zhihu.com/equation?tex=%28x_%7B1%7D%2Cx_%7B2%7D%2Cy_%7B1%7D%2Cy_%7B2%7D%29%3D%285%2C3%2C-1%2C-2%29" srcset="/img/loading.gif" alt="[公式]"></p>
+<p>或</p>
+<p><img src="https://www.zhihu.com/equation?tex=%28x_%7B1%7D%2Cx_%7B2%7D%2Cy_%7B1%7D%2Cy_%7B2%7D%29%3D%283%2C5%2C-2%2C-1%29" srcset="/img/loading.gif" alt="[公式]"></p>
 
-
-
-
-              </div>
             </div>
-          </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Math/">Math</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E4%BB%A3%E6%95%B0/">代数</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/01/01/%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/">
+                        <span class="hidden-mobile">LaTeX插入图片</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
         </div>
       </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
     
 
     
@@ -283,9 +391,15 @@
 
 
 
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
 
 
 
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
 
 
 
@@ -324,6 +438,45 @@
 
 
 
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-svg.js" ></script>
+
+  
 
 
 
