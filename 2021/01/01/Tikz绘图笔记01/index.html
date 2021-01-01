@@ -1,0 +1,534 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="保持很多的热爱和一点点野心">
+  <meta name="author" content="欧阳珈樱">
+  <meta name="keywords" content="">
+  <title>Tikz绘图笔记01 - 樱花味猫猫</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>樱花味猫猫</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('https://pic4.zhimg.com/80/v2-53414f0e6f72b4706420974b075239e4_720w.jpg?source=1940ef5c') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Tikz绘图笔记01">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-01-01 20:12" pubdate>
+        2021年1月1日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      3.9k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      55
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Tikz绘图笔记01</h1>
+            
+            <div class="markdown-body">
+              <p>直线和矩形</p>
+<p>使用PGF绘图的基本语法是：<br><code>\draw[option]...;</code><br>其中 <strong>\draw</strong>  称为绘图命令；后面的…部分称为操作；<br>而[ ]中的能容称为选项，也就是说[ ]内可以不写内容。</p>
+<p>如果我们要绘制一条直线的话，我们只需要在\draw 命令后面<br>输入点的坐标并使用—连结起来即可。比如：</p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-keyword">\begin</span>&#123;tikzpicture&#125;<br><span class="hljs-keyword">\draw</span> (1,3)--(2,2)--(4,5);<br><span class="hljs-keyword">\end</span>&#123;tikzpicture&#125;<br></code></pre></td></tr></table></figure>
+<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8yNDQxMzA0NC04MGVjNDZhMDIxYzlmYWZlLmpwZw?x-oss-process=image/format,png" srcset="/img/loading.gif" alt=""></p>
+<hr>
+<p>可以通过[option]将锋利的角变成圆角，在option 处填写<strong>rounded corners</strong> 即可：<br><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs LaTeX"><span class="hljs-keyword">\begin</span>&#123;tikzpicture&#125;<br><span class="hljs-keyword">\draw</span>[rounded corners] (1,3)--(2,2)--(4,5);<br><span class="hljs-keyword">\end</span>&#123;tikzpicture&#125;<br></code></pre></td></tr></table></figure><br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8yNDQxMzA0NC1lZGJkYWNlMThjN2ZhMTNkLmpwZw?x-oss-process=image/format,png" srcset="/img/loading.gif" alt=""></p>
+<hr>
+<p>将它首尾相连，使用<strong>cycle</strong><br><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-keyword">\begin</span>&#123;tikzpicture&#125;<br><span class="hljs-keyword">\draw</span> (1,3)--(2,2)--(4,5)--cycle;<br><span class="hljs-keyword">\end</span>&#123;tikzpicture&#125;<br></code></pre></td></tr></table></figure><br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8yNDQxMzA0NC0xZmYyOTE0NTVjOTcyMWM1LmpwZw?x-oss-process=image/format,png" srcset="/img/loading.gif" alt=""></p>
+<hr>
+<p>绘制矩形的方式：<br><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-keyword">\begin</span>&#123;tikzpicture&#125;<br><span class="hljs-keyword">\draw</span> (0,0) rectangle (4,2);<br><span class="hljs-keyword">\end</span>&#123;tikzpicture&#125;<br></code></pre></td></tr></table></figure><br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8yNDQxMzA0NC05ZDVkZTk5Mjk5ZmFkYzZjLmpwZw?x-oss-process=image/format,png" srcset="/img/loading.gif" alt=""></p>
+<hr>
+<p>矩阵也有圆角选项，设置方式与之前一样：<br><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-keyword">\begin</span>&#123;tikzpicture&#125;<br><span class="hljs-keyword">\draw</span>[rounded corners] (0,0) rectangle (4,2);<br><span class="hljs-keyword">\end</span>&#123;tikzpicture&#125;<br></code></pre></td></tr></table></figure><br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8yNDQxMzA0NC1kYmNlMjg4NDJmZTYyOTAyLmpwZw?x-oss-process=image/format,png" srcset="/img/loading.gif" alt=""></p>
+<hr>
+<h4 id="圆、椭圆、弧"><a href="#圆、椭圆、弧" class="headerlink" title="圆、椭圆、弧"></a>圆、椭圆、弧</h4><p>给出圆心坐标和半径，然后将<strong>circle</strong> 操作写在两者之间即可，注意半径值需要用小括号括起来：<br><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-keyword">\begin</span>&#123;tikzpicture&#125;<br><span class="hljs-keyword">\draw</span> (1,1) circle (1);<br><span class="hljs-keyword">\end</span>&#123;tikzpicture&#125;<br></code></pre></td></tr></table></figure><br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8yNDQxMzA0NC1hMzhjZjE2ZGJhZWJiMjc1LmpwZw?x-oss-process=image/format,png" srcset="/img/loading.gif" alt=""></p>
+<hr>
+<p>给出椭圆的重心和长轴长、短轴长，然后将<strong>ellipse</strong> 操作写在两者中间即可，<br>注意，长轴长和短轴长需要用括号括起来，两者之间用<strong>and</strong> 隔开：<br><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-keyword">\begin</span>&#123;tikzpicture&#125;<br><span class="hljs-keyword">\draw</span> (1,1) ellipse (2 and 1);<br><span class="hljs-keyword">\end</span>&#123;tikzpicture&#125;<br></code></pre></td></tr></table></figure><br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8yNDQxMzA0NC01Y2MzZjg4MTc4Njk4MGE0LmpwZw?x-oss-process=image/format,png" srcset="/img/loading.gif" alt=""></p>
+<hr>
+<p>绘制圆弧或者椭圆弧我们只需要使用<strong>arc</strong> 操作并给出相应角度即可：<br><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-keyword">\begin</span>&#123;tikzpicture&#125;<br><span class="hljs-keyword">\draw</span> (1 ,1) arc (0:270:1);<br><span class="hljs-keyword">\draw</span> (6 ,1) arc (0:270:2 and 1);<br><span class="hljs-keyword">\end</span>&#123;tikzpicture&#125;<br></code></pre></td></tr></table></figure><br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8yNDQxMzA0NC1lMjliNDQ4ZDdmZmM1ZjFlLmpwZw?x-oss-process=image/format,png" srcset="/img/loading.gif" alt=""></p>
+<p>参数 $0:270$ 代表的是 $0^{\circ}$到$270^{\circ}$ ，即分别绘制了一个圆心在 $(1,1)$ ，半径为 $1$ 的四分之三圆弧和一个中心在 $(6,1)$ ，长轴长为 $2$ 、短轴长为 $1$ 的四分之三椭圆弧。在终止角度之后，使用一个冒号隔开终止角度与半径（长轴长 and 短轴长）。</p>
+<hr>
+<h4 id="曲线"><a href="#曲线" class="headerlink" title="曲线"></a>曲线</h4><p>抛物线用<strong>parabola</strong> 操作，<strong>bend</strong> 操作可以指明顶点。<br><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-keyword">\begin</span>&#123;tikzpicture&#125;<br><span class="hljs-keyword">\draw</span> (5,1) parabola bend (6,0) (7.414 ,2);<br><span class="hljs-keyword">\end</span>&#123;tikzpicture&#125;<br></code></pre></td></tr></table></figure><br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8yNDQxMzA0NC02YTRiM2UzN2JkYTBlYWUzLmpwZw?x-oss-process=image/format,png" srcset="/img/loading.gif" alt=""></p>
+<hr>
+<p>$(5,1)$代表抛物线的起点，$(6,0)$ 代表抛物线的顶点，$(7.414 ,2)$ 代表抛物线的终点。如果我们想要将这些点也进行标记那我们可以使用 <strong>\filldraw</strong> 命令:<br><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-keyword">\begin</span>&#123;tikzpicture&#125;<br><span class="hljs-keyword">\draw</span> (5,1) parabola bend (6,0) (7.414 ,2);<br><span class="hljs-keyword">\filldraw</span> (5,1) circle (.1)<br>(6,0) circle (.1)<br>(7.414 ,2) circle (.1);<br><span class="hljs-keyword">\end</span>&#123;tikzpicture&#125;<br></code></pre></td></tr></table></figure><br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8yNDQxMzA0NC1kMWQwNjAxYzE3MTBiZDg0LmpwZw?x-oss-process=image/format,png" srcset="/img/loading.gif" alt=""></p>
+<hr>
+<p>我们还可以画出贝塞尔（Bézier）曲线。此时需要将 — 操作改为 .. 操作。例如：<br><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-keyword">\begin</span>&#123;tikzpicture&#125;<br><span class="hljs-keyword">\draw</span> (0,0) .. controls (1,1) .. (4,0);<br><span class="hljs-keyword">\fill</span> (1,1) circle (1pt);<br><span class="hljs-keyword">\end</span>&#123;tikzpicture&#125;<br></code></pre></td></tr></table></figure><br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8yNDQxMzA0NC1hYjk0YTc5ODMyNzRkNDA1LmpwZw?x-oss-process=image/format,png" srcset="/img/loading.gif" alt=""></p>
+<p>这样画出的是三次贝塞尔曲线，其中曲线在起点 $(0, 0)$ 和终点 $(4, 0)$ 的切线都过点$ (1,1)$，因此点 $(1,1)$ 称为控制点。代码中的 <strong>\fill</strong> 是填充命令，这里用于画一个实心小圆点，我们后面还会再看到这个命令。</p>
+<p>在绘制三次贝塞尔曲线时，也可以提供两个控制点。例如：<br><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-keyword">\begin</span>&#123;tikzpicture&#125;<br><span class="hljs-keyword">\draw</span> (0,0) .. controls (1,1) and (2,1) .. (4,0);<br><span class="hljs-keyword">\fill</span> (1,1) circle (1pt) (2,1) circle (1pt);<br><span class="hljs-keyword">\end</span>&#123;tikzpicture&#125;<br></code></pre></td></tr></table></figure><br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8yNDQxMzA0NC1lNjAxMmQxZTMxN2Y5Y2E1LmpwZw?x-oss-process=image/format,png" srcset="/img/loading.gif" alt=""></p>
+<p>此时，曲线在起点 $(0, 0)$ 的切线过第一个控制点 $(1,1)$，而在终点 $(4, 0)$ 的切线过第二个控制点 $(2, 1)$。</p>
+<p>三次贝塞尔曲线的形状可以更加复杂，例如下面的例子：<br><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-keyword">\begin</span>&#123;tikzpicture&#125;<br><span class="hljs-keyword">\draw</span> (0,0) .. controls (1,1) and (2,1) .. (4,1);<br><span class="hljs-keyword">\fill</span> (1,1) circle (1pt) (2,1) circle (1pt);<br><span class="hljs-keyword">\end</span>&#123;tikzpicture&#125;<br></code></pre></td></tr></table></figure><br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8yNDQxMzA0NC01ODRiOTY4Y2NjMjgyMmUwLmpwZw?x-oss-process=image/format,png" srcset="/img/loading.gif" alt=""></p>
+<p>在绘制连接两点的曲线时，我们也可以指明起始角度和终结角度。例如：<br><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-keyword">\begin</span>&#123;tikzpicture&#125;<br><span class="hljs-keyword">\draw</span> (0,0) to[out=60,in=-90] (4,0);<br><span class="hljs-keyword">\draw</span> (0,0) to (4,0);<br><span class="hljs-keyword">\end</span>&#123;tikzpicture&#125;<br></code></pre></td></tr></table></figure><br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8yNDQxMzA0NC1hNDAxZDkyNzk0NTBjNDdiLmpwZw?x-oss-process=image/format,png" srcset="/img/loading.gif" alt=""></p>
+<p>如果 to 没有任何选项，就和前面的 — 操作同样画出线段。实际上， to 操作是比较一般的操作，它还有多种选项，这里不再详述。</p>
+<hr>
+<h4 id="网格"><a href="#网格" class="headerlink" title="网格"></a>网格</h4><p>网格的画法如下，其缺省步长是1cm 。<strong>grid</strong> 操作需要起止点两个参数。<strong>help lines</strong> 参数指示用0.2pt 的灰线。<br><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-keyword">\begin</span>&#123;tikzpicture&#125;<br><span class="hljs-keyword">\draw</span> [step=20pt] (0,0) grid (3,2);<br><span class="hljs-keyword">\draw</span> [help lines ,step=20pt] (4,0) grid (7,2);<br><span class="hljs-keyword">\end</span>&#123;tikzpicture&#125;<br></code></pre></td></tr></table></figure><br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8yNDQxMzA0NC1jYmU4N2JlMGQwZDY1NzAyLmpwZw?x-oss-process=image/format,png" srcset="/img/loading.gif" alt=""></p>
+<p>绘制网格类似于绘制矩形，起点和终点类似于我们在绘制矩形时给出的一对矩形的对角顶点，我们将<strong>grid</strong> 操作放在这一对点之间即可。<strong>step</strong> 是步长，即每一个小单元格的边长（小单元格均为正方形），其单位是<strong>pt</strong>。如果我们想要单元格的长度大一点的话那我们就将步长设置的大一些，否则就设置的小一些。</p>
+<hr>
+<h4 id="箭头"><a href="#箭头" class="headerlink" title="箭头"></a>箭头</h4><p>一些绘制箭头的命令如下：<br><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-keyword">\begin</span>&#123;tikzpicture&#125;<br><span class="hljs-keyword">\draw</span> [-&gt;] (0,0)--(9,0);<br><span class="hljs-keyword">\draw</span> [&lt;-] (0,1)--(9,1);<br><span class="hljs-keyword">\draw</span> [&lt;-&gt;] (0,2)--(9,2);<br><span class="hljs-keyword">\draw</span> [&gt;-&gt;&gt;] (0,3)--(9,3);<br><span class="hljs-keyword">\draw</span> [|&lt;-&gt;|] (0,4)--(9,4);<br><span class="hljs-keyword">\end</span>&#123;tikzpicture&#125;<br></code></pre></td></tr></table></figure><br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8yNDQxMzA0NC04NTI2OTI5ZTY3MjdkZmE3LmpwZw?x-oss-process=image/format,png" srcset="/img/loading.gif" alt=""></p>
+<hr>
+<h4 id="线型和线宽"><a href="#线型和线宽" class="headerlink" title="线型和线宽"></a>线型和线宽</h4><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-keyword">\begin</span>&#123;tikzpicture&#125;<br><span class="hljs-keyword">\draw</span> [line width =2pt] (0,0)--(9,0); <span class="hljs-comment">%加粗实线</span><br><span class="hljs-keyword">\draw</span> [dotted] (0,1)--(9,1); <span class="hljs-comment">%点状虚线</span><br><span class="hljs-keyword">\draw</span> [densely dotted] (0,2)--(9,2); <span class="hljs-comment">%较密的点状虚线</span><br><span class="hljs-keyword">\draw</span> [loosely dotted] (0,3)--(9,3); <span class="hljs-comment">%较疏的点状虚线</span><br><span class="hljs-keyword">\draw</span> [dashed] (0,4)--(9,4); <span class="hljs-comment">%线状虚线</span><br><span class="hljs-keyword">\draw</span> [densely dashed] (0,5)--(9,5); <span class="hljs-comment">%较密的线状虚线</span><br><span class="hljs-keyword">\draw</span> [loosely dashed] (0,6)--(9,6); <span class="hljs-comment">%较疏的线状虚线</span><br><span class="hljs-keyword">\end</span>&#123;tikzpicture&#125;<br></code></pre></td></tr></table></figure>
+<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8yNDQxMzA0NC1mZTdkNDBkZTEwMmM2MGU4LmpwZw?x-oss-process=image/format,png" srcset="/img/loading.gif" alt=""></p>
+<hr>
+<h4 id="颜色和填充"><a href="#颜色和填充" class="headerlink" title="颜色和填充"></a>颜色和填充</h4><p>PGF 可以结合<strong>xcolor</strong> 宏包的色彩功能。颜色和填充的用法见下例，其中 <strong>\filldraw</strong> 命令可以用不同颜色画线和填充。注意封闭路径才可以填充！<br><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-keyword">\begin</span>&#123;tikzpicture&#125;<br><span class="hljs-keyword">\draw</span>[red] (0,0) --(9,0);<br><span class="hljs-keyword">\draw</span>[green] (0,1) --(9,1);<br><span class="hljs-keyword">\draw</span>[blue] (0,2) --(9,2);<br><span class="hljs-keyword">\filldraw</span>[draw=blue!80,fill=blue!20] (14 ,1) circle (1);<br><span class="hljs-keyword">\end</span>&#123;tikzpicture&#125;<br></code></pre></td></tr></table></figure><br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8yNDQxMzA0NC0yNWY2MDM3NDBlNzczNDQ0LmpwZw?x-oss-process=image/format,png" srcset="/img/loading.gif" alt=""></p>
+<p>上例中如果我们想设置直线的颜色那么我们可以直接在<code>\draw</code> 命令后面的选项中填写颜色即可。<code>\filldraw</code>命令的选项中，<code>draw</code>是为封闭图形的边界设置颜色，而<code>fill</code>是对封闭图形的内部填充颜色。</p>
+<hr>
+<p>与 <strong>\fill</strong> 命令类似的还有 <strong>\shade</strong> 这个渐变命令。例如：<br><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-keyword">\begin</span>&#123;tikzpicture&#125;<br><span class="hljs-keyword">\shade</span>[inner color=yellow,outer color=orange] (1,1) circle (1);<br><span class="hljs-keyword">\shade</span>[left color=gray,right color=black] (3,0) rectangle (6,2);<br><span class="hljs-keyword">\end</span>&#123;tikzpicture&#125;<br></code></pre></td></tr></table></figure><br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8yNDQxMzA0NC05MmYzY2NmODAyZTIxZThhLmpwZw?x-oss-process=image/format,png" srcset="/img/loading.gif" alt=""></p>
+<hr>
+<h4 id="节点命令"><a href="#节点命令" class="headerlink" title="节点命令"></a>节点命令</h4><p>如果想在图形上加上标签，就要用到节点命令 <strong>\node</strong> 了。例如下面的例子绘制了直角坐标系：<br><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-keyword">\begin</span>&#123;tikzpicture&#125;<br><span class="hljs-keyword">\draw</span>[-&gt;] (0,0) -- (2,0);<br><span class="hljs-keyword">\draw</span>[-&gt;] (0,0) -- (0,2);<br><span class="hljs-keyword">\node</span>[below=4pt,left] at (0,0) &#123;<span class="hljs-built_in">$</span>O<span class="hljs-built_in">$</span>&#125;;<br><span class="hljs-keyword">\node</span>[right] at (2,0) &#123;<span class="hljs-built_in">$</span>x<span class="hljs-built_in">$</span>&#125;;<br><span class="hljs-keyword">\node</span>[above] at (0,2) &#123;<span class="hljs-built_in">$</span>y<span class="hljs-built_in">$</span>&#125;;<br><span class="hljs-keyword">\end</span>&#123;tikzpicture&#125;<br></code></pre></td></tr></table></figure><br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8yNDQxMzA0NC1jZDMxZTczZjMyNGI5ZWE0LmpwZw?x-oss-process=image/format,png" srcset="/img/loading.gif" alt=""></p>
+<p>节点命令的一般形式如下：<br><code>\node[&lt;options &gt;] (&lt;name &gt;) at (&lt;coordinate &gt;) &#123;&lt;text &gt;&#125;</code></p>
+<p>其中 <code>&lt;text&gt;</code>是节点的文本，<code>&lt;coordinate&gt;</code> 是节点的坐标， <code>&lt;name&gt;</code> 是节点的名称，而 <code>&lt;options&gt;</code> 是一些选项。在前面的例子里， <code>left</code>， <code>right</code>， <code>above</code> 和 <code>below</code>分别表示节点文本相对于节点坐标的四种位置。倘若不指明位置，节点文本的中心将和节点的坐标重合。</p>
+<p>至于节点名称的用法，可以先看下面这个例子：<br><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-keyword">\begin</span>&#123;tikzpicture&#125;<br><span class="hljs-keyword">\node</span>[fill=lightgray] (a) at (0,0) &#123;X&#125;;<br><span class="hljs-keyword">\node</span>[fill=lightgray] (b) at (1,1) &#123;Y&#125;;<br><span class="hljs-keyword">\node</span>[fill=lightgray] (c) at (2,0) &#123;Z&#125;;<br><span class="hljs-keyword">\draw</span>[-&gt;] (a) -- (b);<br><span class="hljs-keyword">\draw</span>[-&gt;] (b) -- (c);<br><span class="hljs-keyword">\draw</span>[-&gt;] (c) -- (a);<br><span class="hljs-keyword">\end</span>&#123;tikzpicture&#125;<br></code></pre></td></tr></table></figure><br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8yNDQxMzA0NC0yZDRjNmE2NWE3ZjJkNTUwLmpwZw?x-oss-process=image/format,png" srcset="/img/loading.gif" alt=""></p>
+<p>可以看到，知道了节点名称，就可以把它看成坐标那样，作各种线段和曲线的连接。这就是示意图或者流程图的一般绘制方法。节点之间也可以用相对位置。这时候，我们首先需要载入 <strong>positioning</strong> 库：<br><code>\usetikzlibrary&#123;positioning&#125;</code></p>
+<p>然后就可以用类似下面例子的方法使用相对位置了：<br><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-keyword">\begin</span>&#123;tikzpicture&#125;<br><span class="hljs-keyword">\node</span>[fill=gray] (a) &#123;X&#125;;<br><span class="hljs-keyword">\node</span>[fill=gray,right=1 of a] (b) &#123;Y&#125;;<br><span class="hljs-keyword">\node</span>[fill=gray,right=1 of b] (c) &#123;Z&#125;;<br><span class="hljs-keyword">\draw</span>[-&gt;] (a) -- (b);<br><span class="hljs-keyword">\draw</span>[-&gt;] (b) -- (c);<br><span class="hljs-keyword">\end</span>&#123;tikzpicture&#125;<br></code></pre></td></tr></table></figure><br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8yNDQxMzA0NC01NGI5NmQwOTg5Yjk2ZjJjLmpwZw?x-oss-process=image/format,png" srcset="/img/loading.gif" alt=""></p>
+<p>TikZ 中的节点形状预先定义好的有三种：矩形，圆形和点形，但可以自己定义新的形状。节点形状用 <strong>shape</strong> 选项来确定（不指定则默认为矩形），例如：<br><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-keyword">\begin</span>&#123;tikzpicture&#125;<br><span class="hljs-keyword">\node</span>[shape=rectangle,fill=gray] (a) at (0,0) &#123;X&#125;;<br><span class="hljs-keyword">\node</span>[shape=circle,fill=gray] (b) at (3,0) &#123;Y&#125;;<br><span class="hljs-keyword">\node</span>[shape=coordinate,fill=gray] (c) at (6,0) &#123;Z&#125;;<br><span class="hljs-keyword">\draw</span>[-&gt;] (a) -- (b);<br><span class="hljs-keyword">\draw</span>[-&gt;] (b) -- (c);<br><span class="hljs-keyword">\end</span>&#123;tikzpicture&#125;<br></code></pre></td></tr></table></figure><br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8yNDQxMzA0NC0xOWI2N2RkY2QwYWYwYzJjLmpwZw?x-oss-process=image/format,png" srcset="/img/loading.gif" alt=""></p>
+<p>可以看到，由于点形节点的面积为零，所以填充颜色和标注文本都没有任何效果。</p>
+<p>这种点形节点还可以用简化的记号来表示。例如上面例子的点形节点也可以这样表示：<br><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-keyword">\coordinate</span> (c) at (6,0);<br></code></pre></td></tr></table></figure></p>
+<hr>
+<h4 id="路径命令"><a href="#路径命令" class="headerlink" title="路径命令"></a>路径命令</h4><p>之前介绍的 \draw， \fill， \shade 和 \filldraw 命令，实际上，分别是\path[draw]， \path[fill] ， \path[shade] 和 \path[fill,draw] 命令的简写。而 \node 和 \coordinate 命令分别等同于 \path node 和 \path coordinate。</p>
+<p>例如，下面这四种写法的效果是一样的，它们都画出一个半径为 1cm 的圆：<br><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-keyword">\draw</span> (0,0) circle (1cm);<br><span class="hljs-keyword">\path</span> [draw] (0,0) circle (1cm);<br><span class="hljs-keyword">\path</span> (0,0) [draw] circle (1cm);<br><span class="hljs-keyword">\path</span> (0,0) circle (1cm) [draw];<br></code></pre></td></tr></table></figure><br>而下面这两种写法也是一样的，它们都定义了一个节点：<br><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-keyword">\node</span> [fill=gray] (a) at (1,1) &#123;X&#125;;<br><span class="hljs-keyword">\path</span> (1,1) node[fill=gray] (a) &#123;X&#125;;<br></code></pre></td></tr></table></figure><br>TikZ 的路径命令，将之前介绍的多种命令统一起来了。我们来整理一下。首先，路径命令的一般形式如下：<br><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-keyword">\path</span> &lt;specification&gt;;<br></code></pre></td></tr></table></figure><br>即路径命令后面需要写上路径描述 <code>&lt;specification&gt;</code>，然后以分号结尾。而路径描述可以有多种，这些我们都介绍过了：</p>
+<ul>
+<li>(coordinate) (coordinate): 从一个点移动到另一个点</li>
+<li>(coordinate) — (coordinate): 从一个点画线段到另一个点</li>
+<li>(coordinate) rectangle (coordinate): 以这两个点为对角画矩形</li>
+<li>(coordinate) circle[options]: 以这个点为圆心画圆</li>
+<li>(coordinate) arc[options]: 以这个点为起点画圆弧</li>
+<li>(coordinate) .. controls (control) and (control) .. (coordinate):从一个点画贝塞尔曲线到另一个点</li>
+<li>(coordinate) to[options] (coordinate): 从一个点按照选项指定画某种曲线到另一个点</li>
+<li>(coordinate) node[options] (name) {text}: 将这个点记为文本节点</li>
+<li>(coordinate) coordinate (name): 将这个点记为点形节点</li>
+</ul>
+<hr>
+<h4 id="描点绘制"><a href="#描点绘制" class="headerlink" title="描点绘制"></a>描点绘制</h4><p>在 <strong>\draw</strong> 命令中，我们还可以用 <strong>plot</strong> 操作来画一般的平面曲线。例如：<br><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-keyword">\begin</span>&#123;tikzpicture&#125;<br><span class="hljs-keyword">\draw</span>[-&gt;] (0,0) -- (4,0) node[right] &#123;<span class="hljs-built_in">$</span>x<span class="hljs-built_in">$</span>&#125;;<br><span class="hljs-keyword">\draw</span>[-&gt;] (0,0) -- (0,3) node[above] &#123;<span class="hljs-built_in">$</span>y<span class="hljs-built_in">$</span>&#125;;<br><span class="hljs-keyword">\draw</span> plot coordinates &#123;(0,0) (1,2) (2,1) (4,3)&#125;;<br><span class="hljs-keyword">\end</span>&#123;tikzpicture&#125;<br></code></pre></td></tr></table></figure><br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8yNDQxMzA0NC0xNjVjYTE3Mjg0ODEzYWNkLmpwZw?x-oss-process=image/format,png" srcset="/img/loading.gif" alt=""></p>
+<p>上面的例子中，我们用折线连接各个点得到一条折线。我们也可以用光滑曲线连接这些点。例如：<br><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-keyword">\begin</span>&#123;tikzpicture&#125;<br><span class="hljs-keyword">\draw</span>[-&gt;] (0,0) -- (4,0) node[right] &#123;<span class="hljs-built_in">$</span>x<span class="hljs-built_in">$</span>&#125;;<br><span class="hljs-keyword">\draw</span>[-&gt;] (0,0) -- (0,3) node[above] &#123;<span class="hljs-built_in">$</span>y<span class="hljs-built_in">$</span>&#125;;<br><span class="hljs-keyword">\draw</span>[color=red] plot[smooth] coordinates &#123;(0,0) (1,2) (2,1) (4,3)&#125;;<br><span class="hljs-keyword">\draw</span> plot[smooth,tension=.9] coordinates &#123;(0,0) (1,2) (2,1) (4,3)&#125;;<br><span class="hljs-keyword">\end</span>&#123;tikzpicture&#125;<br></code></pre></td></tr></table></figure><br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8yNDQxMzA0NC0wZWFhMTM2NDhjZGRhYmU2LmpwZw?x-oss-process=image/format,png" srcset="/img/loading.gif" alt=""></p>
+<p>其中 smooth 选项表示我们需要绘制光滑曲线，而 tension 选项描述该光滑曲线的绷紧度，取值范围为从 0 到 1，默认值为 0:55。</p>
+<p>类似地，如果将 smooth 选项改为 smooth cycle 选项，将绘制一个闭合曲线。例如：<br><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-keyword">\begin</span>&#123;tikzpicture&#125;[smooth cycle]<br><span class="hljs-keyword">\draw</span> plot[tension=0] coordinates &#123;(0,1) (1,0) (2,1) (1,2)&#125;;<br><span class="hljs-keyword">\draw</span>[xshift=3cm] plot[tension=0.3] coordinates&#123;(0,1) (1,0) (2,1) (1,2)&#125;;<br><span class="hljs-keyword">\draw</span>[xshift=6cm] plot[tension=0.7] coordinates&#123;(0,1) (1,0) (2,1) (1,2)&#125;;<br><span class="hljs-keyword">\draw</span>[xshift=9cm] plot[tension=1] coordinates&#123;(0,1) (1,0) (2,1) (1,2)&#125;;<br><span class="hljs-keyword">\end</span>&#123;tikzpicture&#125;<br></code></pre></td></tr></table></figure><br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8yNDQxMzA0NC01ODlmYTM5ZTgwZWMyMGM3LmpwZw?x-oss-process=image/format,png" srcset="/img/loading.gif" alt=""></p>
+<p>在这个例子可以看到，对于正方形的四个顶点， tension=0 将画出正方形，而 tension=1 将画出圆形。</p>
+<p>利用 \draw 命令的 plot 操作，我们也可以画一般的函数曲线。例如：<br><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-keyword">\begin</span>&#123;tikzpicture&#125;[domain=-3:3]<br><span class="hljs-keyword">\draw</span>[-&gt;] (-3.2,0) -- (3.2,0) node[below] &#123;<span class="hljs-built_in">$</span>x<span class="hljs-built_in">$</span>&#125;;<br><span class="hljs-keyword">\draw</span>[-&gt;] (0,-3.2) -- (0,3.2) node[above] &#123;<span class="hljs-built_in">$</span>f(x)<span class="hljs-built_in">$</span>&#125;;<br><span class="hljs-keyword">\draw</span>[very thin,color=gray] (-3,-3) grid (3,3);<br><span class="hljs-keyword">\draw</span>[color=orange] plot (<span class="hljs-keyword">\x</span>,<span class="hljs-keyword">\x</span>);<br><span class="hljs-keyword">\draw</span>[color=blue] plot (<span class="hljs-keyword">\x</span>,&#123;sin(<span class="hljs-keyword">\x</span> r)&#125;);<br><span class="hljs-keyword">\draw</span>[color=red] plot (<span class="hljs-keyword">\x</span>,&#123;<span class="hljs-keyword">\x</span>-(1/6)*(<span class="hljs-keyword">\x</span>)<span class="hljs-built_in">^</span>3&#125;);<br><span class="hljs-keyword">\end</span>&#123;tikzpicture&#125;<br></code></pre></td></tr></table></figure><br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8yNDQxMzA0NC02MmVmZGI1NGIyM2ZiYTE1LmpwZw?x-oss-process=image/format,png" srcset="/img/loading.gif" alt=""></p>
+<p>在函数的表达式中，乘号用 * 表示，而且不能省略。如果表示式不是简单的\x，我们一般需要将其中的变量 \x 用圆括号括起来，并且将整个表达式用花括号括起来；否则 PGF/TikZ 在解析表达式时多半会出错。注意代码中的 sin 函数<br>需要指明长度类型 r （表示弧度，默认为角度）。</p>
+<p>实际上，我们用 plot 是可以画出参数曲线的，其中的 \x 就是参数。例如：<br><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-keyword">\begin</span>&#123;tikzpicture&#125;[domain=0:2*pi]<br><span class="hljs-keyword">\draw</span>[very thin,color=gray] (-2,-1) grid (7,1);<br><span class="hljs-keyword">\draw</span>[color=blue] plot (&#123;2*sin(<span class="hljs-keyword">\x</span> r)&#125;,&#123;cos(<span class="hljs-keyword">\x</span> r)&#125;);<br><span class="hljs-keyword">\draw</span>[color=red,xshift=5cm,samples=40] plot (&#123;2*sin(<span class="hljs-keyword">\x</span> r)&#125;,&#123;cos(<span class="hljs-keyword">\x</span> r)&#125;);<br><span class="hljs-keyword">\end</span>&#123;tikzpicture&#125;<br></code></pre></td></tr></table></figure><br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8yNDQxMzA0NC1lZGJkYmRhMjk3YzQ2MmJkLmpwZw?x-oss-process=image/format,png" srcset="/img/loading.gif" alt=""></p>
+<p>比较图形中的两个椭圆，可以看到第二个比第一个光滑。此中区别是由于取样点数 samples 的多少造成的。 samples 选项的默认取值为 25。</p>
+<p>PGF 的数学引擎支持下面这些数学函数：<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8yNDQxMzA0NC01YzlhYzMzOWM5NTQ2ZWNjLmpwZw?x-oss-process=image/format,png" srcset="/img/loading.gif" alt=""></p>
+<hr>
+<h4 id="三维图形"><a href="#三维图形" class="headerlink" title="三维图形"></a>三维图形</h4><p>在 PGF/TikZ 中，也可以绘制空间参数曲线，此时我们用三个坐标来表示空间中的点。例如：<br><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-keyword">\begin</span>&#123;tikzpicture&#125;]<br><span class="hljs-keyword">\draw</span>[-&gt;] (-2,0,0) -- (2,0,0) node[right] &#123;<span class="hljs-built_in">$</span>x<span class="hljs-built_in">$</span>&#125;;<br><span class="hljs-keyword">\draw</span>[-&gt;] (0,-1,0) -- (0,3,0) node[above] &#123;<span class="hljs-built_in">$</span>y<span class="hljs-built_in">$</span>&#125;;<br><span class="hljs-keyword">\draw</span>[-&gt;] (0,0,-2) -- (0,0,2) node[below] &#123;<span class="hljs-built_in">$</span>z<span class="hljs-built_in">$</span>&#125;;<br><span class="hljs-keyword">\draw</span>[color=red] plot[domain=0:2*pi] (&#123;sin(<span class="hljs-keyword">\x</span> r)&#125;,2,&#123;cos(<span class="hljs-keyword">\x</span> r)&#125;);<br><span class="hljs-keyword">\draw</span>[color=red] (0,0,0) -- (1,2,0) (0,0,0) -- (-1,2,0);<br><span class="hljs-keyword">\end</span>&#123;tikzpicture&#125;<br></code></pre></td></tr></table></figure><br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8yNDQxMzA0NC02NzFjMWEzZjlhZTE2ODUxLmpwZw?x-oss-process=image/format,png" srcset="/img/loading.gif" alt=""></p>
+<p>在这个例子中，我们画出了空间中的一个圆以及两个线段，以此轮廓图表示一个圆锥面。但是这个例子还有两个不足：一是我们通常希望将 x 轴指向左下角， y 轴指向右边，而 z 轴指向上边；二是图形中圆和左斜线的连接点看来不太美观。这两个问题可以通过修改坐标轴的指向来解决。例如：<br><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-keyword">\begin</span>&#123;tikzpicture&#125;[x=&#123;(-.1cm,-.15cm)&#125;,y=&#123;(1cm,0cm)&#125;,z=&#123;(0cm,1cm)&#125;]<br><span class="hljs-keyword">\draw</span>[-&gt;] (-5,0,0) -- (5,0,0) node[below] &#123;<span class="hljs-built_in">$</span>x<span class="hljs-built_in">$</span>&#125;;<br><span class="hljs-keyword">\draw</span>[-&gt;] (0,-2,0) -- (0,2,0) node[right] &#123;<span class="hljs-built_in">$</span>y<span class="hljs-built_in">$</span>&#125;;<br><span class="hljs-keyword">\draw</span>[-&gt;] (0,0,-1) -- (0,0,3) node[above] &#123;<span class="hljs-built_in">$</span>z<span class="hljs-built_in">$</span>&#125;;<br><span class="hljs-keyword">\draw</span>[color=red] plot[domain=0:2*pi] (&#123;sin(<span class="hljs-keyword">\x</span> r)&#125;,&#123;cos(<span class="hljs-keyword">\x</span> r)&#125;,2);<br><span class="hljs-keyword">\draw</span>[color=red] (0,0,0) -- (0,1,2) (0,0,0) -- (0,-1,2);<br><span class="hljs-keyword">\end</span>&#123;tikzpicture&#125;<br></code></pre></td></tr></table></figure><br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8yNDQxMzA0NC03MjJmZTM4N2UxYjM3NjAxLmpwZw?x-oss-process=image/format,png" srcset="/img/loading.gif" alt=""></p>
+<p>其中的 $x$， $y$ 和$ z$ 指明了三个坐标轴各自的单位向量的位置。 PGF/TikZ 绘制时将按照指定的位置计算空间图形的投影。默认的取值为 x={(1cm,0cm)}，y={(0cm,1cm)}, z={(-.385cm,-.385cm)}。注意我们需要将坐标用花括号括起来。</p>
+<hr>
+<p>PGF/TikZ 无法绘制复杂的空间曲面，但我们可以用 pgfplots 宏包。在载入这个宏包后，我们可以先试试这个例子：<br><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-keyword">\begin</span>&#123;tikzpicture&#125;<br><span class="hljs-keyword">\begin</span>&#123;axis&#125;[view=&#123;120&#125;&#123;30&#125;,xlabel=<span class="hljs-built_in">$</span>x<span class="hljs-built_in">$</span>,ylabel=<span class="hljs-built_in">$</span>y<span class="hljs-built_in">$</span>]<br><span class="hljs-keyword">\addplot</span>3[domain=-2:2,y domain=-2:2,mesh]&#123;x<span class="hljs-built_in">^</span>2-y<span class="hljs-built_in">^</span>2&#125;;<br><span class="hljs-keyword">\end</span>&#123;axis&#125;<br><span class="hljs-keyword">\end</span>&#123;tikzpicture&#125;<br></code></pre></td></tr></table></figure><br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8yNDQxMzA0NC1mMTI3MzI4NmFiZDI2NmE3LmpwZw?x-oss-process=image/format,png" srcset="/img/loading.gif" alt=""></p>
+<p>其中的 view 选项分别设定了前面所述的方位角和仰角，其默认值为view={25}{30}。由于在 pgfplots 中， z 轴总是垂直向上的，所以不管怎么调整视角都不可能让 y 轴指向右边而 x 轴指向左下角。</p>
+<p>例子中的 mesh 选项指明我们用网格来表示曲面。如果将 mesh 改为 surf，将会填充曲面的网格。<br><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-keyword">\begin</span>&#123;tikzpicture&#125;<br><span class="hljs-keyword">\begin</span>&#123;axis&#125;[view=&#123;120&#125;&#123;30&#125;,axis lines=center,axis on top,<br>xmin=-2,xmax=2,ymin=-2,ymax=2,zmin=-5,zmax=5]<br><span class="hljs-keyword">\addplot</span>3[domain=-2:2,y domain=-2:2,surf]&#123;x<span class="hljs-built_in">^</span>2-y<span class="hljs-built_in">^</span>2&#125;;<br><span class="hljs-keyword">\end</span>&#123;axis&#125;<br><span class="hljs-keyword">\end</span>&#123;tikzpicture&#125;<br></code></pre></td></tr></table></figure><br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8yNDQxMzA0NC0zMGUyMzVhZTY5NDJiMmQ4LmpwZw?x-oss-process=image/format,png" srcset="/img/loading.gif" alt=""></p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/LaTeX/">LaTeX</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/LaTeX/">LaTeX</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Tikz/">Tikz</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/01/01/%E7%A7%AF%E5%88%86%E4%B8%8D%E7%AD%89%E5%BC%8F01/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">积分不等式01</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/01/01/%E4%B8%80%E9%81%93Ramanujan%E5%8E%9F%E5%88%9B%E9%A2%98/">
+                        <span class="hidden-mobile">一道Ramanujan原创题</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      var inputArea = document.querySelector("#local-search-input");
+      inputArea.onclick = function () {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+        this.onclick = null
+      }
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+
+</body>
+</html>
