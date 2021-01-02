@@ -157,7 +157,7 @@
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('https://pic4.zhimg.com/80/v2-53414f0e6f72b4706420974b075239e4_720w.jpg?source=1940ef5c') no-repeat center center;
+         style="background: url('https://sm.ms/image/uRIdmwvBOnU3yTr') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
@@ -189,7 +189,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      6.2k 字
+      5.9k 字
     </span>
   
 
@@ -199,7 +199,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      86
+      78
        分钟
     </span>
   
@@ -585,108 +585,47 @@
 <p><em>Everything</em> is going according to <strong>plan</strong>.</p>
 </blockquote>
 <h1 id="Markdown-列表语法"><a href="#Markdown-列表语法" class="headerlink" title="Markdown 列表语法"></a>Markdown 列表语法</h1><p>可以将多个条目组织成有序或无序列表。</p>
-<h2 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h2><p>要创建有序列表，请在每个列表项前添加数字并紧跟一个英文句点。数字不必按数学顺序排列，但是列表应当以数字 1 起始。</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>Markdown语法</th>
-<th>HTML</th>
-<th>预览效果</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>1. First item2. Second item3. Third item4. Fourth item</code></td>
-<td><code>&lt;ol&gt;&lt;li&gt;First item&lt;/li&gt;&lt;li&gt;Second item&lt;/li&gt;&lt;li&gt;Third item&lt;/li&gt;&lt;li&gt;Fourth item&lt;/li&gt;&lt;/ol&gt;</code></td>
-<td>First itemSecond itemThird itemFourth item</td>
-</tr>
-<tr>
-<td><code>1. First item1. Second item1. Third item1. Fourth item</code></td>
-<td><code>&lt;ol&gt;&lt;li&gt;First item&lt;/li&gt;&lt;li&gt;Second item&lt;/li&gt;&lt;li&gt;Third item&lt;/li&gt;&lt;li&gt;Fourth item&lt;/li&gt;&lt;/ol&gt;</code></td>
-<td>First itemSecond itemThird itemFourth item</td>
-</tr>
-<tr>
-<td><code>1. First item8. Second item3. Third item5. Fourth item</code></td>
-<td><code>&lt;ol&gt;&lt;li&gt;First item&lt;/li&gt;&lt;li&gt;Second item&lt;/li&gt;&lt;li&gt;Third item&lt;/li&gt;&lt;li&gt;Fourth item&lt;/li&gt;&lt;/ol&gt;</code></td>
-<td>First itemSecond itemThird itemFourth item</td>
-</tr>
-<tr>
-<td><code>1. First item2. Second item3. Third item  1. Indented item  2. Indented item4. Fourth item</code></td>
-<td><code>&lt;ol&gt;&lt;li&gt;First item&lt;/li&gt;&lt;li&gt;Second item&lt;/li&gt;&lt;li&gt;Third item&lt;ol&gt;&lt;li&gt;Indented item&lt;/li&gt;&lt;li&gt;Indented item&lt;/li&gt;&lt;/ol&gt;&lt;/li&gt;&lt;li&gt;Fourth item&lt;/li&gt;&lt;/ol&gt;</code></td>
-<td>First itemSecond itemThird itemIndented itemIndented itemFourth item</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h4 id="有序列表最佳实践"><a href="#有序列表最佳实践" class="headerlink" title="有序列表最佳实践"></a>有序列表最佳实践</h4><p>CommonMark and a few other lightweight markup languages let you use a parenthesis (<code>)</code>) as a delimiter (e.g., <code>1) First item</code>), but not all Markdown applications support this, so it isn’t a great option from a compatibility perspective. For compatibility, use periods only.</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>✅ Do this</th>
-<th>❌ Don’t do this</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>1. First item2. Second item</code></td>
-<td><code>1) First item2) Second item</code></td>
-</tr>
-</tbody>
-</table>
-</div>
-<h2 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h2><p>要创建无序列表，请在每个列表项前面添加破折号 (-)、星号 (*) 或加号 (+) 。缩进一个或多个列表项可创建嵌套列表。</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>Markdown语法</th>
-<th>HTML</th>
-<th>预览效果</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>- First item- Second item- Third item- Fourth item</code></td>
-<td><code>&lt;ul&gt;&lt;li&gt;First item&lt;/li&gt;&lt;li&gt;Second item&lt;/li&gt;&lt;li&gt;Third item&lt;/li&gt;&lt;li&gt;Fourth item&lt;/li&gt;&lt;/ul&gt;</code></td>
-<td>First itemSecond itemThird itemFourth item</td>
-</tr>
-<tr>
-<td><code>* First item* Second item* Third item* Fourth item</code></td>
-<td><code>&lt;ul&gt;&lt;li&gt;First item&lt;/li&gt;&lt;li&gt;Second item&lt;/li&gt;&lt;li&gt;Third item&lt;/li&gt;&lt;li&gt;Fourth item&lt;/li&gt;&lt;/ul&gt;</code></td>
-<td>First itemSecond itemThird itemFourth item</td>
-</tr>
-<tr>
-<td><code>+ First item+ Second item+ Third item+ Fourth item</code></td>
-<td><code>&lt;ul&gt;&lt;li&gt;First item&lt;/li&gt;&lt;li&gt;Second item&lt;/li&gt;&lt;li&gt;Third item&lt;/li&gt;&lt;li&gt;Fourth item&lt;/li&gt;&lt;/ul&gt;</code></td>
-<td>First itemSecond itemThird itemFourth item</td>
-</tr>
-<tr>
-<td><code>- First item- Second item- Third item  - Indented item  - Indented item- Fourth item</code></td>
-<td><code>&lt;ul&gt;&lt;li&gt;First item&lt;/li&gt;&lt;li&gt;Second item&lt;/li&gt;&lt;li&gt;Third item&lt;ul&gt;&lt;li&gt;Indented item&lt;/li&gt;&lt;li&gt;Indented item&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;Fourth item&lt;/li&gt;&lt;/ul&gt;</code></td>
-<td>First itemSecond itemThird itemIndented itemIndented itemFourth item</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h4 id="无序列表最佳实践"><a href="#无序列表最佳实践" class="headerlink" title="无序列表最佳实践"></a>无序列表最佳实践</h4><p>Markdown applications don’t agree on how to handle different delimiters in the same list. For compatibility, don’t mix and match delimiters in the same list — pick one and stick with it.</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>✅ Do this</th>
-<th>❌ Don’t do this</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>- First item- Second item- Third item- Fourth item</code></td>
-<td><code>+ First item* Second item- Third item+ Fourth item</code></td>
-</tr>
-</tbody>
-</table>
-</div>
+<h2 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h2><p>使用数字接着一个英文句点。标记符号后面也要接着至少一个空格或制表符(Tab)。</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown"><span class="hljs-bullet">1.</span> First paragraph<br><span class="hljs-bullet">2.</span> Second paragraph<br><span class="hljs-bullet">3.</span> Third paragraph<br></code></pre></td></tr></table></figure>
+<ol>
+<li>First paragraph</li>
+<li>Second paragraph</li>
+<li>Third paragraph</li>
+</ol>
+<p>在列表标记上使用的数字并不会影响输出的 HTML 结果，这意味着，你可以 Use lazy numbering for long lists：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs markdown"><span class="hljs-bullet">1.</span>  Foo.<br><span class="hljs-bullet">1.</span>  Bar.<br><span class="hljs-bullet">    1.</span>  Foofoo.<br><span class="hljs-bullet">    1.</span>  Barbar.<br><span class="hljs-bullet">1.</span>  Baz.<br></code></pre></td></tr></table></figure>
+<ol>
+<li>Foo.</li>
+<li>Bar.<ol>
+<li>Foofoo.</li>
+<li>Barbar.</li>
+</ol>
+</li>
+<li>Baz.</li>
+</ol>
+<p>有序列表标记符前每增加一个 Tab，增加一个层级：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs markdown"><span class="hljs-bullet">1.</span> 他是猪吗？<br><span class="hljs-code">    1.1 是的，他情商太低</span><br><span class="hljs-code">    1.2 不是，他智商很高</span><br><span class="hljs-code">2. 我是狗吗？</span><br><span class="hljs-code">    2.1 是的，每天忙的累死累活(有序列表标记符号前有一个 Tab)</span><br><span class="hljs-code">    2.2 不是，要求高累点我乐意</span><br><span class="hljs-code">        2.2.1 不要想太多(有序列表标记符号前有两个 Tab)</span><br><span class="hljs-code">        2.2.2 成功有方法</span><br></code></pre></td></tr></table></figure>
+<p>他是猪吗？<br> 1.1 是的，他情商太低<br> 1.2 不是，他智商很高</p>
+<p>我是狗吗？<br> 2.1 是的，每天忙的累死累活(有序列表标记符号前有一个 Tab)<br> 2.2 不是，要求高累点我乐意<br> 2.2.1 不要想太多(有序列表标记符号前有两个 Tab)<br> 2.2.2 成功有方法</p>
+<h2 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h2><p>使用 星号 <code>*</code>、加号 <code>+</code> 或是减号 <code>-</code> 作为列表标记。标记符号后面一定要接着至少一个空格或制表符（Tab）。</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown"><span class="hljs-bullet">*</span> Green  （比较推荐）<br><span class="hljs-bullet">-</span> Red  （比较好用）<br><span class="hljs-bullet">+</span>   Blue<br></code></pre></td></tr></table></figure>
+<ul>
+<li><p>Green （比较推荐）</p>
+</li>
+<li><p>Red （比较好用）</p>
+</li>
+<li><p>Blue</p>
+</li>
+</ul>
+<p>无序列表标记符前每增加 2 个空格或是 4 个空格，增加一个层级：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown"><span class="hljs-bullet">-</span> 伟大始于渺小。<br><span class="hljs-bullet">  -</span> 说和做是迥然不同的两回事。<br><span class="hljs-bullet">    -</span> 行动比语言更响亮。<br></code></pre></td></tr></table></figure>
+<p>伟大始于渺小。</p>
+<ul>
+<li>说和做是迥然不同的两回事。<ul>
+<li>行动比语言更响亮。</li>
+</ul>
+</li>
+</ul>
 <h3 id="在列表中嵌套其他元素"><a href="#在列表中嵌套其他元素" class="headerlink" title="在列表中嵌套其他元素"></a>在列表中嵌套其他元素</h3><p>要在保留列表连续性的同时在列表中添加另一种元素，请将该元素缩进四个空格或一个制表符，如下例所示：</p>
 <h4 id="段落"><a href="#段落" class="headerlink" title="段落"></a>段落</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs markdownm">*   This is the first list item.<br>*   Here&#39;s the second list item.<br><br>    I need to add another paragraph below the second list item.<br><br>*   And here&#39;s the third list item.<br></code></pre></td></tr></table></figure>
 <p>渲染效果如下：</p>
@@ -734,7 +673,7 @@
 </li>
 </ol>
 <h4 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h4><p>You can nest an unordered list in an ordered list, or vice versa.</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs text">1. First item<br>2. Second item<br>3. Third item<br>    - Indented item<br>    - Indented item<br>4. Fourth item<br></code></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs markdown"><span class="hljs-bullet">1.</span> First item<br><span class="hljs-bullet">2.</span> Second item<br><span class="hljs-bullet">3.</span> Third item<br><span class="hljs-bullet">    -</span> Indented item<br><span class="hljs-bullet">    -</span> Indented item<br><span class="hljs-bullet">4.</span> Fourth item<br></code></pre></td></tr></table></figure>
 <p>渲染效果如下：</p>
 <ol>
 <li>First item</li>
@@ -981,7 +920,8 @@
 <p>对于 HTML 的块级元素 <code>&lt;div&gt;</code>、<code>&lt;table&gt;</code>、<code>&lt;pre&gt;</code> 和 <code>&lt;p&gt;</code>，请在其前后使用空行（blank lines）与其它内容进行分隔。尽量不要使用制表符（tabs）或空格（spaces）对 HTML 标签做缩进，否则将影响格式。</p>
 <p>在 HTML 块级标签内不能使用 Markdown 语法。例如 <code>&lt;p&gt;italic and **bold**&lt;/p&gt;</code> 将不起作用。</p>
 <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span><a target="_blank" rel="noopener" href="https://markdown.com.cn/basic-syntax/">参考资料1</a>
-<a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>
+<a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:2" class="footnote-text"><span><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/525001212ec5">参考资料2</a>
+<a href="#fnref:2" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>
             </div>
             <hr>
             <div>
