@@ -240,9 +240,12 @@
             <h1 style="display: none">积分不等式01</h1>
             
             <div class="markdown-body">
-              <p>设 $f:[0,1]\to \mathbb{R}$ 是一个可微函数，具有连续导数，且 $f(1)=0$ , 证明:</p>
-<script type="math/tex; mode=display">
-4\int_{0}^{1}x^2|f'(x)|^{2}\mathrm{d}x\geqslant \int_{0}^{1}|f(x)|^2\mathrm{d}x+\left(\int_{0}^{1}|f(x)|\mathrm{d}x\right)^{2}</script><p><strong>证明:</strong> 令 $\displaystyle A=\int_{0}^{1}|f(x)|\mathrm{d}x$</p>
+              <p class="note note-primary">设 $f:[0,1]\to \mathbb{R}$ 是一个可微函数，具有连续导数，且 $f(1)=0$ , 证明:
+$$
+4\int_{0}^{1}x^2|f'(x)|^{2}\mathrm{d}x\geqslant \int_{0}^{1}|f(x)|^2\mathrm{d}x+\left(\int_{0}^{1}|f(x)|\mathrm{d}x\right)^{2}
+$$
+**证明:** 令 $\displaystyle A=\int_{0}^{1}|f(x)|\mathrm{d}x$</p>
+
 <p>由 $\color{blue}{\mathrm{Cauchy-Schwarz}}$ 不等式，我们有</p>
 <script type="math/tex; mode=display">
 \begin{align*} LHS&=4\left(\int_{0}^{1}x^{2}|f'(x)|^{2}\mathrm{d}x\right)\left(\int_{0}^{1}(|f(x)|+A)^{2}\mathrm{d}x\right)\\ &\geqslant 4\left(\int_{0}^{1}x|f'(x)|\cdot|f(x)|\mathrm{d}x+A\int_{0}^{1}x|f'(x)|\mathrm{d}x \right)^{2} \end{align*}</script><p>这时，注意到</p>
