@@ -244,35 +244,50 @@
             <h1 style="display: none">LaTeX插入图片</h1>
             
             <div class="markdown-body">
-              <h1 id="插入单个图片"><a href="#插入单个图片" class="headerlink" title="插入单个图片"></a>插入单个图片</h1><figure class="highlight latex"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs latex"><span class="hljs-keyword">\documentclass</span>&#123;article&#125;<br><span class="hljs-keyword">\usepackage</span>&#123;graphicx&#125;<br><span class="hljs-keyword">\begin</span>&#123;document&#125;<br><span class="hljs-keyword">\begin</span>&#123;figure&#125;[htbp]<br>    <span class="hljs-keyword">\centering</span><br>    <span class="hljs-keyword">\includegraphics</span>&#123;1.eps&#125;<br>    <span class="hljs-keyword">\caption</span>&#123;Elliptic Paraboloid&#125;<br>    <span class="hljs-keyword">\end</span>&#123;figure&#125; <br><span class="hljs-keyword">\end</span>&#123;document&#125; <br></code></pre></div></td></tr></table></figure>
+              <h1 id="插入单个图片"><a class="markdownIt-Anchor" href="#插入单个图片"></a> 插入单个图片</h1>
+<figure class="highlight latex"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs latex"><span class="hljs-keyword">\documentclass</span>&#123;article&#125;<br><span class="hljs-keyword">\usepackage</span>&#123;graphicx&#125;<br><span class="hljs-keyword">\begin</span>&#123;document&#125;<br><span class="hljs-keyword">\begin</span>&#123;figure&#125;[htbp]<br>    <span class="hljs-keyword">\centering</span><br>    <span class="hljs-keyword">\includegraphics</span>&#123;1.eps&#125;<br>    <span class="hljs-keyword">\caption</span>&#123;Elliptic Paraboloid&#125;<br>    <span class="hljs-keyword">\end</span>&#123;figure&#125; <br><span class="hljs-keyword">\end</span>&#123;document&#125; <br></code></pre></div></td></tr></table></figure>
 <p><strong>代码说明：</strong></p>
 <ol>
-<li><p><code>\usepackage&#123;graphicx&#125;</code>为插入图片所需引入的宏包；</p>
+<li>
+<p><code>\usepackage&#123;graphicx&#125;</code>为插入图片所需引入的宏包；</p>
 </li>
-<li><p><code>[htbp]</code>为调整图片排版位置选项，说明如下：</p>
-<p><code>[h]</code>当前位置。将图形放置在正文文本中给出该图形环境的地方。如果本页所剩的页面不够，这一参数将不起作用。<br><code>[t]</code>顶部。将图形放置在页面的顶部。<br><code>[b]</code>底部。将图形放置在页面的底部。<br><code>[p]</code>浮动页。将图形放置在一只允许有浮动对象的页面上。</p>
+<li>
+<p><code>[htbp]</code>为调整图片排版位置选项，说明如下：</p>
+<p><code>[h]</code>当前位置。将图形放置在正文文本中给出该图形环境的地方。如果本页所剩的页面不够，这一参数将不起作用。<br />
+<code>[t]</code>顶部。将图形放置在页面的顶部。<br />
+<code>[b]</code>底部。将图形放置在页面的底部。<br />
+<code>[p]</code>浮动页。将图形放置在一只允许有浮动对象的页面上。</p>
 </li>
-<li><p>上一条中，图片位置为 <code>LaTeX</code> 自动排版，如若我们一定要指定图片在当前位置，仅使用 <code>[h]</code>命令是达不到效果的，此时方法如下：<br>a) 引入<code>float</code>宏包;<br>b) 将<code>\begin&#123;figure&#125;[htbp]</code>改为<code>\begin&#123;figure&#125;[H]</code>，注意是大写的<code>H</code>。</p>
+<li>
+<p>上一条中，图片位置为 <code>LaTeX</code> 自动排版，如若我们一定要指定图片在当前位置，仅使用 <code>[h]</code>命令是达不到效果的，此时方法如下：<br />
+a) 引入<code>float</code>宏包;<br />
+b) 将<code>\begin&#123;figure&#125;[htbp]</code>改为<code>\begin&#123;figure&#125;[H]</code>，注意是大写的<code>H</code>。</p>
 </li>
-<li><p><code>\centering</code> 为图片居中命令</p>
+<li>
+<p><code>\centering</code> 为图片居中命令</p>
 </li>
-<li><p><code>\includegraphics&#123;1.eps&#125;</code> 用于插入图片，可用 <code>[ ]</code> 添加图片尺寸，例如<code>\includegraphics[width=9.5cm,height=8cm]&#123;1.eps&#125;</code>；花括号中为图片相对路径，通常应将图片放在与<code>LaTeX</code>文档相同的路径下，图片格式采用<code>.eps</code>矢量格式会更清晰</p>
+<li>
+<p><code>\includegraphics&#123;1.eps&#125;</code> 用于插入图片，可用 <code>[ ]</code> 添加图片尺寸，例如<code>\includegraphics[width=9.5cm,height=8cm]&#123;1.eps&#125;</code>；花括号中为图片相对路径，通常应将图片放在与<code>LaTeX</code>文档相同的路径下，图片格式采用<code>.eps</code>矢量格式会更清晰</p>
 </li>
-<li><p><code>\caption</code>命令用于插入图注，其应用在<code>\includegraphics</code>的下方即将图注插在图片下方，反之亦然</p>
+<li>
+<p><code>\caption</code>命令用于插入图注，其应用在<code>\includegraphics</code>的下方即将图注插在图片下方，反之亦然</p>
 </li>
 </ol>
-<hr>
-<h1 id="并排插入多张图片并公用一个caption"><a href="#并排插入多张图片并公用一个caption" class="headerlink" title="并排插入多张图片并公用一个caption"></a>并排插入多张图片并公用一个<code>caption</code></h1><p>有时候我们希望同时插入一组图片，共用一个大标题且为每张子图设小标题，效果如下：</p>
-<p><img src="https://i.loli.net/2021/01/01/QeYmNwh6SOuyIlJ.png" srcset="/img/loading.gif" alt=""></p>
+<hr />
+<h1 id="并排插入多张图片并公用一个caption"><a class="markdownIt-Anchor" href="#并排插入多张图片并公用一个caption"></a> 并排插入多张图片并公用一个<code>caption</code></h1>
+<p>有时候我们希望同时插入一组图片，共用一个大标题且为每张子图设小标题，效果如下：</p>
+<p><img src="https://i.loli.net/2021/01/01/QeYmNwh6SOuyIlJ.png" srcset="/img/loading.gif" alt="" /></p>
 <p>同时引入 <code>\usepackage&#123;graphicx&#125;</code> 和 <code>\usepackage&#123;subfigure&#125;</code> 宏包，如下代码实现。</p>
 <figure class="highlight latex"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs latex"><span class="hljs-keyword">\begin</span>&#123;figure&#125;[htbp]<br><span class="hljs-keyword">\centering</span><br><br><span class="hljs-keyword">\subfigure</span>[pic1.]&#123;<br><span class="hljs-keyword">\begin</span>&#123;minipage&#125;[t]&#123;0.25<span class="hljs-keyword">\linewidth</span>&#125;<br><span class="hljs-keyword">\centering</span><br><span class="hljs-keyword">\includegraphics</span>[width=1in]&#123;111.eps&#125;<br><span class="hljs-comment">%\caption&#123;fig1&#125;</span><br><span class="hljs-keyword">\end</span>&#123;minipage&#125;<span class="hljs-comment">%</span><br>&#125;<span class="hljs-comment">%</span><br><span class="hljs-keyword">\subfigure</span>[pic2.]&#123;<br><span class="hljs-keyword">\begin</span>&#123;minipage&#125;[t]&#123;0.25<span class="hljs-keyword">\linewidth</span>&#125;<br><span class="hljs-keyword">\centering</span><br><span class="hljs-keyword">\includegraphics</span>[width=1in]&#123;111.eps&#125;<br><span class="hljs-comment">%\caption&#123;fig2&#125;</span><br><span class="hljs-keyword">\end</span>&#123;minipage&#125;<span class="hljs-comment">%</span><br>&#125;<span class="hljs-comment">%</span><br>                 <span class="hljs-comment">%这个回车键很重要 \quad也可以</span><br><span class="hljs-keyword">\subfigure</span>[pic3.]&#123;<br><span class="hljs-keyword">\begin</span>&#123;minipage&#125;[t]&#123;0.25<span class="hljs-keyword">\linewidth</span>&#125;<br><span class="hljs-keyword">\centering</span><br><span class="hljs-keyword">\includegraphics</span>[width=1in]&#123;111.eps&#125;<br><span class="hljs-comment">%\caption&#123;fig2&#125;</span><br><span class="hljs-keyword">\end</span>&#123;minipage&#125;<br>&#125;<span class="hljs-comment">%</span><br><span class="hljs-keyword">\subfigure</span>[pic4.]&#123;<br><span class="hljs-keyword">\begin</span>&#123;minipage&#125;[t]&#123;0.25<span class="hljs-keyword">\linewidth</span>&#125;<br><span class="hljs-keyword">\centering</span><br><span class="hljs-keyword">\includegraphics</span>[width=1in]&#123;111.eps&#125;<br><span class="hljs-comment">%\caption&#123;fig2&#125;</span><br><span class="hljs-keyword">\end</span>&#123;minipage&#125;<br>&#125;<span class="hljs-comment">%</span><br><br><span class="hljs-keyword">\centering</span><br><span class="hljs-keyword">\caption</span>&#123; pics&#125;<br><span class="hljs-keyword">\end</span>&#123;figure&#125;<br></code></pre></div></td></tr></table></figure>
-<hr>
-<h1 id="图标题格式"><a href="#图标题格式" class="headerlink" title="图标题格式"></a><strong>图标题格式</strong></h1><p>论文里可能要求图片标题为 <code>Fig. 1.</code>，而有的模版生成出来的是 <code>Figure. 1.</code>，此时只需要在 <code>\begin&#123;document&#125;</code> 后面放上 <code>caption</code> 的格式控制命令：</p>
+<hr />
+<h1 id="图标题格式"><a class="markdownIt-Anchor" href="#图标题格式"></a> <strong>图标题格式</strong></h1>
+<p>论文里可能要求图片标题为 <code>Fig. 1.</code>，而有的模版生成出来的是 <code>Figure. 1.</code>，此时只需要在 <code>\begin&#123;document&#125;</code> 后面放上 <code>caption</code> 的格式控制命令：</p>
 <figure class="highlight latex"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs latex"><span class="hljs-keyword">\begin</span>&#123;document&#125;<span class="hljs-keyword">\sloppy</span><br><span class="hljs-keyword">\captionsetup</span>[figure]&#123;labelfont=&#123;bf&#125;,name=&#123;Fig.&#125;,labelsep=period&#125;<br></code></pre></div></td></tr></table></figure>
 <p><code>bf</code> 表示加粗，<code>name</code> 是要显示的名字，<code>labelsep</code> 是名称和序号之间的分隔符，<code>period</code> 表示用句号分隔，<code>space</code> 表示用空格分隔，没有参数就默认使用冒号分隔。</p>
 <p>对于表格也同理，修改自己需要的 <code>name</code> 即可：</p>
 <figure class="highlight latex"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs latex"><span class="hljs-keyword">\captionsetup</span>[table]&#123;labelfont=&#123;bf&#125;,name=&#123;Table&#125;,labelsep=period&#125;<br></code></pre></div></td></tr></table></figure>
-<p>下列宏包的作用是为有超链接的地方设定样式：<br><code>\usepackage[colorlinks,linkcolor=red,anchorcolor=blue,citecolor=green]&#123;hyperref&#125;</code></p>
+<p>下列宏包的作用是为有超链接的地方设定样式：<br />
+<code>\usepackage[colorlinks,linkcolor=red,anchorcolor=blue,citecolor=green]&#123;hyperref&#125;</code></p>
 
             </div>
             <hr>
