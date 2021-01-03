@@ -17,7 +17,7 @@
   <meta name="description" content="保持很多的热爱和一点点野心">
   <meta name="author" content="欧阳珈樱">
   <meta name="keywords" content="">
-  <title>LaTeX插入图片 - 樱花味猫猫</title>
+  <title>不等式01 - 樱花味猫猫</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -162,7 +162,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="LaTeX插入图片">
+            <span class="h2" id="subtitle" title="不等式01">
               
             </span>
 
@@ -177,8 +177,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-01-01 00:15" pubdate>
-        2021年1月1日 凌晨
+      <time datetime="2021-01-03 19:39" pubdate>
+        2021年1月3日 晚上
       </time>
     </span>
   
@@ -189,7 +189,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      777 字
+      27 字
     </span>
   
 
@@ -199,7 +199,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      10
+      1
        分钟
     </span>
   
@@ -237,38 +237,30 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">LaTeX插入图片</h1>
+            <h1 style="display: none">不等式01</h1>
             
             <div class="markdown-body">
-              <h1 id="插入单个图片"><a href="#插入单个图片" class="headerlink" title="插入单个图片"></a>插入单个图片</h1><figure class="highlight latex"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs latex"><span class="hljs-keyword">\documentclass</span>&#123;article&#125;<br><span class="hljs-keyword">\usepackage</span>&#123;graphicx&#125;<br><span class="hljs-keyword">\begin</span>&#123;document&#125;<br><span class="hljs-keyword">\begin</span>&#123;figure&#125;[htbp]<br>    <span class="hljs-keyword">\centering</span><br>    <span class="hljs-keyword">\includegraphics</span>&#123;1.eps&#125;<br>    <span class="hljs-keyword">\caption</span>&#123;Elliptic Paraboloid&#125;<br>    <span class="hljs-keyword">\end</span>&#123;figure&#125; <br><span class="hljs-keyword">\end</span>&#123;document&#125; <br></code></pre></div></td></tr></table></figure>
-<p><strong>代码说明：</strong></p>
-<ol>
-<li><p><code>\usepackage&#123;graphicx&#125;</code>为插入图片所需引入的宏包；</p>
-</li>
-<li><p><code>[htbp]</code>为调整图片排版位置选项，说明如下：</p>
-<p><code>[h]</code>当前位置。将图形放置在正文文本中给出该图形环境的地方。如果本页所剩的页面不够，这一参数将不起作用。<br><code>[t]</code>顶部。将图形放置在页面的顶部。<br><code>[b]</code>底部。将图形放置在页面的底部。<br><code>[p]</code>浮动页。将图形放置在一只允许有浮动对象的页面上。</p>
-</li>
-<li><p>上一条中，图片位置为 <code>LaTeX</code> 自动排版，如若我们一定要指定图片在当前位置，仅使用 <code>[h]</code>命令是达不到效果的，此时方法如下：<br>a) 引入<code>float</code>宏包;<br>b) 将<code>\begin&#123;figure&#125;[htbp]</code>改为<code>\begin&#123;figure&#125;[H]</code>，注意是大写的<code>H</code>。</p>
-</li>
-<li><p><code>\centering</code> 为图片居中命令</p>
-</li>
-<li><p><code>\includegraphics&#123;1.eps&#125;</code> 用于插入图片，可用 <code>[ ]</code> 添加图片尺寸，例如<code>\includegraphics[width=9.5cm,height=8cm]&#123;1.eps&#125;</code>；花括号中为图片相对路径，通常应将图片放在与<code>LaTeX</code>文档相同的路径下，图片格式采用<code>.eps</code>矢量格式会更清晰</p>
-</li>
-<li><p><code>\caption</code>命令用于插入图注，其应用在<code>\includegraphics</code>的下方即将图注插在图片下方，反之亦然</p>
-</li>
-</ol>
-<hr>
-<h1 id="并排插入多张图片并公用一个caption"><a href="#并排插入多张图片并公用一个caption" class="headerlink" title="并排插入多张图片并公用一个caption"></a>并排插入多张图片并公用一个<code>caption</code></h1><p>有时候我们希望同时插入一组图片，共用一个大标题且为每张子图设小标题，效果如下：</p>
-<p><img src="https://i.loli.net/2021/01/01/QeYmNwh6SOuyIlJ.png" srcset="/img/loading.gif" alt=""></p>
-<p>同时引入 <code>\usepackage&#123;graphicx&#125;</code> 和 <code>\usepackage&#123;subfigure&#125;</code> 宏包，如下代码实现。</p>
-<figure class="highlight latex"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs latex"><span class="hljs-keyword">\begin</span>&#123;figure&#125;[htbp]<br><span class="hljs-keyword">\centering</span><br><br><span class="hljs-keyword">\subfigure</span>[pic1.]&#123;<br><span class="hljs-keyword">\begin</span>&#123;minipage&#125;[t]&#123;0.25<span class="hljs-keyword">\linewidth</span>&#125;<br><span class="hljs-keyword">\centering</span><br><span class="hljs-keyword">\includegraphics</span>[width=1in]&#123;111.eps&#125;<br><span class="hljs-comment">%\caption&#123;fig1&#125;</span><br><span class="hljs-keyword">\end</span>&#123;minipage&#125;<span class="hljs-comment">%</span><br>&#125;<span class="hljs-comment">%</span><br><span class="hljs-keyword">\subfigure</span>[pic2.]&#123;<br><span class="hljs-keyword">\begin</span>&#123;minipage&#125;[t]&#123;0.25<span class="hljs-keyword">\linewidth</span>&#125;<br><span class="hljs-keyword">\centering</span><br><span class="hljs-keyword">\includegraphics</span>[width=1in]&#123;111.eps&#125;<br><span class="hljs-comment">%\caption&#123;fig2&#125;</span><br><span class="hljs-keyword">\end</span>&#123;minipage&#125;<span class="hljs-comment">%</span><br>&#125;<span class="hljs-comment">%</span><br>                 <span class="hljs-comment">%这个回车键很重要 \quad也可以</span><br><span class="hljs-keyword">\subfigure</span>[pic3.]&#123;<br><span class="hljs-keyword">\begin</span>&#123;minipage&#125;[t]&#123;0.25<span class="hljs-keyword">\linewidth</span>&#125;<br><span class="hljs-keyword">\centering</span><br><span class="hljs-keyword">\includegraphics</span>[width=1in]&#123;111.eps&#125;<br><span class="hljs-comment">%\caption&#123;fig2&#125;</span><br><span class="hljs-keyword">\end</span>&#123;minipage&#125;<br>&#125;<span class="hljs-comment">%</span><br><span class="hljs-keyword">\subfigure</span>[pic4.]&#123;<br><span class="hljs-keyword">\begin</span>&#123;minipage&#125;[t]&#123;0.25<span class="hljs-keyword">\linewidth</span>&#125;<br><span class="hljs-keyword">\centering</span><br><span class="hljs-keyword">\includegraphics</span>[width=1in]&#123;111.eps&#125;<br><span class="hljs-comment">%\caption&#123;fig2&#125;</span><br><span class="hljs-keyword">\end</span>&#123;minipage&#125;<br>&#125;<span class="hljs-comment">%</span><br><br><span class="hljs-keyword">\centering</span><br><span class="hljs-keyword">\caption</span>&#123; pics&#125;<br><span class="hljs-keyword">\end</span>&#123;figure&#125;<br></code></pre></div></td></tr></table></figure>
-<hr>
-<h1 id="图标题格式"><a href="#图标题格式" class="headerlink" title="图标题格式"></a><strong>图标题格式</strong></h1><p>论文里可能要求图片标题为 <code>Fig. 1.</code>，而有的模版生成出来的是 <code>Figure. 1.</code>，此时只需要在 <code>\begin&#123;document&#125;</code> 后面放上 <code>caption</code> 的格式控制命令：</p>
-<figure class="highlight latex"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs latex"><span class="hljs-keyword">\begin</span>&#123;document&#125;<span class="hljs-keyword">\sloppy</span><br><span class="hljs-keyword">\captionsetup</span>[figure]&#123;labelfont=&#123;bf&#125;,name=&#123;Fig.&#125;,labelsep=period&#125;<br></code></pre></div></td></tr></table></figure>
-<p><code>bf</code> 表示加粗，<code>name</code> 是要显示的名字，<code>labelsep</code> 是名称和序号之间的分隔符，<code>period</code> 表示用句号分隔，<code>space</code> 表示用空格分隔，没有参数就默认使用冒号分隔。</p>
-<p>对于表格也同理，修改自己需要的 <code>name</code> 即可：</p>
-<figure class="highlight latex"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs latex"><span class="hljs-keyword">\captionsetup</span>[table]&#123;labelfont=&#123;bf&#125;,name=&#123;Table&#125;,labelsep=period&#125;<br></code></pre></div></td></tr></table></figure>
-<p>下列宏包的作用是为有超链接的地方设定样式：<br><code>\usepackage[colorlinks,linkcolor=red,anchorcolor=blue,citecolor=green]&#123;hyperref&#125;</code></p>
+              <div class="note note-info">
+            <p>设 $n(n\geqslant2)$ 个正实数 $a_1,a_2,\cdots,a_n$ 满足 $a_1\leqslant a_2\leqslant\cdots\leqslant a_n$. 证明:</p><script type="math/tex; mode=display">\sum_{1\leqslant i<j\leqslant n}\left(a_i+a_j\right)^2\left(\frac{1}{i^2}+\frac{1}{j^2}\right)\geqslant4(n-1)\sum_{i=1}^n\frac{a^2_i}{i^2}</script>
+          </div>
+<p><strong>解:</strong><br>当 $n=2$ 时, 原不等式</p>
+<script type="math/tex; mode=display">
+\Leftrightarrow \frac{5}{4}(a_1+a_2)^2\geqslant 4\cdot\left(a^2_1+\frac{a^2_2}{4}\right)</script><script type="math/tex; mode=display">
+\Leftrightarrow\frac{5}{2}a_1a_2+\frac{1}{4}a^2_2\geqslant\frac{11}{4}a^2_1</script><p>由于 $a_2\geqslant a_1$, 上式成立.<br>设 $n=k-1$ 时成立, 我们已有</p>
+<script type="math/tex; mode=display">
+\sum_{1\leqslant i<j\leqslant k-1}\left(a_i+a_j\right)^2\left(\frac{1}{i^2}+\frac{1}{j^2}\right)\geqslant4(k-2)\sum_{i=1}^{k-1}\frac{a^2_i}{i^2}</script><p>当 $n=k$ 时, 我们只需证明</p>
+<script type="math/tex; mode=display">
+\sum_{i=1}^{k-1}\left(a_i+a_k\right)^2\left(\frac{1}{i^2}+\frac{1}{k^2}\right)\geqslant 4\cdot\left((k-1)\frac{a^2_k}{k^2}+\sum_{i=1}^{k-1}\frac{a^2_i}{i^2}\right)</script><p>但是由于 $(a_i+a_j)^2\geqslant 3a^2_i+a^2_k$, 所以上式</p>
+<script type="math/tex; mode=display">
+LHS\geqslant\sum_{i=1}^{k-1}\left(3a^2_i+a^2_k\right)\left(\frac{1}{i^2}+\frac{1}{k^2}\right)</script><p> 所以我们只需证明</p>
+<script type="math/tex; mode=display">
+\sum_{i=1}^{k-1}\left(a^2_k-a^2_i\right)\cdot\left(\frac{1}{i^2}-\frac{3}{k^2}\right)\geqslant0</script><p>由于 $a_i$ 递增, 则 $a^2_k-a^2_i$ 递减, 而 $\displaystyle \left(\frac{1}{i^2}+\frac{1}{k^2}\right)$ 递减, 由切比雪夫不等式有</p>
+<script type="math/tex; mode=display">
+\sum_{i=1}^{k-1}\left(a^2_k-a^2_i\right)\cdot\left(\frac{1}{i^2}-\frac{3}{k^2}\right)\geqslant\frac{1}{n}\left(\sum_{i=1}^{k-1}a^2_k-a^2_i\right)\cdot
+\left(\sum_{i=1}^{k-1}\frac{1}{i^2}-\frac{3}{k^2}\right)</script><p>由于现在 $k\geqslant3$, 我们有</p>
+<script type="math/tex; mode=display">
+\sum\left(\frac{1}{i^2}-\frac{1}{k^2}\right)>\sum\frac{1}{i(i+1)}-\frac{3(k-1)}{k^2}=1-\frac{1}{k}-\frac{3(k-1)}{k^2}\geqslant0</script><p>恒成立.所以上式右边非负.</p>
+<p>证毕.</p>
 
             </div>
             <hr>
@@ -278,7 +270,7 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/LaTeX/">LaTeX</a>
+                      <a class="hover-with-bg" href="/categories/Math/">Math</a>
                     
                   </div>
                 
@@ -286,7 +278,9 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/LaTeX/">LaTeX</a>
+                      <a class="hover-with-bg" href="/tags/%E4%B8%8D%E7%AD%89%E5%BC%8F/">不等式</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E4%BB%A3%E6%95%B0/">代数</a>
                     
                   </div>
                 
@@ -299,18 +293,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/01/01/%E4%B8%80%E9%81%93Ramanujan%E5%8E%9F%E5%88%9B%E9%A2%98/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">一道Ramanujan原创题</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2020/12/31/sinx%E5%92%8Ccosx%E7%9A%84%E6%97%A0%E7%A9%B7%E4%B9%98%E7%A7%AF/">
-                        <span class="hidden-mobile">sin x 和 cos x 的无穷乘积</span>
+                      <a href="/2021/01/02/Markdown%E8%AF%AD%E6%B3%95/">
+                        <span class="hidden-mobile">Markdown语法</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -468,6 +456,45 @@
 
 
 
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-svg.js" ></script>
+
+  
 
 
 
