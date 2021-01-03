@@ -4,7 +4,7 @@
   
   
   <entry>
-    <title>数学分析01</title>
+    <title>数学分析02</title>
     <link href="/2021/01/03/%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%9002/"/>
     <url>/2021/01/03/%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%9002/</url>
     
@@ -35,7 +35,7 @@
     <link href="/2021/01/03/%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%9001/"/>
     <url>/2021/01/03/%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%9001/</url>
     
-    <content type="html"><![CDATA[<div class="note note-info">            <p>设函数 $f(x)$ 定义在整个数轴上具有各阶导数,并且对于任意 $x$, 有</p><script type="math/tex; mode=display">\left|f^{(n)}(x)-f^{(n-1)}(x)\right|<\frac{1}{n^{2}}, n=1,2, \cdots</script><p>求证:$\displaystyle\lim _{n \rightarrow \infty} f^{(n)}(x)=c e^{x}$.($c$是常数)</p>          </div><p><strong>解:</strong></p><p>设 $a<em>n=f^{(n)}(0)$,则 $\displaystyle |a_n-a</em>{n-1}|&lt;\frac{1}{n^2}$.由</p><script type="math/tex; mode=display">a_{n}=a_{0}+\sum_{k=1}^{n}\left(a_{k}-a_{k-1}\right)</script><p>知 ${a_n}$ 的极限存在, 由条件可得</p><script type="math/tex; mode=display">\left|\left(e^{-x} f^{(n-1)}(x)\right)^{\prime}\right|=\left|e^{-x}\left(f^{(n)}-f^{(n-1)}\right)\right|<\frac{1}{n^{2}} e^{-x}</script><p>将此式在 $(0,x)$ 上积分,可得</p><script type="math/tex; mode=display">\left|e^{-x} f^{(n-1)}(x)-f^{(n-1)}(0)\right| < \frac{1}{n^{2}}\left(1-e^{-x}\right)</script><p>即</p><script type="math/tex; mode=display">\left|f^{(n-1)}(x)-e^{x} f^{(n-1)}(0)\right| < \frac{1}{n^{2}}\left(e^{x}-1\right)</script><p>由此可得</p><script type="math/tex; mode=display">\lim _{n \rightarrow \infty} f^{(n)}(x)=e^{x} \lim _{n \rightarrow \infty} a_{n}=c e^{x}</script>]]></content>
+    <content type="html"><![CDATA[<div class="note note-info">            <p>设函数 $f(x)$ 定义在整个数轴上具有各阶导数,并且对于任意 $x$, 有</p><script type="math/tex; mode=display">\left|f^{(n)}(x)-f^{(n-1)}(x)\right|<\frac{1}{n^{2}}, n=1,2, \cdots</script><p>求证:$\displaystyle\lim _{n \rightarrow \infty} f^{(n)}(x)=c e^{x}$.($c$是常数)</p>          </div><p><strong>解:</strong></p><p>设 $a<em>n=f^{(n)}(0)$, 则 $\displaystyle |a_n-a</em>{n-1}|&lt;\frac{1}{n^2}$.由</p><script type="math/tex; mode=display">a_{n}=a_{0}+\sum_{k=1}^{n}\left(a_{k}-a_{k-1}\right)</script><p>知 ${a_n}$ 的极限存在, 由条件可得</p><script type="math/tex; mode=display">\left|\left(e^{-x} f^{(n-1)}(x)\right)^{\prime}\right|=\left|e^{-x}\left(f^{(n)}-f^{(n-1)}\right)\right|<\frac{1}{n^{2}} e^{-x}</script><p>将此式在 $(0,x)$ 上积分,可得</p><script type="math/tex; mode=display">\left|e^{-x} f^{(n-1)}(x)-f^{(n-1)}(0)\right| < \frac{1}{n^{2}}\left(1-e^{-x}\right)</script><p>即</p><script type="math/tex; mode=display">\left|f^{(n-1)}(x)-e^{x} f^{(n-1)}(0)\right| < \frac{1}{n^{2}}\left(e^{x}-1\right)</script><p>由此可得</p><script type="math/tex; mode=display">\lim _{n \rightarrow \infty} f^{(n)}(x)=e^{x} \lim _{n \rightarrow \infty} a_{n}=c e^{x}</script>]]></content>
     
     
     <categories>
