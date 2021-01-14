@@ -17,7 +17,7 @@
   <meta name="description" content="保持很多的热爱和一点点野心">
   <meta name="author" content="欧阳珈樱">
   <meta name="keywords" content="">
-  <title>积分03 - 樱花味猫猫</title>
+  <title>确定概率的一些方法 - 樱花味猫猫</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -166,7 +166,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="积分03">
+            <span class="h2" id="subtitle" title="确定概率的一些方法">
               
             </span>
 
@@ -181,8 +181,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-01-09 10:54" pubdate>
-        2021年1月9日 上午
+      <time datetime="2021-01-14 12:19" pubdate>
+        2021年1月14日 中午
       </time>
     </span>
   
@@ -193,7 +193,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      416 字
+      1.7k 字
     </span>
   
 
@@ -203,7 +203,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      8
+      22
        分钟
     </span>
   
@@ -241,31 +241,129 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">积分03</h1>
+            <h1 style="display: none">确定概率的一些方法</h1>
             
             <div class="markdown-body">
-              <div class="note note-info">
-            <script type="math/tex; mode=display">I=\int_{0}^{1} \frac{x}{\left\{(2 x-1) \sqrt{x^{2}+x+1}+(2 x+1) \sqrt{x^{2}-x+1}\right\} \sqrt{x^{4}+x^{2}+1}} \mathrm{~d} x</script>
-          </div>
-<p><strong>解1:</strong></p>
+              <h1 id="古典方法"><a href="#古典方法" class="headerlink" title="古典方法"></a>古典方法</h1><p><strong>(抽样模型)</strong>一批产品共有 $N$ 件,其中 $M$ 件是不合格品, $N-M$ 件是合格品.从中随机取出 $n$ 件,试求事件 $A_m=$ “取出的n件产品中有 $m$  件不合格品”的概率.</p>
+<p><strong>解：</strong>显然样本点总数为 $\displaystyle\binom{N}{n}$</p>
+<p>要使 $A_m$ 发生,必须从 $M$ 件不合格品中抽 $m$ 件,再从 $N-M$ 件合格品中抽 $n-m$ 件,根据乘法原理,含有 $\displaystyle \binom{M}{m}\binom{N-M}{n-m}$ 个样品点.</p>
 <script type="math/tex; mode=display">
-a(x)=\sqrt{x^{2}+x+1}=\sqrt{\left(x+\frac{1}{2}\right)^{2}+\frac{3}{4}}</script><script type="math/tex; mode=display">
-a^{\prime}(x)=\frac{x+\frac{1}{2}}{a(x)}</script><script type="math/tex; mode=display">
+P\left(A_{m}\right)=\frac{\left(\begin{array}{l}
+M \\
+m
+\end{array}\right)\left(\begin{array}{l}
+N-M \\
+n-m
+\end{array}\right)}{\left(\begin{array}{l}
+N \\
+n
+\end{array}\right)}, \quad m=0,1,2, \cdots, r, \quad r=\min \{n, M\}</script><hr>
+<p><strong>(放回抽样)</strong>抽样有两种方式:不放回抽样与放回抽样.上例讨论的是不放回抽样.放回抽样是抽取一件后放回,然后再抽取下一件, $\cdots\cdots$ ,如此重复直至抽出 $n$ 件为止.现对上例在有放回抽样情况下,讨论事件 $B_m=$ “取出的 $n$ 件产品中有 $m$ 件不合格品”的概率.</p>
+<p><strong>解：</strong>显然样本点总数为 $N^n$</p>
+<p> 事件 $B_m=$ “取出的 $n$ 件产品中有 $m$ 件不合格品”发生必须从 $N-M$ 件合格品中有放回地抽取 $n-m$ 次,从 $M$ 件不合格品中有放回地抽取 $m$ 次,这样就有 $M^m·(N-M)^{n-m}$ 种取法.再考虑到这 $m$ 件不合格品可能在 $n$ 次中的任何 $m$ 次抽取中<br>得到,总共有 $\displaystyle \binom{n}{m}$ 种可能.所以事件 $B_m$ 含有 $\displaystyle\binom{n}{m}M^m·(N-M)^{n-m}$ 个样本点,故 $B_m$ 的概率为</p>
+<script type="math/tex; mode=display">
 \begin{aligned}
-I&=\frac{1}{2} \int_{0}^{1} \frac{x}{\left[\left(x-\frac{1}{2}\right) a(x)+\left(x+\frac{1}{2}\right) a(-x)\right] a(x) a(-x)} \mathrm{~d} x \\
-&=\frac{1}{2} \int_{0}^{1} \frac{x}{a^{2}(x)\left(a^{2}-x\right)\left[a^{\prime}(x)-a^{\prime}(-x)\right]} \mathrm{~d} x=\frac{1}{2} \int_{0}^{1} \frac{x\left[a^{\prime}(x)+a^{\prime}(-x)\right] }{a^{2}(x) a^{2}(-x)\left\{\left[a^{\prime}(x)\right]^{2}-\left[a^{\prime}(-x)\right]^{2}\right\}}\mathrm{~d} x \\
-&=\frac{1}{2} \int_{0}^{1} \frac{x\left[a^{\prime}(x)+a^{\prime}(-x)\right] }{\left(x+\frac{1}{2}\right)^{2} a^{2}(-x)^{2}-\left(x-\frac{1}{2}\right)^{2} a^{2}(x)}\mathrm{~d} x=\frac{2}{3} \int_{0}^{1} \frac{x\left[a^{\prime}(x)+a^{\prime}(-x)\right] }{2 x}\mathrm{~d} x \\
-&=\frac{1}{3} \int_{0}^{1}\left[a^{\prime}(x)+a^{\prime}(-x)\right]=\frac{a(1)-a(-1)}{3}=\frac{\sqrt{3}-1}{3}
+P\left(B_{m}\right) &=\left(\begin{array}{l}
+n \\
+m
+\end{array}\right) \frac{M^{m}(N-M)^{n-m}}{N^{n}} \\
+&=\left(\begin{array}{l}
+n \\
+m
+\end{array}\right)\left(\frac{M}{N}\right)^{m}\left(1-\frac{M}{N}\right)^{n-m}, \quad m=0,1,2, \cdots, n
 \end{aligned}</script><hr>
-<p><strong>解2:</strong></p>
+<p><strong>(盒子模型)</strong>设有 $n$ 个球,每个球都等可能地被放到 $N$ 个不同盒子中的任一个,每个盒子所放球数不限.试求</p>
+<p>(1) 指定的 $n (n\leqslant N)$ 个盒子中各有一球的概率 $p_1$ ;</p>
+<p>(2) 恰好有 $n (n\leqslant N)$ 个盒子各有一球的概率 $p_2$ ·</p>
+<p><strong>解：</strong>显然样本点总数为 $N^n$</p>
+<p>(1) 因为各有一球的 $n$ 个盒子已经指定,余下的没有球的 $N-n$ 个盒子也同时被指定,所以只要考虑 $n$ 个球在这指定的 $n$ 个盒子中各放 $1$ 个的放法数.设想第 $1$ 个球有 $n$ 种放法,第 $2$ 个球只有 $n-1$ 种放法, $\cdots\cdots$ ,第 $n$ 个球只有 $Ⅰ$ 种放法.所以根据乘法原则,其可能总数为 $n !$ ,于是其概率为</p>
 <script type="math/tex; mode=display">
-\begin{align*}
-&\int_{0}^{1} \frac{x}{\left[(2 x-1) \sqrt{x^{2}+x+1}+(2 x+1) \sqrt{x^{2}-x+1}\right] \sqrt{x^{4}+x^{2}+1}} \mathrm{~d} x \\
-=&\int_{0}^{1} \frac{x\left[(2 x-1) \sqrt{x^{2}+x+1}-(2 x+1) \sqrt{x^{2}-x+1}\right]}{-6 x \sqrt{x^{4}+x^{2}+1}} \mathrm{~d} x \\
-=&-\frac{1}{6} \int_{0}^{1}\left(\frac{2 x-1}{\sqrt{x^{2}-x+1}}-\frac{2 x+1}{\sqrt{x^{2}+x+1}}\right) \mathrm{d} x \\
-=&-\frac{1}{6} \int_{0}^{1} \frac{1}{\sqrt{\left(x-\frac{1}{2}\right)^{2}+\frac{3}{4}}} \mathrm{~d}\left(x-\frac{1}{2}\right)^{2}+\frac{1}{6} \int_{0}^{1} \frac{1}{\sqrt{\left(x+\frac{1}{2}\right)^{2}+\frac{3}{4}}} \mathrm{~d}\left(x+\frac{1}{2}\right)^{2} \\
-=&\frac{1}{3}(\sqrt{3}-1)
-\end{align*}</script>
+p_1=\frac{n!}{N^n}</script><p>(2) 与 (1) 的差别在于: 此 $n$ 个盒子可以在 $N$ 个盒子中任意选取.此时可分两步做:第一步从 $N$ 个盒子中任取 $n$ 个盒子准备放球,共有种取法;第二步将 $n$ 个球放入选中的 $n$ 个盒子中,每个盒子各放 $1$ 个球,共有 $n!$ 种放法.所以根据乘法原则共有</p>
+<script type="math/tex; mode=display">
+\binom{N}{n}\cdot n !=P_{N}^{n}=N(N-1)(N-2) \cdots(N-n+1)</script><p>种放法.其实这个放法数可以更直接的考虑成:第 $1$ 个球可放在 $N$ 个盒子中的任一个,第 $2$ 个球只可放在余下的 $N-1$ 个盒子中的任一个, $\cdots\cdots$ ,第 $n$ 个球只可放在余下的 $N-n+1$ 个盒子中的任一个,由乘法原则即可得以上放法数.因此所求概率为</p>
+<script type="math/tex; mode=display">
+p_{2}=\frac{P_{N}^{n}}{N^{n}}=\frac{N !}{N^{n}(N-n) !}</script><hr>
+<p><strong>(生日问题)</strong> $n$ 个人的生日全不相同的概率 $p_n$ 是多少?<br><strong>解:</strong>把 $n$ 个人看成是 $n$ 个球,将一年 $365$ 天看成是 $N=365$ 个盒子,则“ $n$  个人的生日全不相同”就相当于“恰好有 $n (n\leqslant N)$ 个盒子各有一球”,所以 $n$ 个人的生日全不相同的概率为</p>
+<script type="math/tex; mode=display">
+p_{n}=\frac{365 !}{365^{n}(365-n) !}=\left(1-\frac{1}{365}\right)\left(1-\frac{2}{365}\right) \cdots\left(1-\frac{n-1}{365}\right)</script><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>$n$</th>
+<th>$10$</th>
+<th>$20$</th>
+<th>$30$</th>
+<th>$40$</th>
+<th>$50$</th>
+<th style="text-align:left">$60$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$P_n$</td>
+<td>$0.8840$</td>
+<td>$0.5942$</td>
+<td>$0.3037$</td>
+<td>$0.1180$</td>
+<td>$0.0349$</td>
+<td style="text-align:left">$0.0078$</td>
+</tr>
+<tr>
+<td>$1-P_n$</td>
+<td>$0.1160$</td>
+<td>$0.4058$</td>
+<td>$0.6963$</td>
+<td>$0.8820$</td>
+<td>$0.9651$</td>
+<td style="text-align:left">$0.9922$</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h1 id="几何方法"><a href="#几何方法" class="headerlink" title="几何方法"></a>几何方法</h1><p><strong>(会面问题)</strong>甲乙两人约定在下午 $6$ 时到 $7$ 时之间在某处会面，并约定先到者应等候另一个人 $20$ min ,过时即可离去.求两人能会面的概率.</p>
+<p><strong>解:</strong>以 $x$ 和 $y$ 分别表示甲、乙两人到达约会地点的时间(以min为单位),在平面上建立 $xOy$ 直角坐标系.</p>
+<p><img src="https://i.loli.net/2021/01/14/pZTiPscgkHAy56G.png" srcset="/img/loading.gif" alt=""></p>
+<p>因为甲、乙都是在 $0$ 至 $60$ min内等可能地到达,所以由等可能性知这是—个几何概率问题. $(x,y)$ 的所有可能取值是边长为$60$ 的正方形,其面积为 $S_{\Omega}=60$.而事件 $A=$“两人能够会面”相当于</p>
+<script type="math/tex; mode=display">
+|x-y|\leqslant20</script><p>即图中阴影部分面积</p>
+<script type="math/tex; mode=display">
+P(A)=\frac{S_{A}}{S_{\Omega}}=\frac{60^{2}-40^{2}}{60^{2}}=\frac{5}{9}=0.5556</script><hr>
+<p><strong>(蒲丰投针问题)</strong>平面上画有间隔为 $d(d&gt;0)$ 的等距平行线,向平面任意投掷一枚长为 $l(l&lt;d)$ 的针,求针与任一平行线相交的概率.<br><strong>解:</strong></p>
+<p><img src="https://i.loli.net/2021/01/14/qtaAlX2wBkyYExh.png" srcset="/img/loading.gif" alt=""></p>
+<p>以 $x$ 表示针的中点与最近一条平行线的距离,又以 $\varphi$ 表示针与此直线间的交角,见上图.易知样本空间 $\Omega$ 满足</p>
+<script type="math/tex; mode=display">
+0 \leqslant x \leqslant d / 2, \quad 0 \leqslant \varphi \leqslant \pi</script><p>由这两式可以确定 $x-\varphi$ 平面上的一个矩形 $\Omega$ ,这就是样本空间,其面积为 $S_{\Omega}=d/2$.这时针与平行线相交(记为事件$A$)的充要条件是</p>
+<script type="math/tex; mode=display">
+x \leqslant \frac{l}{2} \sin \varphi</script><p>这个不等式表示的区域是下图中的阴影部分</p>
+<p><img src="https://i.loli.net/2021/01/14/N3H7d4TktCruhzO.png" srcset="/img/loading.gif" alt=""></p>
+<p>由于针是向平面任意投掷的,所以由等可能性知这是一个几何概率问题.由此得</p>
+<script type="math/tex; mode=display">
+P(A)=\frac{S_{A}}{S_{\Omega}}=\cfrac{\int_{0}^{\pi} \frac{l}{2} \sin \varphi \mathrm{d} \varphi}{\frac{d}{2} \pi}=\frac{2 l}{d \pi}</script><p>如果 $l,d$ 为已知,则以 $\pi$ 的值代人上式即可计算得 $P(A)$ 之值.反之,如果已知 $P(A)$ 的值,则也可以利用上式去求 $\pi$ ,而关于  $P(A)$ 的值,可用从试验中获得的频率去近似它:即投针 $N$ 次,其中针与平行线相交 $n$ 次,则频率 $n/N$ 可作为 $P(A)$ 的估计值,于是由</p>
+<script type="math/tex; mode=display">
+\frac{n}{N} \approx P(A)=\frac{2 l}{d \pi}</script><p>可得</p>
+<script type="math/tex; mode=display">
+\pi \approx \frac{2 l N}{d n}</script><hr>
+<p>在长度为 $a$ 的线段内任取两点将其分为三段,求它们可以构成-个三角形的概率.<br><strong>解:</strong></p>
+<p><img src="https://i.loli.net/2021/01/14/2gUsItOWLjxBlnR.png" srcset="/img/loading.gif" alt=""></p>
+<p>由于是将线段任意分成三段,所以由等可能性知这是一个几何概率问题.分别用 $x,y$ 和 $a-x-y$ 表示线段被分成的三段长度,见上图,则显然应该有</p>
+<script type="math/tex; mode=display">
+0<x<a, \quad 0<y<a, \quad 0<a-(x+y)<a</script><p>所以样本空间为</p>
+<script type="math/tex; mode=display">
+\Omega=\{(x, y): \quad 0<x<a, \quad 0<y<a, \quad 0<x+y<a\}</script><p><img src="https://i.loli.net/2021/01/14/8rQmZkq5vT9KSx4.png" srcset="/img/loading.gif" alt=""></p>
+<p>又根据构成三角形的条件:三角形中任意两边之和大于第三边,得事件 $A$ 所含样本点 $(x ,y)$ 必须同时满足</p>
+<script type="math/tex; mode=display">
+\begin{array}{l}
+0<a-(x+y)<x+y \\
+0<x<y+(a-x-y) \\
+0<y<x+(a-x-y)
+\end{array}</script><p>整理得</p>
+<script type="math/tex; mode=display">
+\frac{a}{2}<x+y<a, \quad 0<x<\frac{a}{2}, \quad 0<y<\frac{a}{2}</script><p>所以事件 $A$ 可用下图中的阴影部分表示.</p>
+<p><img src="https://i.loli.net/2021/01/14/z5Ic1nwOk6stYqF.png" srcset="/img/loading.gif" alt=""></p>
+<p>显然有</p>
+<script type="math/tex; mode=display">
+P(A)=\frac14</script><hr>
+
             </div>
             <hr>
             <div>
@@ -282,7 +380,7 @@ I&=\frac{1}{2} \int_{0}^{1} \frac{x}{\left[\left(x-\frac{1}{2}\right) a(x)+\left
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E7%A7%AF%E5%88%86/">积分</a>
+                      <a class="hover-with-bg" href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/">概率论</a>
                     
                   </div>
                 
@@ -295,18 +393,12 @@ I&=\frac{1}{2} \int_{0}^{1} \frac{x}{\left[\left(x-\frac{1}{2}\right) a(x)+\left
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/01/14/%E7%A1%AE%E5%AE%9A%E6%A6%82%E7%8E%87%E7%9A%84%E4%B8%80%E4%BA%9B%E6%96%B9%E6%B3%95/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">确定概率的一些方法</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/01/09/%E7%A7%AF%E5%88%8602/">
-                        <span class="hidden-mobile">积分02</span>
+                      <a href="/2021/01/09/%E7%A7%AF%E5%88%8603/">
+                        <span class="hidden-mobile">积分03</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
