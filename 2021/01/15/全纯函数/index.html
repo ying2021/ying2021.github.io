@@ -17,7 +17,7 @@
   <meta name="description" content="保持很多的热爱和一点点野心">
   <meta name="author" content="欧阳珈樱">
   <meta name="keywords" content="">
-  <title>复数与复变函数 - 樱花味猫猫</title>
+  <title>全纯函数 - 樱花味猫猫</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -166,7 +166,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="复数与复变函数">
+            <span class="h2" id="subtitle" title="全纯函数">
               
             </span>
 
@@ -181,8 +181,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-01-15 15:44" pubdate>
-        2021年1月15日 下午
+      <time datetime="2021-01-15 20:50" pubdate>
+        2021年1月15日 晚上
       </time>
     </span>
   
@@ -193,7 +193,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      613 字
+      1.1k 字
     </span>
   
 
@@ -203,7 +203,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      9
+      18
        分钟
     </span>
   
@@ -241,129 +241,57 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">复数与复变函数</h1>
+            <h1 style="display: none">全纯函数</h1>
             
             <div class="markdown-body">
-              <h1 id="复数的定义及其运算"><a href="#复数的定义及其运算" class="headerlink" title="复数的定义及其运算"></a>复数的定义及其运算</h1><p>我们把复数定义为一对有序的实数 $(a,b)$. 如果用 $\mathbb{R}$ 记实数的全体, $\mathbb{C}$ 记复数的全体，那么</p>
+              <h1 id="Cauchy-­Riemann-方程"><a href="#Cauchy-­Riemann-方程" class="headerlink" title="Cauchy-­Riemann 方程"></a><strong>Cauchy-­Riemann</strong> 方程</h1><p>如果 $f(z)$ 在点 $z_0$ 可微,则 $f(z)-f(z_0)=f’(z_0)\Delta z+o(|\Delta z|)(|\Delta z|\to 0)$ ,其中 $\Delta z=z-z_0 $.</p>
+<p>设 $f(z)=u(x,y)+{\rm i} v(x,y)$ 是定义在域 $D$ 上的函数，$z_0=x_0+{\rm i}y_0\in D$.我们说 $f$ 在 $z_0$ 处<strong>实可微</strong>,是指 $u$ 和 $v$ 作为 $x,y$ 的二元函数在 $(x_0,y_0)$ 处可微.</p>
+<p>今设 $f$ 在 $z_0$ 处实可微，按定义，有</p>
 <script type="math/tex; mode=display">
-\mathbb{C}=\{(a,b):a\in\mathbb{R},b\in\mathbb{R}\}</script><p>在这个集合中定义加法和乘法两种运算：</p>
+\begin{align} f(z)-f(z_0)&=\left(\frac{\partial u}{\partial x}(x_0,y_0)+\mathrm i\frac{\partial v}{\partial x}(x_0,y_0)\right)\Delta x+\left(\frac{\partial u}{\partial y}(x_0,y_0)+\mathrm i\frac{\partial v}{\partial y}(x_0,y_0)\right)\Delta x+o(|\Delta z|)\\ &=\frac{\partial f}{\partial x}(x_0,y_0)\Delta x+\frac{\partial f}{\partial y}(x_0,y_0)\Delta y+o(|\Delta z|)(|\Delta z|\to 0)\\ \end{align}</script><p>而 $\displaystyle\Delta x=\frac 12(\Delta z+\overline{\Delta z}),\Delta y=-\frac 12\mathrm i(\Delta z-\overline{\Delta z})$ ，定义两个算子</p>
 <script type="math/tex; mode=display">
-\begin{gather*}
-(a,b)+(c,d)=(a+c,b+d),\\
-(a,b)(c,d)=(ac-bd,ad+bc).
-\end{gather*}</script><p>容易验证，加法和乘法都满足交换律和结合律；$(0,0)$ 是零元素，$(-a,-b)$ 是 $(a,b)$ 的负元素；$(1,0)$ 是乘法的单位元素；每个非零元素 $(a,b)$ 有逆元素；此外，$\mathbb{C}$ 中的加法和乘法还满足分配律：</p>
+\frac{\partial}{\partial z}=\frac12\left(\frac{\partial}{\partial x}-\mathrm i\frac{\partial}{\partial y}\right),\frac{\partial}{\partial \overline z}=\frac12\left(\frac{\partial}{\partial x}+\mathrm i\frac{\partial}{\partial y}\right)</script><p>则可以计算出</p>
 <script type="math/tex; mode=display">
-[(a,b)+(c,d)](e,f)=(a,b)(e,f)+(c,d)(e,f)</script><p>因此，$\mathbb{C}$ 在上面定义的加法和乘法运算下构成一个域，称为 <strong>复数域</strong> .</p>
-<p>这样可以得到：</p>
+f(z)-f(z_0)=\frac{\partial f}{\partial z}(z_0)\Delta z+\frac{\partial f}{\partial \overline z}(z_0)\overline{\Delta z}+o(|\Delta z|)(|\Delta z|\to 0)</script><p>反过来，由这个式子可以推出 $f$ 实可微。</p>
+<p>如果把复变函数 $f(z)$ 写成</p>
 <script type="math/tex; mode=display">
-(0,1)^2:=(0,1)(0,1)=(-1,0)=-1</script><p>记 $\mathrm i=(0,1)$ , 则复数都可以写成 $a+b\mathrm i$ 的形式, 因为 $(a,b)=(a,0)+(0,b)$, 所以复数集</p>
+f(x,y)=f\bigg(\frac{z+\bar z}2,-{\rm i}\frac{z-\bar z}2\bigg)</script><p>把 $z,\bar z$ 看成独立变量，分别对 $z$ 和 $\bar z$ 求偏导数，则得</p>
 <script type="math/tex; mode=display">
-\mathbb C=\{a+b\mathrm i|a,b\in \mathbb R\}</script><p>通常记 $a=\mathrm{Re}\ z,b=\mathrm{Im}\ z$ , 分别称为<strong>实部</strong>和<strong>虚部</strong>.</p>
-<p>对于复数还可以定义加法和乘法的逆运算: 减法和除法</p>
+\frac{\partial f}{\partial z}=\frac{\partial f}{\partial x} \frac{\partial x}{\partial z}+\frac{\partial f}{\partial y} \frac{\partial y}{\partial z}=\frac{1}{2}\left(\frac{\partial f}{\partial x}-\mathrm{i} \frac{\partial f}{\partial y}\right)</script><script type="math/tex; mode=display">
+\frac{\partial f}{\partial \bar{z}}=\frac{\partial f}{\partial x} \frac{\partial x}{\partial \bar{z}}+\frac{\partial f}{\partial y} \frac{\partial y}{\partial \bar{z}}=\frac{1}{2}\left(\frac{\partial f}{\partial x}+\mathrm{i} \frac{\partial f}{\partial y}\right)</script><p>函数 $f$ 在点 $z_0$ 可微的充要条件是 $f$ 在 $z_0$ 实可微,且 $\displaystyle\frac{\partial f}{\partial \overline z}(x_0,y_0)=0 $.可微时 $\displaystyle f’(z_ 0)=\frac{\partial f}{\partial z}(z_0)$ </p>
+<p>证明很简单.如果 $f$ 在 $z_0$ 可微，则 $f(z)-f(z_0)=f’(z_0)\Delta z+o(|\Delta z|)$ .所以 $f $实可微,且比较就得到结果.反过来也是一样的.<br>$\displaystyle \frac{\partial f}{\partial \overline z}(z_0)=0 $就是所谓的 <strong>Cauchy-Riemann</strong>方程.把它展开成实数的形式,得到：</p>
 <script type="math/tex; mode=display">
-\begin{align}
-&(a+b{\rm{i}})-(c+d{\rm{i}})=(a-c)+(b-d)\rm{i}\\
-&\frac{a+b\rm{i}}{c+d\rm{i}}=(a+b{\rm{i}})\left(\frac{c-d\rm{i}}{c^2+d^2}\right)
-=\frac{ac+bd}{c^2+d^2}+\frac{bc-ad}{c^2+d^2}\rm{i}
-\end{align}</script><p>复数的<strong>模</strong>定义为</p>
+\begin{cases} \displaystyle\frac{\partial u}{\partial x}=\frac{\partial v}{\partial y}\\ \displaystyle\frac{\partial v}{\partial x}=-\frac{\partial u}{\partial y}\\ \end{cases}</script><p>如果 $f(z)=u(r,\theta)+\mathrm iv(r,\theta),z=r(\cos\theta+\mathrm i\sin\theta)$ ,那么<strong>Cauchy-Riemann</strong>方程就变成极坐标的形式：</p>
 <script type="math/tex; mode=display">
-|z|=\sqrt{a^2+b^2},z=a+b\mathrm i</script><p><strong>共轭复数</strong>定义为</p>
+\begin{cases} \displaystyle\frac{\partial u}{\partial r}=\frac 1r\frac{\partial v}{\partial \theta}\\ \displaystyle\frac{\partial v}{\partial r}=-\frac 1r\frac{\partial u}{\partial \theta}\\ \end{cases}</script><p>导数有好几种表示形式，这里只写出一种: $\displaystyle f’(z)=\frac{\partial u}{\partial x}+\mathrm i\frac{\partial v}{\partial x}$</p>
+<p>后面将会证明,全纯函数对于 $x,y$ 的任意阶偏导数都存在.特别地,二阶偏导数存在.这导出了全纯函数与调和函数的关系.记 <strong>Laplace</strong> 算子 $\displaystyle\Delta=\frac{\partial^2}{\partial x^2}+\frac{\partial^2}{\partial y^2}$ .一个二元函数被称为<strong>调和函数</strong>.如果 $\Delta u=0$ ,我们有下面的定理：</p>
+<p><strong>定理</strong> 如果 $f(z)=u+\mathrm iv\in H(D)$ ，则 $u,v$ 是调和函数.</p>
+<p>这是因为 <strong>Cauchy-Riemann</strong>方程</p>
 <script type="math/tex; mode=display">
-\overline{z}=a-b\mathrm i</script><p>设 $z$ 和 $w$ 是两个复数，那么</p>
-<p>$\displaystyle (1)\Re z=\frac12(z+\bar z),\Im z=\frac1{2{\rm{i}}}(z-\bar z)$</p>
-<p>$\displaystyle (2)z\bar z=|z|^2$</p>
-<p>$\displaystyle (3)\overline{z+w}=\bar z+\bar w,\overline{zw}=\bar z\bar w$</p>
-<p>$\displaystyle (4)|zw|=|z|\,|w|,\left|\frac zw\right|=\frac{|z|}{|w|}$</p>
-<p>$\displaystyle (5)|z|=|\bar z|$</p>
-<p>复数可以用所谓<strong>三角形式</strong>表示.若 $z=a+b\mathrm i$ , 令 $a=r\cos\theta,b=r\sin\theta$ , 则</p>
+\begin{align} \Delta u&=\frac{\partial}{\partial x}\left(\frac{\partial u}{\partial x}\right)+\frac{\partial}{\partial y}\left(\frac{\partial u}{\partial y}\right)\\ &=\frac{\partial}{\partial x}\left(\frac{\partial v}{\partial y}\right)+\frac{\partial}{\partial y}\left(-\frac{\partial v}{\partial x}\right)=0 \end{align}</script><p>类似可以证明 $\Delta v=0$ .反过来,从调和函数可以得到全纯函数：</p>
+<p><strong>定理</strong> 设 $u$ 为调和函数,则存在调和函数 $v$ 使得 $u+\mathrm iv$ 为全纯函数,</p>
+<p>由条件得</p>
 <script type="math/tex; mode=display">
-z=r(\cos\theta+\mathrm i\sin\theta)</script><p>$r$ 就是 $z$ 的模, $\theta$ 叫做 $z$ 的<strong>幅角</strong>,记为 $\mathrm{Arg}\ z$ .</p>
-<p>幅角中位于 $(-\pi,\pi]$ 的叫做幅角主值,记为 $\arg z$ .</p>
+\frac{\partial^2u}{\partial x^2}+\frac{\partial^2u}{\partial y^2}=0</script><p>令</p>
 <script type="math/tex; mode=display">
-\mathrm{Arg}\ z=\arg z+2k\pi(k\in\mathbb Z)</script><p>确定复数 $z$ 的辐角, 一般利用 $z$ 的向量表示确定 $z$ 在坐标系中的位置,再利用反正切公式确定 $z$ 的辐角主值.</p>
+P=-\frac{\partial u}{\partial y},Q=\frac{\partial u}{\partial x}</script><p>则</p>
 <script type="math/tex; mode=display">
-\arg z=
-\begin{cases}
-\arctan\cfrac yx &(x>0)   \\
-\arctan\cfrac yx+\pi &(x<0,y\geqslant0)\\
-\arctan\cfrac yx-\pi &(x<0,y<0)\\
-\cfrac{\pi}{2}&(x=0,y>0)\\
--\cfrac{\pi}{2}&(x=0,y<0)
-\end{cases}</script><p>复数的乘法可以看成模相乘，幅角相加;除法类似.关于复数乘法还有下面的 <strong>de Moivre公式</strong> ：</p>
+\frac{\partial P}{\partial y}=\frac{\partial Q}{\partial x}</script><p>设</p>
 <script type="math/tex; mode=display">
-(\cos\theta+\mathrm i\sin\theta)^n=\cos n\theta+\mathrm i\sin n\theta</script><p>由此可以推出满足 $z^n=1$ 的 $n$ 个复数, 叫做 $n$ 次单位根.</p>
+\mathbf F=(P,Q,0)</script><p>则</p>
 <script type="math/tex; mode=display">
-\omega_k=\cos\frac{2k\pi}{n}+\mathrm i\sin\frac{2k\pi}{n}(0\leq k\leq n-1)</script><p>$z^n=w$ 时</p>
+\nabla\times\mathbf F=\mathbf 0</script><p>设 $\Gamma$ 为闭曲线, $\Sigma$ 为其内部.由 <strong>Stokes</strong> 公式：</p>
 <script type="math/tex; mode=display">
-z=\sqrt[\leftroot{-1}\uproot{2} n]{|w|}\bigg(\cos\frac{\theta+2k\pi}n+{\rm i}\sin\frac{\theta+2k\pi}n\bigg)
-,k=0,1,\cdots,n-1.</script><h1 id="扩充平面与复数的球面表示"><a href="#扩充平面与复数的球面表示" class="headerlink" title="扩充平面与复数的球面表示"></a>扩充平面与复数的球面表示</h1><p>考虑 $\mathbb R^3$ 中的单位球面 </p>
+\int_\Gamma\mathbf F\cdot\mathrm d\mathbf r=\iint_\Sigma(\nabla\times\mathbf F)\cdot\mathrm d\mathbf\sigma=0</script><p>(保守场等价于无旋场)</p>
+<p>故积分</p>
 <script type="math/tex; mode=display">
-\mathbb S=\{(x,y,z)|x^2+y^2+z^2=1\}</script><p>并用平面 </p>
+\int_L\mathbf F\cdot\mathrm d\mathbf r=\int_{(x_0,y_0)}^{(x,y)}-\frac{\partial u}{\partial y}\mathrm dx+\frac{\partial u}{\partial x}\mathrm dy</script><p>与路径无关.令 </p>
 <script type="math/tex; mode=display">
-\mathbb C=\{(x,y,0)|x,y\in\mathbb R\}</script><p>表示复数集,叫<strong>复平面</strong>.</p>
-<p>设 $\mathbb S$ 的<strong>北极</strong> $N(0,0,1)$ . 对任何一点 $z\in\mathbb C$,设直线 $zN$ 与 $\mathbb{S}$ 相交于另一点 $P$ , 把 $P$ 叫做 $z$ 的<strong>球面表示</strong>.若 $|z|&gt;1$ .则 $P$ 在北半球上；若 $|z|&lt;1$ ,则 $P$ 在南半球上: 若 $|z|=1$,则 $P$ 就是 $z$ .容易看出,当 $z$ 趋向 $\infty$ 时,球面上对应的点 $P$ 趋向于北极 $N$，自然地，我们就把 $\mathbb{C}_\infty$ 中的 $\infty$ 对应于北极 $N$ .这样一来, $\mathbb{C}_\infty$ 中的所有点（包括无穷远点在内）都被移植到球面上去了，而在球面上, $N$ 和其他的点是一视同仁的.</p>
-<p><img src="https://i.loli.net/2021/01/15/CKm6vJWcBhaRrIA.png" srcset="/img/loading.gif" alt=""></p>
-<p>为了完整性,引入一个新的数 $\infty$ ,它的模是 $+\infty$ ,没有定义幅角.它与其他复数的运算法则规定为: </p>
+v(x,y)=\int_{(x_0,y_0)}^{(x,y)}-\frac{\partial u}{\partial y}\mathrm dx+\frac{\partial u}{\partial x}\mathrm dy\\</script><p>则</p>
 <script type="math/tex; mode=display">
-z\pm \infty=\infty,z\cdot\infty=\infty(z\neq 0),\frac{z}{\infty}=0,\frac{z}{0}=\infty(z\neq 0)</script><p>注意,诸如 </p>
-<script type="math/tex; mode=display">
-0\cdot\infty,\infty\pm\infty</script><p>的式子是没有定义的.</p>
-<p>令 $\mathbb C_\infty=\mathbb C\large\cup \normalsize{\infty}$ , 示加上<strong>无穷远点</strong>的复平面(<strong>扩展复平面</strong>).这个平面与球面一一对应，而北极点 $N$ 对应 $\infty$ .</p>
-<p>设 $z=x+{\rm{i}}y$ , 容易算出 $zN$ 和球面 $S$ 的交点的坐标为</p>
-<script type="math/tex; mode=display">
-x_1=\frac{2x}{x^2+y^2+1},x_2=\frac{2y}{x^2+y^2+1},x_3=\frac{x^2+y^2-1}{x^2+y^2+1}</script><p>直接用复数 $z$,可表示为</p>
-<script type="math/tex; mode=display">
-z_1=\frac{z+\bar z}{1+|z|^2},x_2=\frac{z-\bar z}{{\rm{i}}\big(1+|z|^2\big)},
-x_3=\frac{|z|^2-1}{|z|^2+1}</script><p>从上面的表达式得</p>
-<script type="math/tex; mode=display">
-\begin{cases}
-x_1+{\rm{i}} x_2=\cfrac{2z}{1+|z|^2}\\
-1-x_3=\cfrac2{1+|z|^2}
-\end{cases}</script><p>由此即得</p>
-<script type="math/tex; mode=display">
-z=\frac{x_1+{\rm{i}}x_2}{1-x_3}</script><h1 id="复数列的极限"><a href="#复数列的极限" class="headerlink" title="复数列的极限"></a>复数列的极限</h1><p><strong>复数序列</strong>是指一个 $\mathbb N^*\rightarrow\mathbb C$ 的映射 $z$ , 一般记 $z_n:=z(n)$ .</p>
-<p>说复数序列 ${z_n}$ <strong>收敛</strong>于复数 $z$ , 是指对任何 $\varepsilon&gt;0$ , 存在 $N\in\mathbb N^*$ , 使得 $\forall n&gt;N(|z_n-z|&lt;\varepsilon)$ 成立.记作 $\displaystyle\lim_{n \rightarrow \infty}{z_n}=z$.</p>
-<p>对 $r\in\mathbb R^+,a\in\mathbb C$ , 记集合</p>
-<script type="math/tex; mode=display">
-B(a,r)=\{z\in\mathbb C|\ |z-a|<r\}</script><p>称为以 $a$ 为中心, $r$ 为半径的<strong>圆盘</strong>,或者称为 $a$ 的 $r$ <strong>邻域</strong>.上述极限定义可以解释成:无论取 $z$ 的半径多么小的邻域,当 $n$ 充分大时 $z_n$ 都在邻域内部.特别地,定义无穷远点的 $R$ 邻域</p>
-<script type="math/tex; mode=display">
-B(\infty,R)=\{z\in\mathbb C|\ |z|>R\}</script><p>如果 $z_n=x_n+\mathrm iy_n$, $z=x+\mathrm iy$ , 容易证明 $\lim\limits_{n \rightarrow \infty}{z_n}=z$ 的充要条件是 $\displaystyle\lim_{n \rightarrow \infty}{x_n}=x,\lim_{n \rightarrow \infty}{y_n}=y$ .这是因为</p>
-<script type="math/tex; mode=display">
-|z_n-z|=\sqrt{(x_n-x)^2+(y_n-y)^2}</script><p>接下来就可以建立复数集的完备性定理</p>
-<p><strong>闭集套定理</strong></p>
-<p>对于 $\mathbb C$ 中的闭集序列 ${E_n}$ , 如果它满足：</p>
-<p>$(1)E_1\supset E_2\supset \cdots\supset E_n\supset\cdots$</p>
-<p>$(2)\mathrm{diam}(E_n) :=\sup_{z_1,z_2\in E_n}|z_1-z_2|\rightarrow0,n\to +\infty$</p>
-<p>则 $\bigcap_{n=1}^{\infty}E_n$ 为单点集.</p>
-<p><strong>Bolzano-Weierstrass定理</strong></p>
-<p>任何有界复数序列存在一个收敛子列.如果在 $\mathbb C_{\infty}$ 中考虑,那么任何复数序列都存在收敛子列.(也可以等价于：扩展复平面内任何无限点集有聚点)</p>
-<p><strong>Cauchy收敛准则</strong></p>
-<p>$\lim\limits_{n \rightarrow \infty}{z_n}$ 存在等价于 $\forall\varepsilon&gt;0,\exists N(\forall m,n&gt;N(|z_m-z_n|&lt;\varepsilon))$ .</p>
-<p><strong>有限覆盖定理</strong></p>
-<p>$\mathbb C$ 中的紧集与有界闭集等价; $\mathbb C_{\infty}$ 中的紧集与闭集等价.<strong>紧集</strong>是指任何一个开覆盖都包含有限开覆盖的集合.</p>
-<h1 id="复变函数的极限和连续性"><a href="#复变函数的极限和连续性" class="headerlink" title="复变函数的极限和连续性"></a>复变函数的极限和连续性</h1><p>复变函数与通常的函数有一点点不同,因为它允许<strong>多值函数</strong>的存在.为了严格，我们先看一看实函数的现代定义.</p>
-<p>一个实函数 $f$ 是指一些实数序偶 $(a,b)$ 的集合,使得:<strong>对任意实数</strong> $a$, <strong>存在至多一个实数</strong> $b$ <strong>使得</strong> $(a,b)\in f$ .如果$(a,b)\in f$ ,我们称 $f(a)=b$.</p>
-<p>在复变函数中,我们只需去掉加粗的部分即可.这也就是下面的定义:</p>
-<p>设 $E\subset \mathbb C$ . 一个复变函数 $f$ 是指一些复数序偶 $ (a,b),a\in E$ 的集合.如果 $(a,b)\in f$ ,称 $b$ 是函数 $f$ 在 $a$ 的值.如果对每个 $a\in E$ 函数只有一个值，那么函数 $f$ 称为<strong>单值函数</strong>. $E$ 叫函数的<strong>定义域</strong>, ${f(a)|a\in E}$ 叫函数的<strong>值域</strong>.否则,称为<strong>多值函数</strong>.比如: $\mathrm{Arg}\ z$ 就是一个多值函数.</p>
-<p>一般而言我们说到“函数”都是指单值函数.除非说明.</p>
-<p>对函数 $f(z)$, 设 $z=x+\mathrm iy$ , 则有两个二元实函数 $u(x,y),v(x,y)$ 使得</p>
-<script type="math/tex; mode=display">
-f(z)=u(x,y)+\mathrm iv(x,y)</script><p>考虑定义在点集 $E$ 上的函数 $f$ .假设 $z_0\in\mathbb C_{\infty}$ 是 $E$ 的聚点, $a\in\mathbb C_{\infty}$ .如果对任意的 $\varepsilon&gt;0$ , 存在 $\delta&gt;0$ 使得只要</p>
-<p>$z\in B(z_0,\delta)$ 就有 $f(z)\in B(a,\varepsilon)$ , 则称 $a$ 是函数 $f$ 在 $z\to z_0$ 的<strong>极限</strong>,记作 $\lim_{z\to z_0}f(z)=a$ .</p>
-<p>设上面的定义中</p>
-<script type="math/tex; mode=display">
-a=\alpha+\mathrm i\beta,z_0=x_0+\mathrm iy_0</script><p>则有</p>
-<script type="math/tex; mode=display">
-\begin{align} &|u(x,y)-\alpha|\leq|f(z)-a|\leq|u(x,y)-\alpha|+|v(x,y)-\beta|\\ &|v(x,y)-\beta|\leq|f(z)-a|\leq|u(x,y)-\alpha|+|v(x,y)-\beta|\\ \end{align}</script><p>这样就可以证明：</p>
-<script type="math/tex; mode=display">
-\lim_{z\to z_0}f(z)=a\Leftrightarrow\lim_{x\to x_0\\y\to y_0}u(x,y)=\alpha,\lim_{x\to x_0\\y\to y_0}v(x,y)=\beta</script><p>与实函数相仿,可以证明 <strong>Heine定理</strong> 依然成立.</p>
-<p>如果 $\lim\limits_{z\to z_0}f(z)=f(z_0)$ , 称函数 $f(z)$ 在 $z_0\in E$ 连续.</p>
-<p>由上面的讨论，这等价于二元函数 $u,v$ , 在 $(x_0,y_0)$ 连续.如果函数在集合 $E$ 的每一点连续,就称 $f$  在 $E$ 上连续.</p>
-<p>如果</p>
-<script type="math/tex; mode=display">
-\forall\varepsilon>0,\exists\delta>0(\forall z_1,z_2\in E(|z_1-z_2|<\delta\Rightarrow|f(z_1)-f(z_2)|<\varepsilon))</script><p>称函数 $f(z)$ 在 $E$ 上<strong>一致连续</strong>.</p>
+\frac{\partial v}{\partial x}=-\frac{\partial u}{\partial y}，\frac{\partial v}{\partial y}=\frac{\partial u}{\partial x}</script><p>满足 <strong>Cauchy-Riemann</strong>方程.从而命题成立.</p>
 <section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span><a href="">复变函数史济怀</a>
-<a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:2" class="footnote-text"><span><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/113823530">某数学的inversioner</a>
+<a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:2" class="footnote-text"><span><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/114214745">某数学的inversioner</a>
 <a href="#fnref:2" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>
             </div>
             <hr>
@@ -394,18 +322,12 @@ a=\alpha+\mathrm i\beta,z_0=x_0+\mathrm iy_0</script><p>则有</p>
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/01/15/%E5%A6%82%E4%BD%95%E4%BB%8E%E6%A0%B9%E6%9C%AC%E8%A7%A3%E5%86%B3hexo%E4%B8%8D%E5%85%BC%E5%AE%B9%7B%7B%7D%7D%E6%A0%87%E7%AD%BE%E9%97%AE%E9%A2%98/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Hexo不兼容{{}}标签问题</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/01/15/%E5%85%B3%E4%BA%8E1xn+1%E7%9A%84%E7%A7%AF%E5%88%86/">
-                        <span class="hidden-mobile">关于1/(x^n+1) 的积分</span>
+                      <a href="/2021/01/15/%E5%8C%BA%E9%97%B4%E5%86%8D%E7%8E%B0%E6%80%BB%E7%BB%93/">
+                        <span class="hidden-mobile">区间再现总结</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
