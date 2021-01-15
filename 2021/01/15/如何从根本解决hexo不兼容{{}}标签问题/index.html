@@ -1,0 +1,484 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="保持很多的热爱和一点点野心">
+  <meta name="author" content="欧阳珈樱">
+  <meta name="keywords" content="">
+  <title>hexo不兼容{{}}标签问题 - 樱花味猫猫</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/gradient-light.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.3.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>樱花味猫猫</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/001.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="hexo不兼容{{}}标签问题">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      欧阳珈樱
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-01-15 15:56" pubdate>
+        2021年1月15日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.5k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      24
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">hexo不兼容{{}}标签问题</h1>
+            
+            <div class="markdown-body">
+              <p>转载自[如何从根本解决hexo不兼容{{}}标签问题](http://xcoding.tech/2020/01/18/hexo/%E5%A6%82%E4%BD%95%E4%BB%8E%E6%A0%B9%E6%9C%AC%E8%A7%A3%E5%86%B3hexo%E4%B8%8D%E5%85%BC%E5%AE%B9%7B%7B%7D%7D%E6%A0%87%E7%AD%BE%E9%97%AE%E9%A2%98/)
+
+## 报错
+
+如果你的博客是使用github+hexo搭建的，很可能也遇到过由于`nunjucks`模板标签导致MD文件解析报错的问题，常见问题如下：
+
+<figure class="highlight awk"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs awk"><span class="hljs-number">15</span>:<span class="hljs-number">07</span>:<span class="hljs-number">29.010</span> FATAL Something is wrong. Maybe you can find the solution here: http:<span class="hljs-regexp">//</span>hexo.io<span class="hljs-regexp">/docs/</span>troubleshooting.html<br>Template render error: (unknown path) [Line <span class="hljs-number">37</span>, Column <span class="hljs-number">81</span>]<br>  expected variable end<br>    at Object._prettifyError (<span class="hljs-regexp">/Users/u</span>buntuvim<span class="hljs-regexp">/git/</span>xcoding<span class="hljs-regexp">/node_modules/</span>nunjucks<span class="hljs-regexp">/src/</span>lib.js:<span class="hljs-number">36</span>:<span class="hljs-number">11</span>)<br>    at Template.render (<span class="hljs-regexp">/Users/u</span>buntuvim<span class="hljs-regexp">/git/</span>xcoding<span class="hljs-regexp">/node_modules/</span>nunjucks<span class="hljs-regexp">/src/</span>environment.js:<span class="hljs-number">524</span>:<span class="hljs-number">21</span>)<br>    at Environment.renderString (<span class="hljs-regexp">/Users/u</span>buntuvim<span class="hljs-regexp">/git/</span>xcoding<span class="hljs-regexp">/node_modules/</span>nunjucks<span class="hljs-regexp">/src/</span>environment.js:<span class="hljs-number">362</span>:<span class="hljs-number">17</span>)<br>    at Promise (<span class="hljs-regexp">/Users/u</span>buntuvim<span class="hljs-regexp">/git/</span>xcoding<span class="hljs-regexp">/node_modules/</span>hexo<span class="hljs-regexp">/lib/</span>extend/tag.js:<span class="hljs-number">66</span>:<span class="hljs-number">9</span>)<br>    at Promise._execute (<span class="hljs-regexp">/Users/u</span>buntuvim<span class="hljs-regexp">/git/</span>xcoding<span class="hljs-regexp">/node_modules/</span>bluebird<span class="hljs-regexp">/js/</span>release/debuggability.js:<span class="hljs-number">303</span>:<span class="hljs-number">9</span>)<br>    at Promise._resolveFromExecutor (<span class="hljs-regexp">/Users/u</span>buntuvim<span class="hljs-regexp">/git/</span>xcoding<span class="hljs-regexp">/node_modules/</span>bluebird<span class="hljs-regexp">/js/</span>release/promise.js:<span class="hljs-number">483</span>:<span class="hljs-number">18</span>)<br></code></pre></div></td></tr></table></figure>
+或者：
+
+<figure class="highlight awk"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs awk">Unhandled rejection Template render error: (unknown path) [Line <span class="hljs-number">10</span>, Column <span class="hljs-number">95</span>]<br>  unexpected token: <span class="hljs-comment">#</span><br>    at Object._prettifyError (<span class="hljs-regexp">/Users/u</span>buntuvim<span class="hljs-regexp">/git/</span>xcoding<span class="hljs-regexp">/node_modules/</span>nunjucks<span class="hljs-regexp">/src/</span>lib.js:<span class="hljs-number">36</span>:<span class="hljs-number">11</span>)<br>    at Template.render (<span class="hljs-regexp">/Users/u</span>buntuvim<span class="hljs-regexp">/git/</span>xcoding<span class="hljs-regexp">/node_modules/</span>nunjucks<span class="hljs-regexp">/src/</span>environment.js:<span class="hljs-number">524</span>:<span class="hljs-number">21</span>)<br>    at Environment.renderString (<span class="hljs-regexp">/Users/u</span>buntuvim<span class="hljs-regexp">/git/</span>xcoding<span class="hljs-regexp">/node_modules/</span>nunjucks<span class="hljs-regexp">/src/</span>environment.js:<span class="hljs-number">362</span>:<span class="hljs-number">17</span>)<br>    at Promise (<span class="hljs-regexp">/Users/u</span>buntuvim<span class="hljs-regexp">/git/</span>xcoding<span class="hljs-regexp">/node_modules/</span>hexo<span class="hljs-regexp">/lib/</span>extend/tag.js:<span class="hljs-number">66</span>:<span class="hljs-number">9</span>)<br>    at Promise._execute (<span class="hljs-regexp">/Users/u</span>buntuvim<span class="hljs-regexp">/git/</span>xcoding<span class="hljs-regexp">/node_modules/</span>bluebird<span class="hljs-regexp">/js/</span>release/debuggability.js:<span class="hljs-number">303</span>:<span class="hljs-number">9</span>)<br>    at Promise._resolveFromExecutor (<span class="hljs-regexp">/Users/u</span>buntuvim<span class="hljs-regexp">/git/</span>xcoding<span class="hljs-regexp">/node_modules/</span>bluebird<span class="hljs-regexp">/js/</span>release/promise.js:<span class="hljs-number">483</span>:<span class="hljs-number">18</span>)<br>    at new Promise (<span class="hljs-regexp">/Users/u</span>buntuvim<span class="hljs-regexp">/git/</span>xcoding<span class="hljs-regexp">/node_modules/</span>bluebird<span class="hljs-regexp">/js/</span>release/promise.js:<span class="hljs-number">79</span>:<span class="hljs-number">10</span>)<br>    at Tag.render (<span class="hljs-regexp">/Users/u</span>buntuvim<span class="hljs-regexp">/git/</span>xcoding<span class="hljs-regexp">/node_modules/</span>hexo<span class="hljs-regexp">/lib/</span>extend/tag.js:<span class="hljs-number">64</span>:<span class="hljs-number">10</span>)<br>    at Object.tagFilter [as onRenderEnd] (<span class="hljs-regexp">/Users/u</span>buntuvim<span class="hljs-regexp">/git/</span>xcoding<span class="hljs-regexp">/node_modules/</span>hexo<span class="hljs-regexp">/lib/</span>hexo/post.js:<span class="hljs-number">230</span>:<span class="hljs-number">16</span>)<br>    at Promise.then.then.result (<span class="hljs-regexp">/Users/u</span>buntuvim<span class="hljs-regexp">/git/</span>xcoding<span class="hljs-regexp">/node_modules/</span>hexo<span class="hljs-regexp">/lib/</span>hexo/render.js:<span class="hljs-number">65</span>:<span class="hljs-number">19</span>)<br>    at tryCatcher (<span class="hljs-regexp">/Users/u</span>buntuvim<span class="hljs-regexp">/git/</span>xcoding<span class="hljs-regexp">/node_modules/</span>bluebird<span class="hljs-regexp">/js/</span>release/util.js:<span class="hljs-number">16</span>:<span class="hljs-number">23</span>)<br>    at Promise._settlePromiseFromHandler (<span class="hljs-regexp">/Users/u</span>buntuvim<span class="hljs-regexp">/git/</span>xcoding<span class="hljs-regexp">/node_modules/</span>bluebird<span class="hljs-regexp">/js/</span>release/promise.js:<span class="hljs-number">512</span>:<span class="hljs-number">31</span>)<br>    at Promise._settlePromise (<span class="hljs-regexp">/Users/u</span>buntuvim<span class="hljs-regexp">/git/</span>xcoding<span class="hljs-regexp">/node_modules/</span>bluebird<span class="hljs-regexp">/js/</span>release/promise.js:<span class="hljs-number">569</span>:<span class="hljs-number">18</span>)<br>    at Promise._settlePromise0 (<span class="hljs-regexp">/Users/u</span>buntuvim<span class="hljs-regexp">/git/</span>xcoding<span class="hljs-regexp">/node_modules/</span>bluebird<span class="hljs-regexp">/js/</span>release/promise.js:<span class="hljs-number">614</span>:<span class="hljs-number">10</span>)<br>    at Promise._settlePromises (<span class="hljs-regexp">/Users/u</span>buntuvim<span class="hljs-regexp">/git/</span>xcoding<span class="hljs-regexp">/node_modules/</span>bluebird<span class="hljs-regexp">/js/</span>release/promise.js:<span class="hljs-number">693</span>:<span class="hljs-number">18</span>)<br>    at Async._drainQueue (<span class="hljs-regexp">/Users/u</span>buntuvim<span class="hljs-regexp">/git/</span>xcoding<span class="hljs-regexp">/node_modules/</span>bluebird<span class="hljs-regexp">/js/</span>release/async.js:<span class="hljs-number">133</span>:<span class="hljs-number">16</span>)<br>    at Async._drainQueues (<span class="hljs-regexp">/Users/u</span>buntuvim<span class="hljs-regexp">/git/</span>xcoding<span class="hljs-regexp">/node_modules/</span>bluebird<span class="hljs-regexp">/js/</span>release/async.js:<span class="hljs-number">143</span>:<span class="hljs-number">10</span>)<br>    at Immediate.Async.drainQueues (<span class="hljs-regexp">/Users/u</span>buntuvim<span class="hljs-regexp">/git/</span>xcoding<span class="hljs-regexp">/node_modules/</span>bluebird<span class="hljs-regexp">/js/</span>release/async.js:<span class="hljs-number">17</span>:<span class="hljs-number">14</span>)<br>    at runCallback (timers.js:<span class="hljs-number">651</span>:<span class="hljs-number">20</span>)<br>    at tryOnImmediate (timers.js:<span class="hljs-number">624</span>:<span class="hljs-number">5</span>)<br>    at processImmediate [as _immediateCallback] (timers.js:<span class="hljs-number">596</span>:<span class="hljs-number">5</span>)<br></code></pre></div></td></tr></table></figure>
+出现上述原因都是因为你的Markdown文件中有标签与`nunjucks`模板引擎的标签冲突了，比如`{{}}<code>，</code>}`等等这些标签的内容都会解析失败，那么有什么好的处理方案呢？</p>
+<h2 id="方案2"><a href="#方案2" class="headerlink" title="方案2"></a>方案2</h2><p>答案是有的，我们可以直接修改<code>nunjucks</code>模板的源代码，找到如下文件：</p>
+<figure class="highlight awk"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs awk">node_modules<span class="hljs-regexp">/nunjucks/</span>src/lexer.js<br></code></pre></div></td></tr></table></figure>
+<p>在文件的开头可以看到如下代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs javascript"><span class="hljs-meta">&#x27;use strict&#x27;</span>;<br><br><span class="hljs-keyword">var</span> lib = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;./lib&#x27;</span>);<br><br><span class="hljs-keyword">var</span> whitespaceChars = <span class="hljs-string">&quot; \n\t\r\xA0&quot;</span>;<br><span class="hljs-keyword">var</span> delimChars = <span class="hljs-string">&#x27;()[]&#123;&#125;%*-+~/#,:|.&lt;&gt;=!&#x27;</span>;<br><span class="hljs-keyword">var</span> intChars = <span class="hljs-string">&#x27;0123456789&#x27;</span>;<br><span class="hljs-keyword">var</span> BLOCK_START = <span class="hljs-string">&#x27;&#123;%&#x27;</span>;<br><span class="hljs-keyword">var</span> BLOCK_END = <span class="hljs-string">&#x27;%&#125;&#x27;</span>;<br><span class="hljs-keyword">var</span> VARIABLE_START = <span class="hljs-string">&#x27;&#123;$&#x27;</span>;<br><span class="hljs-keyword">var</span> VARIABLE_END = <span class="hljs-string">&#x27;$&#125;&#x27;</span>;<br><span class="hljs-keyword">var</span> COMMENT_START = <span class="hljs-string">&#x27;&#123;@&#x27;</span>;<br><span class="hljs-keyword">var</span> COMMENT_END = <span class="hljs-string">&#x27;@&#125;&#x27;</span>;<br><span class="hljs-keyword">var</span> TOKEN_STRING = <span class="hljs-string">&#x27;string&#x27;</span>;<br></code></pre></div></td></tr></table></figure>
+<p>可以直接改了这些渲染标签，比如我的Markdown文件中就是需要显示<code>&#123;&#123;name&#125;&#125;</code>这一类代码。那么你可以这么做：</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ebnf"><span class="hljs-attribute">var VARIABLE_START</span> = <span class="hljs-string">&#x27;&#123;$&#x27;</span>;<br><span class="hljs-attribute">var VARIABLE_END</span> = <span class="hljs-string">&#x27;$&#125;&#x27;</span>;<br></code></pre></div></td></tr></table></figure>
+<p>把模板引擎的占位符修改为其他字符之后，这样模板解析的时候就不会跟你的Markdown内容冲突了，而且是对所有Markdown文件都有效的。</p>
+<p>但是需要注意的时候，如果你在项目下执行<code>npm install</code>更新<code>nunjucks</code>模板，那么你修改的<code>node_modules/nunjucks/src/lexer.js</code>会被还原，需要重新修改一遍。<br>但是相对于每个Markdown都修改还是有很大好处的。</p>
+<h2 id="搜索、RSS插件同步修改"><a href="#搜索、RSS插件同步修改" class="headerlink" title="搜索、RSS插件同步修改"></a>搜索、RSS插件同步修改</h2><p>如果你的博客使用<code>hexo-generator-feed</code>或者<code>hexo-generator-search</code>或者是其他依赖于hexo的插件，那么你也需要同步修改这些插件的模板处理标签。<br>比如<code>hexo-generator-search</code>这个插件，通常是用于搜索，比如本站的搜索功能，这些插件也是依赖于<code>nunjucks</code>模板的，所以你也要修改他们的源代码，一搜索插件为例：</p>
+<p>修改如下文件的标签：</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs pgsql">node_modules/hexo-generator-<span class="hljs-keyword">search</span>/templates/<span class="hljs-keyword">search</span>.xml<br></code></pre></div></td></tr></table></figure>
+<p>把文件内容里的<code>&#123;</code>改为<code>&#123;$</code>即可，这个修改是根据你前面的<code>nunjucks</code>修改而定的。</p>
+<figure class="highlight django"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs django"><span class="xml"><span class="hljs-meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span></span><br><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">search</span>&gt;</span> </span><br><span class="xml">  </span><span class="hljs-template-tag">&#123;% <span class="hljs-name"><span class="hljs-name">if</span></span> posts %&#125;</span><br><span class="xml">    </span><span class="hljs-template-tag">&#123;% <span class="hljs-name"><span class="hljs-name">for</span></span> post <span class="hljs-keyword">in</span> posts.toArray() %&#125;</span><br><span class="xml">    <span class="hljs-tag">&lt;<span class="hljs-name">entry</span>&gt;</span></span><br><span class="xml">      <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>&#123;$ post.title $&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span></span><br><span class="xml">      <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;&#123;$ (url + post.path) | uriencode $&#125;&quot;</span>/&gt;</span></span><br><span class="xml">      <span class="hljs-tag">&lt;<span class="hljs-name">url</span>&gt;</span>&#123;$ (url + post.path) | uriencode $&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">url</span>&gt;</span></span><br><span class="xml">      <span class="hljs-tag">&lt;<span class="hljs-name">content</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;html&quot;</span>&gt;</span>&lt;![CDATA[&#123;$ post.content | noControlChars | safe $&#125;]]&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">content</span>&gt;</span></span><br><span class="xml">      </span><span class="hljs-template-tag">&#123;% <span class="hljs-name"><span class="hljs-name">if</span></span> post.categories and post.categories.length&gt;0 %&#125;</span><br><span class="xml">      <span class="hljs-tag">&lt;<span class="hljs-name">categories</span>&gt;</span></span><br><span class="xml">          </span><span class="hljs-template-tag">&#123;% <span class="hljs-name"><span class="hljs-name">for</span></span> cate <span class="hljs-keyword">in</span> post.categories.toArray() %&#125;</span><br><span class="xml">          <span class="hljs-tag">&lt;<span class="hljs-name">category</span>&gt;</span> &#123;$ cate.name $&#125; <span class="hljs-tag">&lt;/<span class="hljs-name">category</span>&gt;</span></span><br><span class="xml">          </span><span class="hljs-template-tag">&#123;% <span class="hljs-name"><span class="hljs-name">endfor</span></span> %&#125;</span><br><span class="xml">      <span class="hljs-tag">&lt;/<span class="hljs-name">categories</span>&gt;</span></span><br><span class="xml">      </span><span class="hljs-template-tag">&#123;% <span class="hljs-name"><span class="hljs-name">endif</span></span> %&#125;</span><br><span class="xml">      </span><span class="hljs-template-tag">&#123;% <span class="hljs-name"><span class="hljs-name">if</span></span> post.tags and post.tags.length&gt;0 %&#125;</span><br><span class="xml">        <span class="hljs-tag">&lt;<span class="hljs-name">tags</span>&gt;</span></span><br><span class="xml">            </span><span class="hljs-template-tag">&#123;% <span class="hljs-name"><span class="hljs-name">for</span></span> tag <span class="hljs-keyword">in</span> post.tags.toArray() %&#125;</span><br><span class="xml">            <span class="hljs-tag">&lt;<span class="hljs-name">tag</span>&gt;</span> &#123;$ tag.name $&#125; <span class="hljs-tag">&lt;/<span class="hljs-name">tag</span>&gt;</span></span><br><span class="xml">            </span><span class="hljs-template-tag">&#123;% <span class="hljs-name"><span class="hljs-name">endfor</span></span> %&#125;</span><br><span class="xml">        <span class="hljs-tag">&lt;/<span class="hljs-name">tags</span>&gt;</span></span><br><span class="xml">      </span><span class="hljs-template-tag">&#123;% <span class="hljs-name"><span class="hljs-name">endif</span></span> %&#125;</span><br><span class="xml">    <span class="hljs-tag">&lt;/<span class="hljs-name">entry</span>&gt;</span></span><br><span class="xml">    </span><span class="hljs-template-tag">&#123;% <span class="hljs-name"><span class="hljs-name">endfor</span></span> %&#125;</span><br><span class="xml">  </span><span class="hljs-template-tag">&#123;% <span class="hljs-name"><span class="hljs-name">endif</span></span> %&#125;</span><br><span class="xml">  </span><span class="hljs-template-tag">&#123;% <span class="hljs-name"><span class="hljs-name">if</span></span> pages %&#125;</span><br><span class="xml">    </span><span class="hljs-template-tag">&#123;% <span class="hljs-name"><span class="hljs-name">for</span></span> page <span class="hljs-keyword">in</span> pages.toArray() %&#125;</span><br><span class="xml">    <span class="hljs-tag">&lt;<span class="hljs-name">entry</span>&gt;</span></span><br><span class="xml">      <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>&#123;$ page.title $&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span></span><br><span class="xml">      <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;&#123;$ (url + page.path) | uriencode $&#125;&quot;</span>/&gt;</span></span><br><span class="xml">      <span class="hljs-tag">&lt;<span class="hljs-name">url</span>&gt;</span>&#123;$ (url + page.path) | uriencode $&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">url</span>&gt;</span></span><br><span class="xml">      <span class="hljs-tag">&lt;<span class="hljs-name">content</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;html&quot;</span>&gt;</span>&lt;![CDATA[&#123;$ page.content | noControlChars | safe $&#125;]]&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">content</span>&gt;</span></span><br><span class="xml">    <span class="hljs-tag">&lt;/<span class="hljs-name">entry</span>&gt;</span></span><br><span class="xml">    </span><span class="hljs-template-tag">&#123;% <span class="hljs-name"><span class="hljs-name">endfor</span></span> %&#125;</span><br><span class="xml">  </span><span class="hljs-template-tag">&#123;% <span class="hljs-name"><span class="hljs-name">endif</span></span> %&#125;</span><br><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">search</span>&gt;</span></span><br></code></pre></div></td></tr></table></figure>
+<p>其他插件处理方法类似，找到模板解析标签全局修改即可。</p>
+<h2 id="方案3"><a href="#方案3" class="headerlink" title="方案3"></a>方案3</h2><p>提供一个一劳永逸的方案，修改项目的<code>package.json</code>文件，把<code>hexo-generator-feed</code>、<code>hexo-generator-search</code>改为我重新处理过的插件即可。</p>
+<figure class="highlight json"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs json">&#123;<br>  <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;xcoding&quot;</span>,<br>  <span class="hljs-attr">&quot;version&quot;</span>: <span class="hljs-string">&quot;0.0.1&quot;</span>,<br>  <span class="hljs-attr">&quot;private&quot;</span>: <span class="hljs-literal">true</span>,<br>  <span class="hljs-attr">&quot;hexo&quot;</span>: &#123;<br>    <span class="hljs-attr">&quot;version&quot;</span>: <span class="hljs-string">&quot;3.7.1&quot;</span><br>  &#125;,<br>  <span class="hljs-attr">&quot;dependencies&quot;</span>: &#123;<br>    <span class="hljs-comment">//…… 其他省略</span><br>    <span class="hljs-attr">&quot;hexo-generator-feed-cst&quot;</span>: <span class="hljs-string">&quot;^0.1.0&quot;</span>,<br>    <span class="hljs-attr">&quot;hexo-generator-search-cst&quot;</span>: <span class="hljs-string">&quot;^0.1.0&quot;</span>,<br>    <span class="hljs-comment">//…… 其他省略</span><br>  &#125;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<p>修改完<code>package.json</code>之后执行命令<code>npm install</code>重新安装依赖。安装完毕后重新启动hexo。这两个插件相关的配置都不需要做任何修改，也不用担心查询更新后被覆盖。</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Hexo/">Hexo</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/01/15/%E5%8C%BA%E9%97%B4%E5%86%8D%E7%8E%B0%E6%80%BB%E7%BB%93/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">区间再现总结</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/01/15/%E5%A4%8D%E6%95%B0%E4%B8%8E%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0/">
+                        <span class="hidden-mobile">复数与复变函数</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      var inputArea = document.querySelector("#local-search-input");
+      inputArea.onclick = function () {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+        this.onclick = null
+      }
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+
+</body>
+</html>

@@ -203,7 +203,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      36
+      37
        分钟
     </span>
   
@@ -293,22 +293,23 @@ a_{1}=\sqrt{2+\sqrt{2}}, a_{2}=\sqrt{2-\sqrt{2}}\\
 \frac{\mathrm{d}}{\mathrm{d} z} F(a, b ; c ; z)=\frac{a b}{c} F(a+1, b+1 ; c+1 ; z)</script><script type="math/tex; mode=display">
 \frac{\mathrm{d}^{n}}{\mathrm{d} z^{n}} F(a, b ; c ; z)=\frac{(a)_{n}(b)_{n}}{(c)_{n}} F(a+n, b+n ; c+n ; z)</script><p>Therefore,</p>
 <script type="math/tex; mode=display">
-\begin{aligned} D &=\frac{\partial}{\partial x} x_{2} F_{1}\left(1, \frac{1}{n} ; 1+\frac{1}{n} ;-x^{n}\right) \\ &=_{2} F_{1}\left(1, \frac{1}{n} ; 1+\frac{1}{n} ;-x^{n}\right)+x \frac{\partial}{\partial x}_{2} F_{1}\left(1, \frac{1}{n} ; 1+\frac{1}{n} ;-x^{n}\right) \\ &=_{2} F_{1}\left(1, \frac{1}{n} ; 1+\frac{1}{n} ;-x^{n}\right)+x \frac{_{2} F_{1}\left(2,1+\frac{1}{n} ; 2+\frac{1}{n} ;-x^{n}\right)}{n+1} \frac{\partial}{\partial x}\left(-x^{n}\right) \\ &=_{2} F_{1}\left(1, \frac{1}{n} ; 1+\frac{1}{n} ;-x^{n}\right)-\frac{x^{n} n}{n+1} _{2} F_{1}\left(2,1+\frac{1}{n} ; 2+\frac{1}{n} ;-x^{n}\right) \\ &=\frac{1}{x^{n}+1} \end{aligned}</script><p>然后就是相关的定积分</p>
-<script type="math/tex; mode=display">
-\int_{0}^{+\infty}\frac{{\rm d}x}{a^n+x^n}=\frac{a\pi}{na^n\sin\frac{\pi}{n}}</script><p>令 $\displaystyle y=\left(\frac{x}{a}\right)^{n}$, 不难得到</p>
+\begin{aligned} D &=\frac{\partial}{\partial x} x_{2} F_{1}\left(1, \frac{1}{n} ; 1+\frac{1}{n} ;-x^{n}\right) \\ &=_{2} F_{1}\left(1, \frac{1}{n} ; 1+\frac{1}{n} ;-x^{n}\right)+x \frac{\partial}{\partial x}_{2} F_{1}\left(1, \frac{1}{n} ; 1+\frac{1}{n} ;-x^{n}\right) \\ &=_{2} F_{1}\left(1, \frac{1}{n} ; 1+\frac{1}{n} ;-x^{n}\right)+x \frac{_{2} F_{1}\left(2,1+\frac{1}{n} ; 2+\frac{1}{n} ;-x^{n}\right)}{n+1} \frac{\partial}{\partial x}\left(-x^{n}\right) \\ &=_{2} F_{1}\left(1, \frac{1}{n} ; 1+\frac{1}{n} ;-x^{n}\right)-\frac{x^{n} n}{n+1} _{2} F_{1}\left(2,1+\frac{1}{n} ; 2+\frac{1}{n} ;-x^{n}\right) \\ &=\frac{1}{x^{n}+1} \end{aligned}</script><p>然后就是相关的定积分<br><div class="note note-info">
+            <script type="math/tex; mode=display">\int_{0}^{+\infty}\frac{{\rm d}x}{a^n+x^n}=\frac{a\pi}{na^n\sin\frac{\pi}{n}}</script>
+          </div><br>令 $\displaystyle y=\left(\frac{x}{a}\right)^{n}$, 不难得到</p>
 <script type="math/tex; mode=display">
 \int_{0}^{+\infty}\frac{{\rm d}x}{a^n+x^n}=\frac{a}{na^n}\int_{0}^{+\infty}\frac{y^{\frac{1}{n}-1}}{1+y}\,{\rm d}y</script><p>利用余元公式</p>
 <script type="math/tex; mode=display">
 \int_{0}^{+\infty}\frac{x^{p-1}}{1+x}\,dx=\frac{\pi}{\sin(p\pi )}</script><p>即可得到结果.</p>
-<script type="math/tex; mode=display">
-\begin{align*} \int_0^1 \frac{1}{1+x^p}{\rm d}x&=\frac{1}{2p}\left[\psi\left(\frac{1}{2p} + \frac12\right) - \psi\left(\frac{1}{2p}\right)\right] \end{align*}</script><p>其中 $\psi(z)$ 是 <strong>Digamma Function</strong></p>
+<div class="note note-info">
+            <script type="math/tex; mode=display">\begin{align*} \int_0^1 \frac{1}{1+x^p}{\rm d}x&=\frac{1}{2p}\left[\psi\left(\frac{1}{2p} + \frac12\right) - \psi\left(\frac{1}{2p}\right)\right] \end{align*}</script><p>其中 $\psi(z)$ 是 <strong>Digamma Function</strong></p>
+          </div>
 <p>$\color{blue}{\rm Proof:}$<br>置 $x^p=t$ , 则</p>
 <script type="math/tex; mode=display">
 \begin{align*} &2p\int_0^1 \frac{dx}{1+x^p} \\ =&2 \int_0^1 \frac{t^{\frac{1}{p}-1}}{1+t} dt= 2\int_0^1 \sum_{n=0}^\infty (-1)^n t^{\frac{1}{p}+n-1} dt\\ =& 2\sum_{n=0}^\infty\int_0^1 (-1)^n t^{\frac{1}{p}+n-1} dt\\ =&2\sum_{n=0}^\infty\int_0^1 (-1)^n t^{\frac{1}{p}+n-1} dt\\ =&2\sum_{n=0}^\infty\frac{(-1)^n}{\frac{1}{p}+n}\\ =& \frac{1}{\frac{1}{2p}} - \frac{1}{\frac{1}{2p} + \frac12} + \sum_{n=1}^\infty\left(\frac{1}{\frac{1}{2p}+n} - \frac{1}{\frac{1}{2p} + n + \frac12}\right)\\ =&\psi\left(\frac{1}{2p} + \frac12\right) - \psi\left(\frac{1}{2p}\right) \end{align*}\\</script><p>最后一步利用了</p>
 <script type="math/tex; mode=display">
 \psi(z)=-\gamma-\frac{1}{z}+\sum_{n=1}^{\infty}\left(\frac{1}{n}-\frac{1}{n+z}\right)\\</script><section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span><a href="">Notebooks of Srinivsu Rmanujan, Vol. 2, Tata Institute of Fundamental Research, Bombay, 1957.</a>
-<a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:2" class="footnote-text"><span><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/334542301"></a>
-<a href="#fnref:2" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:3" class="footnote-text"><span><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/358657559/answer/1103157380"></a>
+<a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:2" class="footnote-text"><span><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/334542301">https://zhuanlan.zhihu.com/p/334542301</a>
+<a href="#fnref:2" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:3" class="footnote-text"><span><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/358657559/answer/1103157380">https://www.zhihu.com/question/358657559/answer/1103157380</a>
 <a href="#fnref:3" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>
             </div>
             <hr>
