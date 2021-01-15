@@ -1,0 +1,476 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="保持很多的热爱和一点点野心">
+  <meta name="author" content="欧阳珈樱">
+  <meta name="keywords" content="">
+  <title>LaTeX画流程图 - 樱花味猫猫</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/gradient-light.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.3.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>樱花味猫猫</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/001.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="LaTeX画流程图">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      欧阳珈樱
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-01-15 11:08" pubdate>
+        2021年1月15日 上午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.4k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      45
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">LaTeX画流程图</h1>
+            
+            <div class="markdown-body">
+              <figure class="highlight latex"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs latex"><span class="hljs-keyword">\documentclass</span>[UTF8]&#123;ctexart&#125;<br><span class="hljs-keyword">\usepackage</span>&#123;tikz&#125;<br><span class="hljs-keyword">\usetikzlibrary</span>&#123;shapes,arrows&#125;<br><br><span class="hljs-keyword">\begin</span>&#123;document&#125;<br><br><span class="hljs-keyword">\tikzstyle</span>&#123;startstop&#125; = [rectangle,rounded corners, minimum width=3cm,minimum height=1cm,text centered,text width =3cm, draw=black,fill=red!30]<br><span class="hljs-keyword">\tikzstyle</span>&#123;io&#125; = [trapezium, trapezium left angle = 70,trapezium right angle=110,minimum width=3cm,minimum height=1cm,text centered,text width =3cm,draw=black,fill=blue!30]<br><span class="hljs-keyword">\tikzstyle</span>&#123;process&#125; = [rectangle,minimum width=3cm,minimum height=1cm,text centered,text width =3cm,draw=black,fill=orange!30]<br><span class="hljs-keyword">\tikzstyle</span>&#123;decision&#125; = [diamond,aspect = 3,text centered,draw=black,fill=green!30]<br><span class="hljs-keyword">\tikzstyle</span>&#123;arrow&#125; = [thick,-&gt;,&gt;=stealth]<br><span class="hljs-keyword">\tikzstyle</span>&#123;straightline&#125; = [line width = 1pt,-]<br><span class="hljs-keyword">\tikzstyle</span>&#123;point&#125;=[coordinate]<br><br><br><br><span class="hljs-keyword">\begin</span>&#123;tikzpicture&#125;[node distance=2cm]<br><span class="hljs-keyword">\node</span> (start) [startstop] &#123;开始&#125;;<br><span class="hljs-keyword">\node</span> (input1) [io,below of=start] &#123;输入聚类的个数 <span class="hljs-built_in">$</span>k<span class="hljs-built_in">$</span> 和最大迭代次数 <span class="hljs-built_in">$</span>n<span class="hljs-built_in">$</span> &#125;;<br><span class="hljs-keyword">\node</span> (process1) [process,below of=input1] &#123;初始化 <span class="hljs-built_in">$</span>k<span class="hljs-built_in">$</span> 个聚类中心&#125;;<br><span class="hljs-keyword">\node</span> (process2) [process,below of=process1] &#123;分配各数据对象到距离最近的类中&#125;;<br><span class="hljs-keyword">\node</span> (decision1) [decision,below of=process2,yshift=-0.5cm] &#123;是否收敛或迭代次数达到 <span class="hljs-built_in">$</span>n<span class="hljs-built_in">$</span> &#125;;<br><span class="hljs-keyword">\node</span> (stop) [startstop,below of=decision1,node distance=3cm] &#123;输出聚类结果&#125;;<br><span class="hljs-keyword">\node</span>(point1)[point,left of=input1,node distance=5cm]&#123;&#125;;<br><br><span class="hljs-keyword">\draw</span> [arrow] (start) -- (input1);<br><span class="hljs-keyword">\draw</span> [arrow] (input1) -- (process1);<br><span class="hljs-keyword">\draw</span> [arrow] (process1) -- (process2);<br><span class="hljs-keyword">\draw</span> [arrow] (process2) -- (decision1);<br><span class="hljs-keyword">\draw</span> [arrow] (decision1) -- node[anchor=east] &#123;是&#125; (stop);<br><span class="hljs-keyword">\draw</span> [straightline] (decision1) -|  (point1);<br><span class="hljs-keyword">\draw</span> [arrow] (point1) -- node[anchor=south] &#123;否&#125; (input1);<br><span class="hljs-keyword">\end</span>&#123;tikzpicture&#125;<br><br><span class="hljs-keyword">\end</span>&#123;document&#125;<br></code></pre></div></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/01/15/8cVCsKRIhDBEG1b.png" srcset="/img/loading.gif" alt=""></p>
+<figure class="highlight latex"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs latex"><span class="hljs-params">#</span> 线粗：<br>thick:粗<br>thin:细<br><span class="hljs-params">#</span> 箭头<br>-&gt;:反向箭头<br>&lt;-:正向箭头<br>&lt;-&gt;:双向箭头<br><span class="hljs-params">#</span> 虚线<br>dashed<br><span class="hljs-params">#</span> 箭头形状<br>&gt;=stealth<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight latex"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs latex"><span class="hljs-params">#</span> name<br>(decision1):这个节点的name，后面需要用这个name调用这个节点。<br><span class="hljs-params">#</span> 属性<br>decision：需要调用的节点的属性<br><span class="hljs-params">#</span> 位置<br>below of=process1：定义节点的位置<br>left of:<br>right of:<br><span class="hljs-params">#</span> 偏移,对位置进行微调<br>yshift:<br>xshift:<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight latex"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs latex"><span class="hljs-params">#</span> 属性<br>[arrow]:需要调用的箭头的属性<br>(decision1)：箭头的其实位置<br>(process2a)：箭头的末端位置<br><span class="hljs-params">#</span> 线型<br>--：直线<br>|-：先竖线后横线<br>-|：向横线后竖线<br><span class="hljs-params">#</span> 文字：如果需要在箭头上添加文字<br>&#123;yes&#125;:需要添加的文字<br><span class="hljs-params">#</span> 文字的位置,上南下北左东右西(与地图方位不一致)<br>[anchor=east]：<br>[anchor=south]：<br>[anchor=west]：<br>[anchor=north]：<br>[anchor=center]：<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight latex"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs latex"><span class="hljs-keyword">\documentclass</span>[11pt]&#123;article&#125;<br><span class="hljs-keyword">\usepackage</span>&#123;tikz&#125; <br><span class="hljs-keyword">\usetikzlibrary</span>&#123;shadows,arrows,positioning,shapes.geometric&#125; <span class="hljs-comment">% Define the layers to draw the diagram</span><br><span class="hljs-keyword">\pgfdeclarelayer</span>&#123;background&#125;<br><span class="hljs-keyword">\pgfdeclarelayer</span>&#123;foreground&#125;<br><span class="hljs-keyword">\pgfsetlayers</span>&#123;background,main,foreground&#125;<br><br><span class="hljs-keyword">\tikzstyle</span>&#123;TDK&#125; = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm, text centered, text width=4cm, draw=black, fill=red!30, drop shadow]<br><span class="hljs-keyword">\tikzstyle</span>&#123;CFX&#125; = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm, text centered, text width=4cm, draw=black, fill=blue!30, drop shadow]<br><span class="hljs-keyword">\tikzstyle</span>&#123;Matlab&#125; = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=3cm, minimum height=1cm, text centered, text width=4cm, draw=black, fill=orange!30, drop shadow]<br><span class="hljs-keyword">\tikzstyle</span>&#123;arrow&#125; = [thick, -&gt;, &gt;=stealth]<br><span class="hljs-keyword">\tikzstyle</span>&#123;texto&#125; = [above, text width=6em, text centered]<br><span class="hljs-keyword">\tikzstyle</span>&#123;linepart&#125; = [draw, thick, color=black!50, -latex&#x27;, dashed] <span class="hljs-keyword">\tikzstyle</span>&#123;line&#125; = [draw, thick, color=black!50, -latex&#x27;]<br><br><span class="hljs-comment">% Define distances for bordering \newcommand&#123;\blockdist&#125;&#123;1.3&#125; \newcommand&#123;\edgedist&#125;&#123;1.5&#125;</span><br><br><span class="hljs-keyword">\newcommand</span>&#123;<span class="hljs-keyword">\etape</span>&#125;[2]&#123;node (p<span class="hljs-params">#1</span>) [etape] &#123;<span class="hljs-params">#2</span>&#125;&#125;<br><span class="hljs-keyword">\newcommand</span>&#123;<span class="hljs-keyword">\matlab</span>&#125;[2]&#123;node (p<span class="hljs-params">#1</span>) [Matlab] &#123;<span class="hljs-params">#2</span>&#125;&#125;<br><span class="hljs-keyword">\newcommand</span>&#123;<span class="hljs-keyword">\tdk</span>&#125;[2]&#123;node (p<span class="hljs-params">#1</span>) [TDK] &#123;<span class="hljs-params">#2</span>&#125;&#125;<br><span class="hljs-keyword">\newcommand</span>&#123;<span class="hljs-keyword">\cfx</span>&#125;[2]&#123;node (p<span class="hljs-params">#1</span>) [CFX] &#123;<span class="hljs-params">#2</span>&#125;&#125;<br><br><span class="hljs-comment">% Draw background</span><br><span class="hljs-keyword">\newcommand</span>&#123;<span class="hljs-keyword">\background</span>&#125;[5]&#123;<span class="hljs-comment">%</span><br><span class="hljs-keyword">\begin</span>&#123;pgfonlayer&#125;&#123;background&#125; <span class="hljs-comment">% Left-top corner of the background rectangle </span><br><span class="hljs-keyword">\path</span> (<span class="hljs-params">#1</span>.west |- <span class="hljs-params">#2</span>.north)+(-0.5,0.25) node (a1) &#123;&#125;;<br><span class="hljs-comment">% Right-bottom corner of the background rectanle</span><br><span class="hljs-keyword">\path</span> (<span class="hljs-params">#3</span>.east |- <span class="hljs-params">#4</span>.south)+(+0.5,-0.25) node (a2) &#123;&#125;; <span class="hljs-comment">% Draw the background</span><br><span class="hljs-keyword">\path</span>[fill=yellow!20,rounded corners, draw=black!50, dashed] (a1) rectangle (a2);<br><span class="hljs-keyword">\path</span> (<span class="hljs-params">#3</span>.east |- <span class="hljs-params">#2</span>.north)+(0,0.25)--(<span class="hljs-params">#1</span>.west |- <span class="hljs-params">#2</span>.north) node[midway] (<span class="hljs-params">#5</span>-n) &#123;&#125;;<br><span class="hljs-keyword">\path</span> (<span class="hljs-params">#3</span>.east |- <span class="hljs-params">#2</span>.south)+(0,-0.35)--(<span class="hljs-params">#1</span>.west |- <span class="hljs-params">#2</span>.south) node[midway] (<span class="hljs-params">#5</span>-s) &#123;&#125;;<br><span class="hljs-keyword">\path</span> (<span class="hljs-params">#3</span>.east |- <span class="hljs-params">#2</span>.north)+(0.7,0)--(<span class="hljs-params">#3</span>.east |- <span class="hljs-params">#4</span>.south) node[midway] (<span class="hljs-params">#5</span>-w) &#123;&#125;;<br><span class="hljs-keyword">\path</span> (a1.east |- a1.south)+(1.3,-1.3) node (u1)[texto] &#123;<span class="hljs-keyword">\textit</span>&#123;<span class="hljs-params">#5</span>&#125;&#125;; <span class="hljs-keyword">\end</span>&#123;pgfonlayer&#125;&#125;<br><br><span class="hljs-keyword">\newcommand</span>&#123;<span class="hljs-keyword">\transreceptor</span>&#125;[3]&#123;<span class="hljs-comment">% </span><br><span class="hljs-keyword">\path</span> [linepart] (<span class="hljs-params">#1</span>.east) -- node [above] &#123;<span class="hljs-keyword">\scriptsize</span> <span class="hljs-params">#2</span>&#125; (<span class="hljs-params">#3</span>);&#125;<br><br><span class="hljs-keyword">\begin</span>&#123;document&#125;<br><span class="hljs-keyword">\noindent</span><br><span class="hljs-keyword">\begin</span>&#123;tikzpicture&#125;[node distance=2cm,x=0.675cm,y=0.6cm]<br><span class="hljs-keyword">\path</span> <span class="hljs-keyword">\tdk</span>&#123;1&#125;&#123;TDK 2D Düsenströmung mit Reaktionskinetik&#125;;<br><span class="hljs-keyword">\path</span> (p1.south)+(0.0,-2.0)<span class="hljs-keyword">\matlab</span>&#123;2&#125;&#123;Matlab Konvertierung von Wärmestromverlauf <span class="hljs-built_in">$</span><span class="hljs-keyword">\dot</span>&#123;q&#125;<span class="hljs-built_in">_</span>w<span class="hljs-built_in">$</span>&#125;; <br><span class="hljs-keyword">\path</span> (p2.east)+(5.0,0.0) <span class="hljs-keyword">\cfx</span>&#123;3&#125;&#123;Ansys CFX 3D Kühlkanalströmung&#125;;<br><span class="hljs-keyword">\path</span> (p3.east)+(6.0,0.0) <span class="hljs-keyword">\tdk</span>&#123;4&#125;&#123;TDK 2D Düsenströmung mit Reaktionskinetik&#125;; <br><span class="hljs-keyword">\path</span> (p4.north)+(-4.5,2.5) <span class="hljs-keyword">\matlab</span>&#123;5&#125;&#123;Matlab Konvertierung von Wärmestromverlauf <span class="hljs-built_in">$</span><span class="hljs-keyword">\dot</span>&#123;q&#125;<span class="hljs-built_in">_</span>w<span class="hljs-built_in">$</span>&#125;;<br><span class="hljs-keyword">\path</span> (p4.south)+(-4.5,-2.5) <span class="hljs-keyword">\matlab</span>&#123;6&#125;&#123;Matlab Konvertierung von Wärmestromverlauf <span class="hljs-built_in">$</span><span class="hljs-keyword">\dot</span>&#123;q&#125;<span class="hljs-built_in">_</span>w<span class="hljs-built_in">$</span>&#125;;<br><br><span class="hljs-keyword">\path</span> [line] (p1.south) -- node [above] &#123;&#125; (p2);<br><span class="hljs-keyword">\path</span> [line] (p2.east) -- node [above] &#123;&#125; (p3); <span class="hljs-keyword">\path</span> [line] (p3.south) |- node [above] &#123;&#125; (p6);<br><span class="hljs-keyword">\path</span> [line] (p4.north) |- node [below] &#123;&#125; (p5);<br><span class="hljs-keyword">\path</span> [line] (p6.east) -| node [above] &#123;&#125; (p4);<br><span class="hljs-keyword">\path</span> [line] (p5.west) -| node [above] &#123;&#125; (p3);<br><br><span class="hljs-keyword">\background</span>&#123;p3&#125;&#123;p5&#125;&#123;p4&#125;&#123;p6&#125;&#123;Iterationen in Matlab&#125;<br><br><span class="hljs-keyword">\end</span>&#123;tikzpicture&#125;<br><br><span class="hljs-keyword">\end</span>&#123;document&#125;<br></code></pre></div></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/01/15/RbVlvK87CPwqO3N.png" srcset="/img/loading.gif" alt=""></p>
+<figure class="highlight latex"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs latex"><span class="hljs-keyword">\documentclass</span>[11pt]&#123;article&#125;<br><span class="hljs-keyword">\usepackage</span>&#123;tikz&#125;<br><span class="hljs-keyword">\usetikzlibrary</span>&#123;shadows,arrows,positioning&#125;<br><span class="hljs-comment">% Define the layers to draw the diagram</span><br><span class="hljs-keyword">\pgfdeclarelayer</span>&#123;background&#125;<br><span class="hljs-keyword">\pgfdeclarelayer</span>&#123;foreground&#125;<br><span class="hljs-keyword">\pgfsetlayers</span>&#123;background,main,foreground&#125;<br><br><span class="hljs-comment">% Define block styles</span><br><span class="hljs-keyword">\tikzstyle</span>&#123;materia&#125;=[draw, fill=blue!20, text width=6.0em, text centered,<br>  minimum height=1.5em,drop shadow]<br><span class="hljs-keyword">\tikzstyle</span>&#123;etape&#125; = [materia, text width=8em, minimum width=10em,<br>  minimum height=3em, rounded corners, drop shadow]<br><span class="hljs-keyword">\tikzstyle</span>&#123;texto&#125; = [above, text width=6em, text centered]<br><span class="hljs-keyword">\tikzstyle</span>&#123;linepart&#125; = [draw, thick, color=black!50, -latex&#x27;, dashed]<br><span class="hljs-keyword">\tikzstyle</span>&#123;line&#125; = [draw, thick, color=black!50, -latex&#x27;]<br><span class="hljs-keyword">\tikzstyle</span>&#123;ur&#125;=[draw, text centered, minimum height=0.01em]<br><br><span class="hljs-comment">% Define distances for bordering</span><br><span class="hljs-keyword">\newcommand</span>&#123;<span class="hljs-keyword">\blockdist</span>&#125;&#123;1.3&#125;<br><span class="hljs-keyword">\newcommand</span>&#123;<span class="hljs-keyword">\edgedist</span>&#125;&#123;1.5&#125;<br><br><span class="hljs-keyword">\newcommand</span>&#123;<span class="hljs-keyword">\etape</span>&#125;[2]&#123;node (p<span class="hljs-params">#1</span>) [etape]<br>  &#123;<span class="hljs-params">#2</span>&#125;&#125;<br><br><span class="hljs-comment">% Draw background</span><br><span class="hljs-keyword">\newcommand</span>&#123;<span class="hljs-keyword">\background</span>&#125;[5]&#123;<span class="hljs-comment">%</span><br>  <span class="hljs-keyword">\begin</span>&#123;pgfonlayer&#125;&#123;background&#125;<br>    <span class="hljs-comment">% Left-top corner of the background rectangle</span><br>    <span class="hljs-keyword">\path</span> (<span class="hljs-params">#1</span>.west |- <span class="hljs-params">#2</span>.north)+(-0.5,0.25) node (a1) &#123;&#125;;<br>    <span class="hljs-comment">% Right-bottom corner of the background rectanle</span><br>    <span class="hljs-keyword">\path</span> (<span class="hljs-params">#3</span>.east |- <span class="hljs-params">#4</span>.south)+(+0.5,-0.25) node (a2) &#123;&#125;;<br>    <span class="hljs-comment">% Draw the background</span><br>    <span class="hljs-keyword">\path</span>[fill=yellow!20,rounded corners, draw=black!50, dashed]<br>      (a1) rectangle (a2);<br>      <span class="hljs-keyword">\path</span> (<span class="hljs-params">#3</span>.east |- <span class="hljs-params">#2</span>.north)+(0,0.25)--(<span class="hljs-params">#1</span>.west |- <span class="hljs-params">#2</span>.north) node[midway] (<span class="hljs-params">#5</span>-n) &#123;&#125;;<br>      <span class="hljs-keyword">\path</span> (<span class="hljs-params">#3</span>.east |- <span class="hljs-params">#2</span>.south)+(0,-0.35)--(<span class="hljs-params">#1</span>.west |- <span class="hljs-params">#2</span>.south) node[midway] (<span class="hljs-params">#5</span>-s) &#123;&#125;;<br>      <span class="hljs-keyword">\path</span> (<span class="hljs-params">#3</span>.east |- <span class="hljs-params">#2</span>.north)+(0.7,0)--(<span class="hljs-params">#3</span>.east |- <span class="hljs-params">#4</span>.south) node[midway] (<span class="hljs-params">#5</span>-w) &#123;&#125;;<br>  <span class="hljs-keyword">\end</span>&#123;pgfonlayer&#125;&#125;<br><br><span class="hljs-keyword">\newcommand</span>&#123;<span class="hljs-keyword">\transreceptor</span>&#125;[3]&#123;<span class="hljs-comment">%</span><br>  <span class="hljs-keyword">\path</span> [linepart] (<span class="hljs-params">#1</span>.east) -- node [above]<br>    &#123;<span class="hljs-keyword">\scriptsize</span> <span class="hljs-params">#2</span>&#125; (<span class="hljs-params">#3</span>);&#125;<br><br><span class="hljs-keyword">\begin</span>&#123;document&#125;<br><span class="hljs-keyword">\begin</span>&#123;tikzpicture&#125;[scale=0.7,transform shape]<br><br>  <span class="hljs-comment">% Draw diagram elements</span><br>  <span class="hljs-keyword">\path</span> <span class="hljs-keyword">\etape</span>&#123;1&#125;&#123;Raw signal&#125;;<br><br>  <span class="hljs-keyword">\path</span> (p1.south)+(0.0,-1.5) <span class="hljs-keyword">\etape</span>&#123;2&#125;&#123;Pre-1&#125;;<br>  <span class="hljs-keyword">\path</span> (p2.south)+(0.0,-1.0) <span class="hljs-keyword">\etape</span>&#123;3&#125;&#123;Pre-2&#125;;<br><br>  <span class="hljs-keyword">\path</span> (p3.south)+(0.0,-1.5) <span class="hljs-keyword">\etape</span>&#123;4&#125;&#123;Feature extract&#125;;<br>  <span class="hljs-keyword">\path</span> (p4.south)+(0.0,-1.0) <span class="hljs-keyword">\etape</span>&#123;5&#125;&#123;Model fitting&#125;;<br><br>  <span class="hljs-keyword">\path</span> (p5.south)+(-3.0,-2.0) <span class="hljs-keyword">\etape</span>&#123;6&#125;&#123;training&#125;;<br>  <span class="hljs-keyword">\path</span> (p5.south)+(3.0,-2.0) <span class="hljs-keyword">\etape</span>&#123;7&#125;&#123;testing&#125;;<br>  <span class="hljs-keyword">\node</span> [below=of p5] (p6-7) &#123;&#125;;<br><br>  <span class="hljs-keyword">\path</span> (p6.south)+(0.0,-2.0) <span class="hljs-keyword">\etape</span>&#123;8&#125;&#123;normal&#125;;<br>  <span class="hljs-keyword">\path</span> (p7.south)+(0.0,-2.0) <span class="hljs-keyword">\etape</span>&#123;9&#125;&#123;abnormal&#125;;<br>  <span class="hljs-keyword">\node</span> [below=of p6-7] (p8-9) &#123;&#125;;<br><br>  <span class="hljs-comment">% Draw arrows between elements</span><br>  <span class="hljs-keyword">\path</span> [line] (p1.south) -- node [above] &#123;&#125; (p2);<br>  <span class="hljs-keyword">\path</span> [line] (p2.south) -- node [above] &#123;&#125; (p3);<br>  <span class="hljs-keyword">\path</span> [line] (p3.south) -- node [above] &#123;&#125; (p4);<br>  <span class="hljs-keyword">\path</span> [line] (p4.south) -- node [above] &#123;&#125; (p5);<br><br>  <span class="hljs-keyword">\background</span>&#123;p2&#125;&#123;p2&#125;&#123;p3&#125;&#123;p3&#125;&#123;bk1&#125;<br>  <span class="hljs-keyword">\background</span>&#123;p4&#125;&#123;p4&#125;&#123;p5&#125;&#123;p5&#125;&#123;bk2&#125;<br>  <span class="hljs-keyword">\background</span>&#123;p6&#125;&#123;p6&#125;&#123;p7&#125;&#123;p7&#125;&#123;bk3&#125;<br><br>  <span class="hljs-keyword">\path</span> [line] (p5.south) -- node [above] &#123;&#125; (bk3-n);<br>  <span class="hljs-keyword">\path</span> [line] (bk3-s) -- node [above] &#123;&#125; (p8);<br>  <span class="hljs-keyword">\path</span> [line] (bk3-s) -- node [above] &#123;&#125; (p9);<br>  <span class="hljs-keyword">\path</span> (bk1-w)+(+6.0,0) node (ur1)[ur] &#123;&#125;;<br>  <span class="hljs-keyword">\path</span> (bk2-w)+(+6.0,0) node (ur2)[ur] &#123;&#125;;<br>  <span class="hljs-keyword">\path</span> (bk3-w)+(+3.0,0) node (ur3)[ur] &#123;&#125;;<br>  <span class="hljs-keyword">\transreceptor</span>&#123;bk1-w&#125;&#123;pre processing&#125;&#123;ur1&#125;;<br>  <span class="hljs-keyword">\transreceptor</span>&#123;bk2-w&#125;&#123;Feature selection&#125;&#123;ur2&#125;;<br>  <span class="hljs-keyword">\transreceptor</span>&#123;bk3-w&#125;&#123;classification&#125;&#123;ur3&#125;;<br><span class="hljs-keyword">\end</span>&#123;tikzpicture&#125;<br><span class="hljs-keyword">\end</span>&#123;document&#125;<br></code></pre></div></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/01/15/Du4jb2Glv1Ne9Kk.png" srcset="/img/loading.gif" alt=""></p>
+<figure class="highlight latex"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs latex"><span class="hljs-keyword">\documentclass</span>[border=10pt]&#123;standalone&#125;<br><span class="hljs-keyword">\usepackage</span>&#123;tikz&#125;<br><span class="hljs-keyword">\usetikzlibrary</span>&#123;shapes.geometric&#125;<br><span class="hljs-keyword">\usetikzlibrary</span>&#123;arrows.meta,arrows&#125;<br><span class="hljs-keyword">\begin</span>&#123;document&#125;<br><span class="hljs-keyword">\begin</span>&#123;tikzpicture&#125;<br>[auto,<br>decision/.style=&#123;diamond, draw=blue, thick, fill=blue!20,<br>    text width=4.5em,align=flush center,<br>    inner sep=1pt&#125;,<br>block/.style =&#123;rectangle, draw=blue, thick, fill=blue!20,<br>    text width=5em,align=center, rounded corners,<br>    minimum height=4em&#125;,<br>line/.style =&#123;draw, thick, -latex&#x27;,shorten &gt;=2pt&#125;,<br>cloud/.style =&#123;draw=red, thick, ellipse,fill=red!20,<br>    minimum height=2em&#125;]<br><span class="hljs-keyword">\matrix</span> [column sep=5mm,row sep=7mm]<br>&#123;<br>    <span class="hljs-comment">% row 1</span><br>    <span class="hljs-keyword">\node</span> [cloud] (expert) &#123;expert&#125;; <span class="hljs-built_in">&amp;</span><br>    <span class="hljs-keyword">\node</span> [block] (init) &#123;initialize model&#125;; <span class="hljs-built_in">&amp;</span><br>    <span class="hljs-keyword">\node</span> [cloud] (system) &#123;system&#125;; <span class="hljs-keyword">\\</span><br>    <span class="hljs-comment">% row 2</span><br>    <span class="hljs-built_in">&amp;</span> <span class="hljs-keyword">\node</span> [block] (identify) &#123;identify candidate model&#125;; <span class="hljs-built_in">&amp;</span> <span class="hljs-keyword">\\</span><br>    <span class="hljs-comment">% row 3</span><br>    <span class="hljs-keyword">\node</span> [block] (update) &#123;update model&#125;; <span class="hljs-built_in">&amp;</span><br>    <span class="hljs-keyword">\node</span> [block] (evaluate) &#123;evaluate candidate models&#125;; <span class="hljs-built_in">&amp;</span> <span class="hljs-keyword">\\</span><br>    <span class="hljs-comment">% row 4</span><br>    <span class="hljs-built_in">&amp;</span> <span class="hljs-keyword">\node</span> [decision] (decide) &#123;is best candidate&#125;; <span class="hljs-built_in">&amp;</span> <span class="hljs-keyword">\\</span><br>    <span class="hljs-comment">% row 5</span><br>    <span class="hljs-built_in">&amp;</span> <span class="hljs-keyword">\node</span> [block] (stop) &#123;stop&#125;; <span class="hljs-built_in">&amp;</span> <span class="hljs-keyword">\\</span><br>&#125;;<br><span class="hljs-keyword">\begin</span>&#123;scope&#125;[every path/.style=line]<br><span class="hljs-keyword">\path</span> (init) -- (identify);<br><span class="hljs-keyword">\path</span> (identify) -- (evaluate);<br><span class="hljs-keyword">\path</span> (evaluate) -- (decide);<br><span class="hljs-keyword">\path</span> (update) |- (identify);<br><span class="hljs-keyword">\path</span> (decide) -| node [near start] &#123;yes&#125; (update);<br><span class="hljs-keyword">\path</span> (decide) -- node [midway] &#123;no&#125; (stop);<br><span class="hljs-keyword">\path</span> [dashed] (expert) -- (init);<br><span class="hljs-keyword">\path</span> [dashed] (system) -- (init);<br><span class="hljs-keyword">\path</span> [dashed] (system) |- (evaluate);<br><span class="hljs-keyword">\end</span>&#123;scope&#125;<br><span class="hljs-keyword">\end</span>&#123;tikzpicture&#125;<br><span class="hljs-keyword">\end</span>&#123;document&#125; <br></code></pre></div></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/01/15/NLbisUCKZItewyc.png" srcset="/img/loading.gif" alt=""></p>
+<figure class="highlight latex"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs latex"><span class="hljs-keyword">\documentclass</span>&#123;article&#125;<br> <br><span class="hljs-keyword">\usepackage</span>&#123;pgf&#125;<br><span class="hljs-keyword">\usepackage</span>&#123;tikz&#125;<br><span class="hljs-keyword">\usetikzlibrary</span>&#123;arrows, decorations.pathmorphing, backgrounds, positioning, fit, petri, automata&#125;<br> <br><span class="hljs-keyword">\definecolor</span>&#123;yellow1&#125;&#123;rgb&#125;&#123;1,0.8,0.2&#125; <br> <br><span class="hljs-comment">%opening</span><br><span class="hljs-keyword">\begin</span>&#123;document&#125;<br><span class="hljs-keyword">\begin</span>&#123;tikzpicture&#125;[-&gt;,&gt;=stealth&#x27;,shorten &gt;=1pt,auto,node distance=2.8cm,<br>                    semithick]<br>  <span class="hljs-keyword">\tikzstyle</span>&#123;every state&#125;=[fill=yellow1,draw=none,text=black]<br> <br>  <span class="hljs-keyword">\node</span>[state]         (S) at (-6, 0)              &#123;<span class="hljs-built_in">$</span>S<span class="hljs-built_in">$</span>&#125;;<br>  <span class="hljs-keyword">\node</span>[state]         (xin1) at (-2, 3)           &#123;<span class="hljs-built_in">$</span>X<span class="hljs-built_in">^</span>1<span class="hljs-built_in">_</span>&#123;in&#125;<span class="hljs-built_in">$</span>&#125;;<br>  <span class="hljs-keyword">\node</span>[state]         (xin2) at (-2, 1)        &#123;<span class="hljs-built_in">$</span>X<span class="hljs-built_in">^</span>2<span class="hljs-built_in">_</span>&#123;in&#125;<span class="hljs-built_in">$</span>&#125;;<br>  <span class="hljs-keyword">\node</span>[state]         (xin3) at (-2, -1)       &#123;<span class="hljs-built_in">$</span>X<span class="hljs-built_in">^</span>3<span class="hljs-built_in">_</span>&#123;in&#125;<span class="hljs-built_in">$</span>&#125;;<br>  <span class="hljs-keyword">\node</span>[state]         (xin4) at (-2, -3)           &#123;<span class="hljs-built_in">$</span>X<span class="hljs-built_in">^</span>4<span class="hljs-built_in">_</span>&#123;in&#125;<span class="hljs-built_in">$</span>&#125;;<br>  <span class="hljs-keyword">\node</span>[state]         (xout1) at (0, 3)          &#123;<span class="hljs-built_in">$</span>X<span class="hljs-built_in">^</span>1<span class="hljs-built_in">_</span>&#123;out&#125;<span class="hljs-built_in">$</span>&#125;;<br>  <span class="hljs-keyword">\node</span>[state]         (xout2) at (0, 1)        &#123;<span class="hljs-built_in">$</span>X<span class="hljs-built_in">^</span>2<span class="hljs-built_in">_</span>&#123;out&#125;<span class="hljs-built_in">$</span>&#125;;<br>  <span class="hljs-keyword">\node</span>[state]         (xout3) at (0, -1)   &#123;<span class="hljs-built_in">$</span>X<span class="hljs-built_in">^</span>3<span class="hljs-built_in">_</span>&#123;out&#125;<span class="hljs-built_in">$</span>&#125;;<br>  <span class="hljs-keyword">\node</span>[state]         (xout4) at (0, -3)           &#123;<span class="hljs-built_in">$</span>X<span class="hljs-built_in">^</span>4<span class="hljs-built_in">_</span>&#123;out&#125;<span class="hljs-built_in">$</span>&#125;;<br>  <span class="hljs-keyword">\node</span>[state]         (xin5)  at (3, -2)   &#123;<span class="hljs-built_in">$</span>X<span class="hljs-built_in">^</span>5<span class="hljs-built_in">_</span>&#123;in&#125;<span class="hljs-built_in">$</span>&#125;;<br>  <span class="hljs-keyword">\node</span>[state]         (xout5) at (5, -2)   &#123;<span class="hljs-built_in">$</span>X<span class="hljs-built_in">^</span>5<span class="hljs-built_in">_</span>&#123;out&#125;<span class="hljs-built_in">$</span>&#125;;<br>  <span class="hljs-keyword">\node</span>[state]         (DC) at (7, 2)           &#123;<span class="hljs-built_in">$</span>DC<span class="hljs-built_in">$</span>&#125;;<br> <br>  <span class="hljs-keyword">\path</span> (S) edge[bend left=26]              node &#123;<span class="hljs-built_in">$</span><span class="hljs-keyword">\infty</span><span class="hljs-built_in">$</span>&#125; (xin1)<br>            edge[bend left=12]              node &#123;<span class="hljs-built_in">$</span><span class="hljs-keyword">\infty</span><span class="hljs-built_in">$</span>&#125; (xin2)<br>            edge[bend right=12]             node &#123;<span class="hljs-built_in">$</span><span class="hljs-keyword">\infty</span><span class="hljs-built_in">$</span>&#125; (xin3)<br>            edge[bend right=26]             node &#123;<span class="hljs-built_in">$</span><span class="hljs-keyword">\infty</span><span class="hljs-built_in">$</span>&#125; (xin4)<br>        (xin1) edge  node &#123;<span class="hljs-built_in">$</span><span class="hljs-keyword">\alpha</span>=1<span class="hljs-built_in">$</span>&#125; (xout1)<br>        (xin2) edge  node &#123;<span class="hljs-built_in">$</span><span class="hljs-keyword">\alpha</span>=1<span class="hljs-built_in">$</span>&#125; (xout2)<br>        (xin3) edge  node &#123;<span class="hljs-built_in">$</span><span class="hljs-keyword">\alpha</span>=1<span class="hljs-built_in">$</span>&#125; (xout3)<br>        (xin4) edge  node &#123;<span class="hljs-built_in">$</span><span class="hljs-keyword">\alpha</span>=1<span class="hljs-built_in">$</span>&#125; (xout4)<br>        (xin5) edge  node &#123;<span class="hljs-built_in">$</span>1<span class="hljs-built_in">$</span>&#125; (xout5);<br>  <span class="hljs-keyword">\draw</span>[-&gt;] (xout1) to[out=-30,in=150] node &#123;<span class="hljs-built_in">$</span><span class="hljs-keyword">\beta</span><span class="hljs-built_in">$</span>&#125; (xin5);<br>  <span class="hljs-keyword">\draw</span>[-&gt;] (xout2.east) to[out=-15,in=165] node [below] &#123;<span class="hljs-built_in">$</span><span class="hljs-keyword">\beta</span><span class="hljs-built_in">$</span>&#125; (xin5);<br>  <span class="hljs-keyword">\draw</span>[-&gt;] (xout3.east) to[out=0,in=180] node [below] &#123;<span class="hljs-built_in">$</span><span class="hljs-keyword">\beta</span><span class="hljs-built_in">$</span>&#125; (xin5.west);<br>  <span class="hljs-keyword">\draw</span>[-&gt;] (xout1) to[out=-5,in=175] node &#123;<span class="hljs-built_in">$</span><span class="hljs-keyword">\infty</span><span class="hljs-built_in">$</span>&#125; (DC);<br>  <span class="hljs-keyword">\draw</span>[-&gt;] (xout5) to[out=40, in=-120] node &#123;<span class="hljs-built_in">$</span><span class="hljs-keyword">\infty</span><span class="hljs-built_in">$</span>&#125; (DC);<br><span class="hljs-keyword">\end</span>&#123;tikzpicture&#125;<br> <br><span class="hljs-keyword">\end</span>&#123;document&#125;<br></code></pre></div></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/01/15/Zz3HqNStsfi7g6c.png" srcset="/img/loading.gif" alt=""></p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/LaTeX/">LaTeX</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%B5%81%E7%A8%8B%E5%9B%BE/">流程图</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/01/15/LaTeX%E9%98%B6%E6%A2%AF%E5%9E%8B%E7%9F%A9%E9%98%B5/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">LaTeX画阶梯型矩阵</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/01/14/mathematica%E7%AC%94%E8%AE%B0/">
+                        <span class="hidden-mobile">mathematica笔记</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      var inputArea = document.querySelector("#local-search-input");
+      inputArea.onclick = function () {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+        this.onclick = null
+      }
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+
+</body>
+</html>

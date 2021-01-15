@@ -1,0 +1,565 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="保持很多的热爱和一点点野心">
+  <meta name="author" content="欧阳珈樱">
+  <meta name="keywords" content="">
+  <title>mathematica笔记 - 樱花味猫猫</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/gradient-light.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.3.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>樱花味猫猫</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/001.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="mathematica笔记">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      欧阳珈樱
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-01-14 20:02" pubdate>
+        2021年1月14日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.3k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      22
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">mathematica笔记</h1>
+            
+            <div class="markdown-body">
+              <h1 id="极限"><a href="#极限" class="headerlink" title="极限"></a>极限</h1><script type="math/tex; mode=display">
+\lim_{x\to 0}\frac{\sin(ax)}{x}</script><figure class="highlight mathematica"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mathematica"><span class="hljs-built_in">In</span><span class="hljs-punctuation">[</span><span class="hljs-number">1</span><span class="hljs-punctuation">]</span><span class="hljs-operator">:=</span> <span class="hljs-built_in">Limit</span><span class="hljs-punctuation">[</span><span class="hljs-built_in">Sin</span><span class="hljs-punctuation">[</span><span class="hljs-variable">a</span> <span class="hljs-variable">x</span><span class="hljs-punctuation">]</span><span class="hljs-operator">/</span><span class="hljs-variable">x</span><span class="hljs-operator">,</span> <span class="hljs-variable">x</span> <span class="hljs-operator">-&gt;</span>  <span class="hljs-number">0</span><span class="hljs-punctuation">]</span><br><br><span class="hljs-built_in">Out</span><span class="hljs-punctuation">[</span><span class="hljs-number">1</span><span class="hljs-punctuation">]</span><span class="hljs-operator">=</span> <span class="hljs-variable">a</span><br></code></pre></div></td></tr></table></figure>
+<script type="math/tex; mode=display">
+\lim_{x\to 1}\left(\frac{m}{1-x^m}-\frac{n}{1-x^n}\right)</script><figure class="highlight mathematica"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mathematica"><span class="hljs-built_in">In</span><span class="hljs-punctuation">[</span><span class="hljs-number">2</span><span class="hljs-punctuation">]</span><span class="hljs-operator">:=</span> <span class="hljs-built_in">Limit</span><span class="hljs-punctuation">[</span><span class="hljs-variable">m</span><span class="hljs-operator">/</span><span class="hljs-punctuation">(</span><span class="hljs-number">1</span> <span class="hljs-operator">-</span> <span class="hljs-variable">x</span><span class="hljs-operator">^</span><span class="hljs-variable">m</span><span class="hljs-punctuation">)</span> <span class="hljs-operator">-</span> <span class="hljs-variable">n</span><span class="hljs-operator">/</span><span class="hljs-punctuation">(</span><span class="hljs-number">1</span> <span class="hljs-operator">-</span> <span class="hljs-variable">x</span><span class="hljs-operator">^</span><span class="hljs-variable">n</span><span class="hljs-punctuation">)</span><span class="hljs-operator">,</span> <span class="hljs-variable">x</span> <span class="hljs-operator">-&gt;</span> <span class="hljs-number">1</span><span class="hljs-punctuation">]</span><br><br><span class="hljs-built_in">Out</span><span class="hljs-punctuation">[</span><span class="hljs-number">2</span><span class="hljs-punctuation">]</span><span class="hljs-operator">=</span> <span class="hljs-punctuation">(</span><span class="hljs-variable">m</span> <span class="hljs-operator">-</span> <span class="hljs-variable">n</span><span class="hljs-punctuation">)</span><span class="hljs-operator">/</span><span class="hljs-number">2</span><br></code></pre></div></td></tr></table></figure>
+<p>左极限</p>
+<blockquote>
+<p>Limit[expr,x-&gt;x0,Direction-&gt;1]</p>
+</blockquote>
+<p>右极限</p>
+<blockquote>
+<p>Limit[expr,x-&gt;x0,Direction-&gt;-1]</p>
+</blockquote>
+<script type="math/tex; mode=display">
+\lim_{x\to 0^+}\frac{\ln x}{x}</script><figure class="highlight mathematica"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mathematica"><span class="hljs-built_in">In</span><span class="hljs-punctuation">[</span><span class="hljs-number">3</span><span class="hljs-punctuation">]</span><span class="hljs-operator">:=</span> <span class="hljs-built_in">Limit</span><span class="hljs-punctuation">[</span><span class="hljs-built_in">Log</span><span class="hljs-punctuation">[</span><span class="hljs-variable">x</span><span class="hljs-punctuation">]</span><span class="hljs-operator">/</span><span class="hljs-variable">x</span><span class="hljs-operator">,</span> <span class="hljs-variable">x</span> <span class="hljs-operator">-&gt;</span> <span class="hljs-number">0</span><span class="hljs-operator">,</span> <span class="hljs-built_in">Direction</span> <span class="hljs-operator">-&gt;</span> <span class="hljs-operator">-</span><span class="hljs-number">1</span><span class="hljs-punctuation">]</span><br><br><span class="hljs-built_in">Out</span><span class="hljs-punctuation">[</span><span class="hljs-number">3</span><span class="hljs-punctuation">]</span><span class="hljs-operator">=</span> <span class="hljs-operator">-</span><span class="hljs-variable">\[Infinity]</span><br></code></pre></div></td></tr></table></figure>
+<script type="math/tex; mode=display">
+\lim_{x\to\infty}\frac{\Gamma(x+1/2)}{\sqrt{x}\Gamma(x)}</script><figure class="highlight mathematica"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mathematica"><span class="hljs-built_in">In</span><span class="hljs-punctuation">[</span><span class="hljs-number">4</span><span class="hljs-punctuation">]</span><span class="hljs-operator">:=</span> <span class="hljs-built_in">Limit</span><span class="hljs-punctuation">[</span><span class="hljs-built_in">Gamma</span><span class="hljs-punctuation">[</span><span class="hljs-variable">x</span> <span class="hljs-operator">+</span> <span class="hljs-number">1</span><span class="hljs-operator">/</span><span class="hljs-number">2</span><span class="hljs-punctuation">]</span><span class="hljs-operator">/</span><span class="hljs-punctuation">(</span><span class="hljs-built_in">Sqrt</span><span class="hljs-punctuation">[</span><span class="hljs-variable">x</span><span class="hljs-punctuation">]</span><span class="hljs-operator">*</span><span class="hljs-built_in">Gamma</span><span class="hljs-punctuation">[</span><span class="hljs-variable">x</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">)</span><span class="hljs-operator">,</span> <span class="hljs-variable">x</span> <span class="hljs-operator">-&gt;</span> <span class="hljs-built_in">Infinity</span><span class="hljs-punctuation">]</span><br><br><span class="hljs-built_in">Out</span><span class="hljs-punctuation">[</span><span class="hljs-number">4</span><span class="hljs-punctuation">]</span><span class="hljs-operator">=</span> <span class="hljs-number">1</span><br></code></pre></div></td></tr></table></figure>
+<p>设 $x_{1}=\sqrt{2}, x_{n}=\sqrt{2+x_{n-1}}$,  求 $\lim\limits _{n \rightarrow \infty} x_{n}$</p>
+<figure class="highlight mathematica"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mathematica"><span class="hljs-variable">f</span><span class="hljs-punctuation">[</span><span class="hljs-number">1</span><span class="hljs-punctuation">]</span><span class="hljs-operator">=</span><span class="hljs-built_in">N</span><span class="hljs-punctuation">[</span><span class="hljs-built_in">Sqrt</span><span class="hljs-punctuation">[</span><span class="hljs-number">2</span><span class="hljs-punctuation">]</span><span class="hljs-operator">,</span><span class="hljs-number">10</span><span class="hljs-punctuation">]</span><span class="hljs-operator">;</span><br><span class="hljs-variable">f</span><span class="hljs-punctuation">[</span><span class="hljs-type">n_</span><span class="hljs-punctuation">]</span> <span class="hljs-operator">:=</span> <span class="hljs-built_in">N</span><span class="hljs-punctuation">[</span><span class="hljs-built_in">Sqrt</span><span class="hljs-punctuation">[</span><span class="hljs-number">2</span><span class="hljs-operator">+</span><span class="hljs-variable">f</span><span class="hljs-punctuation">[</span><span class="hljs-variable">n</span><span class="hljs-operator">-</span><span class="hljs-number">1</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">]</span><span class="hljs-operator">,</span><span class="hljs-number">10</span><span class="hljs-punctuation">]</span><br><span class="hljs-variable">xn</span><span class="hljs-operator">=</span><span class="hljs-built_in">Table</span><span class="hljs-punctuation">[</span><span class="hljs-variable">f</span><span class="hljs-punctuation">[</span><span class="hljs-variable">n</span><span class="hljs-punctuation">]</span><span class="hljs-operator">,</span><span class="hljs-punctuation">&#123;</span><span class="hljs-variable">n</span><span class="hljs-operator">,</span><span class="hljs-number">1</span><span class="hljs-operator">,</span><span class="hljs-number">20</span><span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">]</span><br><span class="hljs-built_in">ListPlot</span><span class="hljs-punctuation">[</span><span class="hljs-variable">xn</span><span class="hljs-operator">,</span><span class="hljs-built_in">PlotStyle</span><span class="hljs-operator">-&gt;</span><span class="hljs-punctuation">&#123;</span><span class="hljs-built_in">Red</span><span class="hljs-operator">,</span><span class="hljs-built_in">Thick</span><span class="hljs-punctuation">&#125;</span><span class="hljs-operator">,</span><span class="hljs-built_in">Joined</span><span class="hljs-operator">-&gt;</span><span class="hljs-built_in">True</span><span class="hljs-punctuation">]</span><br></code></pre></div></td></tr></table></figure>
+<p>画出函数 $\displaystyle f(x)=\frac{(x-5)^2}{3(x+1)}$ 的斜渐近线</p>
+<figure class="highlight mathematica"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mathematica"><span class="hljs-variable">f</span><span class="hljs-punctuation">[</span><span class="hljs-type">x_</span><span class="hljs-punctuation">]</span><span class="hljs-operator">:=</span><span class="hljs-punctuation">(</span><span class="hljs-variable">x</span><span class="hljs-operator">-</span><span class="hljs-number">5</span><span class="hljs-punctuation">)</span><span class="hljs-operator">^</span><span class="hljs-number">2</span><span class="hljs-operator">/</span><span class="hljs-punctuation">(</span><span class="hljs-number">3</span><span class="hljs-operator">*</span><span class="hljs-punctuation">(</span><span class="hljs-variable">x</span><span class="hljs-operator">+</span><span class="hljs-number">1</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">)</span><span class="hljs-operator">;</span><br><span class="hljs-variable">a</span><span class="hljs-operator">=</span><span class="hljs-built_in">Limit</span><span class="hljs-punctuation">[</span><span class="hljs-variable">f</span><span class="hljs-punctuation">[</span><span class="hljs-variable">x</span><span class="hljs-punctuation">]</span><span class="hljs-operator">/</span><span class="hljs-variable">x</span><span class="hljs-operator">,</span><span class="hljs-variable">x</span><span class="hljs-operator">-&gt;</span><span class="hljs-built_in">Infinity</span><span class="hljs-punctuation">]</span><br><span class="hljs-variable">b</span><span class="hljs-operator">=</span><span class="hljs-built_in">Limit</span><span class="hljs-punctuation">[</span><span class="hljs-variable">f</span><span class="hljs-punctuation">[</span><span class="hljs-variable">x</span><span class="hljs-punctuation">]</span><span class="hljs-operator">-</span><span class="hljs-variable">a</span> <span class="hljs-variable">x</span><span class="hljs-operator">,</span><span class="hljs-variable">x</span><span class="hljs-operator">-&gt;</span><span class="hljs-built_in">Infinity</span><span class="hljs-punctuation">]</span><br><span class="hljs-built_in">Plot</span><span class="hljs-punctuation">[</span><span class="hljs-punctuation">&#123;</span><span class="hljs-variable">f</span><span class="hljs-punctuation">[</span><span class="hljs-variable">x</span><span class="hljs-punctuation">]</span><span class="hljs-operator">,</span><span class="hljs-variable">a</span> <span class="hljs-variable">x</span><span class="hljs-operator">+</span><span class="hljs-variable">b</span><span class="hljs-punctuation">&#125;</span><span class="hljs-operator">,</span><span class="hljs-punctuation">&#123;</span><span class="hljs-variable">x</span><span class="hljs-operator">,</span><span class="hljs-number">0</span><span class="hljs-operator">,</span><span class="hljs-number">30</span><span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">]</span><br></code></pre></div></td></tr></table></figure>
+<script type="math/tex; mode=display">
+\lim_{y\to\infty}\lim_{x\to\infty}\left(\frac{xy}{x^2+y^2}\right)^{x^2}</script><figure class="highlight mathematica"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mathematica"><span class="hljs-built_in">In</span><span class="hljs-punctuation">[</span><span class="hljs-number">13</span><span class="hljs-punctuation">]</span><span class="hljs-operator">:=</span> <span class="hljs-built_in">Limit</span><span class="hljs-punctuation">[</span><span class="hljs-built_in">Limit</span><span class="hljs-punctuation">[</span><span class="hljs-punctuation">(</span><span class="hljs-punctuation">(</span><span class="hljs-variable">xy</span><span class="hljs-punctuation">)</span><span class="hljs-operator">/</span><span class="hljs-punctuation">(</span><span class="hljs-variable">x</span><span class="hljs-operator">^</span><span class="hljs-number">2</span> <span class="hljs-operator">+</span> <span class="hljs-variable">y</span><span class="hljs-operator">^</span><span class="hljs-number">2</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">)</span><span class="hljs-operator">^</span><span class="hljs-punctuation">(</span><span class="hljs-variable">x</span><span class="hljs-operator">^</span><span class="hljs-number">2</span><span class="hljs-punctuation">)</span><span class="hljs-operator">,</span> <span class="hljs-variable">x</span> <span class="hljs-operator">-&gt;</span> <span class="hljs-built_in">Infinity</span><span class="hljs-punctuation">]</span><span class="hljs-operator">,</span> <br> <span class="hljs-variable">y</span> <span class="hljs-operator">-&gt;</span> <span class="hljs-built_in">Infinity</span><span class="hljs-punctuation">]</span><br><br><span class="hljs-built_in">Out</span><span class="hljs-punctuation">[</span><span class="hljs-number">13</span><span class="hljs-punctuation">]</span><span class="hljs-operator">=</span> <span class="hljs-number">0</span><br></code></pre></div></td></tr></table></figure>
+<p>还可以计算自变量沿某一固定路径趋向于固定点时，表达式的极限</p>
+<figure class="highlight mathematica"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mathematica"><span class="hljs-built_in">In</span><span class="hljs-punctuation">[</span><span class="hljs-number">15</span><span class="hljs-punctuation">]</span><span class="hljs-operator">:=</span> <span class="hljs-built_in">Limit</span><span class="hljs-punctuation">[</span><span class="hljs-punctuation">(</span><span class="hljs-variable">x</span><span class="hljs-operator">^</span><span class="hljs-number">2</span> <span class="hljs-operator">+</span> <span class="hljs-variable">y</span><span class="hljs-operator">^</span><span class="hljs-number">2</span><span class="hljs-punctuation">)</span><span class="hljs-operator">/</span><span class="hljs-punctuation">(</span><span class="hljs-number">1</span> <span class="hljs-operator">-</span> <span class="hljs-punctuation">(</span><span class="hljs-number">1</span> <span class="hljs-operator">+</span> <span class="hljs-variable">x</span><span class="hljs-operator">^</span><span class="hljs-number">2</span> <span class="hljs-operator">+</span> <span class="hljs-variable">y</span><span class="hljs-operator">^</span><span class="hljs-number">2</span><span class="hljs-punctuation">)</span><span class="hljs-operator">^</span><span class="hljs-punctuation">(</span><span class="hljs-number">1</span><span class="hljs-operator">/</span><span class="hljs-number">2</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">)</span> <span class="hljs-operator">/.</span> <span class="hljs-punctuation">&#123;</span><span class="hljs-variable">y</span> <span class="hljs-operator">-&gt;</span> <span class="hljs-variable">a</span> <span class="hljs-variable">t</span><span class="hljs-operator">,</span> <br>   <span class="hljs-variable">x</span> <span class="hljs-operator">-&gt;</span> <span class="hljs-variable">t</span><span class="hljs-punctuation">&#125;</span><span class="hljs-operator">,</span> <span class="hljs-variable">t</span> <span class="hljs-operator">-&gt;</span> <span class="hljs-number">0</span><span class="hljs-punctuation">]</span><br><br><span class="hljs-built_in">Out</span><span class="hljs-punctuation">[</span><span class="hljs-number">15</span><span class="hljs-punctuation">]</span><span class="hljs-operator">=</span> <span class="hljs-operator">-</span><span class="hljs-number">2</span><br></code></pre></div></td></tr></table></figure>
+<h1 id="求导"><a href="#求导" class="headerlink" title="求导"></a>求导</h1><p>偏导数 $\displaystyle \frac{\partial f}{\partial x}$</p>
+<figure class="highlight mathematica"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mathematica"><span class="hljs-built_in">D</span><span class="hljs-punctuation">[</span><span class="hljs-variable">f</span><span class="hljs-operator">,</span><span class="hljs-variable">x</span><span class="hljs-punctuation">]</span><br></code></pre></div></td></tr></table></figure>
+<p>高阶偏导数 $\displaystyle \frac{\partial^nf}{\partial x_1\partial x_2\cdots \partial x_n}$</p>
+<figure class="highlight mathematica"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mathematica"><span class="hljs-built_in">D</span><span class="hljs-punctuation">[</span><span class="hljs-variable">f</span><span class="hljs-operator">,</span><span class="hljs-variable">x1</span><span class="hljs-operator">,</span><span class="hljs-variable">x2</span><span class="hljs-operator">,...,</span><span class="hljs-variable">xn</span><span class="hljs-punctuation">]</span><br></code></pre></div></td></tr></table></figure>
+<p>$n$ 阶导数</p>
+<figure class="highlight mathematica"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mathematica"><span class="hljs-built_in">D</span><span class="hljs-punctuation">[</span><span class="hljs-variable">f</span><span class="hljs-operator">,</span><span class="hljs-punctuation">&#123;</span><span class="hljs-variable">x</span><span class="hljs-operator">,</span><span class="hljs-variable">n</span><span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">]</span><br></code></pre></div></td></tr></table></figure>
+<p>复合函数的偏导数, $\displaystyle \frac{\partial f}{\partial x},y_1,\cdots,y_m$ 是 $x$ 的函数</p>
+<figure class="highlight mathematica"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mathematica"><span class="hljs-built_in">D</span><span class="hljs-punctuation">[</span><span class="hljs-variable">f</span><span class="hljs-operator">,</span><span class="hljs-variable">x</span><span class="hljs-operator">,</span><span class="hljs-built_in">NonConstants</span> <span class="hljs-operator">-&gt;</span> <span class="hljs-punctuation">&#123;</span><span class="hljs-variable">y1</span><span class="hljs-operator">,</span><span class="hljs-variable">y2</span><span class="hljs-operator">,...,</span><span class="hljs-variable">ym</span><span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">]</span><br></code></pre></div></td></tr></table></figure>
+<p>偏导向量 $\displaystyle \left(\frac{\partial f}{\partial x},\frac{\partial f}{\partial y},\frac{\partial f}{\partial z},\cdots\right)$</p>
+<figure class="highlight mathematica"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mathematica"><span class="hljs-built_in">D</span><span class="hljs-punctuation">[</span><span class="hljs-variable">f</span><span class="hljs-operator">,</span><span class="hljs-punctuation">&#123;</span><span class="hljs-punctuation">&#123;</span><span class="hljs-variable">x</span><span class="hljs-operator">,</span><span class="hljs-variable">y</span><span class="hljs-operator">,</span><span class="hljs-variable">z</span><span class="hljs-operator">,...</span><span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">]</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight mathematica"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mathematica"><span class="hljs-built_in">In</span><span class="hljs-punctuation">[</span><span class="hljs-number">16</span><span class="hljs-punctuation">]</span><span class="hljs-operator">:=</span> <span class="hljs-built_in">D</span><span class="hljs-punctuation">[</span><span class="hljs-variable">x</span><span class="hljs-operator">^</span><span class="hljs-variable">n</span><span class="hljs-operator">,</span> <span class="hljs-variable">x</span><span class="hljs-punctuation">]</span><br><br><span class="hljs-built_in">Out</span><span class="hljs-punctuation">[</span><span class="hljs-number">16</span><span class="hljs-punctuation">]</span><span class="hljs-operator">=</span> <span class="hljs-variable">n</span> <span class="hljs-variable">x</span><span class="hljs-operator">^</span><span class="hljs-punctuation">(</span><span class="hljs-operator">-</span><span class="hljs-number">1</span> <span class="hljs-operator">+</span> <span class="hljs-variable">n</span><span class="hljs-punctuation">)</span><br><br><span class="hljs-built_in">In</span><span class="hljs-punctuation">[</span><span class="hljs-number">17</span><span class="hljs-punctuation">]</span><span class="hljs-operator">:=</span> <span class="hljs-built_in">D</span><span class="hljs-punctuation">[</span><span class="hljs-variable">x</span><span class="hljs-operator">^</span><span class="hljs-variable">n</span><span class="hljs-operator">,</span> <span class="hljs-punctuation">&#123;</span><span class="hljs-variable">x</span><span class="hljs-operator">,</span> <span class="hljs-number">2</span><span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">]</span><br><br><span class="hljs-built_in">Out</span><span class="hljs-punctuation">[</span><span class="hljs-number">17</span><span class="hljs-punctuation">]</span><span class="hljs-operator">=</span> <span class="hljs-punctuation">(</span><span class="hljs-operator">-</span><span class="hljs-number">1</span> <span class="hljs-operator">+</span> <span class="hljs-variable">n</span><span class="hljs-punctuation">)</span> <span class="hljs-variable">n</span> <span class="hljs-variable">x</span><span class="hljs-operator">^</span><span class="hljs-punctuation">(</span><span class="hljs-operator">-</span><span class="hljs-number">2</span> <span class="hljs-operator">+</span> <span class="hljs-variable">n</span><span class="hljs-punctuation">)</span><br><br><span class="hljs-built_in">In</span><span class="hljs-punctuation">[</span><span class="hljs-number">18</span><span class="hljs-punctuation">]</span><span class="hljs-operator">:=</span> <span class="hljs-built_in">D</span><span class="hljs-punctuation">[</span><span class="hljs-variable">z</span> <span class="hljs-punctuation">(</span><span class="hljs-variable">x</span><span class="hljs-operator">^</span><span class="hljs-number">2</span> <span class="hljs-operator">+</span> <span class="hljs-variable">y</span><span class="hljs-operator">^</span><span class="hljs-number">2</span><span class="hljs-punctuation">)</span><span class="hljs-operator">,</span> <span class="hljs-variable">x</span><span class="hljs-operator">,</span> <span class="hljs-variable">y</span><span class="hljs-punctuation">]</span><br><br><span class="hljs-built_in">Out</span><span class="hljs-punctuation">[</span><span class="hljs-number">18</span><span class="hljs-punctuation">]</span><span class="hljs-operator">=</span> <span class="hljs-number">0</span><br><br><span class="hljs-built_in">In</span><span class="hljs-punctuation">[</span><span class="hljs-number">19</span><span class="hljs-punctuation">]</span><span class="hljs-operator">:=</span> <span class="hljs-built_in">D</span><span class="hljs-punctuation">[</span><span class="hljs-variable">z</span> <span class="hljs-punctuation">(</span><span class="hljs-variable">x</span><span class="hljs-operator">^</span><span class="hljs-number">2</span> <span class="hljs-operator">+</span> <span class="hljs-variable">y</span><span class="hljs-operator">^</span><span class="hljs-number">2</span><span class="hljs-punctuation">)</span><span class="hljs-operator">,</span> <span class="hljs-punctuation">&#123;</span><span class="hljs-variable">x</span><span class="hljs-operator">,</span> <span class="hljs-number">2</span><span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">]</span><br><br><span class="hljs-built_in">Out</span><span class="hljs-punctuation">[</span><span class="hljs-number">19</span><span class="hljs-punctuation">]</span><span class="hljs-operator">=</span> <span class="hljs-number">2</span> <span class="hljs-variable">z</span><br><br><span class="hljs-built_in">In</span><span class="hljs-punctuation">[</span><span class="hljs-number">20</span><span class="hljs-punctuation">]</span><span class="hljs-operator">:=</span> <span class="hljs-built_in">D</span><span class="hljs-punctuation">[</span><span class="hljs-variable">z</span> <span class="hljs-punctuation">(</span><span class="hljs-variable">x</span><span class="hljs-operator">^</span><span class="hljs-number">2</span> <span class="hljs-operator">+</span> <span class="hljs-variable">y</span><span class="hljs-operator">^</span><span class="hljs-number">2</span><span class="hljs-punctuation">)</span><span class="hljs-operator">,</span> <span class="hljs-punctuation">&#123;</span><span class="hljs-punctuation">&#123;</span><span class="hljs-variable">x</span><span class="hljs-operator">,</span> <span class="hljs-variable">y</span><span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">]</span><br><br><span class="hljs-built_in">Out</span><span class="hljs-punctuation">[</span><span class="hljs-number">20</span><span class="hljs-punctuation">]</span><span class="hljs-operator">=</span> <span class="hljs-punctuation">&#123;</span><span class="hljs-number">2</span> <span class="hljs-variable">x</span> <span class="hljs-variable">z</span><span class="hljs-operator">,</span> <span class="hljs-number">2</span> <span class="hljs-variable">y</span> <span class="hljs-variable">z</span><span class="hljs-punctuation">&#125;</span><br><br><span class="hljs-built_in">In</span><span class="hljs-punctuation">[</span><span class="hljs-number">21</span><span class="hljs-punctuation">]</span><span class="hljs-operator">:=</span> <span class="hljs-built_in">D</span><span class="hljs-punctuation">[</span><span class="hljs-variable">z</span> <span class="hljs-punctuation">(</span><span class="hljs-variable">x</span><span class="hljs-operator">^</span><span class="hljs-number">2</span> <span class="hljs-operator">+</span> <span class="hljs-variable">y</span><span class="hljs-operator">^</span><span class="hljs-number">2</span><span class="hljs-punctuation">)</span><span class="hljs-operator">,</span> <span class="hljs-punctuation">&#123;</span><span class="hljs-punctuation">&#123;</span><span class="hljs-variable">x</span><span class="hljs-operator">,</span> <span class="hljs-variable">y</span><span class="hljs-operator">,</span> <span class="hljs-variable">z</span><span class="hljs-punctuation">&#125;</span><span class="hljs-operator">,</span> <span class="hljs-number">2</span><span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">]</span><br><br><span class="hljs-built_in">Out</span><span class="hljs-punctuation">[</span><span class="hljs-number">21</span><span class="hljs-punctuation">]</span><span class="hljs-operator">=</span> <span class="hljs-punctuation">&#123;</span><span class="hljs-punctuation">&#123;</span><span class="hljs-number">2</span> <span class="hljs-variable">z</span><span class="hljs-operator">,</span> <span class="hljs-number">0</span><span class="hljs-operator">,</span> <span class="hljs-number">2</span> <span class="hljs-variable">x</span><span class="hljs-punctuation">&#125;</span><span class="hljs-operator">,</span> <span class="hljs-punctuation">&#123;</span><span class="hljs-number">0</span><span class="hljs-operator">,</span> <span class="hljs-number">2</span> <span class="hljs-variable">z</span><span class="hljs-operator">,</span> <span class="hljs-number">2</span> <span class="hljs-variable">y</span><span class="hljs-punctuation">&#125;</span><span class="hljs-operator">,</span> <span class="hljs-punctuation">&#123;</span><span class="hljs-number">2</span> <span class="hljs-variable">x</span><span class="hljs-operator">,</span> <span class="hljs-number">2</span> <span class="hljs-variable">y</span><span class="hljs-operator">,</span> <span class="hljs-number">0</span><span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">&#125;</span><br><br><span class="hljs-built_in">In</span><span class="hljs-punctuation">[</span><span class="hljs-number">22</span><span class="hljs-punctuation">]</span><span class="hljs-operator">:=</span> <span class="hljs-built_in">D</span><span class="hljs-punctuation">[</span><span class="hljs-variable">z</span> <span class="hljs-variable">x</span><span class="hljs-operator">^</span><span class="hljs-number">2</span><span class="hljs-operator">,</span> <span class="hljs-variable">x</span><span class="hljs-operator">,</span> <span class="hljs-built_in">NonConstants</span> <span class="hljs-operator">-&gt;</span> <span class="hljs-punctuation">&#123;</span><span class="hljs-variable">z</span><span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">]</span><br><br><span class="hljs-built_in">Out</span><span class="hljs-punctuation">[</span><span class="hljs-number">22</span><span class="hljs-punctuation">]</span><span class="hljs-operator">=</span> <span class="hljs-number">2</span> <span class="hljs-variable">x</span> <span class="hljs-variable">z</span> <span class="hljs-operator">+</span> <span class="hljs-variable">x</span><span class="hljs-operator">^</span><span class="hljs-number">2</span> <span class="hljs-built_in">D</span><span class="hljs-punctuation">[</span><span class="hljs-variable">z</span><span class="hljs-operator">,</span> <span class="hljs-variable">x</span><span class="hljs-operator">,</span> <span class="hljs-built_in">NonConstants</span> <span class="hljs-operator">-&gt;</span> <span class="hljs-punctuation">&#123;</span><span class="hljs-variable">z</span><span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">]</span><br></code></pre></div></td></tr></table></figure>
+<p>求函数 $f(x)=\sin\left(x^2+\sqrt{x}\right)$ 在 $x=2$ 的导数</p>
+<figure class="highlight mathematica"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mathematica"><span class="hljs-built_in">In</span><span class="hljs-punctuation">[</span><span class="hljs-number">24</span><span class="hljs-punctuation">]</span><span class="hljs-operator">:=</span> <span class="hljs-built_in">D</span><span class="hljs-punctuation">[</span><span class="hljs-built_in">Sin</span><span class="hljs-punctuation">[</span><span class="hljs-variable">x</span><span class="hljs-operator">^</span><span class="hljs-number">2</span> <span class="hljs-operator">+</span> <span class="hljs-built_in">Sqrt</span><span class="hljs-punctuation">[</span><span class="hljs-variable">x</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">]</span><span class="hljs-operator">,</span> <span class="hljs-variable">x</span><span class="hljs-punctuation">]</span> <span class="hljs-operator">/.</span> <span class="hljs-variable">x</span> <span class="hljs-operator">-&gt;</span> <span class="hljs-number">2</span><br><br><span class="hljs-built_in">Out</span><span class="hljs-punctuation">[</span><span class="hljs-number">24</span><span class="hljs-punctuation">]</span><span class="hljs-operator">=</span> <span class="hljs-punctuation">(</span><span class="hljs-number">4</span> <span class="hljs-operator">+</span> <span class="hljs-number">1</span><span class="hljs-operator">/</span><span class="hljs-punctuation">(</span><span class="hljs-number">2</span> <span class="hljs-built_in">Sqrt</span><span class="hljs-punctuation">[</span><span class="hljs-number">2</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">)</span> <span class="hljs-built_in">Cos</span><span class="hljs-punctuation">[</span><span class="hljs-number">4</span> <span class="hljs-operator">+</span> <span class="hljs-built_in">Sqrt</span><span class="hljs-punctuation">[</span><span class="hljs-number">2</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">]</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight mathematica"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mathematica"><span class="hljs-built_in">In</span><span class="hljs-punctuation">[</span><span class="hljs-number">25</span><span class="hljs-punctuation">]</span><span class="hljs-operator">:=</span> <span class="hljs-variable">f</span><span class="hljs-punctuation">[</span><span class="hljs-type">x_</span><span class="hljs-punctuation">]</span> <span class="hljs-operator">:=</span> <span class="hljs-built_in">Sin</span><span class="hljs-punctuation">[</span><span class="hljs-variable">x</span><span class="hljs-operator">^</span><span class="hljs-number">2</span> <span class="hljs-operator">+</span> <span class="hljs-built_in">Sqrt</span><span class="hljs-punctuation">[</span><span class="hljs-variable">x</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">]</span><span class="hljs-operator">;</span><br><span class="hljs-variable">f</span><span class="hljs-operator">&#x27;</span><span class="hljs-punctuation">[</span><span class="hljs-number">2</span><span class="hljs-punctuation">]</span><br><br><span class="hljs-built_in">Out</span><span class="hljs-punctuation">[</span><span class="hljs-number">26</span><span class="hljs-punctuation">]</span><span class="hljs-operator">=</span> <span class="hljs-punctuation">(</span><span class="hljs-number">4</span> <span class="hljs-operator">+</span> <span class="hljs-number">1</span><span class="hljs-operator">/</span><span class="hljs-punctuation">(</span><span class="hljs-number">2</span> <span class="hljs-built_in">Sqrt</span><span class="hljs-punctuation">[</span><span class="hljs-number">2</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">)</span> <span class="hljs-built_in">Cos</span><span class="hljs-punctuation">[</span><span class="hljs-number">4</span> <span class="hljs-operator">+</span> <span class="hljs-built_in">Sqrt</span><span class="hljs-punctuation">[</span><span class="hljs-number">2</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">]</span><br></code></pre></div></td></tr></table></figure>
+<p>给出 $f$ 的全微分形式</p>
+<figure class="highlight mathematica"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mathematica"><span class="hljs-built_in">Dt</span><span class="hljs-punctuation">[</span><span class="hljs-variable">f</span><span class="hljs-punctuation">]</span><br></code></pre></div></td></tr></table></figure>
+<p>给出 $f$ 的全导数,系统默认 $f$ 中所有变量是 $x$ 的函数</p>
+<figure class="highlight mathematica"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mathematica"><span class="hljs-built_in">Dt</span><span class="hljs-punctuation">[</span><span class="hljs-variable">f</span><span class="hljs-operator">,</span><span class="hljs-variable">x</span><span class="hljs-punctuation">]</span><br></code></pre></div></td></tr></table></figure>
+<p>对于 $f$ 中不依赖 $x$ 的常量要用选项 <code>Constants -&gt; &#123;常量1,常量2,...&#125;</code> 作出说明</p>
+<figure class="highlight mathematica"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mathematica"><span class="hljs-built_in">In</span><span class="hljs-punctuation">[</span><span class="hljs-number">27</span><span class="hljs-punctuation">]</span><span class="hljs-operator">:=</span> <span class="hljs-built_in">Dt</span><span class="hljs-punctuation">[</span><span class="hljs-variable">x</span><span class="hljs-operator">^</span><span class="hljs-number">2</span> <span class="hljs-operator">+</span> <span class="hljs-variable">y</span><span class="hljs-operator">^</span><span class="hljs-number">2</span><span class="hljs-operator">,</span> <span class="hljs-variable">x</span><span class="hljs-punctuation">]</span><br><br><span class="hljs-built_in">Out</span><span class="hljs-punctuation">[</span><span class="hljs-number">27</span><span class="hljs-punctuation">]</span><span class="hljs-operator">=</span> <span class="hljs-number">2</span> <span class="hljs-variable">x</span> <span class="hljs-operator">+</span> <span class="hljs-number">2</span> <span class="hljs-variable">y</span> <span class="hljs-built_in">Dt</span><span class="hljs-punctuation">[</span><span class="hljs-variable">y</span><span class="hljs-operator">,</span> <span class="hljs-variable">x</span><span class="hljs-punctuation">]</span><br><br><span class="hljs-built_in">In</span><span class="hljs-punctuation">[</span><span class="hljs-number">28</span><span class="hljs-punctuation">]</span><span class="hljs-operator">:=</span> <span class="hljs-built_in">Dt</span><span class="hljs-punctuation">[</span><span class="hljs-variable">x</span><span class="hljs-operator">^</span><span class="hljs-number">2</span> <span class="hljs-operator">+</span> <span class="hljs-variable">y</span><span class="hljs-operator">^</span><span class="hljs-number">2</span><span class="hljs-operator">,</span> <span class="hljs-variable">x</span><span class="hljs-operator">,</span> <span class="hljs-built_in">Constants</span> <span class="hljs-operator">-&gt;</span> <span class="hljs-punctuation">&#123;</span><span class="hljs-variable">y</span><span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">]</span><br><br><span class="hljs-built_in">Out</span><span class="hljs-punctuation">[</span><span class="hljs-number">28</span><span class="hljs-punctuation">]</span><span class="hljs-operator">=</span> <span class="hljs-number">2</span> <span class="hljs-variable">x</span><br><br><span class="hljs-built_in">In</span><span class="hljs-punctuation">[</span><span class="hljs-number">29</span><span class="hljs-punctuation">]</span><span class="hljs-operator">:=</span> <span class="hljs-built_in">Dt</span><span class="hljs-punctuation">[</span><span class="hljs-variable">x</span><span class="hljs-operator">^</span><span class="hljs-number">2</span> <span class="hljs-operator">+</span> <span class="hljs-variable">y</span><span class="hljs-operator">^</span><span class="hljs-number">2</span><span class="hljs-punctuation">]</span><br><br><span class="hljs-built_in">Out</span><span class="hljs-punctuation">[</span><span class="hljs-number">29</span><span class="hljs-punctuation">]</span><span class="hljs-operator">=</span> <span class="hljs-number">2</span> <span class="hljs-variable">x</span> <span class="hljs-built_in">Dt</span><span class="hljs-punctuation">[</span><span class="hljs-variable">x</span><span class="hljs-punctuation">]</span> <span class="hljs-operator">+</span> <span class="hljs-number">2</span> <span class="hljs-variable">y</span> <span class="hljs-built_in">Dt</span><span class="hljs-punctuation">[</span><span class="hljs-variable">y</span><span class="hljs-punctuation">]</span><br><br><span class="hljs-built_in">In</span><span class="hljs-punctuation">[</span><span class="hljs-number">30</span><span class="hljs-punctuation">]</span><span class="hljs-operator">:=</span> <span class="hljs-built_in">Dt</span><span class="hljs-punctuation">[</span><span class="hljs-variable">x</span><span class="hljs-operator">^</span><span class="hljs-number">2</span> <span class="hljs-operator">+</span> <span class="hljs-variable">y</span><span class="hljs-operator">^</span><span class="hljs-number">2</span> <span class="hljs-operator">+</span> <span class="hljs-variable">z</span><span class="hljs-operator">^</span><span class="hljs-number">2</span><span class="hljs-operator">,</span> <span class="hljs-punctuation">&#123;</span><span class="hljs-variable">x</span><span class="hljs-operator">,</span> <span class="hljs-number">2</span><span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">]</span><br><br><span class="hljs-built_in">Out</span><span class="hljs-punctuation">[</span><span class="hljs-number">30</span><span class="hljs-punctuation">]</span><span class="hljs-operator">=</span> <span class="hljs-number">2</span> <span class="hljs-operator">+</span> <span class="hljs-number">2</span> <span class="hljs-built_in">Dt</span><span class="hljs-punctuation">[</span><span class="hljs-variable">y</span><span class="hljs-operator">,</span> <span class="hljs-variable">x</span><span class="hljs-punctuation">]</span><span class="hljs-operator">^</span><span class="hljs-number">2</span> <span class="hljs-operator">+</span> <span class="hljs-number">2</span> <span class="hljs-variable">y</span> <span class="hljs-built_in">Dt</span><span class="hljs-punctuation">[</span><span class="hljs-variable">y</span><span class="hljs-operator">,</span> <span class="hljs-punctuation">&#123;</span><span class="hljs-variable">x</span><span class="hljs-operator">,</span> <span class="hljs-number">2</span><span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">]</span> <span class="hljs-operator">+</span> <span class="hljs-number">2</span> <span class="hljs-built_in">Dt</span><span class="hljs-punctuation">[</span><span class="hljs-variable">z</span><span class="hljs-operator">,</span> <span class="hljs-variable">x</span><span class="hljs-punctuation">]</span><span class="hljs-operator">^</span><span class="hljs-number">2</span> <span class="hljs-operator">+</span> <br> <span class="hljs-number">2</span> <span class="hljs-variable">z</span> <span class="hljs-built_in">Dt</span><span class="hljs-punctuation">[</span><span class="hljs-variable">z</span><span class="hljs-operator">,</span> <span class="hljs-punctuation">&#123;</span><span class="hljs-variable">x</span><span class="hljs-operator">,</span> <span class="hljs-number">2</span><span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">]</span><br></code></pre></div></td></tr></table></figure>
+<p>$x,y$ 的函数关系由参数方程 $x=2t^2,y=\sin t$ 确定,求 $y$ 关于 $x$ 的二阶导数.</p>
+<figure class="highlight mathematica"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mathematica"><span class="hljs-built_in">In</span><span class="hljs-punctuation">[</span><span class="hljs-number">31</span><span class="hljs-punctuation">]</span><span class="hljs-operator">:=</span> <span class="hljs-variable">x</span><span class="hljs-punctuation">[</span><span class="hljs-type">t_</span><span class="hljs-punctuation">]</span> <span class="hljs-operator">:=</span> <span class="hljs-number">2</span><span class="hljs-operator">*</span><span class="hljs-variable">t</span><span class="hljs-operator">^</span><span class="hljs-number">2</span><span class="hljs-operator">;</span><br><span class="hljs-variable">y</span><span class="hljs-punctuation">[</span><span class="hljs-type">t_</span><span class="hljs-punctuation">]</span> <span class="hljs-operator">:=</span> <span class="hljs-built_in">Sin</span><span class="hljs-punctuation">[</span><span class="hljs-variable">t</span><span class="hljs-punctuation">]</span><span class="hljs-operator">;</span><br><span class="hljs-variable">dx</span> <span class="hljs-operator">:=</span> <span class="hljs-built_in">D</span><span class="hljs-punctuation">[</span><span class="hljs-variable">x</span><span class="hljs-punctuation">[</span><span class="hljs-variable">t</span><span class="hljs-punctuation">]</span><span class="hljs-operator">,</span> <span class="hljs-variable">t</span><span class="hljs-punctuation">]</span><span class="hljs-operator">;</span><br><span class="hljs-variable">dy</span> <span class="hljs-operator">:=</span> <span class="hljs-built_in">D</span><span class="hljs-punctuation">[</span><span class="hljs-variable">y</span><span class="hljs-punctuation">[</span><span class="hljs-variable">t</span><span class="hljs-punctuation">]</span><span class="hljs-operator">,</span> <span class="hljs-variable">t</span><span class="hljs-punctuation">]</span><span class="hljs-operator">;</span><br><span class="hljs-variable">d1</span> <span class="hljs-operator">=</span> <span class="hljs-variable">dy</span><span class="hljs-operator">/</span><span class="hljs-variable">dx</span><br><br><span class="hljs-built_in">Out</span><span class="hljs-punctuation">[</span><span class="hljs-number">35</span><span class="hljs-punctuation">]</span><span class="hljs-operator">=</span> <span class="hljs-built_in">Cos</span><span class="hljs-punctuation">[</span><span class="hljs-variable">t</span><span class="hljs-punctuation">]</span><span class="hljs-operator">/</span><span class="hljs-punctuation">(</span><span class="hljs-number">4</span> <span class="hljs-variable">t</span><span class="hljs-punctuation">)</span><br><br><span class="hljs-built_in">In</span><span class="hljs-punctuation">[</span><span class="hljs-number">36</span><span class="hljs-punctuation">]</span><span class="hljs-operator">:=</span> <span class="hljs-variable">Y</span><span class="hljs-punctuation">[</span><span class="hljs-type">t_</span><span class="hljs-punctuation">]</span> <span class="hljs-operator">:=</span> <span class="hljs-variable">dy</span><span class="hljs-operator">/</span><span class="hljs-variable">dx</span><span class="hljs-operator">;</span><br><span class="hljs-variable">d2</span> <span class="hljs-operator">=</span> <span class="hljs-built_in">D</span><span class="hljs-punctuation">[</span><span class="hljs-variable">Y</span><span class="hljs-punctuation">[</span><span class="hljs-variable">t</span><span class="hljs-punctuation">]</span><span class="hljs-operator">,</span> <span class="hljs-variable">t</span><span class="hljs-punctuation">]</span><span class="hljs-operator">/</span><span class="hljs-built_in">D</span><span class="hljs-punctuation">[</span><span class="hljs-variable">x</span><span class="hljs-punctuation">[</span><span class="hljs-variable">t</span><span class="hljs-punctuation">]</span><span class="hljs-operator">,</span> <span class="hljs-variable">t</span><span class="hljs-punctuation">]</span><br><br><span class="hljs-built_in">Out</span><span class="hljs-punctuation">[</span><span class="hljs-number">37</span><span class="hljs-punctuation">]</span><span class="hljs-operator">=</span> <span class="hljs-punctuation">(</span><span class="hljs-operator">-</span><span class="hljs-punctuation">(</span><span class="hljs-built_in">Cos</span><span class="hljs-punctuation">[</span><span class="hljs-variable">t</span><span class="hljs-punctuation">]</span><span class="hljs-operator">/</span><span class="hljs-punctuation">(</span><span class="hljs-number">4</span> <span class="hljs-variable">t</span><span class="hljs-operator">^</span><span class="hljs-number">2</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">)</span> <span class="hljs-operator">-</span> <span class="hljs-built_in">Sin</span><span class="hljs-punctuation">[</span><span class="hljs-variable">t</span><span class="hljs-punctuation">]</span><span class="hljs-operator">/</span><span class="hljs-punctuation">(</span><span class="hljs-number">4</span> <span class="hljs-variable">t</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">)</span><span class="hljs-operator">/</span><span class="hljs-punctuation">(</span><span class="hljs-number">4</span> <span class="hljs-variable">t</span><span class="hljs-punctuation">)</span><br></code></pre></div></td></tr></table></figure>
+<h1 id="积分"><a href="#积分" class="headerlink" title="积分"></a>积分</h1><p>$\displaystyle\int f(x) \,dx$</p>
+<figure class="highlight mathematica"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mathematica"><span class="hljs-built_in">Integrate</span><span class="hljs-punctuation">[</span><span class="hljs-variable">f</span><span class="hljs-operator">,</span><span class="hljs-variable">x</span><span class="hljs-punctuation">]</span><br></code></pre></div></td></tr></table></figure>
+<p>计算定积分 $\displaystyle\int_a^b f(x) \,dx$ 的准确解</p>
+<figure class="highlight mathematica"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mathematica"><span class="hljs-built_in">Integrate</span><span class="hljs-punctuation">[</span><span class="hljs-variable">f</span><span class="hljs-operator">,</span><span class="hljs-punctuation">&#123;</span><span class="hljs-variable">x</span><span class="hljs-operator">,</span><span class="hljs-variable">a</span><span class="hljs-operator">,</span><span class="hljs-variable">b</span><span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">]</span><br></code></pre></div></td></tr></table></figure>
+<p>计算定积分 $\displaystyle\int_a^b f(x) \,dx$ 的数值解</p>
+<figure class="highlight mathematica"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mathematica"><span class="hljs-built_in">NIntegrate</span><span class="hljs-punctuation">[</span><span class="hljs-variable">f</span><span class="hljs-operator">,</span><span class="hljs-punctuation">&#123;</span><span class="hljs-variable">x</span><span class="hljs-operator">,</span><span class="hljs-variable">a</span><span class="hljs-operator">,</span><span class="hljs-variable">b</span><span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">]</span><br></code></pre></div></td></tr></table></figure>
+<h1 id="级数"><a href="#级数" class="headerlink" title="级数"></a>级数</h1><p>将 <code>expr</code> 在点 $x_0$ 展开到 $n$ 阶的幂级数</p>
+<figure class="highlight mathematica"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mathematica"><span class="hljs-built_in">Series</span><span class="hljs-punctuation">[</span><span class="hljs-variable">expr</span><span class="hljs-operator">,</span><span class="hljs-punctuation">&#123;</span><span class="hljs-variable">x</span><span class="hljs-operator">,</span><span class="hljs-variable">x0</span><span class="hljs-operator">,</span><span class="hljs-variable">n</span><span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">]</span><br></code></pre></div></td></tr></table></figure>
+<p>先对 $y$ 展开到 $m$ 阶再对 $x$ 展开 $n$ 阶幂级数</p>
+<figure class="highlight mathematica"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mathematica"><span class="hljs-built_in">Series</span><span class="hljs-punctuation">[</span><span class="hljs-variable">expr</span><span class="hljs-operator">,</span><span class="hljs-punctuation">&#123;</span><span class="hljs-variable">x</span><span class="hljs-operator">,</span><span class="hljs-variable">x0</span><span class="hljs-operator">,</span><span class="hljs-variable">n</span><span class="hljs-punctuation">&#125;</span><span class="hljs-operator">,</span><span class="hljs-punctuation">&#123;</span><span class="hljs-variable">y</span><span class="hljs-operator">,</span><span class="hljs-variable">y0</span><span class="hljs-operator">,</span><span class="hljs-variable">m</span><span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">]</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight mathematica"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mathematica"><span class="hljs-built_in">In</span><span class="hljs-punctuation">[</span><span class="hljs-number">38</span><span class="hljs-punctuation">]</span><span class="hljs-operator">:=</span> <span class="hljs-built_in">Series</span><span class="hljs-punctuation">[</span><span class="hljs-built_in">Sin</span><span class="hljs-punctuation">[</span><span class="hljs-variable">x</span><span class="hljs-operator">^</span><span class="hljs-number">2</span><span class="hljs-punctuation">]</span><span class="hljs-operator">,</span> <span class="hljs-punctuation">&#123;</span><span class="hljs-variable">x</span><span class="hljs-operator">,</span> <span class="hljs-number">0</span><span class="hljs-operator">,</span> <span class="hljs-number">15</span><span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">]</span><br><br><span class="hljs-built_in">In</span><span class="hljs-punctuation">[</span><span class="hljs-number">44</span><span class="hljs-punctuation">]</span><span class="hljs-operator">:=</span> <span class="hljs-built_in">Series</span><span class="hljs-punctuation">[</span><span class="hljs-variable">f</span><span class="hljs-punctuation">[</span><span class="hljs-variable">x</span><span class="hljs-punctuation">]</span><span class="hljs-operator">,</span> <span class="hljs-punctuation">&#123;</span><span class="hljs-variable">x</span><span class="hljs-operator">,</span> <span class="hljs-variable">a</span><span class="hljs-operator">,</span> <span class="hljs-number">3</span><span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">]</span><br><br><span class="hljs-built_in">In</span><span class="hljs-punctuation">[</span><span class="hljs-number">45</span><span class="hljs-punctuation">]</span><span class="hljs-operator">:=</span> <span class="hljs-built_in">Series</span><span class="hljs-punctuation">[</span><span class="hljs-built_in">Sin</span><span class="hljs-punctuation">[</span><span class="hljs-variable">x</span><span class="hljs-punctuation">]</span><span class="hljs-operator">*</span><span class="hljs-built_in">Cos</span><span class="hljs-punctuation">[</span><span class="hljs-variable">y</span><span class="hljs-punctuation">]</span><span class="hljs-operator">,</span> <span class="hljs-punctuation">&#123;</span><span class="hljs-variable">x</span><span class="hljs-operator">,</span> <span class="hljs-number">0</span><span class="hljs-operator">,</span> <span class="hljs-number">5</span><span class="hljs-punctuation">&#125;</span><span class="hljs-operator">,</span> <span class="hljs-punctuation">&#123;</span><span class="hljs-variable">y</span><span class="hljs-operator">,</span> <span class="hljs-number">0</span><span class="hljs-operator">,</span> <span class="hljs-number">5</span><span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">]</span><br><br></code></pre></div></td></tr></table></figure>
+<p>计算 $\displaystyle \sum_{a}^{b}f(i)$</p>
+<figure class="highlight mathematica"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mathematica"><span class="hljs-built_in">Sum</span><span class="hljs-punctuation">[</span><span class="hljs-variable">f</span><span class="hljs-operator">,</span><span class="hljs-punctuation">&#123;</span><span class="hljs-variable">i</span><span class="hljs-operator">,</span><span class="hljs-variable">a</span><span class="hljs-operator">,</span><span class="hljs-variable">b</span><span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">]</span><br></code></pre></div></td></tr></table></figure>
+<p>$\displaystyle f(a)+f(a+d)+f(a+2d)+\cdots$</p>
+<figure class="highlight mathematica"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mathematica"><span class="hljs-built_in">Sum</span><span class="hljs-punctuation">[</span><span class="hljs-variable">f</span><span class="hljs-operator">,</span><span class="hljs-punctuation">&#123;</span><span class="hljs-variable">i</span><span class="hljs-operator">,</span><span class="hljs-variable">a</span><span class="hljs-operator">,</span><span class="hljs-variable">b</span><span class="hljs-operator">,</span><span class="hljs-variable">d</span><span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">]</span><br></code></pre></div></td></tr></table></figure>
+<p>计算 $\displaystyle \prod_{a}^{b}f(i)$</p>
+<figure class="highlight mathematica"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mathematica"><span class="hljs-built_in">Product</span><span class="hljs-punctuation">[</span><span class="hljs-variable">f</span><span class="hljs-operator">,</span><span class="hljs-punctuation">&#123;</span><span class="hljs-variable">i</span><span class="hljs-operator">,</span><span class="hljs-variable">a</span><span class="hljs-operator">,</span><span class="hljs-variable">b</span><span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">]</span><br></code></pre></div></td></tr></table></figure>
+<p>级数 $f$ 中 $x^n$ 的系数</p>
+<figure class="highlight mathematica"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mathematica"><span class="hljs-built_in">SeriesCoefficient</span><span class="hljs-punctuation">[</span><span class="hljs-variable">f</span><span class="hljs-operator">,</span><span class="hljs-variable">n</span><span class="hljs-punctuation">]</span><br></code></pre></div></td></tr></table></figure>
+<p>函数 $f$ 在 $x_0$ 的展开式中 $(x-x_0)^n$ 的系数 </p>
+<figure class="highlight mathematica"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mathematica"><span class="hljs-built_in">SeriesCoefficient</span><span class="hljs-punctuation">[</span><span class="hljs-variable">f</span><span class="hljs-operator">,</span><span class="hljs-punctuation">&#123;</span><span class="hljs-variable">x</span><span class="hljs-operator">,</span><span class="hljs-variable">x0</span><span class="hljs-operator">,</span><span class="hljs-variable">n</span><span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">]</span><br></code></pre></div></td></tr></table></figure>
+<h1 id="微分方程"><a href="#微分方程" class="headerlink" title="微分方程"></a>微分方程</h1><p>解 $y(x)$ 的微分方程或方程组 <code>eqns</code> , $x$ 为变量</p>
+<figure class="highlight mathematica"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mathematica"><span class="hljs-built_in">DSolve</span><span class="hljs-punctuation">[</span><span class="hljs-variable">eqns</span><span class="hljs-operator">,</span><span class="hljs-variable">y</span><span class="hljs-punctuation">[</span><span class="hljs-variable">x</span><span class="hljs-punctuation">]</span><span class="hljs-operator">,</span><span class="hljs-variable">x</span><span class="hljs-punctuation">]</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight mathematica"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mathematica"><span class="hljs-built_in">In</span><span class="hljs-punctuation">[</span><span class="hljs-number">1</span><span class="hljs-punctuation">]</span><span class="hljs-operator">:=</span> <span class="hljs-built_in">DSolve</span><span class="hljs-punctuation">[</span><span class="hljs-variable">y</span><span class="hljs-operator">&#x27;</span><span class="hljs-punctuation">[</span><span class="hljs-variable">x</span><span class="hljs-punctuation">]</span> <span class="hljs-operator">==</span> <span class="hljs-variable">x</span><span class="hljs-operator">*</span><span class="hljs-variable">y</span><span class="hljs-punctuation">[</span><span class="hljs-variable">x</span><span class="hljs-punctuation">]</span><span class="hljs-operator">,</span> <span class="hljs-variable">y</span><span class="hljs-punctuation">[</span><span class="hljs-variable">x</span><span class="hljs-punctuation">]</span><span class="hljs-operator">,</span> <span class="hljs-variable">x</span><span class="hljs-punctuation">]</span><br><br><span class="hljs-built_in">Out</span><span class="hljs-punctuation">[</span><span class="hljs-number">1</span><span class="hljs-punctuation">]</span><span class="hljs-operator">=</span> <span class="hljs-punctuation">&#123;</span><span class="hljs-punctuation">&#123;</span><span class="hljs-variable">y</span><span class="hljs-punctuation">[</span><span class="hljs-variable">x</span><span class="hljs-punctuation">]</span> <span class="hljs-operator">-&gt;</span> <span class="hljs-built_in">E</span><span class="hljs-operator">^</span><span class="hljs-punctuation">(</span><span class="hljs-variable">x</span><span class="hljs-operator">^</span><span class="hljs-number">2</span><span class="hljs-operator">/</span><span class="hljs-number">2</span><span class="hljs-punctuation">)</span> <span class="hljs-built_in">C</span><span class="hljs-punctuation">[</span><span class="hljs-number">1</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">&#125;</span><br><br><span class="hljs-built_in">In</span><span class="hljs-punctuation">[</span><span class="hljs-number">2</span><span class="hljs-punctuation">]</span><span class="hljs-operator">:=</span> <span class="hljs-built_in">DSolve</span><span class="hljs-punctuation">[</span><span class="hljs-punctuation">&#123;</span><span class="hljs-variable">y</span><span class="hljs-punctuation">[</span><span class="hljs-variable">x</span><span class="hljs-punctuation">]</span> <span class="hljs-operator">==</span> <span class="hljs-operator">-</span><span class="hljs-variable">z</span><span class="hljs-operator">&#x27;</span><span class="hljs-punctuation">[</span><span class="hljs-variable">x</span><span class="hljs-punctuation">]</span><span class="hljs-operator">,</span> <span class="hljs-variable">z</span><span class="hljs-punctuation">[</span><span class="hljs-variable">x</span><span class="hljs-punctuation">]</span> <span class="hljs-operator">==</span> <span class="hljs-operator">-</span><span class="hljs-variable">y</span><span class="hljs-operator">&#x27;</span><span class="hljs-punctuation">[</span><span class="hljs-variable">x</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">&#125;</span><span class="hljs-operator">,</span> <span class="hljs-punctuation">&#123;</span><span class="hljs-variable">y</span><span class="hljs-punctuation">[</span><span class="hljs-variable">x</span><span class="hljs-punctuation">]</span><span class="hljs-operator">,</span> <span class="hljs-variable">z</span><span class="hljs-punctuation">[</span><span class="hljs-variable">x</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">&#125;</span><span class="hljs-operator">,</span> <span class="hljs-variable">x</span><span class="hljs-punctuation">]</span><br><br><span class="hljs-built_in">Out</span><span class="hljs-punctuation">[</span><span class="hljs-number">2</span><span class="hljs-punctuation">]</span><span class="hljs-operator">=</span> <span class="hljs-punctuation">&#123;</span><span class="hljs-punctuation">&#123;</span><span class="hljs-variable">y</span><span class="hljs-punctuation">[</span><span class="hljs-variable">x</span><span class="hljs-punctuation">]</span> <span class="hljs-operator">-&gt;</span> <br>   <span class="hljs-number">1</span><span class="hljs-operator">/</span><span class="hljs-number">2</span> <span class="hljs-built_in">E</span><span class="hljs-operator">^-</span><span class="hljs-variable">x</span> <span class="hljs-punctuation">(</span><span class="hljs-number">1</span> <span class="hljs-operator">+</span> <span class="hljs-built_in">E</span><span class="hljs-operator">^</span><span class="hljs-punctuation">(</span><span class="hljs-number">2</span> <span class="hljs-variable">x</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">)</span> <span class="hljs-built_in">C</span><span class="hljs-punctuation">[</span><span class="hljs-number">1</span><span class="hljs-punctuation">]</span> <span class="hljs-operator">-</span> <span class="hljs-number">1</span><span class="hljs-operator">/</span><span class="hljs-number">2</span> <span class="hljs-built_in">E</span><span class="hljs-operator">^-</span><span class="hljs-variable">x</span> <span class="hljs-punctuation">(</span><span class="hljs-operator">-</span><span class="hljs-number">1</span> <span class="hljs-operator">+</span> <span class="hljs-built_in">E</span><span class="hljs-operator">^</span><span class="hljs-punctuation">(</span><span class="hljs-number">2</span> <span class="hljs-variable">x</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">)</span> <span class="hljs-built_in">C</span><span class="hljs-punctuation">[</span><span class="hljs-number">2</span><span class="hljs-punctuation">]</span><span class="hljs-operator">,</span> <br>  <span class="hljs-variable">z</span><span class="hljs-punctuation">[</span><span class="hljs-variable">x</span><span class="hljs-punctuation">]</span> <span class="hljs-operator">-&gt;</span> <span class="hljs-operator">-</span><span class="hljs-punctuation">(</span><span class="hljs-number">1</span><span class="hljs-operator">/</span><span class="hljs-number">2</span><span class="hljs-punctuation">)</span> <span class="hljs-built_in">E</span><span class="hljs-operator">^-</span><span class="hljs-variable">x</span> <span class="hljs-punctuation">(</span><span class="hljs-operator">-</span><span class="hljs-number">1</span> <span class="hljs-operator">+</span> <span class="hljs-built_in">E</span><span class="hljs-operator">^</span><span class="hljs-punctuation">(</span><span class="hljs-number">2</span> <span class="hljs-variable">x</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">)</span> <span class="hljs-built_in">C</span><span class="hljs-punctuation">[</span><span class="hljs-number">1</span><span class="hljs-punctuation">]</span> <span class="hljs-operator">+</span> <br>    <span class="hljs-number">1</span><span class="hljs-operator">/</span><span class="hljs-number">2</span> <span class="hljs-built_in">E</span><span class="hljs-operator">^-</span><span class="hljs-variable">x</span> <span class="hljs-punctuation">(</span><span class="hljs-number">1</span> <span class="hljs-operator">+</span> <span class="hljs-built_in">E</span><span class="hljs-operator">^</span><span class="hljs-punctuation">(</span><span class="hljs-number">2</span> <span class="hljs-variable">x</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">)</span> <span class="hljs-built_in">C</span><span class="hljs-punctuation">[</span><span class="hljs-number">2</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">&#125;</span><br></code></pre></div></td></tr></table></figure>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/MMA/">MMA</a>
+                    
+                  </div>
+                
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/01/15/LaTeX%E7%94%BB%E6%B5%81%E7%A8%8B%E5%9B%BE/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">LaTeX画流程图</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/01/14/%E6%9D%A1%E4%BB%B6%E6%A6%82%E7%8E%87/">
+                        <span class="hidden-mobile">条件概率</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      var inputArea = document.querySelector("#local-search-input");
+      inputArea.onclick = function () {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+        this.onclick = null
+      }
+    })()
+  </script>
+
+
+
+
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-svg.js" ></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+
+</body>
+</html>
