@@ -333,33 +333,41 @@ f(z)=\frac1{2\pi\mathrm i}\int_\gamma\frac{f(\zeta)}{\zeta-z}\mathrm d\zeta</scr
 <script type="math/tex; mode=display">
 f^{(n)}(z)=\frac{n!}{2\pi\mathrm i}\int_\gamma\frac{f(\zeta)}{(\zeta-z)^{n+1}}\mathrm d\zeta ， z\in D</script><p>这些公式可以倒过来用以计算积分。如果一个积分具有 </p>
 <script type="math/tex; mode=display">
-\int_\gamma\frac{f(\zeta)}{(\zeta-z)^{n+1}}\mathrm d\zeta</script><p>的形式，那么可以考虑把它变成 $f$ 的 $n$ 阶导数来做。比如：</p>
+\int_\gamma\frac{f(\zeta)}{(\zeta-z)^{n+1}}\mathrm d\zeta</script><p>的形式，那么可以考虑把它变成 $f$ 的 $n$ 阶导数来做。比如</p>
 <script type="math/tex; mode=display">
 \int\limits_{|z|=2}\frac{{\rm d}z}{(z^3-1)(z+4)^2}
 $$
 
 设 $R>4$ ，以原点为圆心，考虑半径为 $2$ 的圆 $\gamma_1$ 和半径为 $R$ 的圆 $\gamma_2$ 。令 $f(z)=\cfrac1{z^3-1}$ ，则 $f(z)$ 在 $\gamma_1,\gamma_2$ 围成的圆环中全纯。令 $\gamma=\gamma_2\cup \gamma_1^-$ ，则
+
 $$
 \int_\gamma\frac{1}{(z^3-1)(z+4)^2}\mathrm dz=2\pi\mathrm if'(-4)=-\frac{32}{1323}\pi\mathrm i
 $$
+
 这样就有
+
 $$
 \int_{|z|=2}\frac{1}{(z^3-1)(z+4)^2}\mathrm dz=\frac{32}{1323}\pi\mathrm i+\int_{|z|=R}\frac{1}{(z^3-1)(z+4)^2}\mathrm dz
 $$
+
 由于当 $|z|=R$ 时，有
+
 $$
 |(z^3-1)(z+4)^2|\ge(R^3-1)(R-4)^2
 $$
+
 所以由长大不等式得
+
 $$
-\bigg|\int\limits_{|z|=R}\frac{{\rm d}z}{(z^3-1)(z+4)^2}\bigg|
-\le\frac{2\pi R}{(R^3-1)(R-4)^2}\to0\,\mbox{($R\to\infty$)}
+\bigg|\int\limits_{|z|=R}\frac{{\rm d}z}{(z^3-1)(z+4)^2}\bigg|\le\frac{2\pi R}{(R^3-1)(R-4)^2}\to0\,\mbox{($R\to\infty$)}
 $$
-令$R\to\infty$，即得
+
+令 $R\to\infty$，即得
+
 $$
 \int\limits_{|z|=2}\frac{{\rm d}z}{(z^3-1)(z+4)^2}=\frac{32\pi{\rm i}}{1323}</script><section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span><a href="">复变函数史济怀</a>
-<a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:2" class="footnote-text"><span><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/119331587">某数学的inversioner</a>
-<a href="#fnref:2" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:3" class="footnote-text"><span><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/121024254">某数学的inversioner</a>
+<a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:2" class="footnote-text"><span><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/119331587">复变函数学习笔记(4)</a>
+<a href="#fnref:2" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:3" class="footnote-text"><span><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/121024254">复变函数学习笔记(5)</a>
 <a href="#fnref:3" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>
             </div>
             <hr>
