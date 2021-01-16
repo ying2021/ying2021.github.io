@@ -17,7 +17,7 @@
   <meta name="description" content="保持很多的热爱和一点点野心">
   <meta name="author" content="欧阳珈樱">
   <meta name="keywords" content="">
-  <title>积分03 - 樱花味猫猫</title>
+  <title>不定积分01 - 樱花味猫猫</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -166,7 +166,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="积分03">
+            <span class="h2" id="subtitle" title="不定积分01">
               
             </span>
 
@@ -181,8 +181,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-01-09 10:54" pubdate>
-        2021年1月9日 上午
+      <time datetime="2021-01-16 08:44" pubdate>
+        2021年1月16日 早上
       </time>
     </span>
   
@@ -193,7 +193,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      416 字
+      245 字
     </span>
   
 
@@ -203,7 +203,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      8
+      4
        分钟
     </span>
   
@@ -241,31 +241,22 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">积分03</h1>
+            <h1 style="display: none">不定积分01</h1>
             
             <div class="markdown-body">
               <div class="note note-info">
-            <script type="math/tex; mode=display">I=\int_{0}^{1} \frac{x}{\left\{(2 x-1) \sqrt{x^{2}+x+1}+(2 x+1) \sqrt{x^{2}-x+1}\right\} \sqrt{x^{4}+x^{2}+1}} \mathrm{~d} x</script>
+            <script type="math/tex; mode=display">\int \frac{\ln x}{\sqrt{x^3(1-x)}}{\rm d}x</script>
           </div>
-<p><strong>解1:</strong></p>
+<p><strong>Sol1:</strong></p>
+<p>换元，命 $x=\sin^2\theta,\theta\in(0,\pi/2)$, 则有</p>
 <script type="math/tex; mode=display">
-a(x)=\sqrt{x^{2}+x+1}=\sqrt{\left(x+\frac{1}{2}\right)^{2}+\frac{3}{4}}</script><script type="math/tex; mode=display">
-a^{\prime}(x)=\frac{x+\frac{1}{2}}{a(x)}</script><script type="math/tex; mode=display">
-\begin{aligned}
-I&=\frac{1}{2} \int_{0}^{1} \frac{x}{\left[\left(x-\frac{1}{2}\right) a(x)+\left(x+\frac{1}{2}\right) a(-x)\right] a(x) a(-x)} \mathrm{~d} x \\
-&=\frac{1}{2} \int_{0}^{1} \frac{x}{a^{2}(x)\left(a^{2}-x\right)\left[a^{\prime}(x)-a^{\prime}(-x)\right]} \mathrm{~d} x=\frac{1}{2} \int_{0}^{1} \frac{x\left[a^{\prime}(x)+a^{\prime}(-x)\right] }{a^{2}(x) a^{2}(-x)\left\{\left[a^{\prime}(x)\right]^{2}-\left[a^{\prime}(-x)\right]^{2}\right\}}\mathrm{~d} x \\
-&=\frac{1}{2} \int_{0}^{1} \frac{x\left[a^{\prime}(x)+a^{\prime}(-x)\right] }{\left(x+\frac{1}{2}\right)^{2} a^{2}(-x)^{2}-\left(x-\frac{1}{2}\right)^{2} a^{2}(x)}\mathrm{~d} x=\frac{2}{3} \int_{0}^{1} \frac{x\left[a^{\prime}(x)+a^{\prime}(-x)\right] }{2 x}\mathrm{~d} x \\
-&=\frac{1}{3} \int_{0}^{1}\left[a^{\prime}(x)+a^{\prime}(-x)\right]=\frac{a(1)-a(-1)}{3}=\frac{\sqrt{3}-1}{3}
-\end{aligned}</script><hr>
-<p><strong>解2:</strong></p>
+\begin{align*} \int \frac{\ln x}{\sqrt{x^3(1-x)}}{\rm d}x &=4\int\frac{\ln \sin\theta}{\sin^2\theta}{\rm d}\theta\\ &=4\int \ln \sin\theta {\rm d}(-\cot\theta)\\ &=-4\cot\theta\ln \sin\theta+4\int\cot^2\theta{\rm d}\theta\\ &=-4\cot\theta\ln \sin\theta+4\int(\csc^2\theta-1){\rm d}\theta\\ &=-4\cot\theta\ln\sin \theta-4\cot\theta-4\theta+C. \end{align*}</script><p><strong>Sol2:</strong></p>
 <script type="math/tex; mode=display">
-\begin{align*}
-&\int_{0}^{1} \frac{x}{\left[(2 x-1) \sqrt{x^{2}+x+1}+(2 x+1) \sqrt{x^{2}-x+1}\right] \sqrt{x^{4}+x^{2}+1}} \mathrm{~d} x \\
-=&\int_{0}^{1} \frac{x\left[(2 x-1) \sqrt{x^{2}+x+1}-(2 x+1) \sqrt{x^{2}-x+1}\right]}{-6 x \sqrt{x^{4}+x^{2}+1}} \mathrm{~d} x \\
-=&-\frac{1}{6} \int_{0}^{1}\left(\frac{2 x-1}{\sqrt{x^{2}-x+1}}-\frac{2 x+1}{\sqrt{x^{2}+x+1}}\right) \mathrm{d} x \\
-=&-\frac{1}{6} \int_{0}^{1} \frac{1}{\sqrt{\left(x-\frac{1}{2}\right)^{2}+\frac{3}{4}}} \mathrm{~d}\left(x-\frac{1}{2}\right)^{2}+\frac{1}{6} \int_{0}^{1} \frac{1}{\sqrt{\left(x+\frac{1}{2}\right)^{2}+\frac{3}{4}}} \mathrm{~d}\left(x+\frac{1}{2}\right)^{2} \\
-=&\frac{1}{3}(\sqrt{3}-1)
-\end{align*}</script>
+p=\sqrt{x} ,q=\sqrt{1-x},p^2+q^2=1</script><script type="math/tex; mode=display">
+\begin{align} \int\frac{\ln x}{\sqrt{x^3(1-x)}}{\rm d}x&=\int\frac{2\ln p}{p^3q}{\rm d}(-q^2)\\ &=-\int\frac{4\ln p}{p^3}{\rm d}q\\ &=-\int\frac{4\ln p}{p^2}\frac{p{\rm d}q-q{\rm d}p}{p^2+q^2}\\ &=-\int\frac{4p^2\ln p}{p^2}{\rm d}\frac{q}{p}\\ &=-4\int \ln p{\rm d}\frac{q}{p}\\ &=-4\frac{q}{p}\ln p+4\int\frac{q}{p^2}{\rm d}p\\ &=-4\frac{q}{p}\ln p-4\int q{\rm d}\frac1p\\ &=-4\frac{q}{p}\ln p-4\frac{q}{p}+4\arcsin q  \end{align}</script><blockquote id="fn_1 ">
+<sup>1 </sup>. <a target="_blank" rel="noopener" href="https://www.zhihu.com/question/439441407">https://www.zhihu.com/question/439441407</a><a href="#reffn_1 " title="Jump back to footnote [1 ] in the text."> &#8617;</a>
+</blockquote>
+
             </div>
             <hr>
             <div>
@@ -295,9 +286,9 @@ I&=\frac{1}{2} \int_{0}^{1} \frac{x}{\left[\left(x-\frac{1}{2}\right) a(x)+\left
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/01/14/%E7%A1%AE%E5%AE%9A%E6%A6%82%E7%8E%87%E7%9A%84%E4%B8%80%E4%BA%9B%E6%96%B9%E6%B3%95/">
+                      <a href="/2021/01/16/%E5%85%A8%E7%BA%AF%E5%87%BD%E6%95%B0%E7%9A%84%E7%A7%AF%E5%88%86%E8%A1%A8%E7%A4%BA/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">确定概率的一些方法</span>
+                        <span class="hidden-mobile">全纯函数的积分表示</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -305,8 +296,8 @@ I&=\frac{1}{2} \int_{0}^{1} \frac{x}{\left[\left(x-\frac{1}{2}\right) a(x)+\left
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/01/09/%E7%A7%AF%E5%88%8602/">
-                        <span class="hidden-mobile">积分02</span>
+                      <a href="/2021/01/15/%E5%85%A8%E7%BA%AF%E5%87%BD%E6%95%B0/">
+                        <span class="hidden-mobile">全纯函数</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

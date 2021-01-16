@@ -193,7 +193,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.1k 字
+      3.6k 字
     </span>
   
 
@@ -203,7 +203,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      18
+      53
        分钟
     </span>
   
@@ -290,6 +290,74 @@ P=-\frac{\partial u}{\partial y},Q=\frac{\partial u}{\partial x}</script><p>则<
 v(x,y)=\int_{(x_0,y_0)}^{(x,y)}-\frac{\partial u}{\partial y}\mathrm dx+\frac{\partial u}{\partial x}\mathrm dy\\</script><p>则</p>
 <script type="math/tex; mode=display">
 \frac{\partial v}{\partial x}=-\frac{\partial u}{\partial y}，\frac{\partial v}{\partial y}=\frac{\partial u}{\partial x}</script><p>满足 <strong>Cauchy-Riemann</strong>方程.从而命题成立.</p>
+<h1 id="导数的几何意义"><a href="#导数的几何意义" class="headerlink" title="导数的几何意义"></a>导数的几何意义</h1><p>对任何 $\mathbb C$ 上经过 $z_0$ 的可微参数曲线 $\Gamma:z=\gamma(t)$ 和在 $z_0$ 附近全纯的函数 $f$ ，满足 $f’(z_0)\neq 0$ 。考虑曲线</p>
+<script type="math/tex; mode=display">
+f(\Gamma):z=\sigma(t):=(f\circ\gamma)(t)</script><p>由链式法则：</p>
+<script type="math/tex; mode=display">
+(f\circ\gamma)'(t)=f'(\gamma(t))\cdot\gamma'(t)</script><p>令 $\gamma(t)=z_0$ ，由复数乘法的几何意义有</p>
+<script type="math/tex; mode=display">
+\mathrm{Arg}\ \sigma'(t)=\mathrm{Arg}\ \gamma'(t)+\mathrm{Arg}\ f'(z_0)</script><p>也就是说，在 $z_0$ 附近，两条曲线在 $z_0$ 的切线与实轴的夹角之差总是 $\mathrm{Arg}\ f’(z_0)$ 。这个角叫做映射 $w=f(z)$ 在 $z_04 处的转动角。由此还可以得到</p>
+<p><strong>定理</strong> 全纯函数在导数不为零处不改变两条曲线在某一点的夹角。<br>这是因为，设 $z=\gamma_1(t),z=\gamma_2(t)$ 是两条曲线，同时经过点 $z_0$ ，且 $\sigma_i:=f\circ\gamma_i$ ，则 </p>
+<script type="math/tex; mode=display">
+\mathrm{Arg}\ \sigma_1'(t)-\mathrm{Arg}\ \gamma_1'(t)=\mathrm{Arg}\ f'(z_0)=\mathrm{Arg}\ \sigma_2'(t)-\mathrm{Arg}\ \gamma_2'(t)</script><p>也就是</p>
+<script type="math/tex; mode=display">
+\mathrm{Arg}\ \sigma_2'(t)-\mathrm{Arg}\ \sigma_1'(t)=\mathrm{Arg}\ \gamma_2'(t)-\mathrm{Arg}\ \gamma_1'(t)</script><p>之所以强调导数不为零，是因为零的幅角没有意义。<br>另一方面，由于 </p>
+<script type="math/tex; mode=display">
+ \left|\frac{f(z)-f(z_0)}{z-z_0}\right|\to|f'(z_0)|,z\to z_0</script><p>在 $z_0$ 附近的点 $z$ 与 $z_0$ 的距离以一定的比例被伸缩。我们把 $|f’(z_0)|$ 叫做 $f$ 在 $z_0$ 处的伸缩率。</p>
+<div class="note note-success">
+            <p>设函数 $f\in H(B(0,1)\cup{1})$ 满足 $f(1)=1,f(B(0,1))\subset B(0,1)$.证明：$f’(1)\geq 0$.</p>
+          </div>
+<p><strong>Proof:</strong></p>
+<p>若 $f’(1)=0$，命题成立。下面设 $f’(1)\neq 0$。<br>考虑一条位于 $B(0,1)$ 内部经过 $1$ 的可微曲线 $\Gamma:z=\gamma(t)$ 以及它在函数 $f$ 下的像 $f(\Gamma):z=\sigma(t):=(f\circ \gamma)(t)$。则$f(\Gamma)$ 与$\Gamma$ 在点 $1$ 处的切向量的(有向)夹角就是 $\arg f’(1)$。令 $\Gamma$ 的切线就是直线 $\mathrm{Re}\ z=1$。下面证明 $\arg f’(1)=0$。用反证法，假设 $\arg f’(1)=\theta\neq 0$。由条件我们知道 $\forall z\in B(0,1)(f(z)\in B(0,1))$。但是，这时 $f(\Gamma)$ 在点 $1$ 的曲率圆与在此处的切线$z=1+t\mathrm e^{\mathrm i\left(\theta+\pi/2\right)}$ 相切。由几何知识得到这个圆必有一部分在 $B(0,1)$ 的外部。而曲线 $f(\Gamma)$ 的点在点 $1$ 附近一定在曲率圆的外部(曲率圆与切线之间的缝隙)，所以 $f(\Gamma)$ 上一定有点在 $B(0,1)$ 外部，矛盾。从而 $\arg f’(1)=0$ ，即 $f’(1)&gt;0$。</p>
+<h1 id="初等全纯函数"><a href="#初等全纯函数" class="headerlink" title="初等全纯函数"></a>初等全纯函数</h1><p>基本的初等全纯函数其实只有两种：指数函数和对数函数。本节中介绍的一些其他函数都是这两个函数导出的。</p>
+<h2 id="指数函数"><a href="#指数函数" class="headerlink" title="指数函数"></a>指数函数</h2><p>我们首先定义复数指数幂： $\mathrm e^{x+\mathrm iy}=\mathrm e^x(\cos y+\mathrm i\sin y),x,y\in\mathbb R$ 。其中，如果 $x=0$ ，就得到大名鼎鼎的<strong>Euler</strong>公式：</p>
+<script type="math/tex; mode=display">
+\mathrm e^{\mathrm iy}=\cos y+\mathrm i\sin y\\</script><p><strong>Euler</strong>公式的来源可以看成是<strong>Taylor</strong>公式：</p>
+<script type="math/tex; mode=display">
+\begin{align} \mathrm e^{\mathrm iy}&=\sum_{k=0}^\infty\frac{(\mathrm iy)^k}{k!}\\ &=\sum_{k=0}^{\infty}\frac{(-1)^ky^{2k}}{(2k)!}+\mathrm i\sum_{k=1}^\infty\frac{(-1)^{k-1}y^{2k-1}}{(2k-1)!}\\ &=\cos y+\mathrm i\sin y \end{align}</script><p>这样，复数的表示也可以多一种形式：<strong>指数形式</strong> $z=r\mathrm e^{\mathrm i\theta}$ 。<br>$f(z)=\mathrm e^z$ 就是复变函数中的<strong>指数函数</strong>。容易证明下面的性质：<br>$(1) f(z)$ 是全纯函数，且 $f’(z)=\mathrm e^z=f(z)$ ;<br>$(2) f(z_1)f(z_2)=f(z_1+z_2)$ ;<br>$(3) f(z+2\pi\mathrm i)=f(z)$ .</p>
+<p>下面我们来研究指数函数的单叶性域。一个函数 $f:D\to\mathbb C$ 称为是在 $D$ 中单叶的，如果 $\forall z_1,z_2(z_1\neq z_2\Rightarrow f(z_1)\ne f(z_2))$ 。如果函数在区域 $D$ 是单叶的，称 $D$ 为 $f$ 的单叶性域。<br>假设 $z_k=x_k+\mathrm iy_k(k=1,2)$ ，且 $\mathrm e^{z_1}=\mathrm e^{z_2}$ 。由指数函数的定义： </p>
+<script type="math/tex; mode=display">
+\mathrm e^{x_1}(\cos y_1+\mathrm i\sin y_1)=\mathrm e^{x_2}(\cos y_2+\mathrm i\sin y_2)</script><p>也就是 $z_1-z_2=2k\pi\mathrm i$ 。把相差为 $2\pi\mathrm i$ 的复数视为同一个等价类，则单叶性域必不能包含同一个等价类的元素，亦即带状区域 $I_k={z\in\mathbb C|2k\pi\leq \mathrm{Im}\ z&lt;2(k+1)\pi}(k\in\mathbb Z)$ 都是 $f$ 的单叶性域。</p>
+<h2 id="对数函数"><a href="#对数函数" class="headerlink" title="对数函数"></a>对数函数</h2><p>设 $z\in\mathbb C$ 。如果 $\mathrm e^w=z$ ，称 $w$ 是 $z$ 的<strong>对数</strong>，记为 $w=\mathrm{Log}\ z$ 。设 $z=r\mathrm e^{\mathrm i\theta}$ ，以及 $w=x+\mathrm iy$ ，则可以得到 $x=\ln r,y=\theta+2k\pi$ 。也就是 $w=\ln|z|+\mathrm i\mathrm{Arg}\ z$ 。这是一个多值函数。</p>
+<p>关于积和商的对数,有下列法则:设 $z_1$,及 $z_2$,是不等于零的复数,我们有</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\operatorname{Ln}\left(z_{1} z_{2}\right) &=\ln \left|z_{1} z_{2}\right|+\operatorname{iArg}\left(z_{1} z_{2}\right) \\
+&=\ln \left|z_{1}\right|+\ln \left|z_{2}\right|+\mathrm{i}\left(\operatorname{Arg} z_{1}+\operatorname{Arg} z_{2}\right) \\
+&=\operatorname{Ln} z_{1}+\operatorname{Ln} z_{2} \\
+\operatorname{Ln} \frac{z_{1}}{z_{2}} &=\ln \left|\frac{z_{1}}{z_{2}}\right|+\mathrm{i} \operatorname{Arg} \frac{z_{1}}{z_{2}} \\
+&=\ln \left|z_{1}\right|-\ln \left|z_{2}\right|+\mathrm{i}\left(\operatorname{Arg} z_{1}-\operatorname{Arg} z_{2}\right) \\
+&=\operatorname{Ln} z_{1}-\operatorname{Ln} z_{2}
+\end{aligned}</script><p>对于一个多值函数，许多时候它可以拆分成若干个单值函数，每一个叫做多值函数的<strong>单值分支</strong>。如果它们全纯，称为<strong>单值全纯分支</strong>。对于对数函数有：</p>
+<p><strong>定理</strong> 设 $D$ 为 $\mathbb C_{\infty}$ 中不包含 $0,\infty$ 的单连通区域。则对数函数在 $D$ 内有无穷多个单值全纯分支 $\varphi_k(z)(k\in \mathbb Z)$ 满足 $\mathrm e^{\varphi_k(z)}=z$ ，且对任何 $k$ 都有 $\varphi_k’(z)=\cfrac 1z$ 。</p>
+<p>设 $\arg z=\theta_0\in(0,2\pi)$ 。则 $\varphi_k(z)=\ln |z|+\mathrm i(\theta_0+2k\pi)$ 就满足要求。设 $\theta=\theta_0+2k\pi$ 。则</p>
+<script type="math/tex; mode=display">
+ z=r(\cos\theta+\mathrm i\sin\theta),u=\ln r,v=\theta</script><p>由此可得</p>
+<script type="math/tex; mode=display">
+\begin{cases} \displaystyle\frac{\partial u}{\partial r}=\frac 1r\frac{\partial v}{\partial \theta}\\ \displaystyle\frac{\partial v}{\partial r}=-\frac 1r\frac{\partial u}{\partial \theta}\\ \end{cases}</script><p>所以 $\varphi_k(z)$ 是 $D$ 上的全纯函数，以及</p>
+<script type="math/tex; mode=display">
+\varphi_k'(z)=\frac rz\left(\frac{\partial u}{\partial r}+\mathrm i\frac{\partial v}{\partial r}\right)=\frac 1z</script><p>定理得证。</p>
+<p>特别地， $\varphi_0(z)=\ln |z|+\mathrm i\arg z$ 叫做对数函数的<strong>主支</strong>，记为 $\log z$ 。<br>注意，如果 $D$ 包含原点或无穷远点，那么对于一条环绕原点的简单闭曲线 $\gamma$ ，在 $\gamma$ 上走一圈以后多值函数的值从一个分支变为了另一个分支。这样就不可能分出单值全纯分支来。如果当 $z$ 绕着点 $a$ 的某个充分小的邻域内任意一条简单闭曲线一圈会导致多值函数的值从一个变为另一个，则称 $a$ 为多值函数的<strong>支点</strong>。在这里， $0,\infty$ 是多值函数 $\mathrm {Log}\ z$ 的支点。<br>主支 $\log z$ 可以看成指数函数在复平面上的反变换。</p>
+<h2 id="幂函数"><a href="#幂函数" class="headerlink" title="幂函数"></a>幂函数</h2><p>设 $\mu=a+b\mathrm i$ 是一个复数，则幂函数定义为 $f(z)=z^\mu:=\mathrm e^{\mu\mathrm{Log}\ z}$ 。这个函数随着 $\mu$ 的不同会有不同的性态。下面我们简单讨论一下。首先我们有</p>
+<script type="math/tex; mode=display">
+f(z)=\mathrm e^{(a+b\mathrm i)(\ln|z|+\mathrm i(\arg z+2k\pi))}=\mathrm e^{a\ln|z|-b(\arg z+2k\pi)}\mathrm e^{\mathrm i(b\ln|z|+a(\arg z+2k\pi))}</script><p>$(1) b=0$<br><strong>a.</strong>如果 $a\in\mathbb Z$ ，则 $f(z)$ 是单值函数。与实函数一样可以算出 $f’(z)=az^{a-1},\forall z\in\mathbb C$ 。所以这是一个整函数。这个变换的作用是把一个角域的张角变成 $a$ 倍。<br><strong>b.</strong>如果 $a=\frac{p}{q}\in\mathbb Q\backslash\mathbb Z,\gcd(p,q)=1$ ，那么</p>
+<script type="math/tex; mode=display">
+f(z)=|z|^{\frac pq}\mathrm e^{\mathrm i\frac pq(\arg z+2k\pi)}</script><p>这是一个 $q$ 值函数。特别地， $p=1$ 时这个函数就是 $q$ 次方根 $w=\sqrt[q]{z}$ 。请大家描述 $q$ 次方根作为复平面变换的作用。<br><strong>c.</strong>如果 $a\in\mathbb R\backslash\mathbb Q$ ，则这是一个无穷值函数。<br>$(2) b\neq 0$<br>这是一个无穷值函数。</p>
+<p>在多值函数的情形下,设 $\varphi_k(z) 是 \mathrm{Log}\ z$ 的一个单值全纯分支,则幂函数与之对应的有一个单值全纯分支 $w_k(z)=\mathrm e^{\mu\varphi_k(z)}$ ,且</p>
+<script type="math/tex; mode=display">
+w_k'(z)=\mu\varphi_k'(z)\mathrm e^{\mu\varphi_k(z)}=\mu\mathrm e^{(\mu-1)\varphi_k(z)}=\mu z^{\mu-1}</script><h2 id="三角函数"><a href="#三角函数" class="headerlink" title="三角函数"></a>三角函数</h2><p>我们定义：</p>
+<script type="math/tex; mode=display">
+\sin z=\frac 1{2\mathrm i}(\mathrm e^{\mathrm iz}-\mathrm e^{-\mathrm iz}),\cos z=\frac 12(\mathrm e^{\mathrm iz}+\mathrm e^{-\mathrm iz})</script><script type="math/tex; mode=display">
+\tan z=\frac{\sin z}{\cos z},\cot z=\frac{\cos z}{\sin z}</script><p>前两个定义源自<strong>Euler</strong>公式，而后两个与实函数一致。容易证明：</p>
+<p>$(1) \sin z,\cos z$ 都是整函数，且 $(\sin z)’=\cos z,(\cos z)’=-\sin z$ ；<br>$(2) \tan z$ 在 $\mathbb C\backslash\left{z|z=\cfrac \pi2+k\pi\right}$ 上全纯， $\cot z$ 在 $\mathbb C\backslash\left{z|z=k\pi\right}$ 上全纯，且 $(\tan z)’=\cfrac 1{\cos^2 z},\cot z=-\cfrac 1{\sin^2 z}$ ；<br>$(3)$这些三角函数依然服从三角函数恒等式。</p>
+<h1 id="分式线性变换"><a href="#分式线性变换" class="headerlink" title="分式线性变换"></a>分式线性变换</h1><p>所谓<strong>分式线性变换</strong>，或者说<strong>Möbius变换</strong>，是指复变函数</p>
+<script type="math/tex; mode=display">
+T(z)=\frac{az+b}{cz+d}</script><p>其中 $ad-bc\neq 0$.</p>
+<p>通过一些计算可以证明分式线性变换的复合和逆变换还是分式线性变换。具体而言，如果</p>
+<script type="math/tex; mode=display">
+T_1(z)=\frac{a_1z+b_1}{c_1z+d_1},T_2(z)=\frac{a_2z+b_2}{c_2z+d_2}</script><p>则有</p>
+<script type="math/tex; mode=display">
+(T_1\circ T_2)(z)=\frac{az+b}{cz+d}, \begin{pmatrix} a_1&b_1\\ c_1&d_1\\ \end{pmatrix} \begin{pmatrix} a_2&b_2\\ c_2&d_2\\ \end{pmatrix} = \begin{pmatrix} a&b\\ c&d\\ \end{pmatrix}</script><p>如果 $c=0$ ，这个变换是一个线性函数 $T(z)=Az+B$ ，称为整线性变换(因为这是整函数)。<br>作为分式线性变换的第一个性质，我们有<br><strong>定理(保角性)</strong> 分式线性变换是保角变换。<br>注意到 $T$ 在 $\mathbb C\backslash\left{-\cfrac dc\right}$ 全纯，有 $T’(z)=\cfrac{bc-ad}{(cz+d)^2}$ 。这处处不为零，所以由导数几何意义即证得命题。<br>接下来我们会证明更多的性质。</p>
 <section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span><a href="">复变函数史济怀</a>
 <a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:2" class="footnote-text"><span><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/114214745">某数学的inversioner</a>
 <a href="#fnref:2" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>
@@ -321,6 +389,12 @@ v(x,y)=\int_{(x_0,y_0)}^{(x,y)}-\frac{\partial u}{\partial y}\mathrm dx+\frac{\p
                 <div class="post-prevnext">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2021/01/16/%E4%B8%8D%E5%AE%9A%E7%A7%AF%E5%88%8601/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">不定积分01</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">

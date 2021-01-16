@@ -17,7 +17,7 @@
   <meta name="description" content="保持很多的热爱和一点点野心">
   <meta name="author" content="欧阳珈樱">
   <meta name="keywords" content="">
-  <title>积分01 - 樱花味猫猫</title>
+  <title>全纯函数的 Taylor 展开及其应用 - 樱花味猫猫</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -166,7 +166,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="积分01">
+            <span class="h2" id="subtitle" title="全纯函数的 Taylor 展开及其应用">
               
             </span>
 
@@ -181,8 +181,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-01-01 20:52" pubdate>
-        2021年1月1日 晚上
+      <time datetime="2021-01-16 13:43" pubdate>
+        2021年1月16日 下午
       </time>
     </span>
   
@@ -193,7 +193,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      284 字
+      646 字
     </span>
   
 
@@ -203,7 +203,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      5
+      9
        分钟
     </span>
   
@@ -241,23 +241,28 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">积分01</h1>
+            <h1 style="display: none">全纯函数的 Taylor 展开及其应用</h1>
             
             <div class="markdown-body">
-              <p><strong>问题:</strong><br><div class="note note-info">
-            <script type="math/tex; mode=display">\int_{0}^{\frac{\pi}{2}} \sin ^{2}(x) \ln (\sin (x)) {\rm d} x</script>
-          </div><br><strong>解:</strong> 考虑它的对偶式</p>
+              <h1 id="Weierstrass-定理"><a href="#Weierstrass-定理" class="headerlink" title="Weierstrass 定理"></a>Weierstrass 定理</h1><p>对于复数列 ${z_n}$，式子 $\displaystyle\sum_{n=1}^{\infty}z_n$ 叫做级数。如果数列 $\displaystyle S_n=\sum_{k=1}^nz_k$ 是收敛数列，收敛于 $S$，那么就称级数收敛，并定义其值为 $S$，记为 $\displaystyle\sum_{n=1}^{\infty}z_n=S$。</p>
+<p><strong>定理</strong>  $\displaystyle\sum_{n=1}^\infty z_n$ 收敛的必要条件是 $\displaystyle\lim_{n \rightarrow \infty}{z_n}=0$ 。</p>
+<p><strong>(Cauchy收敛准则)</strong>  $\displaystyle\sum_{n=1}^\infty z_n$ 收敛的充分必要条件是对任意 $\varepsilon&gt;0$ ，存在 $N\in\mathbb N^*$ ，使得对任意 $n&gt;m&gt;N$ 成立 $|z_m+z_{m+1}+\cdots+z_n|&lt;\varepsilon$ 。</p>
+<p>另外，复级数也可以转化为实级数处理，这就是：</p>
+<p><strong>定理</strong>  $\displaystyle\sum_{n=1}^\infty z_n$ 收敛的充分必要条件是 $\displaystyle\sum_{n=1}^\infty\mathrm{Re}\ z_n,\sum_{n=1}^\infty\mathrm{Im}\ z_n$ 都收敛。</p>
+<p>如果级数 $\displaystyle\sum_{n=1}^\infty|z_n|$ 收敛，称级数 $\displaystyle\sum_{n=1}^\infty z_n$ 绝对收敛。由<strong>Cauchy收敛准则</strong>容易证明：绝对收敛的级数一定收敛。</p>
+<div class="note note-success">
+            <p>设复数序列  ${z_n}$ 满足 $\mathrm{Re}\ z_n\geq 0$ ，且级数 $\displaystyle\sum_{n=1}^\infty z_n,\sum_{n=1}^\infty z_n^2$ 收敛。证明 $\displaystyle\sum_{n=1}^\infty z_n^2$ 绝对收敛。</p>
+          </div>
+<p>设 $z_n=r_n\mathrm e^{\mathrm i\theta_n}$ 。则 $r_n,\cos\theta_n\geq 0$ ，且 $\displaystyle\sum_{n=1}^\infty r_n\cos\theta_n,\sum_{n=1}^\infty r_n^2\cos2\theta_n$ 都收敛。由于 $\cos2\theta_n=2\cos^2\theta_n-1$ ，有</p>
 <script type="math/tex; mode=display">
-\int_{0}^{\frac{\pi}{2}} \cos ^{2}(x) \ln (\sin (x)) {\rm d} x</script><p>容易得到 :</p>
-<script type="math/tex; mode=display">
-\begin{align*}     &\int_{0}^{\frac{\pi}{2}} \sin ^{2}(x) \ln (\sin (x)) {\rm d} x\\ =&\int_{0}^{\frac{\pi}{2}}\left(1-\cos ^{2}(x)\right) \ln (\sin (x)) {\rm d} x \\     =&-\frac{\pi}{2} \ln (2)-\int_{0}^{\frac{\pi}{2}} \cos ^{2}(x) \ln (\sin (x)) {\rm d} x     \end{align*}</script><script type="math/tex; mode=display">
-\begin{align*}     &\int_{0}^{\frac{\pi}{2}} \cos ^{2}(x) \ln (\sin (x)) {\rm d} x-\int_{0}^{\frac{\pi}{2}} \sin ^{2}(x) \ln (\sin (x)) {\rm d} x\\     =&\int_{0}^{\frac{\pi}{2}} \cos (2 x) \ln (\sin (x)) {\rm d} x \\     =&\left[-\frac{1}{2} x-\frac{1}{4} \sin (2 x)+\frac{1}{2} \sin (2 x) \ln (\sin (2 x))\right]_{0}^{\frac{\pi}{2}}\\ =&-\frac{\pi}{4}     \end{align*}</script><p>于是</p>
-<script type="math/tex; mode=display">
-\int_{0}^{\frac{\pi}{2}} \sin ^{2}(x) \ln (\sin (x)) {\rm d} x+\int_{0}^{\frac{\pi}{2}} \cos ^{2}(x) \ln (\sin (x)) {\rm d} x=-\frac{\pi}{2}\ln 2</script><script type="math/tex; mode=display">
-\int_{0}^{\frac{\pi}{2}} \sin ^{2}(x) \ln (\sin (x)) {\rm d} x-\int_{0}^{\frac{\pi}{2}} \cos ^{2}(x) \ln (\sin (x)) {\rm d} x=\frac{\pi}{4}</script><p>解得 :</p>
-<script type="math/tex; mode=display">
-\int_{0}^{\frac{\pi}{2}} \sin ^{2}(x) \ln (\sin (x)) {\rm d} x=\frac{\pi}{8}-\frac{\pi}{4}\ln 2</script><script type="math/tex; mode=display">
-\int_{0}^{\frac{\pi}{2}} \cos ^{2}(x) \ln (\sin (x)) {\rm d} x=-\frac{\pi}{8}-\frac{\pi}{4}\ln 2</script>
+\sum_{k=1}^n r_k^2=2\sum_{k=1}^nr_n^2\cos^2\theta_n-\sum_{n=1}^\infty r_n^2\cos2\theta_n\leq2\left(\sum_{k=1}^nr_n\cos\theta_n\right)^2-\sum_{n=1}^\infty r_n^2\cos2\theta_n</script><p>两边取极限知道 $\displaystyle\sum_{n=1}^\infty|z_n^2|=\sum_{n=1}^\infty r_n^2$ 收敛。证毕。</p>
+<p>如果函数项级数 $\displaystyle\sum_{n=1}^\infty f_n(z)$ 满足对任意 $\varepsilon&gt;0$ 存在 $N$ 使得对任意 $n&gt;N,z\in E$ 成立 $\displaystyle\left|\sum_{k=1}^nf_k(z)-f(z)\right|&lt;\varepsilon$ ，则称函数项级数一致收敛于 $f(z)$ 。</p>
+<p><strong>(Cauchy收敛准则)</strong>  $\displaystyle\sum_{n=1}^\infty f_n(z)$ 在 $E$ 上一致收敛的充分必要条件是对任意 $\varepsilon&gt;0$ ，存在 $N$ 使得对任意 $n&gt;m&gt;N,z\in E$ 有 $|f_m(z)+\cdots+f_n(z)|&lt;\varepsilon$ 成立。</p>
+<p><strong>(Weierstrass控制判别法)</strong>  如果对定义在 $E$ 上的函数 $f_n$ ，存在数 $a_n$ 使得成立 $|f_n(z)|\leq a_n,\forall z\in E$ ，且级数 $\displaystyle\sum_{n=1}^\infty a_n$ 收敛，则函数项级数 $\displaystyle\sum_{n=1}^\infty f_n(z)$ 在 $E$ 上一致收敛。</p>
+<h1 id="幂级数"><a href="#幂级数" class="headerlink" title="幂级数"></a>幂级数</h1><p>幂级数是指 $\displaystyle\sum_{n=0}^\infty a_n(z-z_0)^n,z_0,a_0,a_1,\cdots\in\mathbb C$。一般来说我们常常做代换 $w=z-z_0$ 把它转化为更简单的形式.</p>
+<section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span><a href="">复变函数史济怀</a>
+<a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:2" class="footnote-text"><span><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/129354208">复变函数学习笔记(6)</a>
+<a href="#fnref:2" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>
             </div>
             <hr>
             <div>
@@ -274,7 +279,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E7%A7%AF%E5%88%86/">积分</a>
+                      <a class="hover-with-bg" href="/tags/%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0/">复变函数</a>
                     
                   </div>
                 
@@ -287,9 +292,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/01/02/Markdown%E8%AF%AD%E6%B3%95/">
+                      <a href="/2021/01/16/%E5%85%A8%E7%BA%AF%E5%87%BD%E6%95%B0%E7%9A%84%20Laurent%20%E5%B1%95%E5%BC%80%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Markdown语法</span>
+                        <span class="hidden-mobile">全纯函数的 Laurent 展开及其应用</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -297,8 +302,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/01/01/%E7%A7%AF%E5%88%86%E4%B8%8D%E7%AD%89%E5%BC%8F01/">
-                        <span class="hidden-mobile">积分不等式01</span>
+                      <a href="/2021/01/16/%E5%85%A8%E7%BA%AF%E5%87%BD%E6%95%B0%E7%9A%84%E7%A7%AF%E5%88%86%E8%A1%A8%E7%A4%BA/">
+                        <span class="hidden-mobile">全纯函数的积分表示</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
