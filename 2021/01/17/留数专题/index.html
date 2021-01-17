@@ -17,7 +17,7 @@
   <meta name="description" content="保持很多的热爱和一点点野心">
   <meta name="author" content="欧阳珈樱">
   <meta name="keywords" content="">
-  <title>不等式01 - 樱花味猫猫</title>
+  <title>留数专题 - 樱花味猫猫</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -166,7 +166,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="不等式01">
+            <span class="h2" id="subtitle" title="留数专题">
               
             </span>
 
@@ -181,8 +181,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-01-03 19:39" pubdate>
-        2021年1月3日 晚上
+      <time datetime="2021-01-17 16:00" pubdate>
+        2021年1月17日 下午
       </time>
     </span>
   
@@ -193,7 +193,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      27 字
+      700 字
     </span>
   
 
@@ -203,7 +203,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1
+      12
        分钟
     </span>
   
@@ -241,31 +241,62 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">不等式01</h1>
+            <h1 style="display: none">留数专题</h1>
             
             <div class="markdown-body">
-              <div class="note note-info">
-            <p>设 $n(n\geqslant2)$ 个正实数 $a_1,a_2,\cdots,a_n$ 满足 $a_1\leqslant a_2\leqslant\cdots\leqslant a_n$. 证明:</p><script type="math/tex; mode=display">\sum_{1\leqslant i<j\leqslant n}\left(a_i+a_j\right)^2\left(\frac{1}{i^2}+\frac{1}{j^2}\right)\geqslant4(n-1)\sum_{i=1}^n\frac{a^2_i}{i^2}</script>
-          </div>
-<p><strong>解:</strong><br>当 $n=2$ 时, 原不等式</p>
+              <h1 id="displaystyle-int-0-2-pi-R-cos-theta-sin-theta-rm-d-theta-型积分"><a href="#displaystyle-int-0-2-pi-R-cos-theta-sin-theta-rm-d-theta-型积分" class="headerlink" title="$\displaystyle \int_0^{2\pi}R(\cos\theta,\sin\theta){\rm d}\theta$ 型积分"></a>$\displaystyle \int_0^{2\pi}R(\cos\theta,\sin\theta){\rm d}\theta$ 型积分</h1><p>其中 $R( )$ 是有理函数，在 $(0,2\pi)$ 上连续。<br>利用欧拉公式 $e^{i\theta}=\cos\theta+i\sin\theta$ 可以把所有 $\theta$ 换为复数 $z$ ：<br>令 $z=e^{i\theta}$ ，有 $\cfrac 1z=e^{-i\theta}=\cos\theta-i\sin\theta$ ，两式相加减得到</p>
 <script type="math/tex; mode=display">
-\Leftrightarrow \frac{5}{4}(a_1+a_2)^2\geqslant 4\cdot\left(a^2_1+\frac{a^2_2}{4}\right)</script><script type="math/tex; mode=display">
-\Leftrightarrow\frac{5}{2}a_1a_2+\frac{1}{4}a^2_2\geqslant\frac{11}{4}a^2_1</script><p>由于 $a_2\geqslant a_1$, 上式成立.<br>设 $n=k-1$ 时成立, 我们已有</p>
+\cos\theta=\frac 12\left(z+\frac 1z\right)=\frac{z^2+1}{2z},\quad\sin\theta=\frac {1}{2i}\left(z-\frac1z\right)=\frac{z^2-1}{2iz}</script><p>又 </p>
 <script type="math/tex; mode=display">
-\sum_{1\leqslant i<j\leqslant k-1}\left(a_i+a_j\right)^2\left(\frac{1}{i^2}+\frac{1}{j^2}\right)\geqslant4(k-2)\sum_{i=1}^{k-1}\frac{a^2_i}{i^2}</script><p>当 $n=k$ 时, 我们只需证明</p>
-<script type="math/tex; mode=display">
-\sum_{i=1}^{k-1}\left(a_i+a_k\right)^2\left(\frac{1}{i^2}+\frac{1}{k^2}\right)\geqslant 4\cdot\left((k-1)\frac{a^2_k}{k^2}+\sum_{i=1}^{k-1}\frac{a^2_i}{i^2}\right)</script><p>但是由于 $(a_i+a_j)^2\geqslant 3a^2_i+a^2_k$, 所以上式</p>
-<script type="math/tex; mode=display">
-LHS\geqslant\sum_{i=1}^{k-1}\left(3a^2_i+a^2_k\right)\left(\frac{1}{i^2}+\frac{1}{k^2}\right)</script><p> 所以我们只需证明</p>
-<script type="math/tex; mode=display">
-\sum_{i=1}^{k-1}\left(a^2_k-a^2_i\right)\cdot\left(\frac{1}{i^2}-\frac{3}{k^2}\right)\geqslant0</script><p>由于 $a_i$ 递增, 则 $a^2_k-a^2_i$ 递减, 而 $\displaystyle \left(\frac{1}{i^2}+\frac{1}{k^2}\right)$ 递减, 由切比雪夫不等式有</p>
-<script type="math/tex; mode=display">
-\sum_{i=1}^{k-1}\left(a^2_k-a^2_i\right)\cdot\left(\frac{1}{i^2}-\frac{3}{k^2}\right)\geqslant\frac{1}{n}\left(\sum_{i=1}^{k-1}a^2_k-a^2_i\right)\cdot
-\left(\sum_{i=1}^{k-1}\frac{1}{i^2}-\frac{3}{k^2}\right)</script><p>由于现在 $k\geqslant3$, 我们有</p>
-<script type="math/tex; mode=display">
-\sum\left(\frac{1}{i^2}-\frac{1}{k^2}\right)>\sum\frac{1}{i(i+1)}-\frac{3(k-1)}{k^2}=1-\frac{1}{k}-\frac{3(k-1)}{k^2}\geqslant0</script><p>恒成立.所以上式右边非负.</p>
-<p>证毕.</p>
+{\rm d}z={\rm d}e^{i\theta}=e^{i\theta}i{\rm d}\theta=iz{\rm d}\theta,\quad {\rm d}\theta=\frac{{\rm d}z}{iz}
+$$
+可以把原式转换为
+$$
+I=\int_0^{2\pi}R(\cos\theta,\sin\theta){\rm d}\theta=\oint_CR\left(\frac{z^2+1}{2z},\frac{z^2-1}{2iz}\right)\frac{{\rm d}z}{iz}=\oint_Cf(z){\rm d}z
+$$
+路径 $C$ 为正向单位圆周 $|z|=1$ ，所以可使用留数定理，只用考虑单位圆内的奇点。即 $\displaystyle I=2\pi i\sum_k\text{Res}[f(z),z_k]$ ，其中 $z_k$ 为单位圆内所有孤立奇点。
 
+<div class="note note-success">
+            <script type="math/tex; mode=display">\int_0^{2\pi}\frac{1}{\sin\theta+\cos\theta+3}\mathrm{d}\theta</script>
+          </div>
+
+令 $z=e^{i\theta}$，则
+$$
+\int_0^{2\pi}\frac{1}{\sin\theta+\cos\theta+3}\mathrm{d}\theta=2\int_{|z|=1}\frac{\mathrm{d}z}{(i+2)z^2+6iz+i-2}
+$$
+被积函数在单位圆内有一个1阶极点 $\displaystyle a=-\frac{1+2i}{5}$，其留数为
+$$
+\mathrm{Res}(f(z),a)=\left.\frac{1}{\left[(i+2)z^2+6iz+i-2\right]'}\right|_{z=a}=\frac{1}{4i}
+$$
+于是
+$$
+\int_0^{2\pi}\frac{1}{\sin\theta+\cos\theta+3}\mathrm{d}\theta=\pi
+$$
+<div class="note note-success">
+            <script type="math/tex; mode=display">I=\int_{0}^{\pi} \frac{\mathrm{d} \theta}{a+b \cos \theta}(a>b \geqslant 0)</script>
+          </div>
+
+令 $z=e^{i\theta}$，则
+$$
+\begin{aligned}
+I &=\frac{1}{2} \int_{0}^{2 \pi} \frac{\mathrm{d} \theta}{a+b \cos \theta}=\frac{1}{2} \oint_{C} \frac{\mathrm{d} z}{\mathrm{i} z\left[a+b \cdot \frac{1}{2}\left(z+\frac{1}{z}\right)\right]} \\
+&=\frac{1}{\mathrm{i}} \oint_{C} \frac{\mathrm{d} z}{b z^{2}+2 a z+b}=\frac{1}{\mathrm{i} b} \oint_C \frac{\mathrm{d} z}{ z^{2}+\frac{2 a}{b} z+1}\\
+&=\frac{1}{i b} \oint_{C} \frac{\mathrm{d} z}{\left(z-\frac{-a+\sqrt{a^{2}-b^{2}}}{b}\right)\left(z+\frac{a+\sqrt{a^{2}-b^{2}}}{b}\right)}
+\end{aligned}</script><p>$z_{1}=\cfrac{-a+\sqrt{a^{2}-b^{2}}}{b}$ 是一级极点，它的留数是</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\operatorname{Res} f\left(z_{1}\right) &=\lim _{z \rightarrow z_{1}}\left(z-z_{1}\right) f(z)=\lim _{z \rightarrow z_{1}}\left(z-\frac{\sqrt{a^{2}-b^{2}}-a}{b}\right) \frac{1}{z^{2}+\frac{2 a}{b} z+1} \\
+&=\lim _{z \rightarrow z_{1}} \frac{1}{z+\frac{a+\sqrt{a^{2}-b^{2}}}{b}}=\frac{-a+\sqrt{a^{2}-b^{2}}}{b}+\frac{a+\sqrt{a^{2}-b^{2}}}{b} \\
+&=\frac{b}{2 \sqrt{a^{2}-b^{2}}}
+\end{aligned}</script><p>于是</p>
+<script type="math/tex; mode=display">
+I=\frac{1}{i b} \cdot 2 \pi i \cdot \frac{b}{2 \sqrt{a^{2}-b^{2}}}=\frac{\pi}{\sqrt{a^{2}-b^{2}}}</script><h1 id="displaystyle-int-infty-infty-f-x-rm-d-x-型积分"><a href="#displaystyle-int-infty-infty-f-x-rm-d-x-型积分" class="headerlink" title="$\displaystyle\int_{-\infty}^{+\infty}f(x){\rm d}x$ 型积分"></a>$\displaystyle\int_{-\infty}^{+\infty}f(x){\rm d}x$ 型积分</h1><section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span><a href="">复变函数史济怀</a>
+<a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:2" class="footnote-text"><span><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/77163755">复变函数（5）——留数计算实积分</a>
+<a href="#fnref:2" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:3" class="footnote-text"><span><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/271139446">留数定理与积分计算</a>
+<a href="#fnref:3" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:4" class="footnote-text"><span><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/134142622">复变函数学习笔记(8):留数定理(2)</a>
+<a href="#fnref:4" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:5" class="footnote-text"><span><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/119176842">留数定理解决实积分入门</a>
+<a href="#fnref:5" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:6" class="footnote-text"><span><a href="">积分的方法与技巧(金玉明)</a>
+<a href="#fnref:6" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>
             </div>
             <hr>
             <div>
@@ -282,9 +313,9 @@ LHS\geqslant\sum_{i=1}^{k-1}\left(3a^2_i+a^2_k\right)\left(\frac{1}{i^2}+\frac{1
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E4%BB%A3%E6%95%B0/">代数</a>
+                      <a class="hover-with-bg" href="/tags/%E7%A7%AF%E5%88%86/">积分</a>
                     
-                      <a class="hover-with-bg" href="/tags/%E4%B8%8D%E7%AD%89%E5%BC%8F/">不等式</a>
+                      <a class="hover-with-bg" href="/tags/%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0/">复变函数</a>
                     
                   </div>
                 
@@ -297,18 +328,12 @@ LHS\geqslant\sum_{i=1}^{k-1}\left(3a^2_i+a^2_k\right)\left(\frac{1}{i^2}+\frac{1
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/01/03/%E6%9E%81%E9%99%9001/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">极限01</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/01/02/Markdown%E8%AF%AD%E6%B3%95/">
-                        <span class="hidden-mobile">Markdown语法</span>
+                      <a href="/2021/01/16/%E5%85%A8%E7%BA%AF%E5%87%BD%E6%95%B0%E7%9A%84%20Laurent%20%E5%B1%95%E5%BC%80%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/">
+                        <span class="hidden-mobile">全纯函数的 Laurent 展开及其应用</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
