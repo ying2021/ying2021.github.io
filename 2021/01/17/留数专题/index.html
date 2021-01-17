@@ -181,7 +181,7 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-01-17 16:00" pubdate>
+      <time datetime="2021-01-17 16:30" pubdate>
         2021年1月17日 下午
       </time>
     </span>
@@ -193,7 +193,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      701 字
+      705 字
     </span>
   
 
@@ -259,15 +259,19 @@ $$
 
 路径 $C$ 为正向单位圆周 $|z|=1$ ，所以可使用留数定理，只用考虑单位圆内的奇点。即 $\displaystyle I=2\pi i\sum_k\text{Res}[f(z),z_k]$ ，其中 $z_k$ 为单位圆内所有孤立奇点。
 
-<div class="note note-info">
-            <script type="math/tex; mode=display">\int_0^{2\pi}\frac{1}{\sin\theta+\cos\theta+3}\mathrm{d}\theta</script>
-          </div>
+***
+
+
+$$
+\color{blue}\int_0^{2\pi}\frac{1}{\sin\theta+\cos\theta+3}\mathrm{d}\theta
+$$
+
 
 令 $z=e^{i\theta}$，则
 
 $$
 \int_0^{2\pi}\frac{1}{\sin\theta+\cos\theta+3}\mathrm{d}\theta=2\int_{|z|=1}\frac{\mathrm{d}z}{(i+2)z^2+6iz+i-2}
-
+$$
 
 被积函数在单位圆内有一个1阶极点 $\displaystyle a=-\frac{1+2i}{5}$，其留数为
 
@@ -281,9 +285,11 @@ $$
 \int_0^{2\pi}\frac{1}{\sin\theta+\cos\theta+3}\mathrm{d}\theta=\pi
 $$
 
-<div class="note note-info">
-            <script type="math/tex; mode=display">I=\int_{0}^{\pi} \frac{\mathrm{d} \theta}{a+b \cos \theta}(a>b \geqslant 0)</script>
-          </div>
+***
+
+$$
+\color{blue}I=\int_{0}^{\pi} \frac{\mathrm{d} \theta}{a+b \cos \theta}(a>b \geqslant 0)
+$$
 
 令 $z=e^{i\theta}$，则
 $$
