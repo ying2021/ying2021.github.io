@@ -22,8 +22,6 @@
       
       <tag>{{ tag.name }}</tag>
       
-      <tag>{{ tag.name }}</tag>
-      
     </tags>
     
   </entry>

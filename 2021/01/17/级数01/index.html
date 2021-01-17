@@ -17,7 +17,7 @@
   <meta name="description" content="保持很多的热爱和一点点野心">
   <meta name="author" content="欧阳珈樱">
   <meta name="keywords" content="">
-  <title>留数专题 - 樱花味猫猫</title>
+  <title>级数01 - 樱花味猫猫</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -166,7 +166,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="留数专题">
+            <span class="h2" id="subtitle" title="级数01">
               
             </span>
 
@@ -181,8 +181,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-01-17 16:39" pubdate>
-        2021年1月17日 下午
+      <time datetime="2021-01-17 19:23" pubdate>
+        2021年1月17日 晚上
       </time>
     </span>
   
@@ -193,7 +193,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      804 字
+      157 字
     </span>
   
 
@@ -203,7 +203,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      14
+      3
        分钟
     </span>
   
@@ -241,77 +241,24 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">留数专题</h1>
+            <h1 style="display: none">级数01</h1>
             
             <div class="markdown-body">
-              <h1 id="displaystyle-int-0-2-pi-R-cos-theta-sin-theta-rm-d-theta-型积分"><a href="#displaystyle-int-0-2-pi-R-cos-theta-sin-theta-rm-d-theta-型积分" class="headerlink" title="$\displaystyle \int_0^{2\pi}R(\cos\theta,\sin\theta){\rm d}\theta$ 型积分"></a>$\displaystyle \int_0^{2\pi}R(\cos\theta,\sin\theta){\rm d}\theta$ 型积分</h1><p>其中 $R( )$ 是有理函数，在 $(0,2\pi)$ 上连续。<br>利用欧拉公式 $e^{i\theta}=\cos\theta+i\sin\theta$ 可以把所有 $\theta$ 换为复数 $z$ ：<br>令 $z=e^{i\theta}$ ，有 $\cfrac 1z=e^{-i\theta}=\cos\theta-i\sin\theta$ ，两式相加减得到</p>
+              <div class="note note-info">
+            <script type="math/tex; mode=display">\sum_{k=1}^{\infty}\cfrac{\left(\sum_{p=1}^{2k-1}\cfrac{1}{p}\right)}{k(k+1)}</script>
+          </div>
+<p>注意到</p>
 <script type="math/tex; mode=display">
-\cos\theta=\frac 12\left(z+\frac 1z\right)=\frac{z^2+1}{2z},\quad\sin\theta=\frac {1}{2i}\left(z-\frac1z\right)=\frac{z^2-1}{2iz}\\</script><p>又 $\displaystyle {\rm d}z={\rm d}e^{i\theta}=e^{i\theta}i{\rm d}\theta=iz{\rm d}\theta,\quad {\rm d}\theta=\frac{{\rm d}z}{iz}$
-
-可以把原式转换为
-
-$$
-I=\int_0^{2\pi}R(\cos\theta,\sin\theta){\rm d}\theta=\oint_CR\left(\frac{z^2+1}{2z},\frac{z^2-1}{2iz}\right)\frac{{\rm d}z}{iz}=\oint_Cf(z){\rm d}z\\
-$$
-
-路径 $C$ 为正向单位圆周 $|z|=1$ ，所以可使用留数定理，只用考虑单位圆内的奇点。即 $\displaystyle I=2\pi i\sum_k\text{Res}[f(z),z_k]$ ，其中 $z_k$ 为单位圆内所有孤立奇点。
-
-***
-
-$\displaystyle\color{blue}\int_0^{2\pi}\frac{1}{\sin\theta+\cos\theta+3}\mathrm{d}\theta$
-
-
-令 $z=e^{i\theta}$，则
-
-$$
-\int_0^{2\pi}\frac{1}{\sin\theta+\cos\theta+3}\mathrm{d}\theta=2\int_{|z|=1}\frac{\mathrm{d}z}{(i+2)z^2+6iz+i-2}
-$$
-
-被积函数在单位圆内有一个1阶极点 $\displaystyle a=-\frac{1+2i}{5}$，其留数为
-
-$$
-\mathrm{Res}(f(z),a)=\left.\frac{1}{\left[(i+2)z^2+6iz+i-2\right]'}\right|_{z=a}=\frac{1}{4i}
-$$
-
-于是
-
-$$
-\int_0^{2\pi}\frac{1}{\sin\theta+\cos\theta+3}\mathrm{d}\theta=\pi
-$$
-
-***
-
-$\displaystyle\color{blue}I=\int_{0}^{\pi} \frac{\mathrm{d} \theta}{a+b \cos \theta}(a>b \geqslant 0)$
-
-令 $z=e^{i\theta}$，则
-$$
-\begin{aligned}
-I &=\frac{1}{2} \int_{0}^{2 \pi} \frac{\mathrm{d} \theta}{a+b \cos \theta}=\frac{1}{2} \oint_{C} \frac{\mathrm{d} z}{\mathrm{i} z\left[a+b \cdot \frac{1}{2}\left(z+\frac{1}{z}\right)\right]} \\
-&=\frac{1}{\mathrm{i}} \oint_{C} \frac{\mathrm{d} z}{b z^{2}+2 a z+b}=\frac{1}{\mathrm{i} b} \oint_C \frac{\mathrm{d} z}{ z^{2}+\frac{2 a}{b} z+1}\<br>&amp;=\frac{1}{i b} \oint_{C} \frac{\mathrm{d} z}{\left(z-\frac{-a+\sqrt{a^{2}-b^{2}}}{b}\right)\left(z+\frac{a+\sqrt{a^{2}-b^{2}}}{b}\right)}<br>\end{aligned}</p>
-<script type="math/tex; mode=display">
-$z_{1}=\cfrac{-a+\sqrt{a^{2}-b^{2}}}{b}$ 是一级极点，它的留数是</script><p>\begin{aligned}<br>\operatorname{Res} f\left(z_{1}\right) &amp;=\lim _{z \rightarrow z_{1}}\left(z-z_{1}\right) f(z)=\lim _{z \rightarrow z_{1}}\left(z-\frac{\sqrt{a^{2}-b^{2}}-a}{b}\right) \frac{1}{z^{2}+\frac{2 a}{b} z+1} \<br>&amp;=\lim _{z \rightarrow z_{1}} \frac{1}{z+\frac{a+\sqrt{a^{2}-b^{2}}}{b}}=\frac{-a+\sqrt{a^{2}-b^{2}}}{b}+\frac{a+\sqrt{a^{2}-b^{2}}}{b} \<br>&amp;=\frac{b}{2 \sqrt{a^{2}-b^{2}}}<br>\end{aligned}</p>
-<script type="math/tex; mode=display">
-于是</script><p>I=\frac{1}{i b} \cdot 2 \pi i \cdot \frac{b}{2 \sqrt{a^{2}-b^{2}}}=\frac{\pi}{\sqrt{a^{2}-b^{2}}}</p>
-<script type="math/tex; mode=display">
-
-***
-
-$\displaystyle\color{blue}\int_{0}^{2\pi}\frac{{\rm d}\theta}{a+\sin \theta}$
-
-令 $z=e^{i\theta}$，则
-
-$$
-\int_{0}^{2\pi}\frac{{\rm d}\theta}{a+\sin \theta}=\int_{C:|z|=1}\frac{1}{a+(z+z^{-1})/2}\cdot\frac{{\rm d}z}{iz}=2\int_{C:|z|=1}\frac{{\rm d}z}{z^2+2aiz-1}
-$$
-被积函数 $f(z)=\cfrac{{\rm d}z}{z^2+2aiz-1}$ 在 $z$ 平面上有两个奇点:
-$$
-z_1=i\left(-a+\sqrt{a^2-1}\right),z_2=i\left(-a-\sqrt{a^2-1}\right)
-$$
-$z_1=i\left(-a+\sqrt{a^2-1}\right)$ 是一级极点，由留数定理有
-$$
-\int_{0}^{2\pi}\frac{{\rm d}\theta}{a+\sin \theta}=4\pi i\cdot\left.\frac{1}{(z^2+2aiz-1)'}\right|_{z=z_1}=\frac{2\pi}{\sqrt{a^2-1}}</script><hr>
-<h1 id="displaystyle-int-infty-infty-f-x-rm-d-x-型积分"><a href="#displaystyle-int-infty-infty-f-x-rm-d-x-型积分" class="headerlink" title="$\displaystyle\int_{-\infty}^{+\infty}f(x){\rm d}x$ 型积分"></a>$\displaystyle\int_{-\infty}^{+\infty}f(x){\rm d}x$ 型积分</h1><p>111</p>
-
+\sum_{k=m}^{\infty}\frac{1}{k(k+1)}=\frac1m</script><script type="math/tex; mode=display">
+\begin{align*}
+&\sum_{k=1}^{\infty}\cfrac{\left(\sum_{p=1}^{2k-1}\cfrac{1}{p}\right)}{k(k+1)}\\
+=&\sum_{k=1}^{\infty}\frac{1}{k(k+1)}+\left(\frac12+\frac13\right)\sum_{k=2}^{\infty}\frac{1}{k(k+1)}++\left(\frac14+\frac15\right)\sum_{k=3}^{\infty}\frac{1}{k(k+1)}+\cdots\\
+=&1+\sum_{k=2}^{\infty}\frac{1/(2k-2)+1/(2k-1)}{k}\\
+=&1+\frac12\sum_{k=2}^{\infty}\frac{1}{k(k-1)}+\sum_{k=2}^{\infty}\frac{1}{k(2k-1)}\\
+=&1+\frac12+2\sum_{k=2}^{\infty}\left(\frac{1}{2k-1}-\frac{1}{2k}\right)\\
+=&\frac32+2\left(\frac13-\frac14+\frac15-\frac16+\cdots\right)\\
+=&\frac32+2\left(\ln2-1+\frac12\right)=\frac12+2\ln2
+\end{align*}</script>
             </div>
             <hr>
             <div>
@@ -328,9 +275,7 @@ $$
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E7%A7%AF%E5%88%86/">积分</a>
-                    
-                      <a class="hover-with-bg" href="/tags/%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0/">复变函数</a>
+                      <a class="hover-with-bg" href="/tags/%E7%BA%A7%E6%95%B0/">级数</a>
                     
                   </div>
                 
