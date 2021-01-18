@@ -266,7 +266,9 @@ a_n=\frac1{2\pi\mathrm i}\int_{|\zeta-z_0|=\rho}\frac{f(\zeta)}{(\zeta-z_0)^{n+1
 <h1 id="留数定理"><a href="#留数定理" class="headerlink" title="留数定理"></a>留数定理</h1><p>所谓<strong>留数</strong>其实就是Laurent展开式中 $-1$ 次项的系数。正式定义起来，设 $a$ 是 $f$ 的孤立奇点，$f$ 在附近的Laurent展开式设为 $\displaystyle\sum_{n=-\infty}^\infty c_n(z-a)^n$，则称 $c_{-1}$ 为 $f$ 在点 $a$ 的留数，记作 $\mathrm{Res}(f,a)=c_{-1}$。</p>
 <p><strong>留数定理</strong> 设函数 $f(z)$ 在正向闭合路径 $C$ 内除有限个孤立奇点 $z_1,z_2,\cdots,z_n$ 之外处处解析，则</p>
 <script type="math/tex; mode=display">
-\oint_Cf(z)dz=2\pi i\sum_{k=1}^n\text{Res}[f(z),z_k]</script><section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span><a href="">复变函数史济怀</a>
+\oint_Cf(z)dz=2\pi i\sum_{k=1}^n\text{Res}[f(z),z_k]</script><p><strong>扩展留数定理</strong> 设函数 $f(z)$ 在扩展复平面内除有限个孤立奇点 $z_1,z_2,\cdots,z_n, \infty$ 之外处处解析，则</p>
+<script type="math/tex; mode=display">
+\text{Res}[f(z),\infty]+\sum_{k=1}^n\text{Res}[f(z),z_k]=0</script><section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span><a href="">复变函数史济怀</a>
 <a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:2" class="footnote-text"><span><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/133309236">复变函数学习笔记(7)</a>
 <a href="#fnref:2" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:3" class="footnote-text"><span><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/76868291">复变函数（4）——孤立奇点，留数，无穷远点</a>
 <a href="#fnref:3" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>
