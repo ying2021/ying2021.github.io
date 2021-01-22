@@ -67,7 +67,7 @@
 
 
 <body>
-  <header style="height: 70vh;">
+  <header style="height: 100vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -161,7 +161,7 @@
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('https://sm.ms/image/sKaMBowpVu6frdD') no-repeat center center;
+         style="background: url('/img/002.jpg') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
@@ -193,7 +193,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      543 字
+      1.1k 字
     </span>
   
 
@@ -203,7 +203,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      8
+      17
        分钟
     </span>
   
@@ -223,6 +223,10 @@
             
           </div>
 
+          
+            <div class="scroll-down-bar">
+              <i class="iconfont icon-arrowdown"></i>
+            </div>
           
         </div>
       </div>
@@ -274,7 +278,40 @@ x_{0}+x_{1}+x_{2}+\cdots=f^{-1}\left(x_{0}\right)-f^{-1}(0)</script><p>即无穷
 x_{n+1}=\ln \left(\mathrm{e}^{x_{n}}-x_{n}\right)=f\left[f^{-1}\left(x_{n}\right)-x_{n}\right]</script><p>由上面命题知无穷级数 $x_0+x_1+x_2+\cdots$ 收敛,且其和为 </p>
 <script type="math/tex; mode=display">
 f^{-1}\left(x_{0}\right)-f^{-1}(0)=f^{-1}(1)-f^{-1}(0)=\mathrm{e}-1</script><hr>
-
+<p>下面再举几个例子进一步说明此命题的应用<br><div class="note note-info">
+            <p>设数列 ${x_n}$ 满足 $\displaystyle x_0=\frac\pi6,x_{n+1}=\arctan(\tan x_{n}-x_n)$, 证明无穷级数 $x_0+x_1+x_2+\cdots$ 收敛并求其和.</p>
+          </div><br><strong>证明:</strong></p>
+<p>令 $\displaystyle f(x)=\arctan x\left(0\leqslant x&lt;\frac\pi2\right)$</p>
+<p>则 $f(x)$ 为严格单调递增的连续函数且 $f^{-1}(x)=\tan x$, </p>
+<p>易知 $0\leqslant f(x)\leqslant x$, 取 $x_0=\cfrac\pi6$, 当 $n\geqslant 0$ 时</p>
+<script type="math/tex; mode=display">
+x_{n+1}=\arctan \left(\tan x_{n}-x_{n}\right)=f\left[f^{-1}\left(x_{n}\right)-x_{n}\right]</script><p>由上面命题知无穷级数 $x_0+x_1+x_2+\cdots$ 收敛,且其和为</p>
+<script type="math/tex; mode=display">
+f^{-1}\left(x_{0}\right)-f^{-1}(0)=\tan \frac{\pi}{6}-\tan 0=\frac{\sqrt{3}}{3}</script><div class="note note-info">
+            <p>设数列 ${x_n}$ 满足 $\displaystyle x_0=\frac12,x_{n+1}=\frac{x_n^2}{1-x_n+x_n^2}$, 证明无穷级数 $x_0+x_1+x_2+\cdots$ 收敛并求其和.</p>
+          </div>
+<p><strong>证明:</strong></p>
+<p>令 $\displaystyle f(x)=\frac{x}{1+x}(x\geqslant0)$</p>
+<p>则 $f(x)$ 为严格单调递增的连续函数且 $f^{-1}(x)=\cfrac{x}{1-x}$, </p>
+<p>易知 $0\leqslant f(x)\leqslant x$, 取 $x_0=\cfrac12$, 当 $n\geqslant 0$ 时</p>
+<script type="math/tex; mode=display">
+x_{n+1}=\frac{x_{n}^{2}}{1-x_{n}+x_{n}^{2}}=\frac{\frac{x_{n}}{1-x_{n}}-x_{n}}{1+\frac{x_{n}}{1-x_{n}}-x_{n}}=f\left[f^{-1}\left(x_{n}\right)-x_{n}\right]</script><p>由上面命题知无穷级数 $x_0+x_1+x_2+\cdots$ 收敛,且其和为</p>
+<script type="math/tex; mode=display">
+f^{-1}\left(x_{0}\right)-f^{-1}(0)=\frac{\frac{1}{2}}{1-\frac{1}{2}}-0=1</script><div class="note note-info">
+            <p>设数列 ${x_n}$ 满足 $\displaystyle x_0=\frac34,x_{n+1}=1-e^{x_n}+x_ne^{x_n}$, 证明无穷级数 $x_0+x_1+x_2+\cdots$ 收敛并求其和.</p>
+          </div>
+<p><strong>证明:</strong></p>
+<p>令 $\displaystyle f(x)=1-e^{-x}(x\geqslant0)$</p>
+<p>则 $f(x)$ 为严格单调递增的连续函数且 $f^{-1}(x)=-\ln(1-x)$, </p>
+<p>易知 $0\leqslant f(x)\leqslant x$, 取 $x_0=\cfrac34$, 当 $n\geqslant 0$ 时</p>
+<script type="math/tex; mode=display">
+x_{n+1}=1-\mathrm{e}^{x_{n}}+x_{n} \mathrm{e}^{x_{n}}=1-\mathrm{e}^{\ln \left(1-x_{n}\right)+x_{n}}=f\left[f^{-1}\left(x_{n}\right)-x_{n}\right]</script><p>由上面命题知无穷级数 $x_0+x_1+x_2+\cdots$ 收敛,且其和为</p>
+<script type="math/tex; mode=display">
+f^{-1}\left(x_{0}\right)-f^{-1}(0)=-\ln \frac{1}{4}+\ln 1=2 \ln 2</script><hr>
+<p>除了以上例子外,还可以构造很多类似级数并求和,例如可取</p>
+<script type="math/tex; mode=display">
+f(x)=\sin x\left(0 \leqslant x \leqslant \frac{\pi}{2}\right), \quad f(x)=\operatorname{arcsh} x, \quad f(x)=\operatorname{th} x \quad(x \geqslant 0)</script><section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span><a href="">77th Annual William Lowell Putnam Mathematical Competition。 Mathematics Magzine[J].2017,90(2):153一164.</a>
+<a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>
             </div>
             <hr>
             <div>
