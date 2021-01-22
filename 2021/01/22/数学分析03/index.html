@@ -17,7 +17,7 @@
   <meta name="description" content="保持很多的热爱和一点点野心">
   <meta name="author" content="欧阳珈樱">
   <meta name="keywords" content="">
-  <title>定积分04 - 樱花味猫猫</title>
+  <title>数学分析03 - 樱花味猫猫</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -166,7 +166,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="定积分04">
+            <span class="h2" id="subtitle" title="数学分析03">
               
             </span>
 
@@ -181,8 +181,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-01-19 19:47" pubdate>
-        2021年1月19日 晚上
+      <time datetime="2021-01-22 08:34" pubdate>
+        2021年1月22日 早上
       </time>
     </span>
   
@@ -193,7 +193,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      148 字
+      543 字
     </span>
   
 
@@ -203,7 +203,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      2
+      8
        分钟
     </span>
   
@@ -241,24 +241,40 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">定积分04</h1>
+            <h1 style="display: none">数学分析03</h1>
             
             <div class="markdown-body">
               <div class="note note-info">
-            <script type="math/tex; mode=display">\int_0^1\frac{\ln(1+x)}{x(1+x^2)}{\rm d}x</script>
+            <p>数列 ${x_n}$ 定义如下: $x_0=1$ 且对于 $n\geqslant 0$</p><script type="math/tex; mode=display">x_{n+1}=\ln\left(e^{x_n}-x_n\right)</script><p>证明无穷级数 $x_0+x_1+x_2+\cdots$ 收敛并求其和.</p>
           </div>
-<p><strong>解:</strong></p>
-<p>注意到</p>
+<p>考虑更一般的命题<br><div class="note note-info">
+            <p>设 $x\geqslant0$ 时 , $f(x)$ 为严格单调递增的连续函数且满足 $0\leqslant f(x)\leqslant x$ . 数列 ${x_n}$ 定义如下: $x_0\geqslant 0$ 且 $n\geqslant 0$ 时 </p><script type="math/tex; mode=display">x_{n+1}=f[f^{-1}(x_n)-x_n]\tag{1}</script><p>其中 $f^{-1}$ 表示 $f$ 的反函数.则无穷级数 $x_0+x_1+x_2+\cdots$ 收敛,且其和为  $f^{-1}(x_0)-f^{-1}(0)$ .</p>
+          </div></p>
+<hr>
+<p><strong>证明:</strong></p>
+<p>由 $0\leqslant f(x)\leqslant x$ 知 $f^{-1}(x)\geqslant x$, 从而</p>
 <script type="math/tex; mode=display">
-I=\int_0^1\frac{\ln(1+x)}{x(1+x^2)}{\rm d}x=\iint_{[0,1]^2}\frac{{\rm d}x{\rm d}y}{(1+xy)(1+x^2)}</script><p>不难看出</p>
+x_{n+1}=f\left[f^{-1}\left(x_{n}\right)-x_{n}\right] \geqslant f(0) \geqslant 0</script><p>由此可知对所有的 $x_n$ 均有 $x_n\geqslant 0$, 由 $f(x)$ 的单调性知</p>
 <script type="math/tex; mode=display">
-\begin{align*}
-\frac{1}{(1+xy)(1+x^2)}&=\frac{1}{1+y^2}\left(\frac{y^2+1-1}{1+xy}+\frac{1-xy}{1+x^2}\right)\\
-&=\frac{1}{1+xy}-\frac{1}{(1+xy)(1+y^2)}+\frac{1}{(1+x^2)(1+y^2)}-\frac{x}{1+x^2}\cdot\frac{y}{1+y^2}
-\end{align*}</script><p>两边同时积分即得</p>
+x_{n+1}=f\left[f^{-1}\left(x_{n}\right)-x_{n}\right] \leqslant f\left[f^{-1}\left(x_{n}\right)\right]=x_{n}</script><p>故数列 ${x_n}$ 单调递减.</p>
+<p>因为单调递减且有下界数列必有极限,所以 $\lim\limits_{n\to\infty}x_n$ 存在,由 $(1)$ 得</p>
 <script type="math/tex; mode=display">
-I=\frac{\pi^2}{12}-I+\left(\frac{\pi}{4}\right)^2-\left(\frac{\ln2}{2}\right)^2</script><script type="math/tex; mode=display">
-I=\frac{7\pi^2}{96}-\frac{\ln^22}{8}</script>
+f^{-1}\left(x_{n+1}\right)=f^{-1}\left(x_{n}\right)-x_{n}\tag{2}</script><p>上式中令 $n\to\infty$, 再由 $f^{-1}(x)$ 的连续性知 $\lim\limits_{n\to\infty}x_n=0$.</p>
+<p>由 $(2)$ 知 $x_n=f^{-1}(x_n)-f^{-1}(x_{n+1})$, 故对任意自然数 $N(N\geqslant 1)$ 有</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+x_{0}+x_{1}+x_{2}+\cdots+x_{N} &=f^{-1}\left(x_{0}\right)-f^{-1}\left(x_{1}\right)+f^{-1}\left(x_{1}\right)-f^{-1}\left(x_{2}\right)+\cdots+f^{-1}\left(x_{N-1}\right)-f^{-1}\left(x_{N}\right) \\
+&=f^{-1}\left(x_{0}\right)-f^{-1}\left(x_{N}\right)
+\end{aligned}</script><p>上式中令 $n\to\infty$ 并由 $f^{-1}(x)$ 的连续性得</p>
+<script type="math/tex; mode=display">
+x_{0}+x_{1}+x_{2}+\cdots=f^{-1}\left(x_{0}\right)-f^{-1}(0)</script><p>即无穷级数 $x_0+x_1+x_2+\cdots$ 收敛,且其和为  $f^{-1}(x_0)-f^{-1}(0)$ .</p>
+<p>特别地令 $f(x)=\ln(1+x)(x\geqslant0)$, 则 $f(x)$ 为严格单调递增的连续函数且 $f^{-1}(x)=e^x-1$. 易知 $0\leqslant f(x)\leqslant1$. </p>
+<p>取 $x_0=1$, 当 $n\geqslant0$ 时</p>
+<script type="math/tex; mode=display">
+x_{n+1}=\ln \left(\mathrm{e}^{x_{n}}-x_{n}\right)=f\left[f^{-1}\left(x_{n}\right)-x_{n}\right]</script><p>由上面命题知无穷级数 $x_0+x_1+x_2+\cdots$ 收敛,且其和为 </p>
+<script type="math/tex; mode=display">
+f^{-1}\left(x_{0}\right)-f^{-1}(0)=f^{-1}(1)-f^{-1}(0)=\mathrm{e}-1</script><hr>
+
             </div>
             <hr>
             <div>
@@ -275,7 +291,9 @@ I=\frac{7\pi^2}{96}-\frac{\ln^22}{8}</script>
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E7%A7%AF%E5%88%86/">积分</a>
+                      <a class="hover-with-bg" href="/tags/%E5%88%86%E6%9E%90/">分析</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E7%BA%A7%E6%95%B0/">级数</a>
                     
                   </div>
                 
@@ -288,18 +306,12 @@ I=\frac{7\pi^2}{96}-\frac{\ln^22}{8}</script>
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/01/22/%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%9003/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">数学分析03</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/01/17/%E7%BA%A7%E6%95%B001/">
-                        <span class="hidden-mobile">级数01</span>
+                      <a href="/2021/01/19/%E5%AE%9A%E7%A7%AF%E5%88%8604/">
+                        <span class="hidden-mobile">定积分04</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
