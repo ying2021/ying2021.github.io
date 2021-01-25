@@ -1,0 +1,515 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="保持很多的热爱和一点点野心">
+  <meta name="author" content="欧阳珈樱">
+  <meta name="keywords" content="">
+  <title>Python入门 - 樱花味猫猫</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/gradient-light.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.3.0"></head>
+
+
+<body>
+  <header style="height: 100vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>樱花味猫猫</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/002.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Python入门">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      欧阳珈樱
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-01-25 08:49" pubdate>
+        2021年1月25日 早上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      489 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      7
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+            <div class="scroll-down-bar">
+              <i class="iconfont icon-arrowdown"></i>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Python入门</h1>
+            
+            <div class="markdown-body">
+              <h1 id="条件判断语句"><a href="#条件判断语句" class="headerlink" title="条件判断语句"></a>条件判断语句</h1><p><strong>猜拳游戏</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">import</span> random<br>x = random.randint(<span class="hljs-number">0</span>,<span class="hljs-number">2</span>)<br>print(<span class="hljs-string">&quot;剪刀（0）、石头（1）、布（2）&quot;</span>)<br>password = <span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;请输入：&quot;</span>))<br>print(<span class="hljs-string">&quot;电脑输入的是：%d&quot;</span>%x)<br><span class="hljs-keyword">if</span> password == <span class="hljs-number">0</span>:<br>    <span class="hljs-keyword">if</span> x == <span class="hljs-number">0</span>:<br>        print(<span class="hljs-string">&quot;平局&quot;</span>)<br>    <span class="hljs-keyword">elif</span> x == <span class="hljs-number">1</span>:<br>        print(<span class="hljs-string">&quot;你输了&quot;</span>)<br>    <span class="hljs-keyword">elif</span> x == <span class="hljs-number">2</span>:<br>        print(<span class="hljs-string">&quot;你赢了&quot;</span>)<br><span class="hljs-keyword">elif</span> password == <span class="hljs-number">1</span>:<br>    <span class="hljs-keyword">if</span> x == <span class="hljs-number">0</span>:<br>        print(<span class="hljs-string">&quot;你赢了&quot;</span>)<br>    <span class="hljs-keyword">elif</span> x == <span class="hljs-number">1</span>:<br>        print(<span class="hljs-string">&quot;平局&quot;</span>)<br>    <span class="hljs-keyword">elif</span> x == <span class="hljs-number">2</span>:<br>        print(<span class="hljs-string">&quot;你输了&quot;</span>)  <br><span class="hljs-keyword">elif</span> password == <span class="hljs-number">2</span>:<br>    <span class="hljs-keyword">if</span> x == <span class="hljs-number">0</span>:<br>        print(<span class="hljs-string">&quot;你输了&quot;</span>)<br>    <span class="hljs-keyword">elif</span> x == <span class="hljs-number">1</span>:<br>        print(<span class="hljs-string">&quot;你赢了&quot;</span>)<br>    <span class="hljs-keyword">elif</span> x == <span class="hljs-number">2</span>:<br>        print(<span class="hljs-string">&quot;平局&quot;</span>)  <br><span class="hljs-keyword">else</span>:<br>    print(<span class="hljs-string">&quot;输入错误&quot;</span>)<br></code></pre></div></td></tr></table></figure>
+<hr>
+<p><strong>英制单位英寸与公制单位厘米互换</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python">value = <span class="hljs-built_in">float</span>(<span class="hljs-built_in">input</span>(<span class="hljs-string">&#x27;请输入长度: &#x27;</span>))<br>unit = <span class="hljs-built_in">input</span>(<span class="hljs-string">&#x27;请输入单位: &#x27;</span>)<br><span class="hljs-keyword">if</span> unit == <span class="hljs-string">&#x27;in&#x27;</span> <span class="hljs-keyword">or</span> unit == <span class="hljs-string">&#x27;英寸&#x27;</span>:<br>    print(<span class="hljs-string">&#x27;%f英寸 = %f厘米&#x27;</span> % (value, value * <span class="hljs-number">2.54</span>))<br><span class="hljs-keyword">elif</span> unit == <span class="hljs-string">&#x27;cm&#x27;</span> <span class="hljs-keyword">or</span> unit == <span class="hljs-string">&#x27;厘米&#x27;</span>:<br>    print(<span class="hljs-string">&#x27;%f厘米 = %f英寸&#x27;</span> % (value, value / <span class="hljs-number">2.54</span>))<br><span class="hljs-keyword">else</span>:<br>    print(<span class="hljs-string">&#x27;请输入有效的单位&#x27;</span>)<br></code></pre></div></td></tr></table></figure>
+<hr>
+<p><strong>百分制成绩转换为等级制成绩</strong></p>
+<p><strong>要求</strong>：如果输入的成绩在90分以上（含90分）输出A；80分-90分（不含90分）输出B；70分-80分（不含80分）输出C；60分-70分（不含70分）输出D；60分以下输出E。</p>
+<figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python">score = <span class="hljs-built_in">float</span>(<span class="hljs-built_in">input</span>(<span class="hljs-string">&#x27;请输入成绩: &#x27;</span>))<br><span class="hljs-keyword">if</span> score &gt;= <span class="hljs-number">90</span>:<br>    grade = <span class="hljs-string">&#x27;A&#x27;</span><br><span class="hljs-keyword">elif</span> score &gt;= <span class="hljs-number">80</span>:<br>    grade = <span class="hljs-string">&#x27;B&#x27;</span><br><span class="hljs-keyword">elif</span> score &gt;= <span class="hljs-number">70</span>:<br>    grade = <span class="hljs-string">&#x27;C&#x27;</span><br><span class="hljs-keyword">elif</span> score &gt;= <span class="hljs-number">60</span>:<br>    grade = <span class="hljs-string">&#x27;D&#x27;</span><br><span class="hljs-keyword">else</span>:<br>    grade = <span class="hljs-string">&#x27;E&#x27;</span><br>print(<span class="hljs-string">&#x27;对应的等级是:&#x27;</span>, grade)<br></code></pre></div></td></tr></table></figure>
+<hr>
+<p><strong>输入三条边长，如果能构成三角形就计算周长和面积</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python">a = <span class="hljs-built_in">float</span>(<span class="hljs-built_in">input</span>(<span class="hljs-string">&#x27;a = &#x27;</span>))<br>b = <span class="hljs-built_in">float</span>(<span class="hljs-built_in">input</span>(<span class="hljs-string">&#x27;b = &#x27;</span>))<br>c = <span class="hljs-built_in">float</span>(<span class="hljs-built_in">input</span>(<span class="hljs-string">&#x27;c = &#x27;</span>))<br><span class="hljs-keyword">if</span> a + b &gt; c <span class="hljs-keyword">and</span> a + c &gt; b <span class="hljs-keyword">and</span> b + c &gt; a:<br>    peri = a + b + c<br>    print(<span class="hljs-string">f&#x27;周长: <span class="hljs-subst">&#123;peri&#125;</span>&#x27;</span>)<br>    half = peri / <span class="hljs-number">2</span><br>    area = (half * (half - a) * (half - b) * (half - c)) ** <span class="hljs-number">0.5</span><br>    print(<span class="hljs-string">f&#x27;面积: <span class="hljs-subst">&#123;area&#125;</span>&#x27;</span>)<br><span class="hljs-keyword">else</span>:<br>    print(<span class="hljs-string">&#x27;不能构成三角形&#x27;</span>)<br></code></pre></div></td></tr></table></figure>
+<hr>
+<p><strong>分段函数求值</strong></p>
+<script type="math/tex; mode=display">
+f(x)=\begin{cases} 3x-5&{(x>1)}\\x+2&{(-1}\leqslant{x}\leqslant{1)}\\5x+3& (x<-1)\end{cases}</script><figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python">x = <span class="hljs-built_in">float</span>(<span class="hljs-built_in">input</span>(<span class="hljs-string">&#x27;x = &#x27;</span>))<br><span class="hljs-keyword">if</span> x &gt; <span class="hljs-number">1</span>:<br>    y = <span class="hljs-number">3</span> * x - <span class="hljs-number">5</span><br><span class="hljs-keyword">elif</span> x &gt;= -<span class="hljs-number">1</span>:<br>    y = x + <span class="hljs-number">2</span><br><span class="hljs-keyword">else</span>:<br>    y = <span class="hljs-number">5</span> * x + <span class="hljs-number">3</span><br>print(<span class="hljs-string">&#x27;f(%f) = %f&#x27;</span>%(x, y))<br></code></pre></div></td></tr></table></figure>
+<hr>
+<h1 id="循环控制语句"><a href="#循环控制语句" class="headerlink" title="循环控制语句"></a>循环控制语句</h1><p><strong>打印乘法口诀表</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">1</span>, <span class="hljs-number">10</span>):<br>    <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">1</span>, i + <span class="hljs-number">1</span>):<br>        print(<span class="hljs-string">f&#x27;<span class="hljs-subst">&#123;i&#125;</span>*<span class="hljs-subst">&#123;j&#125;</span>=<span class="hljs-subst">&#123;i * j&#125;</span>&#x27;</span>, end=<span class="hljs-string">&#x27;\t&#x27;</span>)<br>    print()<span class="hljs-comment">#控制换行</span><br></code></pre></div></td></tr></table></figure>
+<hr>
+<p><strong>猜数字游戏</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">import</span> random<br><span class="hljs-comment"># 产生一个1-100范围的随机数</span><br>answer = random.randint(<span class="hljs-number">1</span>, <span class="hljs-number">100</span>)<br>counter = <span class="hljs-number">0</span><br><span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:<br>    counter += <span class="hljs-number">1</span><br>    number = <span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>(<span class="hljs-string">&#x27;请输入: &#x27;</span>))<br>    <span class="hljs-keyword">if</span> number &lt; answer:<br>        print(<span class="hljs-string">&#x27;大一点&#x27;</span>)<br>    <span class="hljs-keyword">elif</span> number &gt; answer:<br>        print(<span class="hljs-string">&#x27;小一点&#x27;</span>)<br>    <span class="hljs-keyword">else</span>:<br>        print(<span class="hljs-string">&#x27;恭喜你猜对了!&#x27;</span>)<br>        <span class="hljs-keyword">break</span><br><span class="hljs-comment"># 当退出while循环的时候显示用户一共猜了多少次</span><br>print(<span class="hljs-string">f&#x27;你总共猜了<span class="hljs-subst">&#123;counter&#125;</span>次&#x27;</span>)<br></code></pre></div></td></tr></table></figure>
+<hr>
+<p><strong>用for循环实现1~100之间的偶数求和</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python">total = <span class="hljs-number">0</span><br><span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">2</span>, <span class="hljs-number">101</span>, <span class="hljs-number">2</span>):<br>    total += x<br>print(total)<br></code></pre></div></td></tr></table></figure>
+<hr>
+<p><strong>输入一个正整数判断它是不是素数</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python">num = <span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>(<span class="hljs-string">&#x27;请输入一个正整数: &#x27;</span>))<br>end = <span class="hljs-built_in">int</span>(num ** <span class="hljs-number">0.5</span>)<br>is_prime = <span class="hljs-literal">True</span><br><span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">2</span>, end + <span class="hljs-number">1</span>):<br>    <span class="hljs-keyword">if</span> num % x == <span class="hljs-number">0</span>:<br>        is_prime = <span class="hljs-literal">False</span><br>        <span class="hljs-keyword">break</span><br><span class="hljs-keyword">if</span> is_prime <span class="hljs-keyword">and</span> num != <span class="hljs-number">1</span>:<br>    print(<span class="hljs-string">f&#x27;<span class="hljs-subst">&#123;num&#125;</span>是素数&#x27;</span>)<br><span class="hljs-keyword">else</span>:<br>    print(<span class="hljs-string">f&#x27;<span class="hljs-subst">&#123;num&#125;</span>不是素数&#x27;</span>)<br></code></pre></div></td></tr></table></figure>
+<hr>
+<p><strong>输入两个正整数计算它们的最大公约数和最小公倍数</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python">x = <span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>(<span class="hljs-string">&#x27;x = &#x27;</span>))<br>y = <span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>(<span class="hljs-string">&#x27;y = &#x27;</span>))<br><span class="hljs-keyword">if</span> x &gt; y:<br>    x, y = y, x    <span class="hljs-comment"># Python中可以用这样的方式来交换两个变量的值</span><br><span class="hljs-keyword">for</span> factor <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(x, <span class="hljs-number">0</span>, -<span class="hljs-number">1</span>):<br>    <span class="hljs-keyword">if</span> x % factor == <span class="hljs-number">0</span> <span class="hljs-keyword">and</span> y % factor == <span class="hljs-number">0</span>:<br>        print(<span class="hljs-string">f&#x27;<span class="hljs-subst">&#123;x&#125;</span>和<span class="hljs-subst">&#123;y&#125;</span>的最大公约数是<span class="hljs-subst">&#123;factor&#125;</span>&#x27;</span>)<br>        print(<span class="hljs-string">f&#x27;<span class="hljs-subst">&#123;x&#125;</span>和<span class="hljs-subst">&#123;y&#125;</span>的最小公倍数是<span class="hljs-subst">&#123;x * y // factor&#125;</span>&#x27;</span>)<br>        <span class="hljs-keyword">break</span><br></code></pre></div></td></tr></table></figure>
+<hr>
+<p><strong>寻找水仙花数</strong></p>
+<p>水仙花数也被称为超完全数字不变数、自恋数、自幂数、阿姆斯特朗数，它是一个3位数，该数字每个位上数字的立方之和正好等于它本身，例如：$1^3 + 5^3+ 3^3=153$</p>
+<figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">for</span> num <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">100</span>, <span class="hljs-number">1000</span>):<br>    low = num % <span class="hljs-number">10</span><br>    mid = num // <span class="hljs-number">10</span> % <span class="hljs-number">10</span><br>    high = num // <span class="hljs-number">100</span><br>    <span class="hljs-keyword">if</span> num == low ** <span class="hljs-number">3</span> + mid ** <span class="hljs-number">3</span> + high ** <span class="hljs-number">3</span>:<br>        print(num)<br></code></pre></div></td></tr></table></figure>
+<hr>
+<p><strong>正整数的反转</strong></p>
+<p>例如将<code>12345</code>变成<code>54321</code></p>
+<figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python">num = <span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>(<span class="hljs-string">&#x27;num = &#x27;</span>))<br>reversed_num = <span class="hljs-number">0</span><br><span class="hljs-keyword">while</span> num &gt; <span class="hljs-number">0</span>:<br>    reversed_num = reversed_num * <span class="hljs-number">10</span> + num % <span class="hljs-number">10</span><br>    num //= <span class="hljs-number">10</span><br>print(reversed_num)<br></code></pre></div></td></tr></table></figure>
+<hr>
+<p><strong>《百钱百鸡》问题</strong></p>
+<p>百钱百鸡是我国古代数学家<a href="https://link.zhihu.com/?target=https%3A//baike.baidu.com/item/%E5%BC%A0%E4%B8%98%E5%BB%BA/10246238">张丘建</a>在《算经》一书中提出的数学问题：鸡翁一值钱五，鸡母一值钱三，鸡雏三值钱一。百钱买百鸡，问鸡翁、鸡母、鸡雏各几何？翻译成现代文是：公鸡5元一只，母鸡3元一只，小鸡1元三只，用100块钱买一百只鸡，问公鸡、母鸡、小鸡各有多少只？</p>
+<figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-comment"># 假设公鸡的数量为x，x的取值范围是0到20</span><br><span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">0</span>, <span class="hljs-number">21</span>):<br>    <span class="hljs-comment"># 假设母鸡的数量为y，y的取值范围是0到33</span><br>    <span class="hljs-keyword">for</span> y <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">0</span>, <span class="hljs-number">34</span>):<br>        z = <span class="hljs-number">100</span> - x - y<br>        <span class="hljs-keyword">if</span> <span class="hljs-number">5</span> * x + <span class="hljs-number">3</span> * y + z // <span class="hljs-number">3</span> == <span class="hljs-number">100</span> <span class="hljs-keyword">and</span> z % <span class="hljs-number">3</span> == <span class="hljs-number">0</span>:<br>            print(<span class="hljs-string">f&#x27;公鸡: <span class="hljs-subst">&#123;x&#125;</span>只, 母鸡: <span class="hljs-subst">&#123;y&#125;</span>只, 小鸡: <span class="hljs-subst">&#123;z&#125;</span>只&#x27;</span>)<br></code></pre></div></td></tr></table></figure>
+<hr>
+<p><strong>CRAPS赌博游戏</strong></p>
+<p>CRAPS又称花旗骰，是美国拉斯维加斯非常受欢迎的一种的桌上赌博游戏。该游戏使用两粒骰子，玩家通过摇两粒骰子获得点数进行游戏。简化后的规则是：玩家第一次摇骰子如果摇出了7点或11点，玩家胜；玩家第一次如果摇出2点、3点或12点，庄家胜；玩家如果摇出其他点数则玩家继续摇骰子，如果玩家摇出了7点，庄家胜；如果玩家摇出了第一次摇的点数，玩家胜；其他点数玩家继续摇骰子，直到分出胜负。</p>
+<figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">Craps赌博游戏</span><br><span class="hljs-string">我们设定游戏开始时玩家有1000元的赌注</span><br><span class="hljs-string">游戏结束的条件是玩家破产（输光所有的赌注）</span><br><span class="hljs-string">&quot;&quot;&quot;</span><br><br><span class="hljs-keyword">from</span> random <span class="hljs-keyword">import</span> randint<br><br>money = <span class="hljs-number">1000</span><br><span class="hljs-keyword">while</span> money &gt; <span class="hljs-number">0</span>:<br>    print(<span class="hljs-string">f&#x27;你的总资产为: <span class="hljs-subst">&#123;money&#125;</span>元&#x27;</span>)<br>    go_on = <span class="hljs-literal">False</span><br>    <span class="hljs-comment"># 下注金额必须大于0小于等于玩家总资产</span><br>    <span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:<br>        debt = <span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>(<span class="hljs-string">&#x27;请下注: &#x27;</span>))<br>        <span class="hljs-keyword">if</span> <span class="hljs-number">0</span> &lt; debt &lt;= money:<br>            <span class="hljs-keyword">break</span><br>    <span class="hljs-comment"># 第一次摇色子</span><br>    <span class="hljs-comment"># 用1到6均匀分布的随机数模拟摇色子得到的点数</span><br>    first = randint(<span class="hljs-number">1</span>, <span class="hljs-number">6</span>) + randint(<span class="hljs-number">1</span>, <span class="hljs-number">6</span>)<br>    print(<span class="hljs-string">f&#x27;\n玩家摇出了<span class="hljs-subst">&#123;first&#125;</span>点&#x27;</span>)<br>    <span class="hljs-keyword">if</span> first == <span class="hljs-number">7</span> <span class="hljs-keyword">or</span> first == <span class="hljs-number">11</span>:<br>        print(<span class="hljs-string">&#x27;玩家胜!\n&#x27;</span>)<br>        money += debt<br>    <span class="hljs-keyword">elif</span> first == <span class="hljs-number">2</span> <span class="hljs-keyword">or</span> first == <span class="hljs-number">3</span> <span class="hljs-keyword">or</span> first == <span class="hljs-number">12</span>:<br>        print(<span class="hljs-string">&#x27;庄家胜!\n&#x27;</span>)<br>        money -= debt<br>    <span class="hljs-keyword">else</span>:<br>        go_on = <span class="hljs-literal">True</span><br>    <span class="hljs-comment"># 第一次摇色子没有分出胜负游戏继续</span><br>    <span class="hljs-keyword">while</span> go_on:<br>        go_on = <span class="hljs-literal">False</span><br>        current = randint(<span class="hljs-number">1</span>, <span class="hljs-number">6</span>) + randint(<span class="hljs-number">1</span>, <span class="hljs-number">6</span>)<br>        print(<span class="hljs-string">f&#x27;玩家摇出了<span class="hljs-subst">&#123;current&#125;</span>点&#x27;</span>)<br>        <span class="hljs-keyword">if</span> current == <span class="hljs-number">7</span>:<br>            print(<span class="hljs-string">&#x27;庄家胜!\n&#x27;</span>)<br>            money -= debt<br>        <span class="hljs-keyword">elif</span> current == first:<br>            print(<span class="hljs-string">&#x27;玩家胜!\n&#x27;</span>)<br>            money += debt<br>        <span class="hljs-keyword">else</span>:<br>            go_on = <span class="hljs-literal">True</span><br>print(<span class="hljs-string">&#x27;你破产了, 游戏结束!&#x27;</span>)<br></code></pre></div></td></tr></table></figure>
+<hr>
+<p><strong>斐波那契数列</strong></p>
+<p>斐波那契数列（Fibonacci sequence），通常也被称作黄金分割数列，是意大利数学家莱昂纳多·斐波那契（Leonardoda Fibonacci）在《计算之书》中研究在理想假设条件下兔子成长率问题而引入的数列，因此这个数列也常被戏称为“兔子数列”。斐波那契数列的特点是数列的前两个数都是1，从第三个数开始，每个数都是它前面两个数的和，按照这个规律，斐波那契数列的前10个数是：<code>1, 1, 2, 3, 5, 8, 13, 21, 34, 55</code>。斐波那契数列在现代物理、准晶体结构、化学等领域都有直接的应用。</p>
+<figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">输出斐波那契数列前20个数</span><br><span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-comment"># 前两个数都是1</span><br>a, b = <span class="hljs-number">1</span>, <span class="hljs-number">1</span><br>print(a, b, end=<span class="hljs-string">&#x27; &#x27;</span>)<br><span class="hljs-comment"># 通过递推公式算出后面的18个数</span><br><span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">18</span>):<br>    a, b = b, a + b<br>    print(b, end=<span class="hljs-string">&#x27; &#x27;</span>)<br></code></pre></div></td></tr></table></figure>
+<hr>
+<p><strong>打印素数</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">输出100以内的素数</span><br><span class="hljs-string">&quot;&quot;&quot;</span><br><br><span class="hljs-keyword">for</span> num <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">2</span>, <span class="hljs-number">100</span>):<br>    <span class="hljs-comment"># 假设num是素数</span><br>    is_prime = <span class="hljs-literal">True</span><br>    <span class="hljs-comment"># 在2到num-1之间找num的因子</span><br>    <span class="hljs-keyword">for</span> factor <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">2</span>, num):<br>        <span class="hljs-comment"># 如果找到了num的因子，num就不是素数</span><br>        <span class="hljs-keyword">if</span> num % factor == <span class="hljs-number">0</span>:<br>            is_prime = <span class="hljs-literal">False</span><br>            <span class="hljs-keyword">break</span><br>    <span class="hljs-comment"># 如果布尔值为True在num是素数</span><br>    <span class="hljs-keyword">if</span> is_prime:<br>        print(num)<br></code></pre></div></td></tr></table></figure>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1>
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%AF%BE%E7%A8%8B/">计算机课程</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Python/">Python</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/01/23/%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%9004/">
+                        <span class="hidden-mobile">数学分析04</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      var inputArea = document.querySelector("#local-search-input");
+      inputArea.onclick = function () {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+        this.onclick = null
+      }
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+
+</body>
+</html>
