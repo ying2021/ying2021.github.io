@@ -193,7 +193,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.7k 字
+      2.3k 字
     </span>
   
 
@@ -203,7 +203,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      22
+      28
        分钟
     </span>
   
@@ -324,6 +324,27 @@ p_{n}=\frac{365 !}{365^{n}(365-n) !}=\left(1-\frac{1}{365}\right)\left(1-\frac{2
 </tbody>
 </table>
 </div>
+<hr>
+<p>一枚均匀的硬币掷 $10$ 次，设没有连续出现正面的的概率为 $\cfrac{i}{j}$ ，其中 $i,j$ 互质，求 $i+j$</p>
+<p><strong>解：</strong></p>
+<p>把一枚均匀的硬币掷 $n$ 次，共有 $2^n$ 种可能的情形。设没有连续出现正面的的数目为 $a_n$，则 $a_1=2,a_2=3,a_3=5$.</p>
+<p>一般地，$a_{n+2}=a_{n+1}+a_n,n=1,2,\cdots$. 这是因为，若第 $n+2$ 次掷出的是反面，则前 $n+2$ 次中没有接连出现正面的数目是 $a_{n+1}$. 若第 $n+2$ 次掷出的是正面，则第 $n+1$ 次需掷出反面，这样，没有接连掷出正面的数目为 $a_n$.于是</p>
+<script type="math/tex; mode=display">
+a_4=8,a_5=13,a_6=21,a_7=34,a_8=55,a_9=89,a_{10}=144</script><p>于是掷 $10$ 次，没有连续出现正面的的概率为 </p>
+<script type="math/tex; mode=display">
+\frac{a_{10}}{2^10}=\frac{144}{1024}=\frac{9}{64}</script><p>于是 $i+j=73$.</p>
+<hr>
+<p>将 $n$ 根绳的 $2n$ 个头任意两两相接，试求事件 $A=$ 恰好结成 $n$ 个圆与 $B=$ 恰好结成 $1$ 个圆的概率。</p>
+<p><strong>解：</strong></p>
+<p>显然基本事件总数为 $(2n)!$</p>
+<p>为使事件 $A$ 发生，则每根绳的头必须与自己的尾相接，即每根绳的两个头必须排在第 $2k-1$ 与 $2k$ 第个位子上$(k=1,2,\cdots,n)$.所以 $n$ 根绳的位置共有 $n!$ 种排法.又对应于上述每一种排法，各根绳的头与尾又都有 $2$ 个排法，故</p>
+<p>$|A|=n!2^n=(2n!!)$.于是有</p>
+<script type="math/tex; mode=display">
+P(A)=\frac{(2n!!)}{(2n!)}=\frac{1}{(2n-1)!!}</script><p>对于事件 $B$，位于第 $1$ 位的头有 $2n$ 种选法，然后第 $2$ 位的头共有 $2n-2$ 种选法，其中排除了已选定位于第 $1$ 位的绳的头与尾。将已选好的两个头相接，就剩下 $n-1$ 根绳的 $2n-2$ 个头。于是，选择第 $3$ 个头有 $2n-2$ 种方法，再选取第 $4$ 个头有 $2n-4$ 种方法$\cdots\cdots$ 以此类推有</p>
+<script type="math/tex; mode=display">
+|B|=2n(2n-2)(2n-2)(2n-4)\cdots4\cdot 2\cdot2\cdot1=(2n)!!(2n-2)!!</script><p>于是有</p>
+<script type="math/tex; mode=display">
+P(B)=\frac{(2n)!!(2n-2)!!}{(2n)!}=\frac{(2n-2)!!}{(2n-1)!!}</script><hr>
 <h1 id="几何方法"><a href="#几何方法" class="headerlink" title="几何方法"></a>几何方法</h1><p><strong>(会面问题)</strong>甲乙两人约定在下午 $6$ 时到 $7$ 时之间在某处会面，并约定先到者应等候另一个人 $20$ min ,过时即可离去.求两人能会面的概率.</p>
 <p><strong>解:</strong>以 $x$ 和 $y$ 分别表示甲、乙两人到达约会地点的时间(以min为单位),在平面上建立 $xOy$ 直角坐标系.</p>
 <p><img src="https://i.loli.net/2021/01/14/pZTiPscgkHAy56G.png" srcset="/img/loading.gif" alt=""></p>
