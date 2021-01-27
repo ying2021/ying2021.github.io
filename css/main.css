@@ -302,7 +302,7 @@ sup > a::before,
 html,
 body {
   font-size: 16px;
-  font-family: KaiTi,"Microsoft YaHei",Georgia, sans, serif;;
+  font-family: SimSun,"Microsoft YaHei",Georgia, sans, serif;;
 }
 html,
 body,
@@ -341,7 +341,7 @@ img[srcset] {
 :root {
   --color-mode: 'light';
   --body-bg-color: #eee;
-  --board-bg-color: #fff;
+  --board-bg-color: #80d4f6;
   --text-color: #3c4858;
   --sec-text-color: #718096;
   --post-text-color: #2c3e50;
@@ -862,7 +862,7 @@ img[srcset] {
 .markdown-body {
   font-size: 1rem;
   margin-bottom: 2rem;
-  font-family: KaiTi,"Microsoft YaHei",Georgia, sans, serif;;
+  font-family: SimSun,"Microsoft YaHei",Georgia, sans, serif;;
   color: var(--post-text-color);
 }
 .markdown-body h1,
