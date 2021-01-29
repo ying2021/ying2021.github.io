@@ -17,7 +17,7 @@
   <meta name="description" content="保持很多的热爱和一点点野心">
   <meta name="author" content="欧阳珈樱">
   <meta name="keywords" content="">
-  <title>定积分10 - 樱花味猫猫</title>
+  <title>樱花味猫猫</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -166,7 +166,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="定积分10">
+            <span class="h2" id="subtitle" title="">
               
             </span>
 
@@ -181,8 +181,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-01-28 18:20" pubdate>
-        2021年1月28日 晚上
+      <time datetime="2021-01-29 11:48" pubdate>
+        2021年1月29日 中午
       </time>
     </span>
   
@@ -193,7 +193,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.3k 字
+      34 字
     </span>
   
 
@@ -203,7 +203,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      25
+      1
        分钟
     </span>
   
@@ -245,151 +245,136 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">定积分10</h1>
+            <h1 style="display: none"></h1>
             
             <div class="markdown-body">
-              <div class="note note-info">
-            <script type="math/tex; mode=display">\int_0^1 \frac{\ln{x}}{\left(1-x\right)\left(2-x\right)}{\rm d}x</script>
-          </div>
-<p><strong>Solution:</strong></p>
-<p>The dilogarithm has integral representation:</p>
+              <h1 id="正态分布"><a href="#正态分布" class="headerlink" title="正态分布"></a>正态分布</h1><p>若随机变量 $X$ 的密度函数为</p>
 <script type="math/tex; mode=display">
-\text{Li}_2(z) = \frac{\pi^2}{6}+\int_0^{1-z} \frac{\ln t}{1-t} {\rm d}t</script><p>so, we have</p>
+p(x)=\frac{1}{\sqrt{2 \pi} \sigma} \mathrm{e}^{-\frac{(x-\mu)^{2}}{2 \sigma^{2}}},-\infty<x<\infty</script><p>则称 $X$ 服从<strong>正态分布</strong> , 称 $X$ 为<strong>正态变量</strong> , 记作 $X\sim N(\mu,\sigma^2)$ . 其中位置参数 $-\infty&lt;\mu&lt;+\infty$ , 尺度参数 $\sigma&gt;0$.</p>
+<p>正态分布 $N(\mu,\sigma^2)$ 的分布函数为</p>
 <script type="math/tex; mode=display">
-\begin{aligned}
-\int_0^1 \frac{\ln{x}}{\left(1-x\right)\left(2-x\right)}{\rm d}x &= \int_0^1 \frac{\ln x}{1-x}{\rm d}x - \int_0^1\frac{\ln x}{2-x}{\rm d}x \\
-&= \int_0^1 \frac{\ln x}{1-x}{\rm d}x - 2\int_0^{1/2}\frac{\ln 2x}{2-2x}{\rm d}x \\
-&= \int_0^1 \frac{\ln x}{1-x}{\rm d}x-(\ln 2) \int_0^{1/2}\frac{1}{1-x}{\rm d}x-\int_0^{1/2}\frac{\ln x}{1-x}{\rm d}x \\
-&= -\frac{\pi^2}{6}-\ln^2 2 -\left[\text{Li}_2(\frac{1}{2})-\frac{\pi^2}{6}\right] \\
-&= -\frac{\pi^2}{12}-\frac{\ln^2 2}{2}
-\end{aligned}</script><hr>
-<div class="note note-info">
-            <script type="math/tex; mode=display">\int_0^1\arctan x\left(\frac{1}{x}-\frac{2x^2}{1+x^3}\right){\rm d}x</script>
-          </div>
-<p><strong>Solution:</strong></p>
+F(x)=\frac{1}{\sqrt{2 \pi} \sigma} \int_{-\infty}^{x} \mathrm{e}^{-\frac{(t-\mu)^{2}}{2 \sigma^{2}}} \mathrm{~d} t</script><h2 id="标准正态分布"><a href="#标准正态分布" class="headerlink" title="标准正态分布"></a>标准正态分布</h2><p>称 $\mu=0,\sigma=1$ 时的正态分布 $N(0,1)$为<strong>标准正态分布</strong>.<br>通常记标准正态变量为 $U$ , 记标准正态分布的密度函数为 $\varphi(u)$ , 分布函数为 $\Phi(u)$ , 即</p>
 <script type="math/tex; mode=display">
-\begin{align}
-I&=\int_0^1\arctan x\left(\frac{1}{x}-\frac{2x^2}{1+x^3}\right){\rm d}x\\
-&=\int_0^1\frac{\arctan x}{x}{\rm d}x-2\int_0^1\frac{x^2\arctan x}{1+x^3}{\rm d}x\\
-&=G-\frac{2}{3}\left(\arctan x\ln (1+x^3)|_0^1-\int_0^1\frac{\ln (1+x^3)}{1+x^2}{\rm d}x\right)\\
-&=G-\frac{\pi}{6}\ln2 + \frac{2}{3}\int_0^1\frac{\ln (1+x^3)}{1+x^2}{\rm d}x
-\end{align}</script><p>Let</p>
-<script type="math/tex; mode=display">
-I_1 = \int_0^1 \frac{\ln(1+x^3)}{1+x^2}{\rm d}x \quad \quad I_2 = \int_1^\infty \frac{\ln(1+x^3)}{1+x^2}{\rm d}x</script><p>Then subsituting $x→1/x$ in $I_1$ gives</p>
-<script type="math/tex; mode=display">
-\tag{1} I_1 - I_2 = -3\int_1^\infty \frac{\ln x}{1+x^2} {\rm d}x = -3G</script><p>Next we calculate</p>
-<script type="math/tex; mode=display">
-I_1+I_2 = \int_0^\infty \frac{\ln(1+x^3)}{1+x^2}{\rm d}x</script><p>Let</p>
-<script type="math/tex; mode=display">
-F(a) = \int_0^{ + \infty } {\frac{{\ln (a + {x^3})}}{{1 + {x^2}}}{\rm d}x}</script><p>then, after some works, we obtain</p>
-<script type="math/tex; mode=display">
-F'(a) = \int_0^{ + \infty } {\frac{1}{{(a + {x^3})(1 + {x^2})}}{\rm d}x} = \frac{\pi }{2}\frac{a}{{1 + {a^2}}} + \frac{1}{6}\frac{{\ln a}}{{1 + {a^2}}} + \frac{{2\sqrt 3 \pi }}{9}\frac{{{a^{2/3}} - {a^{ - 2/3}}}}{{1 + {a^2}}}</script><p>Hence, after some calculations,</p>
-<script type="math/tex; mode=display">
-\tag{2} I_1 + I_2 = F(0) + \int_0^1 {F'(a){\rm d}a} = - \frac{G}{3} + \frac{{\pi \ln 2}}{4} + \frac{{2\pi }}{3}\ln (2 + \sqrt 3 )</script><p>Combining $(1)$ and $(2)$ gives the value of $I_1$, and hence by what you have done</p>
-<script type="math/tex; mode=display">
-\begin{align*}
-I &= G-\frac{\pi}{6}\ln2 + \frac{2}{3} I_1\\
-&=\frac{2}{9}\pi \ln (2 + \sqrt 3 ) - \frac{{\pi \ln 2}}{{12}} - \frac{G}{9}
-\end{align*}</script><hr>
-<div class="note note-info">
-            <script type="math/tex; mode=display">I=\int_{0}^{1} \frac{\ln ^{k} x}{x+1} {\rm d} x\qquad(k\in \mathbb{N}^*)</script>
-          </div>
-<p><strong>Solution:</strong></p>
-<p>Applying the geometric series</p>
-<script type="math/tex; mode=display">
-\frac{1}{x+1}=\sum_{n=0}^{\infty}(-1)^{n} x^{n}</script><p>and interchanging the order of integration yields</p>
+\varphi(u)=\frac{1}{\sqrt{2 \pi}} \mathrm{e}^{-\frac{u^{2}}{2}},-\infty<u<\infty</script><script type="math/tex; mode=display">
+\Phi(u)=\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{u} \mathrm{e}^{-\frac{t^{2}}{2}} \mathrm{~d} t,-\infty<u<\infty</script><p>若随机变量 $X\sim N(\mu,\sigma^2)$ , 则 $U=(X-\mu)/\sigma\sim N(0,1)$</p>
+<p><strong>证明：</strong></p>
+<p>记 $X$ 与 $U$ 的分布函数分别为 $F_{X}(x)$ 与 $F_{U}(u)$ , 则由分布函数的定义知</p>
 <script type="math/tex; mode=display">
 \begin{aligned}
-I &=\int_{0}^{1} \ln ^{k} x \sum_{n=0}^{\infty}(-1)^{n} x^{n} {\rm d} x \\
-&=\sum_{n=0}^{\infty}(-1)^{n} \int_{0}^{1} \ln ^{k} x \cdot x^{n} {\rm d} x
-\end{aligned}</script><p>In order to simplify the integration, let $t=-\ln x$ :</p>
+F_{U}(u) &=P(U \leqslant u)=P\left(\frac{X-\mu}{\sigma} \leqslant u\right) \\
+&=P(X \leqslant \mu+\sigma u)=F_{X}(\mu+\sigma u)
+\end{aligned}</script><p>由于正态分布函数是严格单调增函数,且处处可导,因此若记 $X$ 与 $U$ 的密度函数分别为 $P_{X}(x)$ 与 $P_{U}(u)$ , 则</p>
+<script type="math/tex; mode=display">
+p_{U}(u)=\frac{\mathrm{d}}{\mathrm{d} u} F_{X}(\mu+\sigma u)=p_{X}(\mu+\sigma u) \cdot \sigma=\frac{1}{\sqrt{2 \pi}} \mathrm{e}^{-u^{2} / 2}</script><p>由此得</p>
+<script type="math/tex; mode=display">
+U=\frac{X-\mu}{\sigma} N(0,1)</script><p>由以上定理,我们马上可以得到一些在实际中有用的计算公式,若随机变量 $X\sim N(\mu,\sigma^2)$ , 则</p>
+<script type="math/tex; mode=display">
+P(X \leqslant c)=\Phi\left(\frac{c-\mu}{\sigma}\right)</script><script type="math/tex; mode=display">
+P(a<X \leqslant b)=\Phi\left(\frac{b-\mu}{\sigma}\right)-\Phi\left(\frac{a-\mu}{\sigma}\right)</script><h2 id="正态分布的数学期望与方差"><a href="#正态分布的数学期望与方差" class="headerlink" title="正态分布的数学期望与方差"></a>正态分布的数学期望与方差</h2><p>设随机变量 $X\sim N(\mu,\sigma^2)$ , 由于 $U=(X-\mu)/\sigma\sim N(0,1)$ , 所以 $U$ 的数学期望为</p>
+<script type="math/tex; mode=display">
+E(U)=\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} u \mathrm{e}^{-\frac{u^{2}}{2}} \mathrm{~d} u</script><p>注意到上述积分的被积函数为一个奇函数,所以其积分值等于 $0$ , 即 $E(U)= 0$又因为 $X=\mu+\sigma U$ , 所以由数学期望的性质得</p>
+<script type="math/tex; mode=display">
+E(X)=\mu+\sigma \times 0=\mu</script><p>又因为</p>
 <script type="math/tex; mode=display">
 \begin{aligned}
-I &=\sum_{n=0}^{\infty}(-1)^{n} \int_{\infty}^{0}(-t)^{k}\left(e^{-t}\right)^{n} \cdot\left(-e^{-t} {\rm d} t\right) \\
-&=\sum_{n=0}^{\infty}(-1)^{n+k} \int_{0}^{\infty} t^{k} e^{-(n+1) t} {\rm d} t
-\end{aligned}</script><p>Next, we let $w=(n+1)t$ :</p>
+\operatorname{Var}(U) &=E\left(U^{2}\right)-[E(U)]^2=\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} u^{2} \mathrm{e}^{-\frac{u^{2}}{2}} \mathrm{~d} u \\
+&=\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} u \mathrm{~d}\left(-\mathrm{e}^{-\frac{u^{2}}{2}}\right)\\
+&=\frac{1}{\sqrt{2 \pi}}\left(-\left.u \mathrm{e}^{-\frac{u^{2}}{2}}\right|_{-\infty} ^{\infty}+\int_{-\infty}^{\infty} \mathrm{e}^{-\frac{u^{2}}{2}} \mathrm{~d} u\right) \\
+&=\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} \mathrm{e}^{-\frac{u^{2}}{2}} \mathrm{~d} u=\frac{1}{\sqrt{2 \pi}} \sqrt{2 \pi}=1
+\end{aligned}</script><p>且 $X=\mu+\sigma U$ , 所以由方差的性质得</p>
+<script type="math/tex; mode=display">
+\operatorname{Var}(X)=\operatorname{Var}(\mu+\sigma U)=\sigma^{2}</script><h1 id="均匀分布"><a href="#均匀分布" class="headerlink" title="均匀分布"></a>均匀分布</h1><p>若随机变量 $X$ 的密度函数为</p>
+<script type="math/tex; mode=display">
+p(x)=\left\{\begin{array}{ll}
+\dfrac{1}{b-a}, & a<x<b, \\
+0, & \text { 其他. }
+\end{array}\right.</script><p>则称 $X$ 服从区间 $(a,b)$ 上的<strong>均匀分布</strong> , 记作 $X\sim U(a,b)$ , 其分布函数为</p>
+<script type="math/tex; mode=display">
+F(x)=\left\{\begin{array}{ll}
+0, & x<a \\
+\dfrac{x-a}{b-a}, & a \leqslant x<b, \\
+1, & x \geqslant b .
+\end{array}\right.</script><h2 id="均匀分布的数学期望与方差"><a href="#均匀分布的数学期望与方差" class="headerlink" title="均匀分布的数学期望与方差"></a>均匀分布的数学期望与方差</h2><p>设随机变量 $X\sim U(a,b)$ , 则</p>
+<script type="math/tex; mode=display">
+E(X)=\int_{a}^{b} \frac{x}{b-a} d x=\frac{b^{2}-a^{2}}{2(b-a)}=\frac{a+b}{2}</script><p>又因为</p>
+<script type="math/tex; mode=display">
+E\left(X^{2}\right)=\int_{a}^{b} \frac{x^{2}}{b-a} \mathrm{~d} x=\frac{b^{3}-a^{3}}{3(b-a)}=\frac{a^{2}+a b+b^{2}}{3}</script><p>由此得 $X$ 的方差为</p>
+<script type="math/tex; mode=display">
+\operatorname{Var}(X)=E\left(X^{2}\right)-[E(X)]^{2}=\frac{a^{2}+a b+b^{2}}{3}-\frac{(a+b)^{2}}{4}=\frac{(b-a)^{2}}{12}</script><h1 id="指数分布"><a href="#指数分布" class="headerlink" title="指数分布"></a>指数分布</h1><p>若随机变量 $X$ 的密度函数为</p>
+<script type="math/tex; mode=display">
+p(x)=\left\{\begin{array}{cl}
+\lambda \mathrm{e}^{-\lambda x}, & x \geqslant 0 \\
+0, & x<0
+\end{array}\right.</script><p>则称 $X$ 服从<strong>指数分布</strong> , 记作 $X\sim Exp(\lambda)$ , 其中参数 $\lambda&gt;0$ , 指数分布的分布函数为</p>
+<script type="math/tex; mode=display">
+F(x)=\left\{\begin{array}{cl}
+1-\mathrm{e}^{-\lambda x}, & x \geqslant 0 \\
+0, & x<0
+\end{array}\right.</script><h2 id="指数分布的数学期望与方差"><a href="#指数分布的数学期望与方差" class="headerlink" title="指数分布的数学期望与方差"></a>指数分布的数学期望与方差</h2><p>设随机变量 $X\sim Exp(\lambda)$ , 则</p>
 <script type="math/tex; mode=display">
 \begin{aligned}
-I &=\sum_{n=0}^{\infty}(-1)^{n+k} \int_{0}^{\infty}\left(\frac{w}{n+1}\right)^{k} e^{-w} \cdot \frac{{\rm d} w}{n+1} \\
-&=\sum_{n=0}^{\infty} \frac{(-1)^{n+k}}{(n+1)^{k+1}} \int_{0}^{\infty} w^{k} e^{-w} {\rm d} w \\
-&=\sum_{n=0}^{\infty} \frac{(-1)^{n+k}}{(n+1)^{k+1}} \cdot k ! \\
-&=(-1)^{k} k ! \cdot \sum_{n=1}^{\infty} \frac{(-1)^{n-1}}{n^{k+1}}
-\end{aligned}</script><p>However,</p>
+E(X) &=\int_{0}^{\infty} x \lambda \mathrm{e}^{-\lambda x} \mathrm{~d} x=\int_{0}^{\infty} x \mathrm{~d}\left(-\mathrm{e}^{-\lambda x}\right) \\
+&=-\left.x \mathrm{e}^{-\lambda x}\right|_{0} ^{\infty}+\int_{0}^{\infty} \mathrm{e}^{-\lambda x} \mathrm{~d} x=-\left.\frac{1}{\lambda} \mathrm{e}^{-\lambda x}\right|_{0} ^{\infty}=\frac{1}{\lambda}
+\end{aligned}</script><p>又因为</p>
 <script type="math/tex; mode=display">
 \begin{aligned}
-\sum_{n=1}^{\infty} \frac{(-1)^{n-1}}{n^{k+1}} &=\sum_{n=1}^{\infty} \frac{1}{n^{k+1}}-\sum_{n=1}^{\infty} \frac{2}{(2 n)^{k+1}} \\
-&=\left(1-\frac{1}{2^{k}}\right) \sum_{n=1}^{\infty} \frac{1}{n^{k+1}} \\
-&=\left(1-\frac{1}{2^{k}}\right) \zeta(k+1)
-\end{aligned}</script><p>Hence, we conclude that</p>
+E\left(X^{2}\right) &=\int_{0}^{\infty} x^{2} \lambda \mathrm{e}^{-\lambda x} \mathrm{~d} x=\int_{0}^{\infty} x^{2} \mathrm{~d}\left(-\mathrm{e}^{-\lambda x}\right) \\
+&=-\left.x^{2} \mathrm{e}^{-\lambda x}\right|_{0} ^{\infty}+2 \int_{0}^{\infty} x \mathrm{e}^{-\lambda x} \mathrm{~d} x=\frac{2}{\lambda^{2}}
+\end{aligned}</script><p>由此得 $X$ 的方差为</p>
 <script type="math/tex; mode=display">
-I=\int_{0}^{1} \frac{\ln ^{k} x}{x+1} {\rm d} x=(-1)^{k} k !\left(1-\frac{1}{2^{k}}\right) \zeta(k+1)</script><hr>
-<div class="note note-info">
-            <script type="math/tex; mode=display">I=\int_{0}^{1} \frac{\ln \left(1+x+x^{2}\right)}{x} {\rm d} x</script>
-          </div>
-<p><strong>Solution:</strong></p>
-<p>Since $1-x^3=(1-x)(1+x+x^2)$, we can rewrite the integral as follows:</p>
+\operatorname{Var}(X)=E\left(X^{2}\right)-[E(X)]^{2}=\frac{2}{\lambda^{2}}-\frac{1}{\lambda^{2}}=\frac{1}{\lambda^{2}}</script><h2 id="指数分布的无记忆性"><a href="#指数分布的无记忆性" class="headerlink" title="指数分布的无记忆性"></a>指数分布的无记忆性</h2><p>如果随机变量 $X\sim Exp(\lambda)$ , 则对任意 $s&gt;0,t&gt;0$ , 有</p>
 <script type="math/tex; mode=display">
+P(X>s+t \mid X>s)=P(X>t)</script><p>上式的含义为:记 $X$ 是某种产品的使用寿命 $(h)$ , 若 $X$ 服从指数分布,那么已知此产品使用了 $s(h)$ 没发生故障,则再能使用   $t (h)$ 而不发生故障的概率与已使用的 $s (h)$无关,只相当于重新开始使用 $t ( h)$ 的概率,即对已使用过的 $s (h)$ 没有记忆.</p>
+<p><strong>证明：</strong></p>
+<p>因为 $X\sim Exp(\lambda)$ , 所以 $P(X&gt;s)=e^{-\lambda s},s&gt;0$ . 又因为</p>
+<script type="math/tex; mode=display">
+(X>s+t) \subseteq(X>s)</script><p>于是条件概率</p>
+<script type="math/tex; mode=display">
+P(X>s+t \mid X>s)=\frac{P(X>s+t)}{P(X>s)}=\frac{\mathrm{e}^{-\lambda(s+t)}}{\mathrm{e}^{-\lambda s}}=\mathrm{e}^{-\lambda t}=P(X>t)</script><p>即证.</p>
+<h1 id="伽马分布"><a href="#伽马分布" class="headerlink" title="伽马分布"></a>伽马分布</h1><p>若随机变量 $X$ 的密度函数为</p>
+<script type="math/tex; mode=display">
+p(x)=\left\{\begin{array}{ll}
+\dfrac{\lambda^{\alpha}}{\Gamma(\alpha)} x^{\alpha-1} \mathrm{e}^{-\lambda x}, & x \geqslant 0 \\
+0, & x<0
+\end{array}\right.</script><p>则称 $X$ 服从<strong>伽马分布</strong> , 记作 $X\sim Ga(\alpha,\lambda)$ , 其中形状参数 $\alpha&gt;0$ , 尺度参数 $\lambda&gt;0$ .</p>
+<h2 id="伽马分布的数学期望与方差"><a href="#伽马分布的数学期望与方差" class="headerlink" title="伽马分布的数学期望与方差"></a>伽马分布的数学期望与方差</h2><script type="math/tex; mode=display">
+E(X)=\frac{\lambda^{\alpha}}{\Gamma(\alpha)} \int_{0}^{\infty} x^{\alpha} \mathrm{e}^{-\lambda x} \mathrm{~d} x=\frac{\Gamma(\alpha+1)}{\Gamma(\alpha)} \frac{1}{\lambda}=\frac{\alpha}{\lambda}</script><script type="math/tex; mode=display">
+E\left(X^{2}\right)=\frac{\lambda^{\alpha}}{\Gamma(\alpha)} \int_{0}^{\infty} x^{\alpha+1} \mathrm{e}^{-\lambda x} \mathrm{~d} x=\frac{\Gamma(\alpha+2)}{\lambda^{2} \Gamma(\alpha)}=\frac{\alpha(\alpha+1)}{\lambda^{2}}</script><script type="math/tex; mode=display">
+\operatorname{Var}(X)=E\left(X^{2}\right)-[E(X)]^{2}=\frac{\alpha(\alpha+1)}{\lambda^{2}}-\left(\frac{\alpha}{\lambda}\right)^{2}=\frac{\alpha}{\lambda^{2}}</script><h2 id="伽马分布的两个特例"><a href="#伽马分布的两个特例" class="headerlink" title="伽马分布的两个特例"></a>伽马分布的两个特例</h2><p>1.$\alpha =1$ 时的伽马分布就是指数分布, 即</p>
+<script type="math/tex; mode=display">
+G a(1, \lambda)=Exp(\lambda)</script><p>2.称 $\alpha=n/2,\lambda=1/2$ 时的伽马分布是自由度为 $n$ 的 <strong>$\chi^{2}$(卡方)分布</strong>,记为 $\chi^2(n)$ , 即</p>
+<script type="math/tex; mode=display">
+G a\left(\frac{n}{2}, \frac{1}{2}\right)=\chi^{2}(n)</script><p>其密度函数为</p>
+<script type="math/tex; mode=display">
+p(x)=\left\{\begin{array}{cc}
+\dfrac{1}{2^{\frac{n}{2}} \Gamma\left(\frac{n}{2}\right)} \mathrm{e}^{-\frac{x}{2}} x^{\frac{n}{2}-1} & x>0 \\
+0 & x \leqslant 0
+\end{array}\right.</script><script type="math/tex; mode=display">
+E(X)=n, \quad \operatorname{Var}(X)=2 n</script><h1 id="贝塔分布"><a href="#贝塔分布" class="headerlink" title="贝塔分布"></a>贝塔分布</h1><p>若随机变量 $X$ 的密度函数为</p>
+<script type="math/tex; mode=display">
+p(x)=\left\{\begin{array}{cc}
+\dfrac{\Gamma(a+b)}{\Gamma(a) \Gamma(b)} x^{a-1}(1-x)^{b-1} & 0<x<1, \\
+0 & \text { 其他 },
+\end{array}\right.</script><p>则称 $X$ 服从<strong>贝塔分布</strong> , 记作 $X\sim Be(a,b)$ , 其中形状参数 $a&gt;0,b&gt;0$ .</p>
+<h2 id="贝塔分布的数学期望与方差"><a href="#贝塔分布的数学期望与方差" class="headerlink" title="贝塔分布的数学期望与方差"></a>贝塔分布的数学期望与方差</h2><script type="math/tex; mode=display">
 \begin{aligned}
-I &=\int_{0}^{1} \frac{\ln \left(\frac{1-x^{3}}{1-x}\right)}{x} {\rm d} x \\
-&=\int_{0}^{1} \frac{\ln \left(1-x^{3}\right)}{x} {\rm d} x-\int_{0}^{1} \frac{\ln (1-x)}{x} {\rm d} x
-\end{aligned}</script><p>Next, we apply the Maclaurin series for the logarithm:</p>
-<script type="math/tex; mode=display">
-\ln (1-t)=-\sum_{n=1}^{\infty} \frac{t^{n}}{n}</script><p>Using this series followed by interchanging the order of integration and summation gives us</p>
-<script type="math/tex; mode=display">
+E(X) &=\frac{\Gamma(a+b)}{\Gamma(a) \Gamma(b)} \int_{0}^{1} x^{a}(1-x)^{b-1} \mathrm{~d} x \\
+&=\frac{\Gamma(a+b)}{\Gamma(a) \Gamma(b)} \cdot \frac{\Gamma(a+1) \Gamma(b)}{\Gamma(a+b+1)}=\frac{a}{a+b}
+\end{aligned}</script><script type="math/tex; mode=display">
 \begin{aligned}
-I &=\int_{0}^{1} \frac{1}{x} \cdot\left(-\sum_{n=1}^{\infty} \frac{x^{3 n}}{n}\right) {\rm d} x-\int_{0}^{1} \frac{1}{x} \cdot\left(-\sum_{n=1}^{\infty} \frac{x^{n}}{n}\right) {\rm d} x \\
-&=\sum_{n=1}^{\infty} \int_{0}^{1}\left(\frac{x^{n-1}}{n}-\frac{x^{3 n-1}}{n}\right) {\rm d}x \\
-&=\sum_{n=1}^{\infty}\left(\frac{1}{n^{2}}-\frac{1}{3 n^{2}}\right) \\
-&=\frac{2}{3} \sum_{n=1}^{\infty} \frac{1}{n^{2}} \\
-&=\frac{2}{3} \cdot \frac{\pi^{2}}{6} \\
-&=\frac{\pi^{2}}{9}
-\end{aligned}</script><hr>
-<div class="note note-info">
-            <script type="math/tex; mode=display">\mathcal{I}_{k}=\int_{0}^{\infty} x^{k} \ln (x) e^{-x} \mathrm{~d} x\qquad(k \in \mathbb{N})</script>
-          </div>
-<p><strong>Solution:</strong></p>
-<p>For $k=0$, we simply have a definition of the Euler Mascheroni constant:</p>
-<script type="math/tex; mode=display">
-\mathcal{I}_{0}=\int_{0}^{\infty} \ln (x) e^{-x} \mathrm{~d} x=-\gamma</script><p>Can refer to <a target="_blank" rel="noopener" href="https://www.zhihu.com/question/434691356">https://www.zhihu.com/question/434691356</a></p>
-<p>For $k\geqslant1$, applying integration by parts with $u=x^k\ln(x)$ and ${\rm d}v=e^{-x}{\rm d}x$ yields a recurrence relation in terms of the gamma function:</p>
-<script type="math/tex; mode=display">
+E\left(X^{2}\right) &=\frac{\Gamma(a+b)}{\Gamma(a) \Gamma(b)} \int_{0}^{1} x^{a+1}(1-x)^{b-1} \mathrm{~d} x\\
+&=\frac{\Gamma(a+b)}{\Gamma(a) \Gamma(b)} \cdot \frac{\Gamma(a+2) \Gamma(b)}{\Gamma(a+b+2)} \\
+&=\frac{a(a+1)}{(a+b)(a+b+1)}
+\end{aligned}</script><script type="math/tex; mode=display">
 \begin{aligned}
-\mathcal{I}_{k} &=-\left.x^{k} \ln (x) e^{-x}\right|_{x \rightarrow 0^{+}} ^{x \rightarrow \infty}+k \int_{0}^{\infty} x^{k-1} \ln (x) e^{-x} \mathrm{~d} x+\int_{0}^{\infty} x^{k-1} e^{-x} \mathrm{~d} x \\
-&=k \mathcal{I}_{k-1}+\Gamma(k)
-\end{aligned}</script><p>Writing out a few terms, we notice that this recurrence can be expressed beautifully via harmonic numbers. As such, we conclude that</p>
-<script type="math/tex; mode=display">
-\begin{aligned}
-\mathcal{I}_{k} &=\int_{0}^{\infty} x^{k} \ln (x) e^{-x} \mathrm{~d} x \\
-&=k !\left(H_{k}-\gamma\right)
-\end{aligned}</script><p>The first few values of the sequence are then given by</p>
-<script type="math/tex; mode=display">
-\begin{array}{l}
-\mathcal{I}_{0}=-\gamma \\
-\mathcal{I}_{1}=1-\gamma \\
-\mathcal{I}_{2}=3-2 \gamma \\
-\mathcal{I}_{3}=11-6 \gamma \\
-\mathcal{I}_{4}=50-24 \gamma \\
-\mathcal{I}_{5}=274-120 \gamma
-\end{array}</script>
+\operatorname{Var}(X)&=\frac{a(a+1)}{(a+b)(a+b+1)}-\left(\frac{a}{a+b}\right)^{2}\\
+&=\frac{a b}{(a+b)^{2}(a+b+1)}
+\end{aligned}</script>
             </div>
             <hr>
             <div>
               <div class="post-metas mb-3">
                 
-                  <div class="post-meta mr-3">
-                    <i class="iconfont icon-category"></i>
-                    
-                      <a class="hover-with-bg" href="/categories/Math/">Math</a>
-                    
-                  </div>
-                
-                
-                  <div class="post-meta">
-                    <i class="iconfont icon-tags"></i>
-                    
-                      <a class="hover-with-bg" href="/tags/%E7%A7%AF%E5%88%86/">积分</a>
-                    
-                  </div>
                 
               </div>
               
@@ -400,18 +385,12 @@ I &=\int_{0}^{1} \frac{1}{x} \cdot\left(-\sum_{n=1}^{\infty} \frac{x^{3 n}}{n}\r
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/01/28/%E4%B8%8D%E5%AE%9A%E7%A7%AF%E5%88%8602/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile"></span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/01/28/%E5%AE%9A%E7%A7%AF%E5%88%8609/">
-                        <span class="hidden-mobile">定积分09</span>
+                      <a href="/2021/01/29/%E5%B8%B8%E7%94%A8%E7%A6%BB%E6%95%A3%E5%88%86%E5%B8%83/">
+                        <span class="hidden-mobile"></span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -569,45 +548,6 @@ I &=\int_{0}^{1} \frac{1}{x} \cdot\left(-\sum_{n=1}^{\infty} \frac{x^{3 n}}{n}\r
 
 
 
-
-  
-
-  
-    <!-- MathJax -->
-    <script>
-      MathJax = {
-        tex: {
-          inlineMath: [['$', '$'], ['\\(', '\\)']]
-        },
-        options: {
-          renderActions: {
-            findScript: [10, doc => {
-              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
-                const display = !!node.type.match(/; *mode=display/);
-                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-                const text = document.createTextNode('');
-                node.parentNode.replaceChild(text, node);
-                math.start = { node: text, delim: '', n: 0 };
-                math.end = { node: text, delim: '', n: 0 };
-                doc.math.push(math);
-              });
-            }, '', false],
-            insertedScript: [200, () => {
-              document.querySelectorAll('mjx-container').forEach(node => {
-                let target = node.parentNode;
-                if (target.nodeName.toLowerCase() === 'li') {
-                  target.parentNode.classList.add('has-jax');
-                }
-              });
-            }, '', false]
-          }
-        }
-      };
-    </script>
-
-    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-svg.js" ></script>
-
-  
 
 
 

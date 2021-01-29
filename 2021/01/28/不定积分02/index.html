@@ -17,7 +17,7 @@
   <meta name="description" content="保持很多的热爱和一点点野心">
   <meta name="author" content="欧阳珈樱">
   <meta name="keywords" content="">
-  <title>定积分01 - 樱花味猫猫</title>
+  <title>樱花味猫猫</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -166,7 +166,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="定积分01">
+            <span class="h2" id="subtitle" title="">
               
             </span>
 
@@ -181,8 +181,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-01-01 20:52" pubdate>
-        2021年1月1日 晚上
+      <time datetime="2021-01-28 20:41" pubdate>
+        2021年1月28日 晚上
       </time>
     </span>
   
@@ -193,7 +193,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      284 字
+      842 字
     </span>
   
 
@@ -203,7 +203,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      5
+      16
        分钟
     </span>
   
@@ -245,45 +245,47 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">定积分01</h1>
+            <h1 style="display: none"></h1>
             
             <div class="markdown-body">
-              <div class="note note-info">
-            <script type="math/tex; mode=display">\int_{0}^{\frac{\pi}{2}} \sin ^{2}(x) \ln (\sin (x)) {\rm d} x</script>
-          </div>
-<p><strong>**Solution</strong>:** </p>
-<p>Consider its duality</p>
+              <script type="math/tex; mode=display">
+\int \ln (\tan x)\,{\rm d}x</script><p><strong>Solution:</strong></p>
 <script type="math/tex; mode=display">
-\int_{0}^{\frac{\pi}{2}} \cos ^{2}(x) \ln (\sin (x)) {\rm d} x</script><p>Easy to get</p>
+\begin{align} 
+&\int \ln (\tan x)\,{\rm d}x\\ 
+=& \int \ln \left( -i \frac{e^{ix}-e^{-ix}}{e^{ix}+e^{ix}}\right) \,{\rm d}x \\ 
+=& \int \ln(-i)\,{\rm d}x + \int \ln(e^{ix}-e^{-ix})\,{\rm d}x - \int \ln(e^{ix}-e^{-ix})\,{\rm d}x \\ 
+=& - \frac{i \pi}{2} x + \int \ln\big(e^{ix}(1-e^{-2ix}) \big)\,{\rm d}x - \int \ln\big(e^{ix}(1+e^{-2ix})\big)\,{\rm d}x \\ 
+=& \frac{ \pi x}{2i} + \int \ln(1-e^{-2ix}) \,{\rm d}x - \int \ln(1+e^{-2ix}) \,{\rm d}x \\ 
+=& \frac{ \pi x}{2i} - \frac{1}{2i} \int \frac{\ln (1-u)}{u}\,{\rm d}u + \frac{1}{2i}\int \frac{\ln(1+u)}{u} \,{\rm d}u  \\ 
+=& \frac{\pi x}{2i} + \frac{1}{2i} \text{Li}_{2}(u) - \frac{1}{2i} \text{Li}_{2}(-u) + C\\ 
+=& \frac{1}{2i} \left[ \pi x + \text{Li}_{2}(e^{-2ix}) -\text{Li}_{2}(-e^{-2ix}) \right] + C 
+\end{align}</script><hr>
 <script type="math/tex; mode=display">
-\begin{align*}     &\int_{0}^{\frac{\pi}{2}} \sin ^{2}(x) \ln (\sin (x)) {\rm d} x\\ =&\int_{0}^{\frac{\pi}{2}}\left(1-\cos ^{2}(x)\right) \ln (\sin (x)) {\rm d} x \\     =&-\frac{\pi}{2} \ln (2)-\int_{0}^{\frac{\pi}{2}} \cos ^{2}(x) \ln (\sin (x)) {\rm d} x     \end{align*}</script><script type="math/tex; mode=display">
-\begin{align*}     &\int_{0}^{\frac{\pi}{2}} \cos ^{2}(x) \ln (\sin (x)) {\rm d} x-\int_{0}^{\frac{\pi}{2}} \sin ^{2}(x) \ln (\sin (x)) {\rm d} x\\     =&\int_{0}^{\frac{\pi}{2}} \cos (2 x) \ln (\sin (x)) {\rm d} x \\     =&\left[-\frac{1}{2} x-\frac{1}{4} \sin (2 x)+\frac{1}{2} \sin (2 x) \ln (\sin (2 x))\right]_{0}^{\frac{\pi}{2}}\\ =&-\frac{\pi}{4}     \end{align*}</script><p>upon that</p>
+\int\ln\sin x\,\mathrm{d}x</script><p><strong>Solution:</strong></p>
 <script type="math/tex; mode=display">
-\int_{0}^{\frac{\pi}{2}} \sin ^{2}(x) \ln (\sin (x)) {\rm d} x+\int_{0}^{\frac{\pi}{2}} \cos ^{2}(x) \ln (\sin (x)) {\rm d} x=-\frac{\pi}{2}\ln 2</script><script type="math/tex; mode=display">
-\int_{0}^{\frac{\pi}{2}} \sin ^{2}(x) \ln (\sin (x)) {\rm d} x-\int_{0}^{\frac{\pi}{2}} \cos ^{2}(x) \ln (\sin (x)) {\rm d} x=\frac{\pi}{4}</script><p>Therefore</p>
+\begin{align*} 
+&\int\ln\sin x\,\mathrm{d}x\\ 
+=&x\ln\sin x-\int x\frac{\cos x}{\sin x}\,\mathrm{d}x\\ 
+=&x\ln\sin x-\int x\frac{\frac{e^{\mathrm{i}x}+e^{-\mathrm{i}x}}{2}}{\frac{e^{\mathrm{i}x}-e^{-\mathrm{i}x}}{2\mathrm{i}}}\,\mathrm{d}x\\ 
+=&x\ln\sin x-\int \mathrm{i}x\frac{e^{\mathrm{i}x}+e^{-\mathrm{i}x}}{e^{\mathrm{i}x}-e^{-\mathrm{i}x}}\,\mathrm{d}x\\ 
+=&x\ln\sin x-\int \mathrm{i}x\,\mathrm{d}x-\int\frac{2\mathrm{i}xe^{-\mathrm{i}x}}{e^{\mathrm{i}x}-e^{-\mathrm{i}x}}\,\mathrm{d}x\\ 
+=&x\ln\sin x-\frac{1}{2}\mathrm{i}x^2+2\mathrm{i}\int\frac{x}{1-e^{2\mathrm{i}x}}\,\mathrm{d}x\\ 
+=&x\ln\sin x-\frac{1}{2}\mathrm{i}x^2+2\mathrm{i}\int x\sum_{n=0}^{\infty}e^{2\mathrm{i}nx}\,\mathrm{d}x\\ 
+=&x\ln\sin x+\frac{1}{2}\mathrm{i}x^2+2\mathrm{i}\sum_{n=1}^{\infty}\int xe^{2\mathrm{i}nx}\,\mathrm{d}x\\ 
+=&x\ln\sin x+\frac{1}{2}\mathrm{i}x^2-x\sum_{n=1}^{\infty}\frac{e^{2\mathrm{i}nx}}{n}+\frac{\mathrm{i}}{2}\sum_{n=1}^{\infty}\frac{e^{2\mathrm{i}nx}}{n^2}+C\\ 
+=&x\ln\sin x+\frac{1}{2}\mathrm{i}x^2-x\ln(1-e^{2\mathrm{i}x})+\frac{\mathrm{i}}{2}\mathrm{Li}_2(e^{2\mathrm{i}x})+C
+\end{align*}</script><hr>
 <script type="math/tex; mode=display">
-\int_{0}^{\frac{\pi}{2}} \sin ^{2}(x) \ln (\sin (x)) {\rm d} x=\frac{\pi}{8}-\frac{\pi}{4}\ln 2</script><script type="math/tex; mode=display">
-\int_{0}^{\frac{\pi}{2}} \cos ^{2}(x) \ln (\sin (x)) {\rm d} x=-\frac{\pi}{8}-\frac{\pi}{4}\ln 2</script><section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/214430054">构造对偶式求定积分</a>
-<a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>
+\int\ln(\cos x)\,\mathrm{d}x</script><p><strong>Solution:</strong></p>
+<script type="math/tex; mode=display">
+\begin{align*} 
+&\quad \int\ln(\cos x)\,\mathrm{d}x\\ &=x\ln(\cos x)+\int x\tan x\,\mathrm{d}x\\ &=x\ln(\cos x)+\int(-\mathrm{i}x)\frac{\mathrm{e}^{2\mathrm{i}x}-1}{\mathrm{e}^{2\mathrm{i}x}+1}\,\mathrm{d}x\\ &=x\ln(\cos x)+\int\mathrm{i}x\left(1-\frac{2\mathrm{e}^{2\mathrm{i}x}}{1+\mathrm{e}^{2\mathrm{i}x}}\right)\mathrm{d}x\\ &=x\ln(\cos x)+\int\left(\mathrm{i}x-\frac{2\mathrm{i}x\mathrm{e}^{2\mathrm{i}x}}{1+\mathrm{e}^{2\mathrm{i}x}}\right)\mathrm{d}x\\ &=x\ln(\cos x)+\int\left(\mathrm{i}x-\frac{2\mathrm{i}x\mathrm{e}^{2\mathrm{i}x}}{1+\mathrm{e}^{2\mathrm{i}x}}-\ln\left(1+\mathrm{e}^{2\mathrm{i}x}\right)+\ln\left(1+\mathrm{e}^{2\mathrm{i}x}\right)\right)\mathrm{d}x\\ &=x\ln(\cos x)-\int\left(\frac{2\mathrm{i}x\mathrm{e}^{2\mathrm{i}x}}{1+\mathrm{e}^{2\mathrm{i}x}}+\ln\left(1+\mathrm{e}^{2\mathrm{i}x}\right)\right)\mathrm{d}x-\int\left(-\ln\left(1+\mathrm{e}^{2\mathrm{i}x}\right)\right)\mathrm{d}x+\int\mathrm{i}x\,\mathrm{d}x\\ &=x\ln(\cos x)-x\ln\left(1+\mathrm{e}^{2\mathrm{i}x}\right)+\frac{\mathrm{i}}{2}x^2+C-\int\sum_{k=1}^{+\infty}\frac{\left(-\mathrm{e}^{2\mathrm{i}x}\right)^k}{k}\,\mathrm{d}x\\ &=x\ln(\cos x)-x\ln\left(1+\mathrm{e}^{2\mathrm{i}x}\right)+\frac{\mathrm{i}}{2}x^2+C-\sum_{k=1}^{+\infty}\frac{\left(-\mathrm{e}^{2\mathrm{i}x}\right)^k}{2\mathrm{i}k^2}\\ &=x\ln(\cos x)-x\ln\left(1+\mathrm{e}^{2\mathrm{i}x}\right)+\frac{\mathrm{i}}{2}x^2+\frac{\mathrm{i}}{2}\sum_{k=1}^{+\infty}\frac{\left(-\mathrm{e}^{2\mathrm{i}x}\right)^k}{k^2}+C\\ &=x\ln(\cos x)-x\ln\left(1+\mathrm{e}^{2\mathrm{i}x}\right)+\frac{\mathrm{i}}{2}x^2+\frac{\mathrm{i}}{2}\mathrm{Li}_2\left(-\mathrm{e}^{2\mathrm{i}x}\right)+C \end{align*}</script>
             </div>
             <hr>
             <div>
               <div class="post-metas mb-3">
                 
-                  <div class="post-meta mr-3">
-                    <i class="iconfont icon-category"></i>
-                    
-                      <a class="hover-with-bg" href="/categories/Math/">Math</a>
-                    
-                  </div>
-                
-                
-                  <div class="post-meta">
-                    <i class="iconfont icon-tags"></i>
-                    
-                      <a class="hover-with-bg" href="/tags/%E7%A7%AF%E5%88%86/">积分</a>
-                    
-                  </div>
                 
               </div>
               
@@ -294,9 +296,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/01/02/Markdown%E8%AF%AD%E6%B3%95/">
+                      <a href="/2021/01/29/%E5%B8%B8%E7%94%A8%E7%A6%BB%E6%95%A3%E5%88%86%E5%B8%83/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Markdown语法</span>
+                        <span class="hidden-mobile"></span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -304,8 +306,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/01/01/%E7%A7%AF%E5%88%86%E4%B8%8D%E7%AD%89%E5%BC%8F01/">
-                        <span class="hidden-mobile">积分不等式01</span>
+                      <a href="/2021/01/28/%E5%AE%9A%E7%A7%AF%E5%88%8610/">
+                        <span class="hidden-mobile">定积分10</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -463,45 +465,6 @@
 
 
 
-
-  
-
-  
-    <!-- MathJax -->
-    <script>
-      MathJax = {
-        tex: {
-          inlineMath: [['$', '$'], ['\\(', '\\)']]
-        },
-        options: {
-          renderActions: {
-            findScript: [10, doc => {
-              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
-                const display = !!node.type.match(/; *mode=display/);
-                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-                const text = document.createTextNode('');
-                node.parentNode.replaceChild(text, node);
-                math.start = { node: text, delim: '', n: 0 };
-                math.end = { node: text, delim: '', n: 0 };
-                doc.math.push(math);
-              });
-            }, '', false],
-            insertedScript: [200, () => {
-              document.querySelectorAll('mjx-container').forEach(node => {
-                let target = node.parentNode;
-                if (target.nodeName.toLowerCase() === 'li') {
-                  target.parentNode.classList.add('has-jax');
-                }
-              });
-            }, '', false]
-          }
-        }
-      };
-    </script>
-
-    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-svg.js" ></script>
-
-  
 
 
 
