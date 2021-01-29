@@ -193,7 +193,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      238 字
+      523 字
     </span>
   
 
@@ -203,7 +203,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      4
+      10
        分钟
     </span>
   
@@ -271,7 +271,17 @@
 =&(n+1)^n-\frac{2(n+1)^{n+1}}{n+2}+\frac{2(n+1)^{n+2}}{(n+2)(n+3)}-\frac{2n^{n+3}}{(n+1)(n+2)(n+3)}
 \end{align*}</script><p>Therefore</p>
 <script type="math/tex; mode=display">
-\lim_{n\to\infty}\frac{\int_{0}^{1}x^2(x+n)^n{\rm d}x}{(n+1)^n}=1-2+2-2\cdot e^{-1}=1-\frac{2}{e}</script>
+\lim_{n\to\infty}\frac{\int_{0}^{1}x^2(x+n)^n{\rm d}x}{(n+1)^n}=1-2+2-2\cdot e^{-1}=1-\frac{2}{e}</script><hr>
+<p>几个和式极限的对比</p>
+<script type="math/tex; mode=display">
+\begin{align*}  
+\lim\limits_{n\to+\infty}\sum\limits_{k=1}^{n}\dfrac{n}{n^2+k^2}&=\lim\limits_{n\to+\infty}\dfrac{1}{n}\sum\limits_{k=1}^{n}\dfrac{1}{1+\left(\tfrac{k}{n}\right)^2}=\int^{1}_0\dfrac{1}{1+x^2}\mathrm{d}x=\dfrac{\pi}{4}\\  
+\lim\limits_{n\to+\infty}\sum\limits_{k=1}^{mn}\dfrac{n}{n^2+k^2}&=\lim\limits_{n\to+\infty}\dfrac{1}{n}\sum\limits_{k=1}^{mn}\dfrac{1}{1+\left(\tfrac{k}{n}\right)^2}=\int^{m}_0\dfrac{1}{1+x^2}\mathrm{d}x=\arctan\left(m\right)\\  
+\lim\limits_{n\to+\infty}\sum\limits_{k=1}^{n^2}\dfrac{n}{n^2+k^2}&=\lim\limits_{n\to+\infty}\dfrac{1}{n}\sum\limits_{k=1}^{n^2}\dfrac{1}{1+\left(\tfrac{k}{n}\right)^2}=\int^{+\infty}_0\dfrac{1}{1+x^2}\mathrm{d}x=\dfrac{\pi}{2}\\ 
+\lim\limits_{n\to+\infty}\sum\limits_{k=1}^{n^3}\dfrac{n}{n^2+k^2}&=\lim\limits_{n\to+\infty}\dfrac{1}{n}\sum\limits_{k=1}^{n^3}\dfrac{1}{1+\left(\tfrac{k}{n}\right)^2}=\int^{+\infty}_0\dfrac{1}{1+x^2}\mathrm{d}x=\dfrac{\pi}{2}\\  
+\lim\limits_{n\to+\infty}\sum\limits_{k=1}^{+\infty}\dfrac{n}{n^2+k^2}&=\lim\limits_{n\to+\infty}\dfrac{1}{n}\sum\limits_{k=1}^{+\infty}\dfrac{1}{1+\left(\tfrac{k}{n}\right)^2}=\lim\limits_{n\to+\infty}\left(\frac{\pi}{2}\coth\left(n\pi\right)-\frac{1}{2n}\right)=\dfrac{\pi}{2}\\  
+\end{align*}</script><hr>
+
             </div>
             <hr>
             <div>
