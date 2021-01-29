@@ -17,9 +17,25 @@
   <meta name="description" content="保持很多的热爱和一点点野心">
   <meta name="author" content="欧阳珈樱">
   <meta name="keywords" content="">
-  <title>分类 - Math - 樱花味猫猫</title>
+  <title>数学期望和方差的性质 - 樱花味猫猫</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/gradient-light.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
 
 
 
@@ -51,7 +67,7 @@
 
 
 <body>
-  <header style="height: 60vh;">
+  <header style="height: 100vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -145,18 +161,72 @@
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('https://pic1.zhimg.com/80/v2-fc3b739e87c4ec45a12e49acf16fd1cb_720w.jpg?source=1940ef5c') no-repeat center center;
+         style="background: url('/img/002.jpg') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="分类 - Math">
+            <span class="h2" id="subtitle" title="数学期望和方差的性质">
               
             </span>
 
             
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      欧阳珈樱
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-01-29 14:52" pubdate>
+        2021年1月29日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      390 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      6
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
           </div>
 
+          
+            <div class="scroll-down-bar">
+              <i class="iconfont icon-arrowdown"></i>
+            </div>
           
         </div>
       </div>
@@ -165,106 +235,126 @@
 
   <main>
     
-      <div class="container nopadding-x-md">
-        <div class="py-5" id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">共计 37 篇文章</p>
-  <hr>
-  
-  
-    
       
-      <p class="h5">2021</p>
-    
-    <a href="/2021/01/16/%E4%B8%8D%E5%AE%9A%E7%A7%AF%E5%88%8601/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">不定积分01</span>
-      <time style="float: right;">01-16</time>
-    </a>
-  
-    
-    <a href="/2021/01/15/%E5%85%A8%E7%BA%AF%E5%87%BD%E6%95%B0/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">全纯函数</span>
-      <time style="float: right;">01-15</time>
-    </a>
-  
-    
-    <a href="/2021/01/15/%E5%8C%BA%E9%97%B4%E5%86%8D%E7%8E%B0%E6%80%BB%E7%BB%93/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">区间再现总结</span>
-      <time style="float: right;">01-15</time>
-    </a>
-  
-    
-    <a href="/2021/01/15/%E5%A4%8D%E6%95%B0%E4%B8%8E%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">复数与复变函数</span>
-      <time style="float: right;">01-15</time>
-    </a>
-  
-    
-    <a href="/2021/01/15/%E5%85%B3%E4%BA%8E1xn+1%E7%9A%84%E7%A7%AF%E5%88%86/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">关于1/(x^n+1) 的积分</span>
-      <time style="float: right;">01-15</time>
-    </a>
-  
-    
-    <a href="/2021/01/14/%E6%9D%A1%E4%BB%B6%E6%A6%82%E7%8E%87/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">条件概率</span>
-      <time style="float: right;">01-14</time>
-    </a>
-  
-    
-    <a href="/2021/01/14/%E7%A1%AE%E5%AE%9A%E6%A6%82%E7%8E%87%E7%9A%84%E4%B8%80%E4%BA%9B%E6%96%B9%E6%B3%95/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">确定概率的一些方法</span>
-      <time style="float: right;">01-14</time>
-    </a>
-  
-    
-    <a href="/2021/01/09/%E5%AE%9A%E7%A7%AF%E5%88%8603/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">定积分03</span>
-      <time style="float: right;">01-09</time>
-    </a>
-  
-    
-    <a href="/2021/01/09/%E5%AE%9A%E7%A7%AF%E5%88%8602/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">定积分02</span>
-      <time style="float: right;">01-09</time>
-    </a>
-  
-    
-    <a href="/2021/01/03/%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%9002/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">数学分析02</span>
-      <time style="float: right;">01-03</time>
-    </a>
-  
-</div>
 
-
-  <nav aria-label="navigation">
-    <span class="pagination" id="pagination">
-      <a class="extend prev" rel="prev" href="/categories/Math/page/2/"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/categories/Math/">1</a><a class="page-number" href="/categories/Math/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/categories/Math/page/4/">4</a><a class="extend next" rel="next" href="/categories/Math/page/4/"><i class="iconfont icon-arrowright"></i></a>
-    </span>
-  </nav>
-  
-  <script>
-    for (ele of document.getElementById("pagination").getElementsByTagName("a")) {
-      ele.href += '#board';
-    }
-  </script>
-
-
-
-
-              </div>
-            </div>
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">数学期望和方差的性质</h1>
+            
+            <div class="markdown-body">
+              <p>若随机变量 $X$ 的分布用分布列 $p(x_i)$ 或用密度函数 $p(x)$ 表示,则 $X$ 的某一函数 $g(X)$ 的数学期望为</p>
+<script type="math/tex; mode=display">
+\tag{1}E[g(X)]=\begin{cases}
+\displaystyle \sum\limits_{i} g\left(x_{i}\right) p\left(x_{i}\right), & \text {在离散场合} \\
+\displaystyle \int_{-\infty}^{\infty} g(x) p(x) \mathrm{d} x, & \text {在连续场合 }
+\end{cases}</script><h1 id="数学期望的性质"><a href="#数学期望的性质" class="headerlink" title="数学期望的性质"></a>数学期望的性质</h1><div class="note note-info">
+            <p>若 $c$ 是常数,则 $E(c)=c$ .</p>
           </div>
+<p><strong>证明：</strong></p>
+<p>如果将常数 $c$ 看作仅取一个值的随机变量 $X$,则有 $P(X=c)=1$ , 从而其数学期望 $E(c)= E(X)= c\times 1 =c$.</p>
+<div class="note note-info">
+            <p>对任意常数 $a$ , 有 $E(aX)=aE(X)$ .</p>
+          </div>
+<p><strong>证明：</strong></p>
+<p>在 $(1)$ 中令 $g(x)=ax$ , 然后把 $a$ 从求和号或积分号中提出来即得.</p>
+<div class="note note-info">
+            <p>对任意的两个函数 $g_1(x)$ 和 $g_2(x)$ 有</p><script type="math/tex; mode=display">E\left[g_{1}(X) \pm g_{2}(X)\right]=E\left[g_{1}(X)\right] \pm E\left[g_{2}(X)\right]</script>
+          </div>
+<p><strong>证明：</strong></p>
+<p>在 $(1)$ 中令 $g(x)=g_1(x)\pm g_2(x)$ , 然后把和式分解成两个和式 , 或把积分分解成两个积分即得.</p>
+<h1 id="方差的性质"><a href="#方差的性质" class="headerlink" title="方差的性质"></a>方差的性质</h1><div class="note note-info">
+            <script type="math/tex; mode=display">\operatorname{Var}(X)=E\left(X^{2}\right)-[E(X)]^{2}</script>
+          </div>
+<p><strong>证明：</strong></p>
+<script type="math/tex; mode=display">
+\begin{align*}
+\operatorname{Var}(X)&=E(X-E(X))^{2}=E\left(X^{2}-2 X \cdot E(X)+(E(X))^{2}\right)\\
+&=E\left(X^{2}\right)-2 E(X) \cdot E(X)+(E(X))^{2}=E\left(X^{2}\right)-[E(X)]^{2}
+\end{align*}</script><div class="note note-info">
+            <p>$c$ 为常数, 则 $\operatorname{Var}(c)=0$ .</p>
+          </div>
+<p><strong>证明：</strong></p>
+<script type="math/tex; mode=display">
+\operatorname{Var}(c)=E(c-E(c))^{2}=E(c-c)^{2}=0</script><div class="note note-info">
+            <p>若 $a,b$ 为常数 , 则 ${\rm Var}(aX+b)=a^2{\rm Var}(X)$ .</p>
+          </div>
+<p><strong>证明：</strong></p>
+<script type="math/tex; mode=display">
+\begin{align*}
+{\rm Var}(aX+b)&=E(aX+b-E(aX+b))^2\\
+&=E(a(X-E(X)))^2\\
+&=a^2{\rm Var}(X)
+\end{align*}</script>
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Math/">Math</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/">概率论</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/01/29/%E5%B8%B8%E7%94%A8%E8%BF%9E%E7%BB%AD%E5%88%86%E5%B8%83/">
+                        <span class="hidden-mobile">常用连续分布</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
         </div>
       </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
     
 
     
@@ -344,9 +434,15 @@
 
 
 
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
 
 
 
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
 
 
 
@@ -387,6 +483,45 @@
 
 
 
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-svg.js" ></script>
+
+  
 
 
 
