@@ -193,7 +193,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      3.5k 字
+      4.2k 字
     </span>
   
 
@@ -203,7 +203,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      69
+      83
        分钟
     </span>
   
@@ -303,7 +303,9 @@ x &=\left(e^{x}-1\right) \sum_{i=0}^{\infty} \frac{B_{i} x^{i}}{i !} \\
 &=\sum_{j=0}^{\infty} \frac{x^{j+1}}{(j+1) !} \sum_{i=0}^{\infty} \frac{B_{i} x^{i}}{i !}
 \end{aligned}</script><p>Recall the Cauchy product of two infinite series:  </p>
 <script type="math/tex; mode=display">
-\left(\sum_{k=0}^{\infty} a_{k}\right)\left(\sum_{m=0}^{\infty} b_{m}\right)=\left(\sum_{n=0}^{\infty} c_{n}\right)</script><p>where $\displaystyle c_{n}=a_{0} b_{n}+a_{1} b_{n-1}+\cdots+a_{n} b_{0}=\sum_{k=0}^{n} a_{k} b_{n-k}$. If we take the Cauchy product in this case, we obtain  </p>
+\left(\sum_{k=0}^{\infty} a_{k}\right)\left(\sum_{m=0}^{\infty} b_{m}\right)=\left(\sum_{n=0}^{\infty} c_{n}\right)</script><p>where </p>
+<script type="math/tex; mode=display">
+\displaystyle c_{n}=a_{0} b_{n}+a_{1} b_{n-1}+\cdots+a_{n} b_{0}=\sum_{k=0}^{n} a_{k} b_{n-k}</script><p>If we take the Cauchy product in this case, we obtain  </p>
 <script type="math/tex; mode=display">
 \begin{aligned}
 x &=\sum_{n=0}^{\infty} \sum_{k=0}^{n} \frac{x^{n+1-k}}{(n+1-k) !} \cdot \frac{B_{k} x^{k}}{k !} \\
@@ -362,11 +364,11 @@ g(x) &=\frac{x}{e^{x}-1}-B_{1} x \\
 <p>$\square$</p>
 <h1 id="Bernoulli-Numbers-and-Cotangent"><a href="#Bernoulli-Numbers-and-Cotangent" class="headerlink" title="Bernoulli Numbers and Cotangent"></a>Bernoulli Numbers and Cotangent</h1><p>We know from the previous section that  </p>
 <script type="math/tex; mode=display">
-g(x)=\frac{x}{e^{x}-1}-B_{1} x=\frac{x\left(e^{x / 2}+e^{-x / 2}\right)}{2\left(e^{x / 2}-e^{-x / 2}\right)}\tag{1}</script><p>Note that</p>
+g(x)=\frac{x}{e^{x}-1}-B_{1} x=\frac{x\left(e^{x / 2}+e^{-x / 2}\right)}{2\left(e^{x / 2}-e^{-x / 2}\right)}</script><p>Note that</p>
 <script type="math/tex; mode=display">
 \sinh x=\frac{e^{x}-e^{-x}}{2} \qquad \cosh x=\frac{e^{x}+e^{-x}}{2}</script><p>Thus,  </p>
 <script type="math/tex; mode=display">
-\dfrac{e^{x / 2}+e^{-x / 2}}{e^{x / 2}-e^{-x / 2}}=\dfrac{\dfrac{e^{x / 2}+e^{-x / 2}}{2}}{\dfrac{e^{x / 2}-e^{-x / 2}}{2}}=\dfrac{\cosh \dfrac{x}{2}}{\sinh \dfrac{x}{2}}=\operatorname{coth} \frac{x}{2}</script><p>And in equation $(1)$, we notice that  </p>
+\dfrac{e^{x / 2}+e^{-x / 2}}{e^{x / 2}-e^{-x / 2}}=\dfrac{\dfrac{e^{x / 2}+e^{-x / 2}}{2}}{\dfrac{e^{x / 2}-e^{-x / 2}}{2}}=\dfrac{\cosh \dfrac{x}{2}}{\sinh \dfrac{x}{2}}=\operatorname{coth} \frac{x}{2}</script><p>We notice that  </p>
 <script type="math/tex; mode=display">
 \begin{aligned}
 g(x) &=\frac{x\left(e^{x / 2}+e^{-x / 2}\right)}{2\left(e^{x / 2}-e^{-x / 2}\right)} \\
@@ -476,7 +478,63 @@ g(x) &=\frac{x\left(e^{x / 2}+e^{-x / 2}\right)}{2\left(e^{x / 2}-e^{-x / 2}\rig
 \zeta(2 k)=(-1)^{k-1} \frac{(2 \pi)^{2 k}}{(2 k) !} B_{2 k}</script><p>$\square$</p>
 <p>We notice that all $\zeta(2k)$ must always be positive, so from the exponent of $-1$, we have $B_{4k} &lt; 0$ and $B_{4k+2}&gt;0$ for integers $k$. Thus, another way to write this result above, recognizing that $(-1)^{k-1}B_{2k}=|B_{2k}|$, is:  </p>
 <script type="math/tex; mode=display">
-\zeta(2 k)=\frac{\left|B_{2 k}\right|(2 \pi)^{2 k}}{2(2 k) !}</script><section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span><a target="_blank" rel="noopener" href="https://arminda.whitman.edu/islandora/object/arminda%3A62243/datastream/PDF/view">The Bernoulli Numbers: A Brief Primer by Nathaniel Douglas Larson</a>
+\zeta(2 k)=\frac{\left|B_{2 k}\right|(2 \pi)^{2 k}}{2(2 k) !}</script><p>We also get the following important result about the positive growth of the Bernoulli numbers:  </p>
+<p>For $k\geqslant3,|B_{2k+2}|&gt;|B_{2k}|$.</p>
+<p>Looking at the first few terms, we might not make this conjecture, since $|B_6|=\dfrac{1}{42}&lt;\dfrac{1}{30}=|B_4|$. However,for all other $k$ this is true.  </p>
+<p><strong>Proof :</strong></p>
+<p>Using the previous formula, we solve for the magnitude of two consecutive even Bernoulli numbers:  </p>
+<script type="math/tex; mode=display">
+\left|B_{2 k}\right|=\frac{2 \zeta(2 k)(2 k) !}{(2 \pi)^{2 k}} \quad\left|B_{2 k+2}\right|=\frac{2 \zeta(2 k+2)(2 k+2) !}{(2 \pi)^{2 k+2}}</script><p>If we take the ratio of these terms, we find  </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\frac{\left|B_{2 k+2}\right|}{\left|B_{2 k}\right|} &=\frac{(2 k+2) !(2 \pi)^{2 k}}{(2 m) !(2 \pi)^{2 m+2}} \\
+&=\frac{(2 m+2)(2 m+1)}{(2 \pi)^{2}} \\
+&>1
+\end{aligned}</script><p>for all $m\geqslant3$.</p>
+<p>$\square$</p>
+<p>Now that we have proven these useful corollaries about the Bernoulli numbers, let us consider some examples that apply this formula to mathematical problems.</p>
+<div class="note note-info">
+            <p>Evaluate the infinite sum  </p><script type="math/tex; mode=display">\sum_{n=1}^{\infty} \frac{1}{n^{10}}=\frac{1}{1^{10}}+\frac{1}{2^{10}}+\frac{1}{3^{10}}+\frac{1}{4^{10}}+\cdots</script>
+          </div>
+<p><strong>Solution :</strong> </p>
+<p>We recognize that this sum is $\zeta(10)$, and we can use the formula derived above.  </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\zeta(10) &=\frac{4^{5}\left|B_{10}\right| \pi^{10}}{10 !} \\
+&=\frac{1024\left|\frac{5}{66}\right| \pi^{10}}{10 !} \\
+&=\frac{1}{93555} \pi^{10} \\
+& \approx 1.0009945 .
+\end{aligned}</script><p>$\square$</p>
+<div class="note note-info">
+            <p>For each positive $N$, let $P_N$ be the probability that two randomly chosen integers in $\begin{Bmatrix} 1,2,\cdots,N\end{Bmatrix}$ are coprime. As $N$ approaches infinity, to what value $P$ does $P_N$ converge?  </p>
+          </div>
+<p><strong>Solution :</strong> </p>
+<p>We claim that  </p>
+<script type="math/tex; mode=display">
+P_N\to P=\dfrac{6}{\pi^2}</script><p>We will “prove” this in similar fashion to our other Euler proof in this section, that is, without the detailed consideration of convergence that we would need in a rigorous solution.  </p>
+<p>We consider each of the possible prime factors of the integers below $N$. There is one-half probability that each of the integers are even (or nearly one-half, depending on the value of $N$), so the probability that they both are even is $\dfrac12\cdot\dfrac12=\dfrac14$. Thus, the probability that the integers do not share $2$ as a factor is exactly $\left(1-\dfrac14\right)$.</p>
+<p>Applying similar logic convinces us that the probability that the integers do not share a factor of $3$ is $\left(1-\dfrac19\right)$, that they do not share a factor of $4$ is $\left(1-\dfrac{1}{16}\right)$, and so on, so that the probability that any prime $p$ is not a common factor is $\left(1-\dfrac{1}{p^2}\right)$. Thus, with an error term of $\epsilon_N$ , our desired probability becomes  </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+P_{N} &=\left(1-\frac{1}{2^{2}}\right)\left(1-\frac{1}{3^{2}}\right)\left(1-\frac{1}{5^{2}}\right) \cdots+\epsilon_{N} \\
+&=\prod_{\text {prime } p}\left(1-\frac{1}{p^{2}}\right)+\epsilon_{N}
+\end{aligned}</script><p>The formal result, which shows that the error $\epsilon_N$ converges to $0$, was proven in $1881$ by Italian mathematician Ernesto Cesaro  . We will take this for granted and state that  </p>
+<script type="math/tex; mode=display">
+\lim _{N \rightarrow \infty} P_{N}=P=\left(1-\frac{1}{2^{2}}\right)\left(1-\frac{1}{3^{2}}\right)\left(1-\frac{1}{5^{2}}\right) \cdots</script><p>Thus</p>
+<script type="math/tex; mode=display">
+P=\frac{1}{\zeta(2)}=\frac{6}{\pi^2}\approx61\%</script><p>$\square$</p>
+<div class="note note-info">
+            <p>If we think about it closely, we can actually combine the results of the previous two examples. Select ten integers between $1$ and $N$ at random and let the probability that they are collectively coprime be $P_N$ . Then as $N$ approaches infinity, what is the value of this probability $P$ ?</p>
+          </div>
+<p><strong>Solution :</strong> </p>
+<p>We build upon the logic of the previous example. The probability that each number has a factor of $2$ is nearly $1-\dfrac{1}{2^{10}}$ . The probability that each has a factor of $3$ is about $1-\dfrac{1}{3^{10}}$, and so on. Then,  </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\lim _{N \rightarrow \infty} P_{N}=P &=\left(1-\frac{1}{2^{10}}\right)\left(1-\frac{1}{3^{10}}\right)\left(1-\frac{1}{5^{10}}\right) \cdots \\
+&=1 / \zeta(10) \\
+& \approx 99.9 \%
+\end{aligned}</script><p>$\square$</p>
+<section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span><a target="_blank" rel="noopener" href="https://arminda.whitman.edu/islandora/object/arminda%3A62243/datastream/PDF/view">The Bernoulli Numbers: A Brief Primer by Nathaniel Douglas Larson</a>
 <a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:2" class="footnote-text"><span><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/166136767">伯努利数与欧拉数</a>
 <a href="#fnref:2" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:3" class="footnote-text"><span><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/138401110">从5050到-1/12——伯努利数、欧拉-麦克劳林公式与拉马努金求和</a>
 <a href="#fnref:3" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>
@@ -496,15 +554,17 @@ g(x) &=\frac{x\left(e^{x / 2}+e^{-x / 2}\right)}{2\left(e^{x / 2}-e^{-x / 2}\rig
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
+                      <a class="hover-with-bg" href="/tags/Bernoulli-Numbers/">Bernoulli Numbers</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Generating-Function/">Generating Function</a>
+                    
                       <a class="hover-with-bg" href="/tags/%E6%97%A0%E7%A9%B7%E4%B9%98%E7%A7%AF/">无穷乘积</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%9F%AF%E8%A5%BF%E4%B9%98%E7%A7%AF/">柯西乘积</a>
                     
                       <a class="hover-with-bg" href="/tags/%E7%BA%A7%E6%95%B0/">级数</a>
                     
-                      <a class="hover-with-bg" href="/tags/Bernoulli-Numbers/">Bernoulli Numbers</a>
-                    
                       <a class="hover-with-bg" href="/tags/Zeta-Function/">Zeta Function</a>
-                    
-                      <a class="hover-with-bg" href="/tags/Generating-Function/">Generating Function</a>
                     
                   </div>
                 
@@ -516,6 +576,12 @@ g(x) &=\frac{x\left(e^{x / 2}+e^{-x / 2}\right)}{2\left(e^{x / 2}-e^{-x / 2}\rig
                 <div class="post-prevnext">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2021/01/30/Bernoulli%20Numbers%20(2)/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Bernoulli Numbers (2)</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
