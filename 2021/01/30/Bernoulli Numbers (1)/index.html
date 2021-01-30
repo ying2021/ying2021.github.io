@@ -1,0 +1,741 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="保持很多的热爱和一点点野心">
+  <meta name="author" content="欧阳珈樱">
+  <meta name="keywords" content="">
+  <title>Bernoulli Numbers (1) - 樱花味猫猫</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/gradient-light.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.3.0"></head>
+
+
+<body>
+  <header style="height: 100vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>樱花味猫猫</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/002.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Bernoulli Numbers (1)">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      欧阳珈樱
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-01-30 14:38" pubdate>
+        2021年1月30日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      3.5k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      68
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+            <div class="scroll-down-bar">
+              <i class="iconfont icon-arrowdown"></i>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Bernoulli Numbers (1)</h1>
+            
+            <div class="markdown-body">
+              <h1 id="The-Bernoulli-Generating-Function"><a href="#The-Bernoulli-Generating-Function" class="headerlink" title="The Bernoulli Generating Function"></a>The Bernoulli Generating Function</h1><p>The Bernoulli numbers are the coefficients of the exponential generating function  </p>
+<script type="math/tex; mode=display">
+\frac{x}{e^{x}-1}=\sum_{k=0}^{\infty} \frac{B_{k} x^{k}}{k !}</script><p>We can work out the first few terms of the sequence by evaluating the Taylor series expansion of $\dfrac{x}{e^x-1}$ , We can calculate the first couple derivatives and their limits as $x$ approaches $0$ ,  </p>
+<script type="math/tex; mode=display">
+\begin{align*}
+f(x) &=\frac{x}{e^{x}-1} & \text { with } \lim _{x \rightarrow 0} f(x)&=1 \\
+f^{\prime}(x) &=\frac{e^{x} x-e^{x}+1}{\left(e^{x}-1\right)^{2}} & \text { with } \lim _{x \rightarrow 0} f^{\prime}(x)&=-\frac{1}{2} \\
+f^{\prime \prime}(x) &=\frac{e^{2 x} x-e^{x} x-2 e^{2 x}+2 e^{x}}{\left(e^{x}-1\right)^{3}} & \text { with } \lim _{x \rightarrow 0} f^{\prime \prime}(x)&=\frac{1}{6}\\
+&\cdots &\cdots
+\end{align*}</script><p>which gives us the Taylor series centered at $0$ (aka Macluarin series):  </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\frac{x}{e^{x}-1}&=\sum_{n=0}^{\infty} \frac{f^{(n)} x^{n}}{n !} \\
+&=1+\left(-\frac{1}{2}\right) x+\left(\frac{1}{6}\right) \frac{x^{2}}{2 !}+\left(-\frac{1}{30}\right) \frac{x^{4}}{4}+\left(\frac{1}{42}\right) \frac{x^{6}}{6 !}+\cdots \\
+&=1-\frac{x}{2}+\frac{x^{2}}{12}+\frac{x^{4}}{720}+\frac{x^{6}}{30240}+\cdots
+\end{aligned}</script><p>And the value of $B_n$ can be obtained by seeking the limit of the $n$th derivative of the generating function at $x=0$:</p>
+<script type="math/tex; mode=display">
+B_n=\lim_{x\to0}{\mathrm{d}^n\over\mathrm{d}x^n}\left[x\over e^x-1\right]</script><p>Let us step back from the exponential generating function to take a closer look at the Bernoulli numbers<br>themselves. When you look at the first terms of the Bernoulli numbers, what do you notice?  </p>
+<script type="math/tex; mode=display">
+\begin{array}{lll}
+B_{0} & =1 & B_{11}&=0 \\
+B_{1} & =-1 / 2 & B_{12}&=-691 / 2730 \\
+B_{2} & =1 / 6 & B_{13}&=0 \\
+B_{3} & =0 & B_{14}&=7 / 6 \\
+B_{4} & =-1 / 30 & B_{15}&=0 \\
+B_{5} & =0 & B_{16}&=-3617 / 510 \\
+B_{6} & =1 / 42 & B_{17}&=0 \\
+B_{7} & =0 & B_{18}&=43867 / 798 \\
+B_{8} & =-1 / 30 & \cdots \\
+B_{9} & =0 & B_{49}&=0 \\
+B_{10} & =5 / 66 & B_{50}&=4950572052410796482122477525 / 66
+\end{array}</script><p>Likely, a few of the patterns you see are among the following:  </p>
+<ul>
+<li>$B_n$ is rational.  </li>
+<li>$B_{2n+1}=0$ for $n\geqslant1$ . </li>
+<li>$B_{2n}$ alternates sign:  $B_{4n}<0$ and $B_{4n+2}>0$ for $n\geqslant 1$ .</li>
+<li>The magnitude of $B_{2n}$ grows very quickly.  </li>
+</ul>
+<h1 id="The-Bernoulli-Numbers-Are-Rational"><a href="#The-Bernoulli-Numbers-Are-Rational" class="headerlink" title="The Bernoulli Numbers Are Rational"></a>The Bernoulli Numbers Are Rational</h1><p>One of the key properties of the Bernoulli numbers is that they are rational. To prove this fact, we will derive the following recurrence relation for the Bernoulli numbers. If the proposition below is true, we note that the fact that $B_k$ is rational follows immediately.</p>
+<p>The Bernoulli numbers satisfy the relation  </p>
+<script type="math/tex; mode=display">
+B_{0}=1 \text { and } \sum_{k=0}^{n-1}\left(\begin{array}{l}
+n \\
+k
+\end{array}\right) B_{k}=0, \text { for } n>1.</script><p><strong>Proof :</strong></p>
+<p>This is our process: we multiply by $e^x-1$ on both sides, express $e^x-1$ as a Taylor series, take the<br>Cauchy product of this series with $\displaystyle\sum_{i=0}^{\infty}\dfrac{B_{i}x^i}{i!}$ , and then equate powers of $x$. First,  </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\frac{x}{e^{x}-1} &=\sum_{i=0}^{\infty} \frac{B_{i} x^{i}}{i !} \\
+x &=\left(e^{x}-1\right) \sum_{i=0}^{\infty} \frac{B_{i} x^{i}}{i !} \\
+&=\left(x+\frac{x^{2}}{2 !}+\frac{x^{3}}{3 !}+\cdots\right) \sum_{i=0}^{\infty} \frac{B_{i} x^{i}}{i !} \\
+&=\sum_{j=1}^{\infty} \frac{x^{j}}{j !} \sum_{i=0}^{\infty} \frac{B_{i} x^{i}}{i !} \\
+&=\sum_{j=0}^{\infty} \frac{x^{j+1}}{(j+1) !} \sum_{i=0}^{\infty} \frac{B_{i} x^{i}}{i !}
+\end{aligned}</script><p>Recall the Cauchy product of two infinite series:  </p>
+<script type="math/tex; mode=display">
+\left(\sum_{k=0}^{\infty} a_{k}\right)\left(\sum_{m=0}^{\infty} b_{m}\right)=\left(\sum_{n=0}^{\infty} c_{n}\right)</script><p>where $\displaystyle c_{n}=a_{0} b_{n}+a_{1} b_{n-1}+\cdots+a_{n} b_{0}=\sum_{k=0}^{n} a_{k} b_{n-k}$. If we take the Cauchy product in this case, we obtain  </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+x &=\sum_{n=0}^{\infty} \sum_{k=0}^{n} \frac{x^{n+1-k}}{(n+1-k) !} \cdot \frac{B_{k} x^{k}}{k !} \\
+&=\sum_{n=0}^{\infty} \sum_{k=0}^{n} \frac{B_{k} x^{n+1}}{(n+1-k) ! k !} \\
+&=\sum_{n=0}^{\infty} \sum_{k=0}^{n} \frac{(n+1) ! B_{k}}{(n+1-k) ! k !} \frac{x^{n+1}}{(n+1) !} \\
+&=\sum_{n=0}^{\infty} \sum_{k=0}^{n}\left(\begin{array}{c}
+n+1 \\
+k
+\end{array}\right) B_{k} \frac{x^{n+1}}{(n+1) !}\\
+&=\sum_{n=1}^{\infty} \sum_{k=0}^{n-1}\left(\begin{array}{l}
+n \\
+k
+\end{array}\right) B_{k} \frac{x^{n}}{n !}
+\end{aligned}</script><p>On the left hand side we have only $x$. We know the coefficient of $x$ on the right hand side is $0$, and the<br>coefficient of every other power of $x$ is $0$. Thus, the desired relation results:  </p>
+<script type="math/tex; mode=display">
+B_{0}=1 \text { and } \sum_{k=0}^{n-1}\left(\begin{array}{l}
+n \\
+k
+\end{array}\right) B_{k}=0, \text { for } n>1.</script><p>$\square$</p>
+<p>It can also be expressed as</p>
+<script type="math/tex; mode=display">
+B_{0}=1  \text { and } \sum\limits_{k=0}^{n}\binom{n+1}{k}B_{k}=0, \text { for } n>1.</script><script type="math/tex; mode=display">
+B_{0}=1\text { and } B_{n}=-\dfrac{1}{n+1}\sum\limits_{k=0}^{n-1}\binom{n+1}{k}B_{k}, \text { for } n>1.</script><p>These reformulations capture the fundamental relation of the Bernoulli numbers to one another, which we can demonstrate by writing the first few terms of the recurrence:</p>
+<script type="math/tex; mode=display">
+\begin{array}{l}
+1=B_{0} \\
+0=B_{0}+2 B_{1} \\
+0=B_{0}+3 B_{1}+3 B_{2} \\
+0=B_{0}+4 B_{1}+6 B_{2}+4 B_{3} \\
+0=B_{0}+5 B_{1}+10 B_{2}+10 B_{3}+5 B_{4}
+\end{array}</script><p>Perhaps the most memorable way of remembering this is relationship is through the pseudo-equation<br>$(B + 1)^n = B^n$, where the left hand side is expanded</p>
+<script type="math/tex; mode=display">
+B^n+\binom{n}{n-1}B^{n-1}+\cdots+\binom{n}{1}B^1+1=B^n</script><p>and then all exponents are converted into subscripts</p>
+<script type="math/tex; mode=display">
+B_{n}+\left(\begin{array}{c}
+n \\
+n-1
+\end{array}\right) B_{n-1}+\cdots+\left(\begin{array}{c}
+n \\
+1
+\end{array}\right) B_{1}+1=B_{n}</script><p>This simple mnemonic proves useful for remembering the Bernoulli numbers, and understanding their close association<br>with the Binomial Theorem and Pascal’s Triangle.  </p>
+<h1 id="The-Odd-Bernoulli-Numbers-Except-B1-Are-Zero"><a href="#The-Odd-Bernoulli-Numbers-Except-B1-Are-Zero" class="headerlink" title="The Odd Bernoulli Numbers (Except B1) Are Zero"></a>The Odd Bernoulli Numbers (Except B1) Are Zero</h1><p>$B_{2n+1}=0$ for $n\geqslant1$ </p>
+<p><strong>Proof :</strong></p>
+<p>Consider the Bernoulli generating function</p>
+<script type="math/tex; mode=display">
+\frac{x}{e^{x}-1}=B_{0}+B_{1} x+\frac{B_{2} x^{2}}{2 !}+\frac{B_{3} x^{3}}{3 !}+\cdots</script><p>minus the term  $B_1 x$ . Then we have  </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+g(x) &=\frac{x}{e^{x}-1}-B_{1} x \\
+&=\frac{x}{e^{x}-1}+\frac{x}{2} \\
+&=\frac{2 x+x\left(e^{x}-1\right)}{2\left(e^{x}-1\right)} \\
+&=\frac{x\left(e^{x}+1\right)}{2\left(e^{x}-1\right)} \\
+&=\frac{x\left(e^{x}+1\right)}{2\left(e^{x}-1\right)}\left(\frac{e^{-x / 2}}{e^{-x / 2}}\right) \\
+&=\frac{x\left(e^{x / 2}+e^{-x / 2}\right)}{2\left(e^{x / 2}-e^{-x / 2}\right)}
+\end{aligned}</script><p>Obviously $g$ is even. Thus, the power series of  $\dfrac{x}{e^x-1}-B_1x$ has no nonzero odd-power terms,<br>and  $B_{2n+1}=0$ for $n\geqslant1$ .</p>
+<p>$\square$</p>
+<h1 id="Bernoulli-Numbers-and-Cotangent"><a href="#Bernoulli-Numbers-and-Cotangent" class="headerlink" title="Bernoulli Numbers and Cotangent"></a>Bernoulli Numbers and Cotangent</h1><p>We know from the previous section that  </p>
+<script type="math/tex; mode=display">
+g(x)=\frac{x}{e^{x}-1}-B_{1} x=\frac{x\left(e^{x / 2}+e^{-x / 2}\right)}{2\left(e^{x / 2}-e^{-x / 2}\right)}\tag{1}</script><p>Note that</p>
+<script type="math/tex; mode=display">
+\sinh x=\frac{e^{x}-e^{-x}}{2} \qquad \cosh x=\frac{e^{x}+e^{-x}}{2}</script><p>Thus,  </p>
+<script type="math/tex; mode=display">
+\dfrac{e^{x / 2}+e^{-x / 2}}{e^{x / 2}-e^{-x / 2}}=\dfrac{\dfrac{e^{x / 2}+e^{-x / 2}}{2}}{\dfrac{e^{x / 2}-e^{-x / 2}}{2}}=\dfrac{\cosh \dfrac{x}{2}}{\sinh \dfrac{x}{2}}=\operatorname{coth} \frac{x}{2}</script><p>And in equation $(1)$, we notice that  </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+g(x) &=\frac{x\left(e^{x / 2}+e^{-x / 2}\right)}{2\left(e^{x / 2}-e^{-x / 2}\right)} \\
+&=\frac{x}{2} \operatorname{coth} \frac{x}{2}
+\end{aligned}</script><p>Since the Taylor expansion of the left-hand side has no nonzero odd terms, we may write,  </p>
+<script type="math/tex; mode=display">
+\frac{x}{2} \operatorname{coth} \frac{x}{2}=\sum_{n=0}^{\infty} \frac{B_{2 n} x^{2 n}}{(2 n) !}</script><p>from which we can derive an expression for hyperbolic cotangent:  </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\operatorname{coth} x &=\sum_{n=0}^{\infty} \frac{B_{2 n}(2 x)^{2 n}}{x(2 n) !} \\
+&=\sum_{n=0}^{\infty} \frac{2 B_{2 n}(2 x)^{2 n-1}}{(2 n) !}
+\end{aligned}</script><p>If we substitute $xi$ for $x$ in this equation, we find an expression in terms of cotangent, for $|x|\leqslantπ$  </p>
+<script type="math/tex; mode=display">
+\cot x=\sum_{n=0}^{\infty}(-1)^{n} \frac{2 B_{2 n}(2 x)^{2 n-1}}{(2 n) !}</script><p>Furthermore, $\tan x$;  $\tanh x$; $\ln \sin x$; $\dfrac{\sin x}{x}$ and other trigonometric functions can be expressed in terms of the<br>Bernoulli numbers. </p>
+<h1 id="The-Riemann-Zeta-Function"><a href="#The-Riemann-Zeta-Function" class="headerlink" title="The Riemann Zeta Function"></a>The Riemann Zeta Function</h1><p>One of the most powerful applications of the Bernoulli numbers the evaluation of the Riemann zeta function.  </p>
+<p>Let $k$ be a real, $|k|\geqslant 1$: Then the Riemann zeta function over the real numbers, $\zeta(k)$, is defined as  </p>
+<script type="math/tex; mode=display">
+\zeta(k)=\sum_{n=1}^{\infty}\frac{1}{n^k}</script><p>For $k&gt;1$ ,</p>
+<script type="math/tex; mode=display">
+\zeta(k)=\prod_{p}\left(\frac{1}{1-p^{-k}}\right)</script><p>over all primes $p$ .  </p>
+<p><strong>Proof :</strong></p>
+<p>The proof of this theorem relies on the uniqueness of factorization guaranteed by the Fundamental<br>Theorem of Arithmetic. There are two approaches{one which involves a sieve and another which follows<br>from geometric series. We will take the latter approach.  </p>
+<p>For $0 &lt; x &lt; 1$ , we have  </p>
+<script type="math/tex; mode=display">
+\frac{1}{1-x}=1+x+x^2+x^3+x^4+\cdots</script><p>If, for each prime $p$ and $k &gt; 1$, we say $x=\dfrac{1}{p^k}$ :</p>
+<script type="math/tex; mode=display">
+\dfrac{1}{1-\frac{1}{p^{k}}}=1+\frac{1}{p^{k}}+\frac{1}{p^{2 k}}+\frac{1}{p^{3 k}}+\frac{1}{p^{4 k}}+\cdots</script><p>If we take the product of each of these generating functions on the left hand side, we get  </p>
+<script type="math/tex; mode=display">
+\begin{align*}
+&\left(\frac{1}{1-\frac{1}{2^{k}}}\right)\left(\frac{1}{1-\frac{1}{3^{k}}}\right)\left(\frac{1}{1-\frac{1}{5^{k}}}\right) \cdots\\
+=&\left(1+\frac{1}{2^{k}}+\frac{1}{2^{2 k}}+\cdots\right)\left(1+\frac{1}{3^{k}}+\frac{1}{3^{2 k}}+\cdots\right)\left(1+\frac{1}{5^{k}}+\frac{1}{5^{2 k}}+\cdots\right)+\cdots
+\end{align*}</script><p>We now employ the FTA(Fundamental Theorem of Arithmetic). Every term of the expansion on the right hand side will be of the form  </p>
+<script type="math/tex; mode=display">
+\frac{1}{p_{1}^{m_{1} k} p_{2}^{m_{2} k} \cdots p_{n}^{m_{n} k}}</script><p>where $m_1,\cdots,m_n$ are positive integers. By the FTA, each positive integer has a unique factorization into<br>the powers of primes. Therefore the expansion becomes,  </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\left(\frac{1}{1-\frac{1}{2^{k}}}\right)\left(\frac{1}{1-\frac{1}{3^{k}}}\right)\left(\frac{1}{1-\frac{1}{5^{k}}}\right) \cdots &=1+\frac{1}{2^{k}}+\frac{1}{3^{k}}+\frac{1}{4^{k}}+\frac{1}{5^{k}}+\frac{1}{6^{k}}+\cdots \\
+\prod_{p}\left(\frac{1}{1-p^{-k}}\right) &=\zeta(k)
+\end{aligned}</script><p>$\square$</p>
+<p>For any integer  $k&gt;0$,</p>
+<script type="math/tex; mode=display">
+\zeta(2 k)=\sum_{n=1}^{\infty} \frac{1}{n^{2 k}}=\frac{\left|B_{2 k}\right|(2 \pi)^{2 k}}{2(2 k) !}</script><p>It is remarkable to see the Bernoulli numbers appear in this formula, as well as to see that even values of<br>the zeta function are rational numbers multiplied by powers of $\pi$. We will prove this theorem by equating two<br>different expressions for cotangent. But first, we will give ourselves an intuition regarding this problem by<br>considering the case $\zeta(2)$, which Euler solved equating two expressions for $sine$. </p>
+<p>The function $\sin x$ can be written as the infinite polynomial  </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\sin x &=\lim _{n \rightarrow \infty} x\left(1-\frac{x}{\pi}\right)\left(1+\frac{x}{\pi}\right)\left(1-\frac{x}{2 \pi}\right)\left(1+\frac{x}{2 \pi}\right) \cdots\left(1-\frac{x}{n \pi}\right)\left(1+\frac{x}{n \pi}\right) \\
+&=\lim _{n \rightarrow \infty} x\left(1-\frac{x^{2}}{\pi^{2}}\right)\left(1-\frac{x^{2}}{4 \pi^{2}}\right)\left(1-\frac{x^{2}}{9 \pi^{2}}\right) \cdots\left(1-\frac{x}{n^{2} \pi^{2}}\right) \\
+\frac{\sin x}{x} &=\lim _{n \rightarrow \infty}\left(1-\frac{x^{2}}{\pi^{2}}\right)\left(1-\frac{x^{2}}{4 \pi^{2}}\right)\left(1-\frac{x^{2}}{9 \pi^{2}}\right) \cdots\left(1-\frac{x}{n^{2} \pi^{2}}\right) \\
+&=\prod_{n=1}^{\infty}\left(1-\left(\frac{x}{n \pi}\right)^{2}\right)
+\end{aligned}</script><p>What if we try to isolate the $x^2$ term? In order to obtain a $x^2$ term, we simply take one of the $-\dfrac{x^2}{k\pi^2}$<br>multiplied by all ones in the expansion of $\dfrac{\sin x}{x}$. So, we see that  </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\frac{\sin x}{x} &=1-\frac{x^{2}}{\pi^{2}}\left(1+\frac{1}{4}+\frac{1}{9}+\cdots\right)+\mathcal{O}\left(x^{4}\right) \\
+&=1-\frac{x^{2}}{\pi^{2}}\left(\sum_{k=1}^{\infty} \frac{1}{k^{2}}\right)+\mathcal{O}\left(x^{4}\right) \\
+&=1-\frac{x^{2}}{\pi^{2}} \zeta(2)+\mathcal{O}\left(x^{4}\right)
+\end{aligned}</script><p>Now we consider another expression of $\sin x$. In addition to the formula we just derived, we know the Taylor series of $\sin x$,</p>
+<script type="math/tex; mode=display">
+\sin x=x-\frac{x^{3}}{3 !}+\frac{x^{5}}{5 !}-\frac{x^{7}}{7 !}+\cdots</script><p>from which we can calculate  </p>
+<script type="math/tex; mode=display">
+\frac{\sin x}{x}=1-\frac{x^{2}}{3 !}+\frac{x^{4}}{5 !}-\frac{x^{6}}{7 !}+\cdots</script><p>Now, if we compare the coefficients of $x^2$ in each equation, we see that  </p>
+<script type="math/tex; mode=display">
+\frac{1}{\pi^2}\zeta(2)=\frac{1}{3!}\quad \Rightarrow  \zeta(2)=\frac{\pi^2}{6}</script><p>This is a fascinating result. But how do we generalize our function in order to find larger values of the<br>zeta function, such as $\zeta(10)$? The secret is in the cotangent formula in terms of the Bernoulli numbers<br>that we derived in the previous section, which we will compare to a cotangent formula in terms of the zeta<br>function. Before we can do that, we must find such a formula.  </p>
+<p>Consider the infinite polynomial expression for $\dfrac{\sin x}{x}$. We want to write $\cot x$ in terms of $\sin x$ in order to<br>make a substitution. Note that</p>
+<script type="math/tex; mode=display">
+\frac{{\rm d}}{{\rm d}x}\ln \sin x=\cot x
+$$
+If we take the natural logarithm of $\dfrac{\sin x}{x}$, we see,  
+$$
+\begin{aligned}
+\ln \frac{\sin x}{x} &=\ln \left[\prod_{n=1}^{\infty}\left(1-\left(\frac{x}{n \pi}\right)^{2}\right)\right] \\
+\ln \sin x-\ln x &=\ln \left[\prod_{n=1}^{\infty}\left(1-\left(\frac{x}{n \pi}\right)^{2}\right)\right] \\
+\ln \sin x &=\ln x+\sum_{n=1}^{\infty} \ln \left(1-\frac{x^{2}}{(n \pi)^{2}}\right)
+\end{aligned}</script><p>We want to take the derivative of both sides. Since  </p>
+<script type="math/tex; mode=display">
+\frac{{\rm d}}{{\rm d} x} \ln \left(1-\frac{x^{2}}{(n \pi)^{2}}\right)=\frac{{\rm d}}{{\rm d} x} \ln \left(\frac{(n \pi)^{2}-x^{2}}{(n \pi)^{2}}\right)=\left(\frac{-2 x}{(n \pi)^{2}-x^{2}}\right)=\frac{2 x}{x^{2}-(n \pi)^{2}}</script><p>then when we take the derivative we obtain an expression for cotangent,  </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\cot x &=\frac{1}{x}+\sum_{n=1}^{\infty}\left(\frac{2 x}{x^{2}-(n \pi)^{2}}\right) \\
+&=\frac{1}{x}+\sum_{n=1}^{\infty}\left(\frac{1}{x+n \pi}+\frac{1}{x-n \pi}\right) \\
+&=\frac{1}{x}+\sum_{n=1}^{\infty} \frac{1}{\pi n}\left(\frac{1}{1+\frac{x}{n \pi}}+\frac{1}{1-\frac{x}{n \pi}}\right)
+\end{aligned}</script><p>We are almost ready, but some additional manipulation is required to tease out a term of $\zeta(2)$. Next, we expand out into the difference of two power series. Since  $\displaystyle \frac{1}{1-x}=\sum_{k=0}^{\infty}x^k$ and $\displaystyle \frac{1}{1+x}=\sum_{k=0}^{\infty}(-1)^kx^k$ , we have  </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\cot x &=\frac{1}{x}+\sum_{n=1}^{\infty} \frac{1}{\pi n}\left(\sum_{k=0}^{\infty}(-1)^{k}\left(\frac{x}{n \pi}\right)^{k}-\sum_{k=0}^{\infty}\left(\frac{x}{n \pi}\right)^{k}\right) \\
+&=\frac{1}{x}+\sum_{n=1}^{\infty} \frac{1}{\pi n}\left(\left[\sum_{k=0}^{\infty}\left(\frac{x}{n \pi}\right)^{2 k}-\left(\frac{x}{n \pi}\right)^{2 k+1}\right]-\sum_{k=0}^{\infty}\left[\left(\frac{x}{n \pi}\right)^{2 k}-\left(\frac{x}{n \pi}\right)^{2 k+1}\right]\right) \\
+&=\frac{1}{x}+\sum_{n=1}^{\infty} \frac{1}{\pi n}\left(2 \sum_{k=0}^{\infty}\left(\frac{x}{n \pi}\right)^{2 k+1}\right)
+\end{aligned}</script><p>If we change the order of summation and replace $k$ with $k + 1$, we get  </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\cot x &=\frac{1}{x}+\sum_{n=1}^{\infty} \sum_{k=1}^{\infty}\left(\frac{2 x^{2 k-1}}{(n \pi)^{2 k}}\right) \\
+&=\frac{1}{x}+\sum_{k=1}^{\infty} \sum_{n=1}^{\infty} \frac{2 x^{2 k-1}}{(\pi)^{2 k}} \cdot \frac{1}{n^{2 k}} \\
+&=\frac{1}{x}+\sum_{k=1}^{\infty} \frac{2 x^{2 k-1}}{(\pi)^{2 k}} \sum_{n=1}^{\infty} \frac{1}{n^{2 k}} \\
+&=\frac{1}{x}+\sum_{k=1}^{\infty} \frac{2 x^{2 k-1}}{(\pi)^{2 k}} \zeta(2 n)
+\end{aligned}</script><p>Now, we have two different equations for cotangent: one which involves the Bernoulli numbers and another<br>that involves the even values of the zeta function. We are finally ready to prove</p>
+<p>For any integer  $k&gt;0$,</p>
+<script type="math/tex; mode=display">
+\zeta(2 k)=\sum_{n=1}^{\infty} \frac{1}{n^{2 k}}=\frac{\left|B_{2 k}\right|(2 \pi)^{2 k}}{2(2 k) !}</script><p><strong>Proof :</strong></p>
+<p>Recall  </p>
+<script type="math/tex; mode=display">
+\mathrm{cot}x=\sum_{k=0}^{\infty}(-1)^{k} \frac{2 B_{2 k}(2 x)^{2 k-1}}{(2 k) !}=\frac{1}{x}+\sum_{k=1}^{\infty}(-1)^{k-1} \frac{2 B_{2 k}(2 x)^{2 k-1}}{(2 n) !}</script><p>If we equate these expressions, we find  </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\frac{1}{x}+\sum_{k=1}^{\infty} \frac{2 x^{2 k-1}}{(\pi)^{2 k}} \zeta(2 k) &=\frac{1}{x}+\sum_{k=1}^{\infty}(-1)^{k-1} \frac{2 B_{2 k}(2 x)^{2 k-1}}{(2 k) !} \\
+\sum_{k=1}^{\infty} \frac{2 x^{2 k-1}}{(\pi)^{2 k}} \zeta(2 k)& =\sum_{k=1}^{\infty}(-1)^{k-1} \frac{2 B_{2 k}(2 x)^{2 k-1}}{(2 k) !}
+\end{aligned}</script><p>When we compare the coefficients of $x^{2k-1}$ in the two summations, we arrive at the equation  </p>
+<script type="math/tex; mode=display">
+\frac{2}{\pi^{2 k}} \zeta(2 k)=(-1)^{k-1} \frac{2^{2 k} B_{2 k}}{(2 k) !}</script><p>Which is</p>
+<script type="math/tex; mode=display">
+\zeta(2 k)=(-1)^{k-1} \frac{(2 \pi)^{2 k}}{(2 k) !} B_{2 k}</script><p>$\square$</p>
+<p>We notice that all $\zeta(2k)$ must always be positive, so from the exponent of $-1$, we have $B_{4k} &lt; 0$ and $B_{4k+2}&gt;0$ for integers $k$. Thus, another way to write this result above, recognizing that $(-1)^{k-1}B_{2k}=|B_{2k}|$, is:  </p>
+<script type="math/tex; mode=display">
+\zeta(2 k)=\frac{\left|B_{2 k}\right|(2 \pi)^{2 k}}{2(2 k) !}</script><section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span><a target="_blank" rel="noopener" href="https://arminda.whitman.edu/islandora/object/arminda%3A62243/datastream/PDF/view">The Bernoulli Numbers: A Brief Primer by Nathaniel Douglas Larson</a>
+<a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:2" class="footnote-text"><span><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/166136767">伯努利数与欧拉数</a>
+<a href="#fnref:2" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:3" class="footnote-text"><span><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/138401110">从5050到-1/12——伯努利数、欧拉-麦克劳林公式与拉马努金求和</a>
+<a href="#fnref:3" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Math/">Math</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%97%A0%E7%A9%B7%E4%B9%98%E7%A7%AF/">无穷乘积</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E7%BA%A7%E6%95%B0/">级数</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Bernoulli-Numbers/">Bernoulli Numbers</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Zeta-Function/">Zeta Function</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Generating-Function/">Generating Function</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/01/29/%E5%AE%9A%E7%A7%AF%E5%88%8611/">
+                        <span class="hidden-mobile">定积分11</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      var inputArea = document.querySelector("#local-search-input");
+      inputArea.onclick = function () {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+        this.onclick = null
+      }
+    })()
+  </script>
+
+
+
+
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-svg.js" ></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+
+</body>
+</html>

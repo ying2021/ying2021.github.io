@@ -193,7 +193,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      362 字
+      609 字
     </span>
   
 
@@ -203,7 +203,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      7
+      12
        分钟
     </span>
   
@@ -280,7 +280,20 @@ J(k)=\dfrac{\pi}{2}(\log(\sqrt{k^2+1}+1)-\log 2)</script><p>And</p>
 <script type="math/tex; mode=display">
 I'(k)=\dfrac{\pi}{2}\log\dfrac{\sqrt{k^2+1}+1}{\sqrt{k^2+1}}</script><p>Finally</p>
 <script type="math/tex; mode=display">
-I(k)=\dfrac{\pi}{2}\left(k\log\dfrac{\sqrt{k^2+1}+1}{\sqrt{k^2+1}}-\arctan(k)+\sinh^{-1}(k)\right)</script>
+I(k)=\dfrac{\pi}{2}\left(k\log\dfrac{\sqrt{k^2+1}+1}{\sqrt{k^2+1}}-\arctan(k)+\sinh^{-1}(k)\right)</script><hr>
+<div class="note note-info">
+            <p>When $0&lt;a&lt;2,0&lt;k&lt;1,$ Proof :</p><script type="math/tex; mode=display">\int_{0}^{\pi}\left(\frac{\sin \varphi}{1+\cos \varphi}\right)^{a-1} \frac{\mathrm{d} \varphi}{1+k \cos \varphi}=\frac{1}{1+k}\left(\sqrt{\frac{1+k}{1-k}}\right)^{a} \frac{\pi}{\sin \frac{a}{2} \pi}</script>
+          </div>
+<p><strong>Solution:</strong></p>
+<p>Perform the change of variable $t=\tan\dfrac{\varphi}{2}$ gives</p>
+<script type="math/tex; mode=display">
+\int_{0}^{\pi}\left(\frac{\sin \varphi}{1+\cos \varphi}\right)^{a-1} \frac{d \varphi}{1+k \cos \varphi}=2 \int_{0}^{+\infty} \frac{t^{a-1} d t}{(1+k)+(1-k) t^{2}}</script><p>Follow it by another change of variable $\displaystyle\sqrt{\frac{1+k}{1-k}}t=\tan \theta$ gives</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+& \frac{2}{1+k}\left(\sqrt{\frac{1+k}{1-k}}\right)^{a} \int_{0}^{\frac{\pi}{2}} \tan ^{a-1} \theta \mathrm{d} \theta=\frac{2}{1+k}\left(\sqrt{\frac{1+k}{1-k}}\right)^{a} \int_{0}^{\frac{\pi}{2}} \sin ^{a-1} \theta \cos ^{1-a} \theta \mathrm{d} \theta \\
+=& \frac{1}{1+k}\left(\sqrt{\frac{1+k}{1-k}}\right)^{a} \mathrm{B}\left(\frac{a}{2}, 1-\frac{a}{2}\right)=\frac{1}{1+k}\left(\sqrt{\frac{1+k}{1-k}}\right)^{a} \Gamma\left(\frac{a}{2}\right) \Gamma\left(1-\frac{a}{2}\right)\\
+=&\frac{1}{1+k}\left(\sqrt{\frac{1+k}{1-k}}\right)^{a} \frac{\pi}{\sin \frac{a}{2} \pi}
+\end{aligned}</script>
             </div>
             <hr>
             <div>
@@ -309,6 +322,12 @@ I(k)=\dfrac{\pi}{2}\left(k\log\dfrac{\sqrt{k^2+1}+1}{\sqrt{k^2+1}}-\arctan(k)+\s
                 <div class="post-prevnext">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2021/01/30/Bernoulli%20Numbers%20(1)/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Bernoulli Numbers (1)</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
