@@ -203,7 +203,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      68
+      69
        分钟
     </span>
   
@@ -265,7 +265,7 @@ f^{\prime \prime}(x) &=\frac{e^{2 x} x-e^{x} x-2 e^{2 x}+2 e^{x}}{\left(e^{x}-1\
 &=1-\frac{x}{2}+\frac{x^{2}}{12}+\frac{x^{4}}{720}+\frac{x^{6}}{30240}+\cdots
 \end{aligned}</script><p>And the value of $B_n$ can be obtained by seeking the limit of the $n$th derivative of the generating function at $x=0$:</p>
 <script type="math/tex; mode=display">
-B_n=\lim_{x\to0}{\mathrm{d}^n\over\mathrm{d}x^n}\left[x\over e^x-1\right]</script><p>Let us step back from the exponential generating function to take a closer look at the Bernoulli numbers<br>themselves. When you look at the first terms of the Bernoulli numbers, what do you notice?  </p>
+B_n=\lim_{x\to0}{\mathrm{d}^n\over\mathrm{d}x^n}\left[x\over e^x-1\right]</script><p>Let us step back from the exponential generating function to take a closer look at the Bernoulli numbers themselves. When you look at the first terms of the Bernoulli numbers, what do you notice?  </p>
 <script type="math/tex; mode=display">
 \begin{array}{lll}
 B_{0} & =1 & B_{11}&=0 \\
@@ -293,7 +293,7 @@ B_{0}=1 \text { and } \sum_{k=0}^{n-1}\left(\begin{array}{l}
 n \\
 k
 \end{array}\right) B_{k}=0, \text { for } n>1.</script><p><strong>Proof :</strong></p>
-<p>This is our process: we multiply by $e^x-1$ on both sides, express $e^x-1$ as a Taylor series, take the<br>Cauchy product of this series with $\displaystyle\sum_{i=0}^{\infty}\dfrac{B_{i}x^i}{i!}$ , and then equate powers of $x$. First,  </p>
+<p>This is our process: we multiply by $e^x-1$ on both sides, express $e^x-1$ as a Taylor series, take the Cauchy product of this series with $\displaystyle\sum_{i=0}^{\infty}\dfrac{B_{i}x^i}{i!}$ , and then equate powers of $x$. First,  </p>
 <script type="math/tex; mode=display">
 \begin{aligned}
 \frac{x}{e^{x}-1} &=\sum_{i=0}^{\infty} \frac{B_{i} x^{i}}{i !} \\
@@ -317,7 +317,7 @@ k
 n \\
 k
 \end{array}\right) B_{k} \frac{x^{n}}{n !}
-\end{aligned}</script><p>On the left hand side we have only $x$. We know the coefficient of $x$ on the right hand side is $0$, and the<br>coefficient of every other power of $x$ is $0$. Thus, the desired relation results:  </p>
+\end{aligned}</script><p>On the left hand side we have only $x$. We know the coefficient of $x$ on the right hand side is $0$, and the coefficient of every other power of $x$ is $0$. Thus, the desired relation results:  </p>
 <script type="math/tex; mode=display">
 B_{0}=1 \text { and } \sum_{k=0}^{n-1}\left(\begin{array}{l}
 n \\
@@ -334,7 +334,7 @@ B_{0}=1\text { and } B_{n}=-\dfrac{1}{n+1}\sum\limits_{k=0}^{n-1}\binom{n+1}{k}B
 0=B_{0}+3 B_{1}+3 B_{2} \\
 0=B_{0}+4 B_{1}+6 B_{2}+4 B_{3} \\
 0=B_{0}+5 B_{1}+10 B_{2}+10 B_{3}+5 B_{4}
-\end{array}</script><p>Perhaps the most memorable way of remembering this is relationship is through the pseudo-equation<br>$(B + 1)^n = B^n$, where the left hand side is expanded</p>
+\end{array}</script><p>Perhaps the most memorable way of remembering this is relationship is through the pseudo-equation $(B + 1)^n = B^n$, where the left hand side is expanded</p>
 <script type="math/tex; mode=display">
 B^n+\binom{n}{n-1}B^{n-1}+\cdots+\binom{n}{1}B^1+1=B^n</script><p>and then all exponents are converted into subscripts</p>
 <script type="math/tex; mode=display">
@@ -344,7 +344,7 @@ n-1
 \end{array}\right) B_{n-1}+\cdots+\left(\begin{array}{c}
 n \\
 1
-\end{array}\right) B_{1}+1=B_{n}</script><p>This simple mnemonic proves useful for remembering the Bernoulli numbers, and understanding their close association<br>with the Binomial Theorem and Pascal’s Triangle.  </p>
+\end{array}\right) B_{1}+1=B_{n}</script><p>This simple mnemonic proves useful for remembering the Bernoulli numbers, and understanding their close association with the Binomial Theorem and Pascal’s Triangle.  </p>
 <h1 id="The-Odd-Bernoulli-Numbers-Except-B1-Are-Zero"><a href="#The-Odd-Bernoulli-Numbers-Except-B1-Are-Zero" class="headerlink" title="The Odd Bernoulli Numbers (Except B1) Are Zero"></a>The Odd Bernoulli Numbers (Except B1) Are Zero</h1><p>$B_{2n+1}=0$ for $n\geqslant1$ </p>
 <p><strong>Proof :</strong></p>
 <p>Consider the Bernoulli generating function</p>
@@ -380,7 +380,7 @@ g(x) &=\frac{x\left(e^{x / 2}+e^{-x / 2}\right)}{2\left(e^{x / 2}-e^{-x / 2}\rig
 &=\sum_{n=0}^{\infty} \frac{2 B_{2 n}(2 x)^{2 n-1}}{(2 n) !}
 \end{aligned}</script><p>If we substitute $xi$ for $x$ in this equation, we find an expression in terms of cotangent, for $|x|\leqslantπ$  </p>
 <script type="math/tex; mode=display">
-\cot x=\sum_{n=0}^{\infty}(-1)^{n} \frac{2 B_{2 n}(2 x)^{2 n-1}}{(2 n) !}</script><p>Furthermore, $\tan x$;  $\tanh x$; $\ln \sin x$; $\dfrac{\sin x}{x}$ and other trigonometric functions can be expressed in terms of the<br>Bernoulli numbers. </p>
+\cot x=\sum_{n=0}^{\infty}(-1)^{n} \frac{2 B_{2 n}(2 x)^{2 n-1}}{(2 n) !}</script><p>Furthermore, $\tan x$;  $\tanh x$; $\ln \sin x$; $\dfrac{\sin x}{x}$ and other trigonometric functions can be expressed in terms of the Bernoulli numbers. </p>
 <h1 id="The-Riemann-Zeta-Function"><a href="#The-Riemann-Zeta-Function" class="headerlink" title="The Riemann Zeta Function"></a>The Riemann Zeta Function</h1><p>One of the most powerful applications of the Bernoulli numbers the evaluation of the Riemann zeta function.  </p>
 <p>Let $k$ be a real, $|k|\geqslant 1$: Then the Riemann zeta function over the real numbers, $\zeta(k)$, is defined as  </p>
 <script type="math/tex; mode=display">
@@ -388,7 +388,7 @@ g(x) &=\frac{x\left(e^{x / 2}+e^{-x / 2}\right)}{2\left(e^{x / 2}-e^{-x / 2}\rig
 <script type="math/tex; mode=display">
 \zeta(k)=\prod_{p}\left(\frac{1}{1-p^{-k}}\right)</script><p>over all primes $p$ .  </p>
 <p><strong>Proof :</strong></p>
-<p>The proof of this theorem relies on the uniqueness of factorization guaranteed by the Fundamental<br>Theorem of Arithmetic. There are two approaches{one which involves a sieve and another which follows<br>from geometric series. We will take the latter approach.  </p>
+<p>The proof of this theorem relies on the uniqueness of factorization guaranteed by the Fundamental Theorem of Arithmetic. There are two approaches{one which involves a sieve and another which follows from geometric series. We will take the latter approach.  </p>
 <p>For $0 &lt; x &lt; 1$ , we have  </p>
 <script type="math/tex; mode=display">
 \frac{1}{1-x}=1+x+x^2+x^3+x^4+\cdots</script><p>If, for each prime $p$ and $k &gt; 1$, we say $x=\dfrac{1}{p^k}$ :</p>
@@ -400,7 +400,7 @@ g(x) &=\frac{x\left(e^{x / 2}+e^{-x / 2}\right)}{2\left(e^{x / 2}-e^{-x / 2}\rig
 =&\left(1+\frac{1}{2^{k}}+\frac{1}{2^{2 k}}+\cdots\right)\left(1+\frac{1}{3^{k}}+\frac{1}{3^{2 k}}+\cdots\right)\left(1+\frac{1}{5^{k}}+\frac{1}{5^{2 k}}+\cdots\right)+\cdots
 \end{align*}</script><p>We now employ the FTA(Fundamental Theorem of Arithmetic). Every term of the expansion on the right hand side will be of the form  </p>
 <script type="math/tex; mode=display">
-\frac{1}{p_{1}^{m_{1} k} p_{2}^{m_{2} k} \cdots p_{n}^{m_{n} k}}</script><p>where $m_1,\cdots,m_n$ are positive integers. By the FTA, each positive integer has a unique factorization into<br>the powers of primes. Therefore the expansion becomes,  </p>
+\frac{1}{p_{1}^{m_{1} k} p_{2}^{m_{2} k} \cdots p_{n}^{m_{n} k}}</script><p>where $m_1,\cdots,m_n$ are positive integers. By the FTA, each positive integer has a unique factorization into the powers of primes. Therefore the expansion becomes,  </p>
 <script type="math/tex; mode=display">
 \begin{aligned}
 \left(\frac{1}{1-\frac{1}{2^{k}}}\right)\left(\frac{1}{1-\frac{1}{3^{k}}}\right)\left(\frac{1}{1-\frac{1}{5^{k}}}\right) \cdots &=1+\frac{1}{2^{k}}+\frac{1}{3^{k}}+\frac{1}{4^{k}}+\frac{1}{5^{k}}+\frac{1}{6^{k}}+\cdots \\
@@ -408,7 +408,7 @@ g(x) &=\frac{x\left(e^{x / 2}+e^{-x / 2}\right)}{2\left(e^{x / 2}-e^{-x / 2}\rig
 \end{aligned}</script><p>$\square$</p>
 <p>For any integer  $k&gt;0$,</p>
 <script type="math/tex; mode=display">
-\zeta(2 k)=\sum_{n=1}^{\infty} \frac{1}{n^{2 k}}=\frac{\left|B_{2 k}\right|(2 \pi)^{2 k}}{2(2 k) !}</script><p>It is remarkable to see the Bernoulli numbers appear in this formula, as well as to see that even values of<br>the zeta function are rational numbers multiplied by powers of $\pi$. We will prove this theorem by equating two<br>different expressions for cotangent. But first, we will give ourselves an intuition regarding this problem by<br>considering the case $\zeta(2)$, which Euler solved equating two expressions for $sine$. </p>
+\zeta(2 k)=\sum_{n=1}^{\infty} \frac{1}{n^{2 k}}=\frac{\left|B_{2 k}\right|(2 \pi)^{2 k}}{2(2 k) !}</script><p>It is remarkable to see the Bernoulli numbers appear in this formula, as well as to see that even values of the zeta function are rational numbers multiplied by powers of $\pi$. We will prove this theorem by equating two different expressions for cotangent. But first, we will give ourselves an intuition regarding this problem by considering the case $\zeta(2)$, which Euler solved equating two expressions for $sine$. </p>
 <p>The function $\sin x$ can be written as the infinite polynomial  </p>
 <script type="math/tex; mode=display">
 \begin{aligned}
@@ -416,7 +416,7 @@ g(x) &=\frac{x\left(e^{x / 2}+e^{-x / 2}\right)}{2\left(e^{x / 2}-e^{-x / 2}\rig
 &=\lim _{n \rightarrow \infty} x\left(1-\frac{x^{2}}{\pi^{2}}\right)\left(1-\frac{x^{2}}{4 \pi^{2}}\right)\left(1-\frac{x^{2}}{9 \pi^{2}}\right) \cdots\left(1-\frac{x}{n^{2} \pi^{2}}\right) \\
 \frac{\sin x}{x} &=\lim _{n \rightarrow \infty}\left(1-\frac{x^{2}}{\pi^{2}}\right)\left(1-\frac{x^{2}}{4 \pi^{2}}\right)\left(1-\frac{x^{2}}{9 \pi^{2}}\right) \cdots\left(1-\frac{x}{n^{2} \pi^{2}}\right) \\
 &=\prod_{n=1}^{\infty}\left(1-\left(\frac{x}{n \pi}\right)^{2}\right)
-\end{aligned}</script><p>What if we try to isolate the $x^2$ term? In order to obtain a $x^2$ term, we simply take one of the $-\dfrac{x^2}{k\pi^2}$<br>multiplied by all ones in the expansion of $\dfrac{\sin x}{x}$. So, we see that  </p>
+\end{aligned}</script><p>What if we try to isolate the $x^2$ term? In order to obtain a $x^2$ term, we simply take one of the $-\dfrac{x^2}{k\pi^2}$ multiplied by all ones in the expansion of $\dfrac{\sin x}{x}$. So, we see that  </p>
 <script type="math/tex; mode=display">
 \begin{aligned}
 \frac{\sin x}{x} &=1-\frac{x^{2}}{\pi^{2}}\left(1+\frac{1}{4}+\frac{1}{9}+\cdots\right)+\mathcal{O}\left(x^{4}\right) \\
@@ -428,18 +428,20 @@ g(x) &=\frac{x\left(e^{x / 2}+e^{-x / 2}\right)}{2\left(e^{x / 2}-e^{-x / 2}\rig
 <script type="math/tex; mode=display">
 \frac{\sin x}{x}=1-\frac{x^{2}}{3 !}+\frac{x^{4}}{5 !}-\frac{x^{6}}{7 !}+\cdots</script><p>Now, if we compare the coefficients of $x^2$ in each equation, we see that  </p>
 <script type="math/tex; mode=display">
-\frac{1}{\pi^2}\zeta(2)=\frac{1}{3!}\quad \Rightarrow  \zeta(2)=\frac{\pi^2}{6}</script><p>This is a fascinating result. But how do we generalize our function in order to find larger values of the<br>zeta function, such as $\zeta(10)$? The secret is in the cotangent formula in terms of the Bernoulli numbers<br>that we derived in the previous section, which we will compare to a cotangent formula in terms of the zeta<br>function. Before we can do that, we must find such a formula.  </p>
-<p>Consider the infinite polynomial expression for $\dfrac{\sin x}{x}$. We want to write $\cot x$ in terms of $\sin x$ in order to<br>make a substitution. Note that</p>
+\frac{1}{\pi^2}\zeta(2)=\frac{1}{3!}\quad \Rightarrow  \zeta(2)=\frac{\pi^2}{6}</script><p>This is a fascinating result. But how do we generalize our function in order to find larger values of the zeta function, such as $\zeta(10)$? The secret is in the cotangent formula in terms of the Bernoulli numbers that we derived in the previous section, which we will compare to a cotangent formula in terms of the zeta function. Before we can do that, we must find such a formula.  </p>
+<p>Consider the infinite polynomial expression for $\dfrac{\sin x}{x}$. We want to write $\cot x$ in terms of $\sin x$ in order to make a substitution. Note that</p>
 <script type="math/tex; mode=display">
 \frac{{\rm d}}{{\rm d}x}\ln \sin x=\cot x
 $$
+
 If we take the natural logarithm of $\dfrac{\sin x}{x}$, we see,  
+
 $$
 \begin{aligned}
 \ln \frac{\sin x}{x} &=\ln \left[\prod_{n=1}^{\infty}\left(1-\left(\frac{x}{n \pi}\right)^{2}\right)\right] \\
 \ln \sin x-\ln x &=\ln \left[\prod_{n=1}^{\infty}\left(1-\left(\frac{x}{n \pi}\right)^{2}\right)\right] \\
 \ln \sin x &=\ln x+\sum_{n=1}^{\infty} \ln \left(1-\frac{x^{2}}{(n \pi)^{2}}\right)
-\end{aligned}</script><p>We want to take the derivative of both sides. Since  </p>
+\end{aligned}</script><p>We want to take the derivative of both sides. Since</p>
 <script type="math/tex; mode=display">
 \frac{{\rm d}}{{\rm d} x} \ln \left(1-\frac{x^{2}}{(n \pi)^{2}}\right)=\frac{{\rm d}}{{\rm d} x} \ln \left(\frac{(n \pi)^{2}-x^{2}}{(n \pi)^{2}}\right)=\left(\frac{-2 x}{(n \pi)^{2}-x^{2}}\right)=\frac{2 x}{x^{2}-(n \pi)^{2}}</script><p>then when we take the derivative we obtain an expression for cotangent,  </p>
 <script type="math/tex; mode=display">
@@ -460,7 +462,7 @@ $$
 &=\frac{1}{x}+\sum_{k=1}^{\infty} \sum_{n=1}^{\infty} \frac{2 x^{2 k-1}}{(\pi)^{2 k}} \cdot \frac{1}{n^{2 k}} \\
 &=\frac{1}{x}+\sum_{k=1}^{\infty} \frac{2 x^{2 k-1}}{(\pi)^{2 k}} \sum_{n=1}^{\infty} \frac{1}{n^{2 k}} \\
 &=\frac{1}{x}+\sum_{k=1}^{\infty} \frac{2 x^{2 k-1}}{(\pi)^{2 k}} \zeta(2 n)
-\end{aligned}</script><p>Now, we have two different equations for cotangent: one which involves the Bernoulli numbers and another<br>that involves the even values of the zeta function. We are finally ready to prove</p>
+\end{aligned}</script><p>Now, we have two different equations for cotangent: one which involves the Bernoulli numbers and another that involves the even values of the zeta function. We are finally ready to prove</p>
 <p>For any integer  $k&gt;0$,</p>
 <script type="math/tex; mode=display">
 \zeta(2 k)=\sum_{n=1}^{\infty} \frac{1}{n^{2 k}}=\frac{\left|B_{2 k}\right|(2 \pi)^{2 k}}{2(2 k) !}</script><p><strong>Proof :</strong></p>
