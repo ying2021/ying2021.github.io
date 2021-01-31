@@ -193,7 +193,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      4.7k 字
+      5k 字
     </span>
   
 
@@ -203,7 +203,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      93
+      99
        分钟
     </span>
   
@@ -472,7 +472,30 @@ f(0) &=\int_{0}^{1} f(x)\,\mathrm  d x+\left.\sum_{k=1}^{m} \frac{B_{k}}{k !} f^
 <script type="math/tex; mode=display">
 {\displaystyle |R_{p}|\leqslant {\frac {2\zeta (p)}{(2\pi )^{p}}}\int _{m}^{n}|f^{(p)}(x)|\,\mathrm dx}</script><p>In the context of computing asymptotic expansions of sums and series, usually the most useful form of the Euler–Maclaurin formula is</p>
 <script type="math/tex; mode=display">
-\boxed{{\displaystyle \sum _{n=a}^{b}f(n)\sim \int _{a}^{b}f(x)\, \text{d}x+{\frac {f(b)+f(a)}{2}}+\sum _{k=1}^{\infty }\,{\frac {B_{2k}}{(2k)!}}\left(f^{(2k-1)}(b)-f^{(2k-1)}(a)\right)}}</script><h1 id="Applications-of-Euler-Maclaurin-Summation"><a href="#Applications-of-Euler-Maclaurin-Summation" class="headerlink" title="Applications of Euler-Maclaurin Summation"></a>Applications of Euler-Maclaurin Summation</h1><h2 id="the-Sums-of-Powers"><a href="#the-Sums-of-Powers" class="headerlink" title="the Sums of Powers"></a>the Sums of Powers</h2><p>The sum of the first $n - 1$ positive integers to the $m^{th}$ power is equivalent to  </p>
+\boxed{{\displaystyle \sum _{n=a}^{b}f(n)\sim \int _{a}^{b}f(x)\, \text{d}x+{\frac {f(b)+f(a)}{2}}+\sum _{k=1}^{\infty }\,{\frac {B_{2k}}{(2k)!}}\left(f^{(2k-1)}(b)-f^{(2k-1)}(a)\right)}}</script><p>Generalized Euler–Maclaurin formula</p>
+<script type="math/tex; mode=display">
+\bbox[#EEF,15px,border:2px solid red]{\color{brown}{\begin{aligned}
+\int_{a}^{a+h} f(x)\,\mathrm  d x=& \frac{h}{2 n}(f(a)+f(a+h))+\frac{h}{n} \sum_{k=1}^{n-1} f\left(a+\frac{k}{n} h\right) \\
+&-\sum_{k=1}^{m} \frac{{B}_{2 k}}{(2 k) !}\left(\frac{h}{n}\right)^{2k}\left(f^{(2k-1)}(a+h)-f^{(2 k-1)}(a)\right)\\
+&-\frac{n {B}_{2 m+2} f^{(2 m+2)}(\xi)}{(2 m+2) !}\left(\frac{h}{n}\right)^{2 m+3}
+\end{aligned}}}</script><p>$\text { where } \xi \in(a, a+h), n \text { is a positive integer and } m \text { is a nonnegative integer. }$</p>
+<p>Take $a=0$ and $h=1$ to get</p>
+<script type="math/tex; mode=display">
+\bbox[#EEF,15px,border:2px solid red]{\color{blue}{
+\begin{align*}
+\int_0^1f(x)\,\mathrm dx=&\frac{f(0)+f(1)}{2n}+\frac1n\sum_{k=1}^{n-1} f\left(\frac{k}{n} \right)\\
+&-\sum_{k=1}^{m} \frac{{B}_{2 k}}{(2 k) !}\left(\frac{1}{n}\right)^{2k}\left(f^{(2k-1)}(1)-f^{(2 k-1)}(0)\right)\\
+&-\frac{n {B}_{2 m+2} f^{(2 m+2)}(\xi)}{(2 m+2) !}\left(\frac{1}{n}\right)^{2 m+3}
+\end{align*}
+}}</script><p>Then we come up with a very nice formula</p>
+<script type="math/tex; mode=display">
+\bbox[#EEF,15px,border:2px solid red]{\color{green}{
+\begin{align*}
+\frac1n\sum_{k=1}^{n} f\left(\frac{k}{n} \right)=&\int_0^1f(x)\,\mathrm dx+\frac{f(1)-f(0)}{2n}\\
+&+\sum_{k=1}^{m} \frac{{B}_{2 k}}{(2 k) !}\left(\frac{1}{n}\right)^{2k}\left(f^{(2k-1)}(1)-f^{(2 k-1)}(0)\right)\\
+&+\frac{n {B}_{2 m+2} f^{(2 m+2)}(\xi)}{(2 m+2) !}\left(\frac{1}{n}\right)^{2 m+3}
+\end{align*}
+}}</script><h1 id="Applications-of-Euler-Maclaurin-Summation"><a href="#Applications-of-Euler-Maclaurin-Summation" class="headerlink" title="Applications of Euler-Maclaurin Summation"></a>Applications of Euler-Maclaurin Summation</h1><h2 id="the-Sums-of-Powers"><a href="#the-Sums-of-Powers" class="headerlink" title="the Sums of Powers"></a>the Sums of Powers</h2><p>The sum of the first $n - 1$ positive integers to the $m^{th}$ power is equivalent to  </p>
 <script type="math/tex; mode=display">
 S_{m}(n-1)=\frac{1}{m+1} \sum_{k=0}^{m}\left(\begin{array}{c}
 m+1 \\

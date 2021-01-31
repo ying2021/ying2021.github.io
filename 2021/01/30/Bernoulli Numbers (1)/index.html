@@ -193,7 +193,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      4.8k 字
+      2.2k 字
     </span>
   
 
@@ -203,7 +203,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      94
+      43
        分钟
     </span>
   
@@ -405,9 +405,14 @@ g(x) &=\frac{x\left(e^{x / 2}+e^{-x / 2}\right)}{2\left(e^{x / 2}-e^{-x / 2}\rig
 \begin{aligned}
 \operatorname{coth} x &=\sum_{n=0}^{\infty} \frac{B_{2 n}(2 x)^{2 n}}{x(2 n) !} \\
 &=\sum_{n=0}^{\infty} \frac{2 B_{2 n}(2 x)^{2 n-1}}{(2 n) !}
-\end{aligned}</script><p>If we substitute $xi$ for $x$ in this equation, we find an expression in terms of cotangent, for $|x|\leqslantπ$  </p>
+\end{aligned}</script><p>If we substitute $xi$ for $x$ in this equation, we find an expression in terms of cotangent, for $|x|&lt;π$  </p>
 <script type="math/tex; mode=display">
-\cot x=\sum_{n=0}^{\infty}(-1)^{n} \frac{2 B_{2 n}(2 x)^{2 n-1}}{(2 n) !}</script><p>Furthermore, $\tan x$;  $\tanh x$; $\ln \sin x$; $\dfrac{\sin x}{x}$ and other trigonometric functions can be expressed in terms of the Bernoulli numbers. </p>
+\cot x=\sum_{n=0}^{\infty}(-1)^{n} \frac{2 B_{2 n}(2 x)^{2 n-1}}{(2 n) !}</script><p>If we observe that</p>
+<script type="math/tex; mode=display">
+2\coth (2x)-\coth (x)=\tanh (x)</script><p>Not difficult to draw</p>
+<script type="math/tex; mode=display">
+\tanh (x)=\sum_{k=1}^{\infty} 4^{k}\left(4^{k}-1\right) B_{2 k} \frac{x^{2 k-1}}{(2 k) !}=x-\frac{x^{3}}{3}+\frac{2 x^{5}}{15}-\frac{17 x^{7}}{315}+\ldots \quad|x|<\frac{\pi}{2}</script><script type="math/tex; mode=display">
+\tan (x)=\sum_{k=1}^{\infty}(-4)^{k}\left(1-4^{k}\right) B_{2 k} \frac{x^{2 k-1}}{(2 k) !}=x+\frac{x^{3}}{3}+\frac{2 x^{5}}{15}+\frac{17 x^{7}}{315}+\ldots \quad|x|<\frac{\pi}{2}</script><p>Furthermore, $\ln \cos x$; $\ln \sin x$; $\dfrac{\sin x}{x}$ ; $\ln \dfrac{\sin x}{x}$; $\ln \dfrac{\tan x}{x}$ and other trigonometric functions can be expressed in terms of the Bernoulli numbers. </p>
 <h1 id="The-Riemann-Zeta-Function"><a href="#The-Riemann-Zeta-Function" class="headerlink" title="The Riemann Zeta Function"></a>The Riemann Zeta Function</h1><p>One of the most powerful applications of the Bernoulli numbers the evaluation of the Riemann zeta function.  </p>
 <p>Let $k$ be a real, $|k|\geqslant 1$: Then the Riemann zeta function over the real numbers, $\zeta(k)$, is defined as  </p>
 <script type="math/tex; mode=display">
