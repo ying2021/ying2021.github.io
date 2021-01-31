@@ -193,7 +193,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      769 字
+      1.7k 字
     </span>
   
 
@@ -203,7 +203,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      15
+      33
        分钟
     </span>
   
@@ -265,7 +265,6 @@ B_{2 k}=\frac{(-1)^{k-1} 2(2 k) !}{(2 \pi)^{2 k}} \zeta(2 k)</script><p>If we ta
 <script type="math/tex; mode=display">
 (2 k) ! \sim\left(\frac{2 k}{e}\right)^{2 k} \sqrt{4 \pi k}</script><p>Combining these observations, we see  </p>
 <script type="math/tex; mode=display">
-
 B_{2 k} \sim \frac{(-1)^{k-1} \cdot 2}{(2 \pi)^{2 k}}\left(\frac{2 k}{e}\right)^{2 k} \sqrt{4 \pi k}</script><p>which turns out to be  </p>
 <script type="math/tex; mode=display">
 B_{2 k} \sim(-1)^{k-1} 4\left(\frac{k}{\pi e}\right)^{2 k} \sqrt{\pi k}</script><p>as desired.  </p>
@@ -320,7 +319,91 @@ B_{2 k} \sim(-1)^{k-1} 4\left(\frac{k}{\pi e}\right)^{2 k} \sqrt{\pi k}</script>
 <script type="math/tex; mode=display">
 27,298,230.96508 \leqslant\left|B_{24}\right| \leqslant 27,298,230.96702</script><p>Since $24 = 4\cdot6$, then $B_{24} &lt; 0$. So the value of $B_{24}$ to the the nearest integer is $-27,298,231$.  </p>
 <p>$\square$</p>
-<section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span><a target="_blank" rel="noopener" href="https://arminda.whitman.edu/islandora/object/arminda%3A62243/datastream/PDF/view">The Bernoulli Numbers: A Brief Primer by Nathaniel Douglas Larson</a>
+<h1 id="The-Clausen-von-Staudt-Theorem"><a href="#The-Clausen-von-Staudt-Theorem" class="headerlink" title="The Clausen-von Staudt Theorem"></a>The Clausen-von Staudt Theorem</h1><p>For primes $p$,  </p>
+<script type="math/tex; mode=display">
+B_{2 k} \equiv-\sum_{(p-1) \mid 2 k} \frac{1}{p} \bmod 1</script><p>For example, with $k = 10$; we know $p - 1$ divides $20$ for $p = 2, 3, 5$; and $11$, as $1, 2, 4$ and  $10$ divide $10$.  </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+B_{20} & \equiv-\sum_{(p-1) \mid 2 k} \frac{1}{p} \\
+&=-\left(\frac{1}{2}+\frac{1}{3}+\frac{1}{5}+\frac{1}{11}\right) \\
+&=-\frac{371}{330} \\
+& \equiv \frac{289}{330} \quad \bmod 1
+\end{aligned}</script><p>Observe that every Bernoulli denominator is the product of distinct primes.  </p>
+<p>One of the simplest consequences of the Clausen-von Staudt Theorem concerns primes of the form $k =3n + 1$</p>
+<p>For prime $k = 3n + 1$,  </p>
+<script type="math/tex; mode=display">
+B_{2 k} \equiv \frac{1}{6} \quad \bmod 1</script><p><strong>Proof:</strong></p>
+<p>Consider the Clausen von Staudt theorem. If $(p - 1)$ divides $2(3n + 1)$, then $p - 1$ can be $2, 3, 3n + 1$, or $6n + 2$. But if $p - 1 = k = 3n + 1$, a prime, then $p = 3n + 2$ must be divisible by $2$, in which case $p$ is not  prime. Similarly, if $p - 1 = 6n + 2$, then $p = 3(2n + 1)$, so $p$ is not prime. Therefore, the only values of $p - 1$ are $2$ and $3$, and  </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+B_{3 n+1} & \equiv-\sum_{(p-1) \mid 2 k} \frac{1}{p} \\
+&=-\left(\frac{1}{2}+\frac{1}{3}\right) \\
+&=-\frac{5}{6}\\
+&\equiv \frac{1}{6} \quad \mathrm{mod}\ 1
+\end{aligned}</script><p>$\square$</p>
+<p>This gives us  </p>
+<script type="math/tex; mode=display">
+B_{14} \equiv B_{26} \equiv B_{38} \equiv B_{62} \equiv B_{74} \equiv B_{86} \equiv B_{122} \equiv \cdots \equiv \frac{1}{6} \quad \bmod\ 1</script><p>As we have shown, one reason why the Clausen-von Staudt Theorem is important because it allows us to calculate exactly the denominator of each Bernoulli number. No such analogue exists for the numerator. However, the theorem allows us to calculate the exact value of a Bernoulli number, as long as you have a close enough approximation.</p>
+<div class="note note-info">
+            <p>Find the exact value of $B_{28}$ using approximation.  </p>
+          </div>
+<p><strong>Solution:</strong></p>
+<p>This problem is solved in two steps. First, we find an estimate of $B_{28}$ to the nearest integer. We know  </p>
+<script type="math/tex; mode=display">
+B_{28}\approx-27,298,230.96</script><p>Second, we use the Clausen-von Staudt to calculate $B_{28} \bmod 1$. We know that $p - 1$ divides $28$ for $p = 2, 3, 5, 29$, since $1, 2, 4$, and $28$ divide $28$. Thus,  </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+B_{28} & \equiv-\sum_{(p-1) \mid 2 k} \frac{1}{p} \\
+&=-\left(\frac{1}{2}+\frac{1}{3}+\frac{1}{5}+\frac{1}{29}\right) \\
+&=-\frac{929}{870} \\
+&=-\frac{59}{870} \quad \bmod 1
+\end{aligned}</script><p>This is the key to solve for the Bernoulli number exactly. Since $\dfrac{811}{870}\approx.96$, the exact Bernoulli number $B_{28}$ must be  </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+B_{28} &=-27,298,231-\frac{811}{870} \\
+&=-\frac{23749460970+811}{870} \\
+&=-\frac{23749461029}{870} 
+\end{aligned}</script><h1 id="Direct-Formulas"><a href="#Direct-Formulas" class="headerlink" title="Direct Formulas"></a>Direct Formulas</h1><p>The Bernoulli numbers can be written  </p>
+<script type="math/tex; mode=display">
+B_{n}=\sum_{k=0}^{n} \frac{1}{k+1} \sum_{j=0}^{k}(-1)^{j}\left(\begin{array}{c}
+k \\
+j
+\end{array}\right) j^{n}</script><p><strong>Proof:</strong></p>
+<p>We know that the Bernoulli numbers are defined  </p>
+<script type="math/tex; mode=display">
+\frac{x}{e^{x}-1}=\sum_{k=0}^{\infty} \frac{B_{k} x^{k}}{k !}</script><p>Then, by the definition of a Taylor series, $B_n$ is the $n^{th}$ derivative of $\dfrac{x}{e^x-1}$ evaluated at $x = 0$. In other words,  </p>
+<script type="math/tex; mode=display">
+B_{n}=\left.\frac{\mathrm d^{n}}{\mathrm d x^{n}}\left(\frac{x}{e^{x}-1}\right)\right|_{x=0}</script><p>We know:  </p>
+<script type="math/tex; mode=display">
+x=\ln\left(1-\left(1-e^x\right)\right)=\sum_{k=1}^{\infty}\frac{(1-e^x)^k}{k}</script><p>for $|1 - e^x| &lt; 1$. Thus, we can rewrite the generating function of the Bernoulli numbers,  </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\frac{x}{e^{x}-1} &=\sum_{k=1}^{\infty} \frac{\left(1-e^{x}\right)^{k-1}}{k} \\
+&=\sum_{k=0}^{\infty} \frac{\left(1-e^{x}\right)^{k}}{k+1}
+\end{aligned}</script><p>Then,  </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+B_{n} &=\left.\frac{\mathrm d^{n}}{\mathrm d x^{n}}\left(\sum_{k=0}^{\infty} \frac{\left(1-e^{x}\right)^{k}}{k+1}\right)\right|_{x=0} \\
+&=\left.\sum_{k=0}^{\infty} \frac{1}{k+1} \frac{\mathrm d^{n}}{\mathrm d x^{n}}\left(1-e^{x}\right)^{k}\right|_{x=0}
+\end{aligned}</script><p>We may notice that if $k \geqslant n + 1$, then the $n^{th}$ derivative is zero. Then the binomial theorem gives us the  expression,  </p>
+<script type="math/tex; mode=display">
+B_{n}=\left.\sum_{k=0}^{\infty} \frac{1}{k+1} \sum_{j=0}^{k}(-1)^{j}\left(\begin{array}{l}
+k \\
+j
+\end{array}\right) \frac{\mathrm d^{n}}{\mathrm d x^{n}} e^{j x}\right|_{x=0}</script><p>We evaluate the derivative to obtain  </p>
+<script type="math/tex; mode=display">
+B_{n}=\sum_{k=0}^{n} \frac{1}{k+1} \sum_{j=0}^{k}(-1)^{j}\left(\begin{array}{c}
+k \\
+j
+\end{array}\right) j^{n}</script><p>$\square$</p>
+<p>The Stirling number of the second kind, $S(n, k)$, is the number of ways to partition $n$ elements into $k$ non-empty sets. The formula for this operation turns out to be  </p>
+<script type="math/tex; mode=display">
+S(n, k)=\frac{(-1)^{k}}{k !} \sum_{m=0}^{k}(-1)^{m}\left(\begin{array}{c}
+k \\
+m
+\end{array}\right) m^{n}</script><p>Using this definition, we can give the formula for the Bernoulli numbers:  </p>
+<script type="math/tex; mode=display">
+B_{n}=\sum_{k=0}^{n}(-1)^{n+k} \frac{k ! S(n, k)}{k+1}</script><section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span><a target="_blank" rel="noopener" href="https://arminda.whitman.edu/islandora/object/arminda%3A62243/datastream/PDF/view">The Bernoulli Numbers: A Brief Primer by Nathaniel Douglas Larson</a>
 <a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>
             </div>
             <hr>
