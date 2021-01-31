@@ -193,7 +193,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      4.2k 字
+      4.8k 字
     </span>
   
 
@@ -203,7 +203,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      83
+      94
        分钟
     </span>
   
@@ -348,7 +348,7 @@ n \\
 1
 \end{array}\right) B_{1}+1=B_{n}</script><p>This simple mnemonic proves useful for remembering the Bernoulli numbers, and understanding their close association with the Binomial Theorem and Pascal’s Triangle.  </p>
 <h1 id="The-Odd-Bernoulli-Numbers-Except-B1-Are-Zero"><a href="#The-Odd-Bernoulli-Numbers-Except-B1-Are-Zero" class="headerlink" title="The Odd Bernoulli Numbers (Except B1) Are Zero"></a>The Odd Bernoulli Numbers (Except B1) Are Zero</h1><p>$B_{2n+1}=0$ for $n\geqslant1$ </p>
-<p><strong>Proof :</strong></p>
+<p><strong>Proof 1 :</strong></p>
 <p>Consider the Bernoulli generating function</p>
 <script type="math/tex; mode=display">
 \frac{x}{e^{x}-1}=B_{0}+B_{1} x+\frac{B_{2} x^{2}}{2 !}+\frac{B_{3} x^{3}}{3 !}+\cdots</script><p>minus the term  $B_1 x$ . Then we have  </p>
@@ -362,6 +362,31 @@ g(x) &=\frac{x}{e^{x}-1}-B_{1} x \\
 &=\frac{x\left(e^{x / 2}+e^{-x / 2}\right)}{2\left(e^{x / 2}-e^{-x / 2}\right)}
 \end{aligned}</script><p>Obviously $g$ is even. Thus, the power series of  $\dfrac{x}{e^x-1}-B_1x$ has no nonzero odd-power terms,<br>and  $B_{2n+1}=0$ for $n\geqslant1$ .</p>
 <p>$\square$</p>
+<p><strong>Proof 2 :</strong></p>
+<p>Consider complex functions</p>
+<script type="math/tex; mode=display">
+ f(z)=\frac{z}{e^{z}-1}=\sum\limits_{n=0}^{\infty}B_{n}\frac{z^{n}}{n!}</script><p>Set the circle $|z|=1$, we can know that $f(z)$ is analytic in $\mathbb{C}$, so the Laurent expansion for the following complex function is</p>
+<script type="math/tex; mode=display">
+ \frac{f(z)}{z^{2n+2}}=\frac{B_{0}}{0!}z^{-2n-2}+\frac{B_{1}}{1!}z^{-2n-1}+\dots+\frac{B_{2n+1}}{(2n+1)!}z^{-1}+\frac{B_{2n+2}}{(2n+2)!}+\dots</script><p>Use the residue theorem on $\mathbb{C}$ to get</p>
+<script type="math/tex; mode=display">
+\oint_{C}\frac{f(z)}{z^{2n+2}}\,\mathrm dz=2\pi{i}\cdot{\frac{B_{2n+1}}{(2n+1)!}}</script><p>Perform plural substitution $z=e^{i\theta}$, then</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+B_{2 n+1}&=\frac{(2 n+1) !}{2 \pi i} \int_{0}^{2 \pi} \frac{e^{i \theta}}{e^{e^{i \theta}-1}} e^{-2 n i \theta-2 i \theta} i e^{i \theta} \,\mathrm d \theta\\
+&=\frac{(2 n+1) !}{2 \pi} \int_{0}^{2 \pi} \frac{e^{-2 n i \theta}}{e^{e^{i \theta}-1}} \,\mathrm d \theta \\
+&=\frac{(2 n+1) !}{2 \pi} \int_{0}^{\pi} \frac{e^{-2 n i \theta}}{e^{e^{i \theta}}-1} \,\mathrm d \theta+\frac{(2 n+1) !}{2 \pi} \int_{\pi}^{2 \pi} \frac{e^{-2 n i \theta}}{e^{e^{i \theta}}-1} \,\mathrm d \theta \\
+&=\frac{(2 n+1) !}{2 \pi} \int_{0}^{\pi} \frac{e^{-2 n i \theta}}{e^{e^{i \theta}}-1} \,\mathrm d \theta+\frac{(2 n+1) !}{2 \pi} \int_{0}^{\pi} \frac{e^{-2 n i \theta+2 n \pi i}}{e^{i \theta}-1} \,\mathrm d \theta \\
+&=\frac{(2n+1)!}{2\pi}\int_{0}^{\pi}\frac{e^{-2ni\theta}}{e^{e^{i\theta}}-1}\,\mathrm d\theta+\frac{(2n+1)!}{2\pi}\int_{0}^{\pi}\frac{e^{-2ni\theta}}{e^{e^{-i\theta}}-1}\,\mathrm d\theta\\
+&=\frac{(2n+1)!}{2\pi}\int_{0}^{\pi}-e^{-2ni\theta}\,\mathrm d\theta\\
+&=\left\{\begin{array}{ll}
+0, & n \geqslant 1 \\
+-\frac{1}{2}, & n=0
+\end{array}\right.
+\end{align*}</script><p>$\square$</p>
+<h1 id="Bernoulli-Number-Generator"><a href="#Bernoulli-Number-Generator" class="headerlink" title="Bernoulli Number Generator"></a>Bernoulli Number Generator</h1><figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-comment"># -*- codeing = utf-8 -*-</span><br><span class="hljs-comment"># @time : 2021-01-29 20:03</span><br><span class="hljs-comment"># @Author : 欧阳珈樱</span><br><span class="hljs-comment"># @File : test.py</span><br><span class="hljs-comment"># @Software: PyCharm</span><br><br><span class="hljs-keyword">from</span> fractions <span class="hljs-keyword">import</span> Fraction <span class="hljs-keyword">as</span> Fr<br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">bernoulli2</span>():</span><br>    A, m = [], <span class="hljs-number">0</span><br>    <span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:<br>        A.append(Fr(<span class="hljs-number">1</span>, m + <span class="hljs-number">1</span>))<br>        <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(m, <span class="hljs-number">0</span>, -<span class="hljs-number">1</span>):<br>            A[j - <span class="hljs-number">1</span>] = j * (A[j - <span class="hljs-number">1</span>] - A[j])<br>        <span class="hljs-keyword">yield</span> A[<span class="hljs-number">0</span>]  <span class="hljs-comment"># (which is Bm)</span><br>        m += <span class="hljs-number">1</span><br><br>bn2 = [ix <span class="hljs-keyword">for</span> ix <span class="hljs-keyword">in</span> <span class="hljs-built_in">zip</span>(<span class="hljs-built_in">range</span>(<span class="hljs-number">41</span>), bernoulli2())]<br>bn2 = [(i, b) <span class="hljs-keyword">for</span> i, b <span class="hljs-keyword">in</span> bn2 <span class="hljs-keyword">if</span> b]<br>width = <span class="hljs-built_in">max</span>(<span class="hljs-built_in">len</span>(<span class="hljs-built_in">str</span>(b.numerator)) <span class="hljs-keyword">for</span> i, b <span class="hljs-keyword">in</span> bn2)<br><span class="hljs-keyword">for</span> i, b <span class="hljs-keyword">in</span> bn2:<br>    print(<span class="hljs-string">&#x27;B(%2i) = %*i/%i&#x27;</span> % (i, width, b.numerator, b.denominator))<br></code></pre></div></td></tr></table></figure>
+<p><strong>Output:</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python">B( <span class="hljs-number">0</span>) =                      <span class="hljs-number">1</span>/<span class="hljs-number">1</span><br>B( <span class="hljs-number">1</span>) =                      <span class="hljs-number">1</span>/<span class="hljs-number">2</span><br>B( <span class="hljs-number">2</span>) =                      <span class="hljs-number">1</span>/<span class="hljs-number">6</span><br>B( <span class="hljs-number">4</span>) =                     -<span class="hljs-number">1</span>/<span class="hljs-number">30</span><br>B( <span class="hljs-number">6</span>) =                      <span class="hljs-number">1</span>/<span class="hljs-number">42</span><br>B( <span class="hljs-number">8</span>) =                     -<span class="hljs-number">1</span>/<span class="hljs-number">30</span><br>B(<span class="hljs-number">10</span>) =                      <span class="hljs-number">5</span>/<span class="hljs-number">66</span><br>B(<span class="hljs-number">12</span>) =                   -<span class="hljs-number">691</span>/<span class="hljs-number">2730</span><br>B(<span class="hljs-number">14</span>) =                      <span class="hljs-number">7</span>/<span class="hljs-number">6</span><br>B(<span class="hljs-number">16</span>) =                  -<span class="hljs-number">3617</span>/<span class="hljs-number">510</span><br>B(<span class="hljs-number">18</span>) =                  <span class="hljs-number">43867</span>/<span class="hljs-number">798</span><br>B(<span class="hljs-number">20</span>) =                -<span class="hljs-number">174611</span>/<span class="hljs-number">330</span><br>B(<span class="hljs-number">22</span>) =                 <span class="hljs-number">854513</span>/<span class="hljs-number">138</span><br>B(<span class="hljs-number">24</span>) =             -<span class="hljs-number">236364091</span>/<span class="hljs-number">2730</span><br>B(<span class="hljs-number">26</span>) =                <span class="hljs-number">8553103</span>/<span class="hljs-number">6</span><br>B(<span class="hljs-number">28</span>) =           -<span class="hljs-number">23749461029</span>/<span class="hljs-number">870</span><br>B(<span class="hljs-number">30</span>) =          <span class="hljs-number">8615841276005</span>/<span class="hljs-number">14322</span><br>B(<span class="hljs-number">32</span>) =         -<span class="hljs-number">7709321041217</span>/<span class="hljs-number">510</span><br>B(<span class="hljs-number">34</span>) =          <span class="hljs-number">2577687858367</span>/<span class="hljs-number">6</span><br>B(<span class="hljs-number">36</span>) =  -<span class="hljs-number">26315271553053477373</span>/<span class="hljs-number">1919190</span><br>B(<span class="hljs-number">38</span>) =       <span class="hljs-number">2929993913841559</span>/<span class="hljs-number">6</span><br>B(<span class="hljs-number">40</span>) = -<span class="hljs-number">261082718496449122051</span>/<span class="hljs-number">13530</span><br></code></pre></div></td></tr></table></figure>
+<p>If you want to get more detailed information, please click this link: <a target="_blank" rel="noopener" href="https://rosettacode.org/wiki/Bernoulli_numbers">https://rosettacode.org/wiki/Bernoulli_numbers</a> </p>
 <h1 id="Bernoulli-Numbers-and-Cotangent"><a href="#Bernoulli-Numbers-and-Cotangent" class="headerlink" title="Bernoulli Numbers and Cotangent"></a>Bernoulli Numbers and Cotangent</h1><p>We know from the previous section that  </p>
 <script type="math/tex; mode=display">
 g(x)=\frac{x}{e^{x}-1}-B_{1} x=\frac{x\left(e^{x / 2}+e^{-x / 2}\right)}{2\left(e^{x / 2}-e^{-x / 2}\right)}</script><p>Note that</p>
@@ -556,15 +581,15 @@ P=\frac{1}{\zeta(2)}=\frac{6}{\pi^2}\approx61\%</script><p>$\square$</p>
                     
                       <a class="hover-with-bg" href="/tags/Bernoulli-Numbers/">Bernoulli Numbers</a>
                     
-                      <a class="hover-with-bg" href="/tags/Generating-Function/">Generating Function</a>
-                    
                       <a class="hover-with-bg" href="/tags/%E6%97%A0%E7%A9%B7%E4%B9%98%E7%A7%AF/">无穷乘积</a>
-                    
-                      <a class="hover-with-bg" href="/tags/%E6%9F%AF%E8%A5%BF%E4%B9%98%E7%A7%AF/">柯西乘积</a>
                     
                       <a class="hover-with-bg" href="/tags/%E7%BA%A7%E6%95%B0/">级数</a>
                     
                       <a class="hover-with-bg" href="/tags/Zeta-Function/">Zeta Function</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Generating-Function/">Generating Function</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%9F%AF%E8%A5%BF%E4%B9%98%E7%A7%AF/">柯西乘积</a>
                     
                   </div>
                 

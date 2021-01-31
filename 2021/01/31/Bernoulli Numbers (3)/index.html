@@ -17,7 +17,7 @@
   <meta name="description" content="保持很多的热爱和一点点野心">
   <meta name="author" content="欧阳珈樱">
   <meta name="keywords" content="">
-  <title>数学分析03 - 樱花味猫猫</title>
+  <title>Bernoulli Numbers (3) - 樱花味猫猫</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -166,7 +166,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="数学分析03">
+            <span class="h2" id="subtitle" title="Bernoulli Numbers (3)">
               
             </span>
 
@@ -181,8 +181,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-01-22 08:34" pubdate>
-        2021年1月22日 早上
+      <time datetime="2021-01-31 15:56" pubdate>
+        2021年1月31日 下午
       </time>
     </span>
   
@@ -193,7 +193,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.1k 字
+      769 字
     </span>
   
 
@@ -203,7 +203,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      17
+      15
        分钟
     </span>
   
@@ -245,72 +245,82 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">数学分析03</h1>
+            <h1 style="display: none">Bernoulli Numbers (3)</h1>
             
             <div class="markdown-body">
-              <div class="note note-info">
-            <p>数列 ${x_n}$ 定义如下: $x_0=1$ 且对于 $n\geqslant 0$</p><script type="math/tex; mode=display">x_{n+1}=\ln\left(e^{x_n}-x_n\right)</script><p>证明无穷级数 $x_0+x_1+x_2+\cdots$ 收敛并求其和.</p>
-          </div>
-<p>考虑更一般的命题<br><div class="note note-info">
-            <p>设 $x\geqslant0$ 时 , $f(x)$ 为严格单调递增的连续函数且满足 $0\leqslant f(x)\leqslant x$ . 数列 ${x_n}$ 定义如下: $x_0\geqslant 0$ 且 $n\geqslant 0$ 时 </p><script type="math/tex; mode=display">x_{n+1}=f[f^{-1}(x_n)-x_n]\tag{1}</script><p>其中 $f^{-1}$ 表示 $f$ 的反函数.则无穷级数 $x_0+x_1+x_2+\cdots$ 收敛,且其和为  $f^{-1}(x_0)-f^{-1}(0)$ .</p>
-          </div></p>
-<hr>
-<p><strong>证明:</strong></p>
-<p>由 $0\leqslant f(x)\leqslant x$ 知 $f^{-1}(x)\geqslant x$, 从而</p>
+              <h1 id="The-Bernoulli-Numbers-Grow-Large"><a href="#The-Bernoulli-Numbers-Grow-Large" class="headerlink" title="The Bernoulli Numbers Grow Large"></a>The Bernoulli Numbers Grow Large</h1><p>For positive values of $k$,  </p>
 <script type="math/tex; mode=display">
-x_{n+1}=f\left[f^{-1}\left(x_{n}\right)-x_{n}\right] \geqslant f(0) \geqslant 0</script><p>由此可知对所有的 $x_n$ 均有 $x_n\geqslant 0$, 由 $f(x)$ 的单调性知</p>
+B_{2 k} \sim(-1)^{k-1} 4\left(\frac{k}{\pi e}\right)^{2 k} \sqrt{\pi k}</script><p><strong>Proof :</strong></p>
+<p>We know that  </p>
 <script type="math/tex; mode=display">
-x_{n+1}=f\left[f^{-1}\left(x_{n}\right)-x_{n}\right] \leqslant f\left[f^{-1}\left(x_{n}\right)\right]=x_{n}</script><p>故数列 ${x_n}$ 单调递减.</p>
-<p>因为单调递减且有下界数列必有极限,所以 $\lim\limits_{n\to\infty}x_n$ 存在,由 $(1)$ 得</p>
+\zeta(2 k)=\sum_{n=1}^{\infty} \frac{1}{n^{2 k}}=\frac{\left|B_{2 k}\right|(2 \pi)^{2 k}}{2(2 k) !}</script><p>We can rearrange this equation to find an expression in terms of $B_{2k}$;  </p>
 <script type="math/tex; mode=display">
-f^{-1}\left(x_{n+1}\right)=f^{-1}\left(x_{n}\right)-x_{n}\tag{2}</script><p>上式中令 $n\to\infty$, 再由 $f^{-1}(x)$ 的连续性知 $\lim\limits_{n\to\infty}x_n=0$.</p>
-<p>由 $(2)$ 知 $x_n=f^{-1}(x_n)-f^{-1}(x_{n+1})$, 故对任意自然数 $N(N\geqslant 1)$ 有</p>
+B_{2 k}=\frac{(-1)^{k-1} 2(2 k) !}{(2 \pi)^{2 k}} \zeta(2 k)</script><p>If we take the limit  </p>
 <script type="math/tex; mode=display">
 \begin{aligned}
-x_{0}+x_{1}+x_{2}+\cdots+x_{N} &=f^{-1}\left(x_{0}\right)-f^{-1}\left(x_{1}\right)+f^{-1}\left(x_{1}\right)-f^{-1}\left(x_{2}\right)+\cdots+f^{-1}\left(x_{N-1}\right)-f^{-1}\left(x_{N}\right) \\
-&=f^{-1}\left(x_{0}\right)-f^{-1}\left(x_{N}\right)
-\end{aligned}</script><p>上式中令 $n\to\infty$ 并由 $f^{-1}(x)$ 的连续性得</p>
+\lim _{k \rightarrow \infty} \zeta(2 k) &=\lim _{k \rightarrow \infty} \sum_{n=1}^{\infty} \frac{1}{n^{2 k}} \\
+&=1+\lim _{k \rightarrow \infty} \sum_{n=2}^{\infty} \frac{1}{n^{2 k}} \\
+&=1
+\end{aligned}</script><p>so $\zeta(2k)\sim 1$ as $k$ becomes large. With Stirling’s Formula, we have  </p>
 <script type="math/tex; mode=display">
-x_{0}+x_{1}+x_{2}+\cdots=f^{-1}\left(x_{0}\right)-f^{-1}(0)</script><p>即无穷级数 $x_0+x_1+x_2+\cdots$ 收敛,且其和为  $f^{-1}(x_0)-f^{-1}(0)$ .</p>
-<p>特别地令 $f(x)=\ln(1+x)(x\geqslant0)$, 则 $f(x)$ 为严格单调递增的连续函数且 $f^{-1}(x)=e^x-1$. 易知 $0\leqslant f(x)\leqslant1$. </p>
-<p>取 $x_0=1$, 当 $n\geqslant0$ 时</p>
+(2 k) ! \sim\left(\frac{2 k}{e}\right)^{2 k} \sqrt{4 \pi k}</script><p>Combining these observations, we see  </p>
 <script type="math/tex; mode=display">
-x_{n+1}=\ln \left(\mathrm{e}^{x_{n}}-x_{n}\right)=f\left[f^{-1}\left(x_{n}\right)-x_{n}\right]</script><p>由上面命题知无穷级数 $x_0+x_1+x_2+\cdots$ 收敛,且其和为 </p>
+
+B_{2 k} \sim \frac{(-1)^{k-1} \cdot 2}{(2 \pi)^{2 k}}\left(\frac{2 k}{e}\right)^{2 k} \sqrt{4 \pi k}</script><p>which turns out to be  </p>
 <script type="math/tex; mode=display">
-f^{-1}\left(x_{0}\right)-f^{-1}(0)=f^{-1}(1)-f^{-1}(0)=\mathrm{e}-1</script><hr>
-<p>下面再举几个例子进一步说明此命题的应用<br><div class="note note-info">
-            <p>设数列 ${x_n}$ 满足 $\displaystyle x_0=\frac\pi6,x_{n+1}=\arctan(\tan x_{n}-x_n)$, 证明无穷级数 $x_0+x_1+x_2+\cdots$ 收敛并求其和.</p>
-          </div><br><strong>证明:</strong></p>
-<p>令 $\displaystyle f(x)=\arctan x\left(0\leqslant x&lt;\frac\pi2\right)$</p>
-<p>则 $f(x)$ 为严格单调递增的连续函数且 $f^{-1}(x)=\tan x$, </p>
-<p>易知 $0\leqslant f(x)\leqslant x$, 取 $x_0=\cfrac\pi6$, 当 $n\geqslant 0$ 时</p>
+B_{2 k} \sim(-1)^{k-1} 4\left(\frac{k}{\pi e}\right)^{2 k} \sqrt{\pi k}</script><p>as desired.  </p>
+<p>$\square$</p>
+<p>We can consider an alternative approximation. If we want to approximate the magnitude of the even Bernoulli numbers, we need only to take the absolute value:  </p>
 <script type="math/tex; mode=display">
-x_{n+1}=\arctan \left(\tan x_{n}-x_{n}\right)=f\left[f^{-1}\left(x_{n}\right)-x_{n}\right]</script><p>由上面命题知无穷级数 $x_0+x_1+x_2+\cdots$ 收敛,且其和为</p>
-<script type="math/tex; mode=display">
-f^{-1}\left(x_{0}\right)-f^{-1}(0)=\tan \frac{\pi}{6}-\tan 0=\frac{\sqrt{3}}{3}</script><div class="note note-info">
-            <p>设数列 ${x_n}$ 满足 $\displaystyle x_0=\frac12,x_{n+1}=\frac{x_n^2}{1-x_n+x_n^2}$, 证明无穷级数 $x_0+x_1+x_2+\cdots$ 收敛并求其和.</p>
+\left|B_{2 k}\right| \sim 4\left(\frac{k}{\pi e}\right)^{2 k} \sqrt{\pi k}</script><div class="note note-info">
+            <p>For what value of k does the value of $B_{2k}$ first surpass one million?  </p>
           </div>
-<p><strong>证明:</strong></p>
-<p>令 $\displaystyle f(x)=\frac{x}{1+x}(x\geqslant0)$</p>
-<p>则 $f(x)$ 为严格单调递增的连续函数且 $f^{-1}(x)=\cfrac{x}{1-x}$, </p>
-<p>易知 $0\leqslant f(x)\leqslant x$, 取 $x_0=\cfrac12$, 当 $n\geqslant 0$ 时</p>
+<p><strong>Solution:</strong></p>
+<p>We first need to solve the inequality  </p>
 <script type="math/tex; mode=display">
-x_{n+1}=\frac{x_{n}^{2}}{1-x_{n}+x_{n}^{2}}=\frac{\frac{x_{n}}{1-x_{n}}-x_{n}}{1+\frac{x_{n}}{1-x_{n}}-x_{n}}=f\left[f^{-1}\left(x_{n}\right)-x_{n}\right]</script><p>由上面命题知无穷级数 $x_0+x_1+x_2+\cdots$ 收敛,且其和为</p>
+4\left(\frac{k}{\pi e}\right)^{2 k} \sqrt{\pi k}>1,000,000</script><p>and then show that the previous even valued Bernoulli number is less than one million. Solving for $k$, we find that it is between $12$ and $13$, so the nearest integer solution is $k = 13$. Plugging $13$ into our approximation we get  </p>
 <script type="math/tex; mode=display">
-f^{-1}\left(x_{0}\right)-f^{-1}(0)=\frac{\frac{1}{2}}{1-\frac{1}{2}}-0=1</script><div class="note note-info">
-            <p>设数列 ${x_n}$ 满足 $\displaystyle x_0=\frac34,x_{n+1}=1-e^{x_n}+x_ne^{x_n}$, 证明无穷级数 $x_0+x_1+x_2+\cdots$ 收敛并求其和.</p>
+\begin{aligned}
+\left|B_{26}\right| & \sim 4\left(\frac{13}{\pi e}\right)^{2 \cdot 13} \sqrt{13 \pi} \\
+& \approx 1,420,955 .
+\end{aligned}</script><p>Since this value is over one million, it is definitely a candidate! However, we need to make sure that the<br>value of $|B_{24}|$ is not close to $1,000,000$, which would force us to fine-tune our approximation. However,  </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\left|B_{24}\right| & \sim 4\left(\frac{12}{\pi e}\right)^{2 \cdot 12} \sqrt{12 \pi} \\
+& \approx 86,280
+\end{aligned}</script><p>so our calculations produced the correct result. $B_{26}$ is the first Bernoulli number with a magnitude greater than one million.  </p>
+<p>$\square$</p>
+<div class="note note-info">
+            <p>What about ten billion? What is the first Bernoulli number with magnitude greater than ten billion?  </p>
           </div>
-<p><strong>证明:</strong></p>
-<p>令 $\displaystyle f(x)=1-e^{-x}(x\geqslant0)$</p>
-<p>则 $f(x)$ 为严格单调递增的连续函数且 $f^{-1}(x)=-\ln(1-x)$, </p>
-<p>易知 $0\leqslant f(x)\leqslant x$, 取 $x_0=\cfrac34$, 当 $n\geqslant 0$ 时</p>
+<p><strong>Solution:</strong></p>
+<p>We solve  </p>
 <script type="math/tex; mode=display">
-x_{n+1}=1-\mathrm{e}^{x_{n}}+x_{n} \mathrm{e}^{x_{n}}=1-\mathrm{e}^{\ln \left(1-x_{n}\right)+x_{n}}=f\left[f^{-1}\left(x_{n}\right)-x_{n}\right]</script><p>由上面命题知无穷级数 $x_0+x_1+x_2+\cdots$ 收敛,且其和为</p>
+4\left(\frac{k}{\pi e}\right)^{2 k} \sqrt{\pi k}>10,000,000,000</script><p>and find that the first integer solution is $k = 16$. Using our approximations, we find  </p>
 <script type="math/tex; mode=display">
-f^{-1}\left(x_{0}\right)-f^{-1}(0)=-\ln \frac{1}{4}+\ln 1=2 \ln 2</script><hr>
-<p>除了以上例子外,还可以构造很多类似级数并求和,例如可取</p>
+\begin{aligned}
+\left|B_{32}\right| & \sim 4\left(\frac{16}{\pi e}\right)^{2 \cdot 16} \sqrt{16 \pi} \\
+& \approx 15,077,002,848 \\
+\end{aligned}</script><p>And</p>
 <script type="math/tex; mode=display">
-f(x)=\sin x\left(0 \leqslant x \leqslant \frac{\pi}{2}\right), \quad f(x)=\operatorname{arcsh} x, \quad f(x)=\operatorname{th} x \quad(x \geqslant 0)</script><section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span><a href="">77th Annual William Lowell Putnam Mathematical Competition。 Mathematics Magzine[J].2017,90(2):153一164.</a>
+\begin{aligned}
+\left|B_{30}\right| & \sim 4\left(\frac{15}{\pi e}\right)^{2 \cdot 15} \sqrt{15 \pi} \\
+& \approx 599,912,195
+\end{aligned}</script><p>so $B_{32}$ must be our desired Bernoulli number.  </p>
+<p>$\square$</p>
+<div class="note note-info">
+            <p>Estimate $B_{28}$ to the nearest integer.  </p>
+          </div>
+<p><strong>Solution:</strong></p>
+<p>Use</p>
+<script type="math/tex; mode=display">
+4\left(\frac{2 n}{4 e \pi} \cdot \frac{120 n^{2}+9}{120 n^{2}-1}\right)^{n} \sqrt{\frac{\pi n}{2}} \leqslant\left|B_{n}\right| \leqslant 4 \pi\left(\frac{2 n+1}{4 e \pi} \cdot \frac{240 n(n+1)+69}{240 n(n+1)+79}\right)^{n+1 / 2}</script><p>Plugging in $28$ for $n$, we can use a calculator to solve for the bounds of $B_{28}$:  </p>
+<script type="math/tex; mode=display">
+4\left(\frac{2 \cdot 28}{4 e \pi} \cdot \frac{120 \cdot 28^{2}+9}{120 \cdot 28^{2}-1}\right)^{28} \sqrt{\frac{\pi \cdot 28}{2}} \leqslant\left|B_{28}\right| \leqslant 4 \pi\left(\frac{2 \cdot 28+1}{4 e \pi} \cdot \frac{240 \cdot 28(29)+69}{240 \cdot 28(29)+79}\right)^{28+1 / 2}</script><p>which reduces to  </p>
+<script type="math/tex; mode=display">
+27,298,230.96508 \leqslant\left|B_{24}\right| \leqslant 27,298,230.96702</script><p>Since $24 = 4\cdot6$, then $B_{24} &lt; 0$. So the value of $B_{24}$ to the the nearest integer is $-27,298,231$.  </p>
+<p>$\square$</p>
+<section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span><a target="_blank" rel="noopener" href="https://arminda.whitman.edu/islandora/object/arminda%3A62243/datastream/PDF/view">The Bernoulli Numbers: A Brief Primer by Nathaniel Douglas Larson</a>
 <a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>
             </div>
             <hr>
@@ -328,9 +338,7 @@ f(x)=\sin x\left(0 \leqslant x \leqslant \frac{\pi}{2}\right), \quad f(x)=\opera
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E5%88%86%E6%9E%90/">分析</a>
-                    
-                      <a class="hover-with-bg" href="/tags/%E7%BA%A7%E6%95%B0/">级数</a>
+                      <a class="hover-with-bg" href="/tags/Bernoulli-Numbers/">Bernoulli Numbers</a>
                     
                   </div>
                 
@@ -343,18 +351,12 @@ f(x)=\sin x\left(0 \leqslant x \leqslant \frac{\pi}{2}\right), \quad f(x)=\opera
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/01/23/%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%9004/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">数学分析04</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/01/19/%E5%AE%9A%E7%A7%AF%E5%88%8604/">
-                        <span class="hidden-mobile">定积分04</span>
+                      <a href="/2021/01/30/Bernoulli%20Numbers%20(2)/">
+                        <span class="hidden-mobile">Bernoulli Numbers (2)</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

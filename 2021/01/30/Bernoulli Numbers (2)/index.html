@@ -193,7 +193,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.6k 字
+      4.7k 字
     </span>
   
 
@@ -203,7 +203,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      32
+      93
        分钟
     </span>
   
@@ -251,7 +251,12 @@
               <h1 id="Bernoulli-Polynomials"><a href="#Bernoulli-Polynomials" class="headerlink" title="Bernoulli Polynomials"></a>Bernoulli Polynomials</h1><p>The Bernoulli polynomials are a sequence of polynomials, $B_k(y)$, defined by the following power series expansion:  </p>
 <script type="math/tex; mode=display">
 \frac{x e^{x y}}{e^{x}-1}=\sum_{k=0}^{\infty} \frac{B_{k}(y) x^{k}}{k !}</script><p>The generating function for the Bernoulli polynomials is the generating function for the Bernoulli numbers multiplied by a term of $e^{xy}$. Our first observation of the Bernoulli polynomials is that the constant term of $B_k(y)$ is in fact $B_k$. If we set $y = 0$, then $\displaystyle \frac{xe^{xy}}{e^x-1}=\frac{x}{e^x-1}$ and so $B_k(0) = B_k$.  </p>
-<p>There are further connections: we can use the generating function for the Bernoulli numbers to develop a recurrence relation for the Bernoulli polynomials.  </p>
+<p>We notice that  </p>
+<script type="math/tex; mode=display">
+\frac{x}{e^{x}-1}=\sum_{k=0}^{\infty} B_{k} \frac{x^{k}}{k !}</script><script type="math/tex; mode=display">
+\sum_{k=0}^{\infty}B_{k}(1)  \frac{x^{k}}{k !}=\frac{x e^{x}}{e^{x}-1}=\frac{x}{1-e^{-x}}=\frac{-x}{e^{-x}-1}=\sum_{k=0}^{\infty} (-1)^kB_{k} \frac{x^{k}}{k !}</script><p>So</p>
+<script type="math/tex; mode=display">
+B_k(1)=(-1)^kB_k</script><p>There are further connections: we can use the generating function for the Bernoulli numbers to develop a recurrence relation for the Bernoulli polynomials.  </p>
 <p>The Bernoulli polynomials, $B_k(y)$ satisfy the recurrence relation  </p>
 <script type="math/tex; mode=display">
 B_{k}(y)=\sum_{n=0}^{k}\left(\begin{array}{l}
@@ -260,13 +265,15 @@ n
 \end{array}\right) B_{n} y^{k-n}</script><p><strong>Proof :</strong></p>
 <script type="math/tex; mode=display">
 \begin{aligned}
-\sum_{k=0}^{\infty} \frac{B_{k}(y) x^{k}}{k !} &=\frac{x e^{x y}}{e^{x}-1} \\
+&\quad\sum_{k=0}^{\infty} \frac{B_{k}(y) x^{k}}{k !} \\
+&=\frac{x e^{x y}}{e^{x}-1} \\
 &=\frac{x}{e^{x}-1} \cdot e^{x y} \\
 &=\sum_{k=0}^{\infty} \frac{B_{k} x^{k}}{k !} \cdot \sum_{k=0}^{\infty} \frac{(x y)^{k}}{k !}
 \end{aligned}</script><p>We find the Cauchy product by the same process as earlier to obtain  </p>
 <script type="math/tex; mode=display">
 \begin{aligned}
-\sum_{k=0}^{\infty} \frac{B_{k}(y) x^{k}}{k !} &=\sum_{k=0}^{\infty} \sum_{n=0}^{k} \frac{(x y)^{k-n}}{(k-n) !} \cdot \frac{B_{n} x^{n}}{n !} \\
+&\quad\sum_{k=0}^{\infty} \frac{B_{k}(y) x^{k}}{k !} \\
+&=\sum_{k=0}^{\infty} \sum_{n=0}^{k} \frac{(x y)^{k-n}}{(k-n) !} \cdot \frac{B_{n} x^{n}}{n !} \\
 &=\sum_{k=0}^{\infty} \sum_{n=0}^{k} \frac{y^{k-n} B_{k}}{(k-n) ! n !} x^{k} \\
 &=\sum_{k=0}^{\infty} \sum_{n=0}^{k}\left(\begin{array}{l}
 k \\
@@ -293,13 +300,15 @@ B_{6}(y)&=y^{6}-3 y^{5}+\frac{5}{2} y^{4}-\frac{1}{2} y^{2}+\frac{1}{42}
 <p>Let us consider one of these polynomials, say $B_5(y)$, more closely. What if we differentiate it, or integrate it over $0$ to $1$?  </p>
 <script type="math/tex; mode=display">
 \begin{aligned}
-\frac{\mathrm d}{\mathrm d y} B_{5}(y) &=5 y^{4}-10 y^{3}+5 y^{2}-\frac{1}{6} \\
+&\quad\frac{\mathrm d}{\mathrm d y} B_{5}(y) \\
+&=5 y^{4}-10 y^{3}+5 y^{2}-\frac{1}{6} \\
 &=5\left(y^{4}-2 y^{3}+y^{2}-\frac{1}{30}\right) \\
 &=5 B_{4}(y)
 \end{aligned}</script><p>so we observe that in this case, $B_k^{\prime}(y) = kB_{k-1}(y)$. We also see  </p>
 <script type="math/tex; mode=display">
 \begin{aligned}
-\int_{0}^{1} B_{5}(y)\,\mathrm d y &=\frac{1}{6} y^{6}-\frac{1}{2} y^{5}+\frac{5}{12} y^{4}-\left.\frac{1}{12} y^{2}\right|_{0} ^{1} \\
+&\quad\int_{0}^{1} B_{5}(y)\,\mathrm d y \\
+&=\frac{1}{6} y^{6}-\frac{1}{2} y^{5}+\frac{5}{12} y^{4}-\left.\frac{1}{12} y^{2}\right|_{0} ^{1} \\
 &=0
 \end{aligned}</script><p>These two observations are, remarkably, true in general. In fact, they give us the following inductive definition for the Bernoulli numbers.  </p>
 <p>A polynomial, $B_k(y)$, is a Bernoulli polynomial if and only if  </p>
@@ -318,7 +327,8 @@ B_{6}(y)&=y^{6}-3 y^{5}+\frac{5}{2} y^{4}-\frac{1}{2} y^{2}+\frac{1}{42}
 \end{aligned}</script><p>Next, we divide both sides by $x$ and then replace $k$ with $k + 1$:  </p>
 <script type="math/tex; mode=display">
 \begin{aligned}
-\frac{x e^{x y}}{e^{x}-1} &=\sum_{k=1}^{\infty} \frac{B_{k}^{\prime}(y) x^{k-1}}{k !} \\
+&\quad\frac{x e^{x y}}{e^{x}-1} \\
+&=\sum_{k=1}^{\infty} \frac{B_{k}^{\prime}(y) x^{k-1}}{k !} \\
 &=\sum_{k=0}^{\infty} \frac{B_{k+1}^{\prime}(y) x^{k}}{(k+1) !}
 \end{aligned}</script><p>Finally, we equate terms of the two expansions of $\dfrac{xe^{xy}}{e^x-1}$ and find  </p>
 <script type="math/tex; mode=display">
@@ -326,7 +336,8 @@ B_{6}(y)&=y^{6}-3 y^{5}+\frac{5}{2} y^{4}-\frac{1}{2} y^{2}+\frac{1}{42}
 B_{k+1}^{\prime}(y)=(k+1) B_{k}(y)</script><p>The third property is also satisfied,  </p>
 <script type="math/tex; mode=display">
 \begin{aligned}
-\int_{0}^{1} B_{k}(y) \,\mathrm dy &=\left.\frac{B_{k+1}(y)}{k+1}\right|_{0} ^{1} \\
+&\quad\int_{0}^{1} B_{k}(y) \,\mathrm dy \\
+&=\left.\frac{B_{k+1}(y)}{k+1}\right|_{0} ^{1} \\
 &=\frac{1}{k+1}\left(B_{k+1}(1)-B_{k+1}(0)\right) \\
 &=0
 \end{aligned}</script><p>because $B_{k+1}(0) = B_{k+1}$ and  </p>
@@ -344,7 +355,8 @@ n
 <p>We prove this identity by manipulating the following generating function:  </p>
 <script type="math/tex; mode=display">
 \begin{aligned}
-\sum_{k=0}^{\infty}\left(B_{k}(y+1)-B_{k}(y)\right) \frac{x^{k}}{k !} &=\sum_{k=0}^{\infty} B_{k}(y+1) \frac{x^{k}}{k !}-\sum_{k=0}^{\infty} B_{k}(y) \frac{x^{k}}{k !} \\
+&\quad\sum_{k=0}^{\infty}\left(B_{k}(y+1)-B_{k}(y)\right) \frac{x^{k}}{k !} \\
+&=\sum_{k=0}^{\infty} B_{k}(y+1) \frac{x^{k}}{k !}-\sum_{k=0}^{\infty} B_{k}(y) \frac{x^{k}}{k !} \\
 &=\frac{x e^{x(y+1)}}{e^{x}-1}-\frac{x e^{x y}}{e^{x}-1} \\
 &=\frac{x e^{x(y+1)}-x e^{x y}}{e^{x}-1} \\
 &=\frac{x e^{x y}\left(e^{x}-1\right)}{e^{x}-1} \\
@@ -352,14 +364,14 @@ n
 &=\sum_{k=0}^{\infty} \frac{x(x y)^{k}}{k !} \\
 &=\sum_{k=0}^{\infty} y^{k} \frac{x^{k+1}}{k !} \\
 &=\sum_{k=0}^{\infty} k y^{k} \frac{x^{k}}{k !}
-\end{aligned}</script><p>Comparing powers of x yields the identity.</p>
+\end{aligned}</script><p>Comparing powers of $x$ yields the identity.</p>
 <p>$\square$</p>
 <p>$\text { 2. } B_{k}(1-y)=(-1)^{k} B_{k}(y)$</p>
 <p><strong>Proof :</strong></p>
 <p>We prove this and the following result using a similar technique:  </p>
 <script type="math/tex; mode=display">
 \begin{aligned}
-\sum_{k=0}^{\infty}(-1)^{k}\left(B_{k}(y)\right) \frac{x^{k}}{k !} &=\sum_{k=0}^{\infty}\left(B_{k}(y)\right) \frac{(-x)^{k}}{k !} \\
+&\quad\sum_{k=0}^{\infty}(-1)^{k}\left(B_{k}(y)\right) \frac{x^{k}}{k !}\\ &=\sum_{k=0}^{\infty}\left(B_{k}(y)\right) \frac{(-x)^{k}}{k !} \\
 &=\frac{-x e^{-x y}}{e^{-x}-1} \\
 &=\frac{-x e^{-x y}}{e^{-x}-1}\left(\frac{-e^{x}}{-e^{x}}\right) \\
 &=\frac{x e^{-x y} e^{x}}{e^{x}-1} \\
@@ -371,7 +383,8 @@ n
 <p><strong>Proof :</strong></p>
 <script type="math/tex; mode=display">
 \begin{aligned}
-\sum_{k=0}^{\infty}\left(2^{1-k}-1\right) B_{k} \frac{x^{k}}{k !} &=\sum_{k=0}^{\infty} 2^{1-k} B_{k} \frac{x^{k}}{k !}+\sum_{k=0}^{\infty} B_{k} \frac{x^{k}}{k !} \\
+&\quad\sum_{k=0}^{\infty}\left(2^{1-k}-1\right) B_{k} \frac{x^{k}}{k !} \\
+&=\sum_{k=0}^{\infty} 2^{1-k} B_{k} \frac{x^{k}}{k !}+\sum_{k=0}^{\infty} B_{k} \frac{x^{k}}{k !} \\
 &=2 \sum_{k=0}^{\infty} B_{k} \frac{(x / 2)^{k}}{k !}+\sum_{k=0}^{\infty} B_{k} \frac{x^{k}}{k !} \\
 &=2 \frac{x / 2}{e^{x / 2}-1}-\frac{x}{e^{x}-1} \\
 &=\frac{x\left(e^{x / 2}+1\right)-x}{e^{x}-1} \\
@@ -387,9 +400,194 @@ n
 <li>$B_{k}(y)=(B+y)^{k},$ where $B^{k}$ is interpreted as the Bernoulli number $B_{k}$ (much like the mnemonic for the Bernoulli numbers themselves)</li>
 <li>$B_{k}=(B-y)^{k},$ where $B_{k}$ is interpreted as the Bernoulli polynomial $B_{k}(y)$.</li>
 </ol>
-<h1 id="The-Euler-Maclaurin-Summation-Formula"><a href="#The-Euler-Maclaurin-Summation-Formula" class="headerlink" title="The Euler-Maclaurin Summation Formula"></a>The Euler-Maclaurin Summation Formula</h1><p>111</p>
+<h1 id="The-Euler-Maclaurin-Summation-Formula"><a href="#The-Euler-Maclaurin-Summation-Formula" class="headerlink" title="The Euler-Maclaurin Summation Formula"></a>The Euler-Maclaurin Summation Formula</h1><p>One of the most useful results involving the Bernoulli numbers is a formula connecting summations and integrals discovered independently by Euler and the Scottish mathematician Colin Maclaurin (1698-1746), called the Euler-Maclaurin Summation Formula (EMSF).  </p>
+<p>Let $a$ and $b$ be integers with $a &lt; b$  and let $f$ be a smooth function on $[a,b]$. Then for all $m \geqslant 1$:  </p>
+<script type="math/tex; mode=display">
+\sum_{i=a}^{b-1} f(i)=\int_{a}^{b} f(x)\,\mathrm  d x+\left.\sum_{k=1}^{m} \frac{B_{k}}{k !} f^{(k-1)}(x)\right|_{a} ^{b}+R_{m}</script><p>where $R_m$, the remainder, is equal to  </p>
+<script type="math/tex; mode=display">
+(-1)^{m+1} \int_{a}^{b} \frac{B_{m}(y-\lfloor y\rfloor)}{m !} f^{(m)}(x)\,\mathrm  d x</script><p>and tends towards zero as m approaches infinity.  </p>
+<p><strong>Proof :</strong></p>
+<p>We proceed by induction on m and a summation. We will consider only $f(0)$ on the left hand side and show the result is true for all $m$. Later, we will show how this method works for all possible $a$ and $b$. Our first step will be to prove the base case of $a = 0, b = 1$, and $m = 1$. That is,  </p>
+<script type="math/tex; mode=display">
+f(0)=\int_{0}^{1} f(x) \,\mathrm d x+\left.B_{1} f(x)\right|_{0} ^{1}+R_{m}</script><p>where  $\displaystyle R_m=\int_0^1B_1(x)f^{\prime}(x)\,\mathrm dx$.</p>
+<p>We begin with a result from the Fundamental Theorem of Calculus,  </p>
+<script type="math/tex; mode=display">
+f(x)=f(0)+\int_{0}^{x} f^{\prime}(t)\,\mathrm  d t</script><p>If we integrate with respect to $x$ over the interval $0$ to $1$, we see that  </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+&\int_{0}^{1} f(x) \,\mathrm d x \\
+=&f(0)+\int_{0}^{1} \int_{0}^{x} f^{\prime}(t)\,\mathrm  d t\,\mathrm  d x\\
+=&f(0)+\int_{0}^{1} \int_{t}^{1} f^{\prime}(t)\,\mathrm  d x\,\mathrm  d t \\
+\color{blue}{(1)}\qquad=&f(0)+\int_{0}^{1} f^{\prime}(t)(1-t)\,\mathrm  d t\\
+=&f(0)+\int_{0}^{1} f^{\prime}(t)\,\mathrm  d t+\int_{0}^{1} f^{\prime}(t)(-t)\,\mathrm  d t \\
+=&f(0)+[f(1)-f(0)]+\int_{0}^{1} f^{\prime}(t)(-t)\,\mathrm  d t \\
+\color{blue}{(2)}\qquad=&f(1)+\int_{0}^{1} f^{\prime}(t)(-t) \,\mathrm d t
+\end{aligned}</script><p>Next, we add together equations $\color{blue}{(1)}$ and $\color{blue}{(2)}$.  </p>
+<script type="math/tex; mode=display">
+2 \int_{0}^{1} f(x)\,\mathrm  d x=f(0)+f(1)+\int_{0}^{1} f^{\prime}(t)(1-t) \,\mathrm d t+\int_{0}^{1} f^{\prime}(t)(-t) \,\mathrm d t</script><script type="math/tex; mode=display">
+2 \int_{0}^{1} f(x)\,\mathrm  d x=f(0)+f(1)+\int_{0}^{1} f^{\prime}(t)(1-2 t)\,\mathrm  d t</script><p>If we divide by $2$ and bring a term of $f(0)$ to the left side, we obtain  </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\int_{0}^{1} f(x)\,\mathrm  d x &=\frac{f(0)+f(1)}{2}+\int_{0}^{1} f^{\prime}(t)\left(\frac{1}{2}-t\right) \,\mathrm d t \\
+\int_{0}^{1} f(x)\,\mathrm  d x &=\frac{f(1)-f(0)}{2}+f(0)+\int_{0}^{1} f^{\prime}(x)\left(\frac{1}{2}-x\right)\,\mathrm  d t \\
+f(0) &=\int_{0}^{1} f(x)\,\mathrm  d x-\frac{1}{2}(f(1)-f(0))-\int_{0}^{1} f^{\prime}(x)\left(\frac{1}{2}-x\right) \\
+f(0) &=\int_{0}^{1} f(x)\,\mathrm  d x+\left.B_{1} f(x)\right|_{0} ^{1}+R_{m}
+\end{aligned}</script><p>with  $\displaystyle R_m=\int_0^1B_1(x)f^{\prime}(x)\,\mathrm dx$.Next, we complete our induction step. Holding $a = 0$ and $b = 1$ constant, we show that for all $m\geqslant1$ </p>
+<script type="math/tex; mode=display">
+f(0)=\int_{0}^{1} f(x)\,\mathrm  d x+\left.\sum_{k=1}^{m} \frac{B_{k}}{k !} f^{(k-1)}(x)\right|_{0} ^{1}+R_{m}</script><p>with the remainder  </p>
+<script type="math/tex; mode=display">
+R_{m}=(-1)^{m+1} \int_{0}^{1} \frac{B_{m}(x)}{m !} f^{(m)}(x)\,\mathrm  d x</script><p>Assume that the above is true for all $k \leqslant m$. We turn our focus to the remainder term,  </p>
+<script type="math/tex; mode=display">
+\frac{(-1)^{m+1}}{m !} \int_{0}^{1} B_{m}(x) f^{(m)}(x)\,\mathrm  d x</script><p>How can we evaluate this? Our key is to use the fact that $B’_{k+1}(x)=(k+1)B_k(x)$. We consider only  </p>
+<script type="math/tex; mode=display">
+\int_{0}^{1} B_{m}(x) f^{(m)}(x)\,\mathrm  d x</script><p>and conduct integration by parts, which yields:  </p>
+<script type="math/tex; mode=display">
+\int_{0}^{1} B_{k}(x) f^{(k)}(x)\,\mathrm  d x=\left.\frac{B_{k+1}(x)}{k+1} f^{(k)}(x)\right|_{0} ^{1}-\frac{1}{k+1} \int_{0}^{1} B_{k+1}(x) f^{(k+1)}(x) \,\mathrm d x</script><p>Substituting this in, the remainder term becomes  </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+R_{m} &=\frac{(-1)^{m+1}}{m !} \int_{0}^{1} B_{m}(x) f^{(m)}(x)\,\mathrm  d x \\
+&=\frac{(-1)^{m+1}}{m !}\left[\left.\frac{B_{m+1}(x)}{m+1} f^{(m)}(x)\right|_{0} ^{1}-\frac{1}{m+1} \int_{0}^{1} B_{m+1}(x) f^{(m+1)}(x) \,\mathrm d x\right] \\
+&=\frac{(-1)^{m+1}}{(m+1) !}\left[\left.B_{m+1}(x) f^{(m)}(x)\right|_{0} ^{1}-\int_{0}^{1} B_{m+1}(x) f^{(m+1)}(x) \,\mathrm d x\right]
+\end{aligned}</script><p>Here, we note if $m$ is odd, then $(-1)^{m+1} = 1$. If $m$ is even, then $B_{m+1}(0) = B_{m+1}(1) = 0$, from the previous section, and $B_{m+1} = 0$ because it is an odd Bernoulli number greater than $1$. Therefore, we claim  </p>
+<script type="math/tex; mode=display">
+\left.\frac{(-1)^{m+1}}{(m+1) !} B_{m+1}(x) f^{(m)}(x)\right|_{0} ^{1}=\left.\frac{1}{(m+1) !} B_{m+1} f^{(m)}(x)\right|_{0} ^{1}</script><p>and the value of $f(0)$ becomes  </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+f(0) &=\int_{0}^{1} f(x)\,\mathrm  d x+\left.\sum_{k=1}^{m} \frac{B_{k}}{k !} f^{(k-1)}(x)\right|_{0} ^{1}+R_{m} \\
+&=\int_{0}^{1} f(x)\,\mathrm  d x+\left.\sum_{k=1}^{m} \frac{B_{k}}{k !} f^{(k-1)}(x)\right|_{0} ^{1}+\frac{(-1)^{m+1}}{(m+1) !}\left[\left.B_{m+1}(x) f^{(m)}(x)\right|_{0} ^{1}-\int_{0}^{1} B_{m+1}(x) f^{(m+1)}(x)\,\mathrm  d x\right] \\
+&=\int_{0}^{1} f(x)\,\mathrm  d x+\left.\sum_{k=1}^{m} \frac{B_{k}}{k !} f^{(k-1)}(x)\right|_{0} ^{1}+\left.\frac{1}{(m+1) !} B_{m+1} f^{(m)}(x)\right|_{0} ^{1}+\frac{(-1)^{m+2}}{(m+1) !} \int_{0}^{1} B_{m+1}(x) f^{(m+1)}(x)\,\mathrm  d x \\
+&=\int_{0}^{1} f(x)\,\mathrm  d x+\left.\sum_{k=1}^{m+1} \frac{B_{k}}{k !} f^{(k-1)}(x)\right|_{0} ^{1}+\frac{(-1)^{m+2}}{(m+1) !} \int_{0}^{1} B_{m+1}(x) f^{(m+1)}(x)\,\mathrm  d x
+\end{aligned}</script><p>This completes this round of induction.  </p>
+<p>In the second step of this proof,  for each integer $a\leqslant i&lt;b$. We sum,</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\sum_{i=a}^{b-1} f(i) &=\sum_{i=a}^{b-1}\left[\int_{i}^{i+1} f(x)\,\mathrm  d x+\left.\sum_{k=1}^{m+1} \frac{B_{k}}{k !} f^{(k-1)}(x)\right|_{i} ^{i+1}+\frac{(-1)^{m+1}}{(m+1) !} \int_{i}^{i+1} B_{m+1}(x) f^{(m+1)}(x)\,\mathrm  d x\right] \\
+&=\sum_{i=a}^{b-1}\left[\int_{i}^{i+1} f(x)\,\mathrm  d x\right]+\sum_{i=a}^{b-1}\left[\left.\sum_{k=1}^{m+1} \frac{B_{k}}{k !} f^{(k-1)}(x)\right|_{i} ^{i+1}\right]+\sum_{i=a}^{b-1}\left[\frac{(-1)^{m+1}}{(m+1) !} \int_{i}^{i+1} B_{m+1}(x) f^{(m+1)}(x)\,\mathrm  d x\right] \\
+&=\int_{a}^{b} f(x) d x+\left.\sum_{k=1}^{m+1} \frac{B_{k}}{k !} f^{(k-1)}(x)\right|_{a} ^{b}+\frac{(-1)^{m+1}}{(m+1) !} \int_{a}^{b} B_{m+1}(x) f^{(m+1)}(x)\,\mathrm  d x
+\end{aligned}</script><p>This is the Euler-Maclaurin Summation Formula.  </p>
+<p>$\square$</p>
+<p>It can also be expressed as</p>
+<script type="math/tex; mode=display">
+\boxed{    \sum_{n=a}^b{f\left( n \right)}=\int_a^b{f\left( x \right) \text{d}x}+\frac{f\left( a \right) +f\left( b \right)}{2}+\sum_{k=1}^{\infty}{\frac{B_{2k}}{\left( 2k \right) !}}\left( f^{\left( 2k-1 \right)}\left( b \right) -f^{\left( 2k-1 \right)}\left( a \right) \right)+R_p}</script><p>The size of the remainder term can be estimated as</p>
+<script type="math/tex; mode=display">
+{\displaystyle |R_{p}|\leqslant {\frac {2\zeta (p)}{(2\pi )^{p}}}\int _{m}^{n}|f^{(p)}(x)|\,\mathrm dx}</script><p>In the context of computing asymptotic expansions of sums and series, usually the most useful form of the Euler–Maclaurin formula is</p>
+<script type="math/tex; mode=display">
+\boxed{{\displaystyle \sum _{n=a}^{b}f(n)\sim \int _{a}^{b}f(x)\, \text{d}x+{\frac {f(b)+f(a)}{2}}+\sum _{k=1}^{\infty }\,{\frac {B_{2k}}{(2k)!}}\left(f^{(2k-1)}(b)-f^{(2k-1)}(a)\right)}}</script><h1 id="Applications-of-Euler-Maclaurin-Summation"><a href="#Applications-of-Euler-Maclaurin-Summation" class="headerlink" title="Applications of Euler-Maclaurin Summation"></a>Applications of Euler-Maclaurin Summation</h1><h2 id="the-Sums-of-Powers"><a href="#the-Sums-of-Powers" class="headerlink" title="the Sums of Powers"></a>the Sums of Powers</h2><p>The sum of the first $n - 1$ positive integers to the $m^{th}$ power is equivalent to  </p>
+<script type="math/tex; mode=display">
+S_{m}(n-1)=\frac{1}{m+1} \sum_{k=0}^{m}\left(\begin{array}{c}
+m+1 \\
+k
+\end{array}\right) B_{k} n^{m-k+1}</script><p><strong>Proof :</strong></p>
+<p>We will apply the EMSF to the function $f(x) = x^p$, with $a = 0 , b = n$ and $m \geqslant 1$. We consider the remainder first. For all $p \leqslant m$,  </p>
+<script type="math/tex; mode=display">
+f^{(p)}(x)=m(m-1)(m-2) \cdots(m-p+1) x^{m-p}</script><p>Therefore, $f^{(m)}(x) = m!$ and the remainder becomes  </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+R_{m} &=\frac{(-1)^{m+1}}{m !} \int_{a}^{b} B_m(y-\lfloor y\rfloor) f^{(m)}\,\mathrm   d y \\
+&=(-1)^{m+1} \int_{a}^{b} B_m(y-\lfloor y\rfloor)\,\mathrm   d y \\
+&=(-1)^{m+1}\left(\int_{a}^{a+1} B_m(y-\lfloor y\rfloor)\,\mathrm   d y+\int_{a+1}^{a+2} B_m(y-\lfloor y\rfloor)\,\mathrm   d y+\cdots+\int_{b-1}^{b} B_m(y-\lfloor y\rfloor)\,\mathrm   d y\right) \\
+&=(-1)^{m+1}\left(\int_{0}^{1} B_m(y-\lfloor y\rfloor) \,\mathrm  d y+\int_{0}^{1} B_m(y-\lfloor y\rfloor)\,\mathrm   d y+\cdots+\int_{0}^{1} B_m(y-\lfloor y\rfloor) \,\mathrm  d y\right) \\
+&=(-1)^{m+1}(b-a) \int_{0}^{1} B_m(y-\lfloor y\rfloor)\,\mathrm   d y \\
+&=0
+\end{aligned}</script><p>Thus, EMSF gives us  </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\sum_{i=0}^{n-1} x^{m} &=\int_{0}^{n} x^{m}\,\mathrm  dx+\left.\sum_{k=1}^{m} \frac{B_{k}}{k !} m(m-1)(m-2) \cdots(m-k+2) x^{m-k+1}\right|_{0} ^{n}+R_{m} \\
+&=\frac{x^{m+1}}{m+1}+\frac{1}{m+1} \sum_{k=1}^{m}\left(\begin{array}{c}
+m+1 \\
+k
+\end{array}\right) B_{k} n^{m-k+1} \\
+&=\frac{1}{m+1} \sum_{k=0}^{m}\left(\begin{array}{c}
+m+1 \\
+k
+\end{array}\right) B_{k} n^{m-k+1}
+\end{aligned}</script><p>$\square$</p>
+<h2 id="Euler’s-Constant"><a href="#Euler’s-Constant" class="headerlink" title="Euler’s Constant"></a>Euler’s Constant</h2><p>The Euler-Mascheroni constant, $\gamma$ , is defined as  </p>
+<script type="math/tex; mode=display">
+\gamma=\lim _{n \rightarrow \infty}\left(\sum_{k=1}^{n} \frac{1}{k}-\int_{1}^{\infty} \frac{1}{x}\right) \approx 0.57721566</script><p>Using our summation formula, we uncover a the following relation between the Bernoulli numbers and the Euler-Mascheroni constant:  </p>
+<script type="math/tex; mode=display">
+\gamma=\frac{1}{2}+\sum_{k=1}^{\infty} \frac{B_{2 k}}{2 k}</script><p><strong>Proof :</strong></p>
+<p>With the EMSF, let $f(x) =\dfrac{1}{x} , a = 1$, and $b = n$.  </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\sum_{i=a}^{b-1} f(i) &=\int_{a}^{b} f(x)\,\mathrm    d x+\left.\sum_{k=1}^{m} \frac{B_{k}}{k !} f^{(k-1)}(x)\right|_{a} ^{b}+R_{m} \\
+\sum_{i=1}^{n-1} \frac{1}{i} &=\int_{1}^{n} \frac{1}{x}\,\mathrm    d x+\left.\sum_{k=1}^{m} \frac{B_{k}}{k !} \frac{(-1)^{k-1}(k-1) !}{x^{k}}\right|_{1} ^{n}+R_{m}
+\end{aligned}</script><p>We evaluate the integral  </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\sum_{i=1}^{n-1} \frac{1}{i} &=\ln x+\left.\sum_{k=1}^{m} \frac{(-1)^{k-1} B_{k}}{k x^{k}}\right|_{1} ^{n}+R_{m} \\
+\sum_{i=1}^{n} \frac{1}{i}-\ln x &=\frac{1}{n}+\sum_{k=1}^{m} \frac{(-1)^{k-1} B_{k}}{k}\left[\frac{1}{n^{k}}-1\right]+R_{m} \\
+&=\frac{1}{2}+\frac{1}{2 n}+\sum_{k=1}^{m} \frac{B_{2 k}}{2 k}\left[1-\frac{1}{n^{2 k}}\right]+R_{m}
+\end{aligned}</script><p>since all odd terms of the Bernoulli numbers aside from $B_1$ are zero. If we take these sums as $n$ approaches infinity, the left-hand side becomes the Euler-Mascheroni constant. And as $m$ approaches infinity, we know that $R_m$ goes to zero, giving us:</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\lim _{m, n \rightarrow \infty}\left[\sum_{i=1}^{n} \frac{1}{i}-\ln x\right] &=\lim _{m, n \rightarrow \infty}\left[\frac{1}{2}+\frac{1}{2 n}+\sum_{k=1}^{m} \frac{B_{2 k}}{2 k}\left[1-\frac{1}{n^{2 k}}\right]+R_{m}\right] \\
+\gamma &=\frac{1}{2}+\sum_{k=1}^{m} \frac{B_{2 k}}{2 k}
+\end{aligned}</script><p>$\square$</p>
+<h2 id="Stirling’s-Formula"><a href="#Stirling’s-Formula" class="headerlink" title="Stirling’s Formula"></a>Stirling’s Formula</h2><p>For positive integers $n$,  </p>
+<script type="math/tex; mode=display">
+n ! \sim \sqrt{2 \pi n}\left(\frac{n}{e}\right)^{n}</script><p><strong>Proof :</strong></p>
+<p>Let $f(x) = \ln n, a = 1, b = n$, and $m = 1$ in the EMSF.  </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\sum_{i=a}^{b-1} f(i) &=\int_{a}^{b} f(x)\,\mathrm    d x+\left.\sum_{k=1}^{m} \frac{B_{k}}{k !} f^{(k-1)}(x)\right|_{a} ^{b}+R_{m} \\
+\sum_{i=1}^{n-1} \ln i &=\int_{1}^{n} \ln x\,\mathrm    d x+\left.B_{1} \ln x\right|_{1} ^{n}+R_{1} \\
+\ln (n-1) ! &=n \ln n-n+1-\frac{1}{2} \ln n+R_{1} \\
+\ln n ! &=n \ln n-n+1+\frac{1}{2} \ln n+R_{1} \\
+\ln n ! &=\left(n+\frac{1}{2}\right) \ln n-(n-1)+R_{1} \\
+n ! &=C(n) \sqrt{n}\left(\frac{n}{e}\right)^{n}
+\end{aligned}</script><p>where $C(n) = e^{R_1-1}$ and $\lim\limits_{n\to\infty}C(n)=\sqrt{2\pi}$. So</p>
+<script type="math/tex; mode=display">
+n ! \sim \sqrt{2 \pi n}\left(\frac{n}{e}\right)^{n}</script><p>$\square$</p>
+<h2 id="Some-examples"><a href="#Some-examples" class="headerlink" title="Some examples"></a>Some examples</h2><div class="note note-info">
+            <p>Use the Euler-Maclaurin formula to evaluate the sum  </p><script type="math/tex; mode=display">\sum_{n=0}^{N} \cos \frac{2 \pi n}{N}</script>
+          </div>
+<p><strong>Solution:</strong></p>
+<script type="math/tex; mode=display">
+\sum_{n=0}^{N} \cos \frac{2 \pi n}{N}=\int_{0}^{N}  \cos \frac{2 \pi n}{N}\,\mathrm   d n+\frac{1}{2}(1+1)+0=1</script><p>Because  </p>
+<script type="math/tex; mode=display">
+f^{(2 m-1)}(0)=f^{(2 m-1)}(N)=0</script><p>And</p>
+<script type="math/tex; mode=display">
+\int_{0}^{N}  \cos \frac{2 n \pi}{N}\,\mathrm   d n=\frac{N}{2 \pi} \int_{0}^{2 \pi}  \cos x\,\mathrm   d x=0</script><p>Of course, the sum may be carried out directly,  </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\sum_{n=0}^{N} \cos \frac{2 \pi n}{N} &=\frac{1}{2} \sum_{0}^{N}\left(e^{i 2 \pi n / N}+e^{-i 2 \pi n / N}\right) \\
+&=\frac{1}{2}\left[\frac{1-e^{2 \pi i(N+1) / N}}{1-e^{2 \pi i / N}}+\frac{1-e^{-2 \pi i(N+1) / N}}{1-e^{-2 \pi i / N}}\right] \\
+&=\frac{1}{2}(1+1)=1
+\end{aligned}</script><p>$\square$</p>
+<div class="note note-info">
+            <p>The following sum occurs, in computing the vacuum energy in a cosmological model:  </p><script type="math/tex; mode=display">\sum_{l=0}^{\infty}(2 l+1) e^{-l(l+1) t}</script><p>How does this behave as $t\to0$?  </p>
+          </div>
+<p><strong>Solution:</strong></p>
+<p>We will answer this question by using the Euler-Maclaurin formula assuming that the remainder $R_n$ tends to zero<br>as $n\to\infty$. Thus we will write the limiting form of that sum formula as  </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\sum_{l=0}^{\infty} f(l)= & \int_{0}^{\infty} f(l)\,\mathrm   d l+\frac{1}{2}[f(\infty)+f(0)] \\
+&+\sum_{k=1}^{\infty} \frac{B_{2 k}}{(2 k) !}\left[f^{(2 k-1)}(\infty)-f^{(2 k-1)}(0)\right]
+\end{aligned}</script><p>Here  </p>
+<script type="math/tex; mode=display">
+f(l)=(2 l+1) e^{-l(l+1) t}</script><p>so that  </p>
+<script type="math/tex; mode=display">
+f(\infty)=f^{(2 k-1)}(\infty)=0</script><p>while a very simple calculation shows</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+f(0) &=1 \\
+f^{\prime}(0) &=2-t \\
+f^{\prime \prime \prime}(0) &=-12 t+12 t^{2}-t^{3} \\
+f^{(5)}(0) &=120 t^{2}-180 t^{3}+30 t^{4}-t^{5} \\
+f^{(7)}(0) &=-1680 t^{3}+3360 t^{4}-840 t^{5}+56 t^{6}-t^{7} \\
+f^{(2 k-1)}(0) &=\mathcal{O}\left(t^{4}\right), \quad k \geqslant 5
+\end{aligned}</script><p>Thus  </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\sum_{l=0}^{\infty}(2 l+1) e^{-l(l+1) t}&=\int_{0}^{\infty} d l(2 l+1) e^{-l(l+1) t}+\frac{1}{2}-\frac{B_{2}}{2} f^{\prime}(0)-\frac{B_{4}}{4 !} f^{\prime \prime \prime}(0)-\ldots \\
+&=\frac{1}{t} \int_{0}^{\infty} d u e^{-u}+\frac{1}{2}+\frac{1}{2}\left(\frac{1}{6}\right)(t-2) +\frac{1}{4 !}\left(-\frac{1}{30}\right)\left[12 t+\mathcal{O}\left(t^{2}\right)\right]+\mathcal{O}\left(t^{2}\right) \\
+&= \frac{1}{t}+\frac{1}{3}+\frac{t}{15}+\frac{4}{315} t^{2}+\frac{1}{315} t^{3}+\ldots
+\end{aligned}</script><p>$\square$</p>
 <section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span><a target="_blank" rel="noopener" href="https://arminda.whitman.edu/islandora/object/arminda%3A62243/datastream/PDF/view">The Bernoulli Numbers: A Brief Primer by Nathaniel Douglas Larson</a>
-<a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>
+<a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:2" class="footnote-text"><span><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Euler%E2%80%93Maclaurin_formula">https://en.wikipedia.org/wiki/Euler%E2%80%93Maclaurin_formula</a>
+<a href="#fnref:2" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:3" class="footnote-text"><span><a href="">阶的估(潘承洞、于秀源)</a>
+<a href="#fnref:3" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>
             </div>
             <hr>
             <div>
@@ -408,15 +606,15 @@ n
                     
                       <a class="hover-with-bg" href="/tags/Bernoulli-Numbers/">Bernoulli Numbers</a>
                     
-                      <a class="hover-with-bg" href="/tags/Generating-Function/">Generating Function</a>
-                    
-                      <a class="hover-with-bg" href="/tags/Euler-Maclaurin-Summation-Formula/">Euler-Maclaurin Summation Formula</a>
-                    
                       <a class="hover-with-bg" href="/tags/%E6%97%A0%E7%A9%B7%E4%B9%98%E7%A7%AF/">无穷乘积</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E7%BA%A7%E6%95%B0/">级数</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Generating-Function/">Generating Function</a>
                     
                       <a class="hover-with-bg" href="/tags/%E6%9F%AF%E8%A5%BF%E4%B9%98%E7%A7%AF/">柯西乘积</a>
                     
-                      <a class="hover-with-bg" href="/tags/%E7%BA%A7%E6%95%B0/">级数</a>
+                      <a class="hover-with-bg" href="/tags/Euler-Maclaurin-Summation-Formula/">Euler-Maclaurin Summation Formula</a>
                     
                   </div>
                 
@@ -428,6 +626,12 @@ n
                 <div class="post-prevnext">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2021/01/31/Bernoulli%20Numbers%20(3)/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Bernoulli Numbers (3)</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
