@@ -17,7 +17,7 @@
   <meta name="description" content="保持很多的热爱和一点点野心">
   <meta name="author" content="欧阳珈樱">
   <meta name="keywords" content="">
-  <title>与tanx=x有关的一些题 - 樱花味猫猫</title>
+  <title>樱花味猫猫</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -166,7 +166,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="与tanx=x有关的一些题">
+            <span class="h2" id="subtitle" title="">
               
             </span>
 
@@ -181,7 +181,7 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-02-01 09:03" pubdate>
+      <time datetime="2021-02-01 11:07" pubdate>
         2021年2月1日 上午
       </time>
     </span>
@@ -193,7 +193,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      412 字
+      1.3k 字
     </span>
   
 
@@ -203,7 +203,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      7
+      25
        分钟
     </span>
   
@@ -245,88 +245,104 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">与tanx=x有关的一些题</h1>
+            <h1 style="display: none"></h1>
             
             <div class="markdown-body">
               <div class="note note-info">
-            <p>设 $\begin{Bmatrix}x_n\end{Bmatrix}$ 为方程 $x=\tan x$ 正根从小到大排列以后得到的数列,计算</p><script type="math/tex; mode=display">\sum_{n=1}^{\infty}\frac{1}{x_n^2}</script>
+            <p>求 $\displaystyle\sum_{k=1}^n{\frac{n}{n^2+k^2}}$ 在 $n\to\infty$ 时的渐近展开式.</p>
           </div>
 <p><strong>Solution:</strong></p>
+<p>利用 <a target="_blank" rel="noopener" href="https://ying2021.github.io/2021/01/30/Bernoulli%20Numbers%20(2">Bernoulli Numbers (2)</a>/#The-Euler-Maclaurin-Summation-Formula) 中提到的公式</p>
 <script type="math/tex; mode=display">
-x=\tan x\Rightarrow \frac{\sin x}{x}-\cos x=0</script><p>Taylor 展开后得到</p>
-<script type="math/tex; mode=display">
-\frac13x^2-\frac{1}{30}x^4+\frac{1}{840}x^6+\cdots=0</script><p>又 $x&gt;0$ , 故 $x_n$ 为</p>
-<script type="math/tex; mode=display">
-\frac13-\frac{1}{30}x^2+\frac{1}{840}x^4+\cdots=0</script><p>的根.令 $x_n^2=t_n$ , 则</p>
-<script type="math/tex; mode=display">
-\frac13-\frac{1}{30}t_n+\frac{1}{840}t_n^2+\cdots=0</script><p>由高阶韦达定理有</p>
-<script type="math/tex; mode=display">
+\bbox[#00FFFF,15px,border:2px solid red]{\color{green}{
 \begin{align*}
-&\sum_{n=1}^{\infty}\frac{1}{x_n^2}=\sum_{n=1}^{\infty}\frac{1}{t_n}\\
-=&\frac{t_2t_3\cdots t_n+\cdots +t_1t_2t_3\cdots t_{n-1}}{t_1t_2\cdots t_n}\\
-=&-\frac{-1/30}{1/3}\\
-=&\frac{1}{10}
-\end{align*}</script><hr>
+\frac1n\sum_{k=1}^{n} f\left(\frac{k}{n} \right)=&\int_0^1f(x)\,\mathrm dx+\frac{f(1)-f(0)}{2n}\\
+&+\sum_{k=1}^{m} \frac{{B}_{2 k}}{(2 k) !}\left(\frac{1}{n}\right)^{2k}\left(f^{(2k-1)}(1)-f^{(2 k-1)}(0)\right)\\
+&+\frac{n {B}_{2 m+2} f^{(2 m+2)}(\xi)}{(2 m+2) !}\left(\frac{1}{n}\right)^{2 m+3}
+\end{align*}
+}}</script><p>取 $\displaystyle f\left( x \right) =\frac{1}{1+x^2}$ 即得</p>
+<script type="math/tex; mode=display">
+\begin{align*}     &\sum_{k=1}^n{\frac{n}{n^2+k^2}}=\frac{1}{n}\sum_{k=1}^n{\frac{1}{1+\left( \frac{k}{n} \right) ^2}}\\
+=&\int_0^1{\frac{1}{1+x^2}\text{d}x}+\frac{\overset{-\frac{1}{2}}{\overbrace{f\left( 1 \right) -f\left( 0 \right) }}}{2n}+\frac{1}{12n^2}\left( \underset{-\frac{1}{2}}{\underbrace{f'\left( 1 \right) -f'\left( 0 \right) }} \right) \\     
+-&\frac{1}{720n^4}\left( \underset{0}{\underbrace{f^{\left( 3 \right)}\left( 1 \right) -f^{\left( 3 \right)}\left( 0 \right) }} \right) +\frac{1}{30240n^6}\left( \underset{15}{\underbrace{f^{\left( 5 \right)}\left( 1 \right) -f^{\left( 5 \right)}\left( 0 \right) }} \right) +\mathcal{O}\left( \frac{1}{n^7} \right) \\     
+=&\frac{\pi}{4}-\frac{1}{4n}-\frac{1}{24n^2}+\frac{1}{2016n^6}+\mathcal{O}\left( \frac{1}{n^7} \right)  \end{align*}</script><p>于是</p>
+<script type="math/tex; mode=display">
+\bbox[#00FFFF,15px,border:2px solid red]{\color{red}{
+\sum_{k=1}^n{\frac{n}{n^2+k^2}}=\frac{\pi}{4}-\frac{1}{4n}-\frac{1}{24n^2}+\frac{1}{2016n^6}+\mathcal{O}\left( \frac{1}{n^7} \right)\quad  (n\rightarrow\infty)
+}}</script><hr>
 <div class="note note-info">
-            <p>把方程 $\tan x =x$ 的正根从小到大排成数列 $x_{n}$, 求$A,B,C$, 使得</p><script type="math/tex; mode=display">\lim\limits_{n\to \infty}n(x_{n}-An-B-Cn^{-1})=0</script>
+            <p>求 $\displaystyle\sum_{k=1}^n{\frac{1}{n+k}}$ 在 $n\to\infty$ 时的渐近展开式.</p>
           </div>
 <p><strong>Solution:</strong></p>
-<p>易知 $x_{n}\in \left(n \pi ,n \pi +\dfrac{\pi}{2}\right)$ , 则</p>
+<p>利用 <a target="_blank" rel="noopener" href="https://ying2021.github.io/2021/01/30/Bernoulli%20Numbers%20(2">Bernoulli Numbers (2)</a>/#The-Euler-Maclaurin-Summation-Formula) 中提到的公式</p>
 <script type="math/tex; mode=display">
-x_{n}=\tan x_{n}=\tan (x_{n}-n\pi)</script><script type="math/tex; mode=display">
-\lim\limits_{n\to \infty}(x_{n}-n\pi)=\lim\limits_{n\to \infty }\arctan x_{n}=\frac{\pi}{2}</script><script type="math/tex; mode=display">
-n\pi -An=0\Rightarrow A=\pi</script><script type="math/tex; mode=display">
-\lim\limits_{n\to \infty}(x_{n}-n\pi -B)=0 \Rightarrow B=\frac{\pi}{2}</script><script type="math/tex; mode=display">
+\bbox[#00FFFF,15px,border:2px solid red]{\color{green}{
 \begin{align*}
-C&=\lim\limits_{n\to \infty}n(\arctan x_{n}-\frac{\pi}{2})\\
-&=\lim\limits_{n\to \infty}-n\arctan \frac{1}{x_{n}}\\
-&=\lim\limits_{n\to \infty}\frac{-n}{\frac{\pi}{2}+n\pi}=-\frac{1}{\pi}
-\end{align*}</script><hr>
+\frac1n\sum_{k=1}^{n} f\left(\frac{k}{n} \right)=&\int_0^1f(x)\,\mathrm dx+\frac{f(1)-f(0)}{2n}\\
+&+\sum_{k=1}^{m} \frac{{B}_{2 k}}{(2 k) !}\left(\frac{1}{n}\right)^{2k}\left(f^{(2k-1)}(1)-f^{(2 k-1)}(0)\right)\\
+&+\frac{n {B}_{2 m+2} f^{(2 m+2)}(\xi)}{(2 m+2) !}\left(\frac{1}{n}\right)^{2 m+3}
+\end{align*}
+}}</script><p>取 $\displaystyle f\left( x \right) =\frac{1}{1+x}$ 即得</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+&\sum_{k=1}^{n} \frac{1}{n+k}=\frac{1}{n} \sum_{k=1}^{n} \frac{1}{1+\frac{k}{n}}\\ =&\int_{0}^{1} \frac{1}{1+x} \mathrm{~d} x+\overbrace{\frac{f(1)-f(0)}{2 n}}^{-\frac{1}{2}}+\frac{1}{12 n^{2}}\left(\underbrace{f^{\prime}(1)-f^{\prime}(0)}_{\frac{3}{4}}\right) \\
+-&\frac{1}{720 n^{4}}\left(\underbrace{f^{(3)}(1)-f^{(3)}(0)}_{-3 !\left(\frac{1}{2^{4}}-1\right)}\right))+\frac{1}{30240 n^{6}}\left(\underbrace{f^{(5)}(1)-f^{(5)}(0)}_{-5 !\left(\frac{1}{2^{6}}-1\right)}\right)+\mathcal{O}\left(\frac{1}{n^{7}}\right) \\
+=&\ln 2-\frac{1}{4 n}+\frac{1}{16 n^{2}}-\frac{1}{128 n^{4}}+\frac{1}{256 n^{6}}+\mathcal{O}\left(\frac{1}{n^{7}}\right) \quad(n \rightarrow \infty)
+\end{aligned}</script><p>于是</p>
+<script type="math/tex; mode=display">
+\bbox[#00FFFF,15px,border:2px solid red]{\color{red}{
+\sum_{k=1}^n{\frac{1}{n+k}}=\ln 2-\frac{1}{4 n}+\frac{1}{16 n^{2}}-\frac{1}{128 n^{4}}+\frac{1}{256 n^{6}}+\mathcal{O}\left(\frac{1}{n^{7}}\right) \quad(n \rightarrow \infty)
+}}</script><hr>
 <div class="note note-info">
-            <p>把方程 $\tan x =x$ 的正根从小到大排成数列$x_{n}$,求极限</p><script type="math/tex; mode=display">\lim\limits_{n \to \infty}x_{n}^{2}\sin (x_{n+1}-x_{n})</script>
+            <script type="math/tex; mode=display">\lim_{n\to\infty}\sum_{k=1}^n\left(\frac kn\right)^n</script>
           </div>
 <p><strong>Solution:</strong></p>
-<p>先证明 $\lim\limits_{n\to \infty}(x_{n+1}-x_{n})=\pi$,过程如下:</p>
-<p>记 </p>
+<p>利用 <a target="_blank" rel="noopener" href="https://ying2021.github.io/2021/01/30/Bernoulli%20Numbers%20(2">Bernoulli Numbers (2)</a>/#The-Euler-Maclaurin-Summation-Formula) 中提到的公式</p>
 <script type="math/tex; mode=display">
-f(x)=\tan x -x,x\in(n\pi ,n\pi +\frac{\pi}{2}),n=1,2,3,\cdots</script><p>$f’(x)=\sec^2 x -1&gt;0 ,$于是 $f(x)$ 在区间 $(n\pi ,n\pi +\frac{\pi}{2})$ 上单调递增.</p>
+\bbox[#00FFFF,15px,border:2px solid red]{\color{green}{
+\sum_{i=a}^{b-1} f(i)=\int_{a}^{b} f(x)\,\mathrm  d x+\left.\sum_{k=1}^{m} \frac{B_{k}}{k !} f^{(k-1)}(x)\right|_{a} ^{b}+R_{m}
+}}</script><p>取 $\displaystyle f\left( x \right) =x^n$ 即得</p>
 <script type="math/tex; mode=display">
-f(n\pi)=-n\pi<0,x\to \left(n\pi+\frac{\pi}{2}\right),f(x)\to +\infty</script><p>$f(x)$ 在每个区间 $\left(n\pi,n\pi +\frac{\pi}{2}\right)$ 内有唯一零点 $x_{n}$, $x_{n}$ 是 $\tan x =x$ 的第 $n$ 个正根.</p>
+\begin{aligned}
+&\sum_{k=1}^{n}\left(\frac{k}{n}\right)^{n}=1+\frac{1}{n^{n}} \sum_{k=0}^{n-1} k^{n} \\
+=&1+\frac{1}{n^{n}} \int_{0}^{n} x^{n} \mathrm{~d} x+\frac{1}{n^{n}} \sum_{k=1}^{\infty} \frac{B_{k}}{k !}\left(f^{(k-1)}(n)-f^{(k-1)}(0)\right) \\
+=&1+\frac{n}{n+1}+\frac{1}{n^{n}} \sum_{k=1}^{n} \frac{B_{k}}{k !} f^{(k-1)}(n) \\
+=&1+\frac{n}{n+1}+\frac{1}{n^{n}} \sum_{k=1}^{n}\left[\frac{B_{k}}{k !} n^{n-k+1}(n(n-1) \cdots(n-k+2))\right] \\
+=&1+\frac{n}{n+1}+\sum_{k=1}^{n}\left[\frac{B_{k}}{k !} n^{1-k}(n(n-1) \cdots(n-k+2))\right]\\
+=&1+\frac{n}{n+1}+\sum_{k=1}^{n}\frac{B_k}{k!}\left[1+\mathcal{O}(n^{-1})\right]\\
+=&1+\frac{n}{n+1}+\sum_{k=1}^{n}\frac{B_k}{k!}+\sum_{k=1}^n\frac{B_k}{k!}\mathcal{O}(n^{-1})
+\end{aligned}</script><p>又</p>
+<script type="math/tex; mode=display">
+\sum_{k=0}^{\infty} \frac{B_{k}}{k !} x^{k}=\frac{x}{e^{x}-1} \Longrightarrow \lim _{n \rightarrow \infty} \sum_{k=1}^{n} \frac{B_{k}}{k !}=\frac{1}{e-1}-1</script><p>于是</p>
+<script type="math/tex; mode=display">
+\bbox[#00FFFF,15px,border:2px solid red]{\color{red}{
+\lim _{n \rightarrow \infty}\left(\left(\frac{1}{n}\right)^{n}+\left(\frac{2}{n}\right)^{n}+\cdots+\left(\frac{n}{n}\right)^{n}\right)=\frac{e}{e-1}
+}}</script><hr>
+<div class="note note-info">
+            <script type="math/tex; mode=display">\sum_{n=1}^{\infty}\frac{(-1)^n\ln n}{n}</script>
+          </div>
+<p><strong>Solution:</strong></p>
+<p>利用 <a target="_blank" rel="noopener" href="https://ying2021.github.io/2021/01/30/Bernoulli%20Numbers%20(2">Bernoulli Numbers (2)</a>/#The-Euler-Maclaurin-Summation-Formula) 中提到的公式</p>
+<script type="math/tex; mode=display">
+\bbox[#00FFFF,15px,border:2px solid red]{\color{green}{
+\sum_{n=a}^b{f\left( n \right)}=\int_a^b{f\left( x \right) \text{d}x}+\frac{f\left( a \right) +f\left( b \right)}{2}+\sum_{k=1}^{\infty}{\frac{B_{2k}}{\left( 2k \right) !}}\left( f^{\left( 2k-1 \right)}\left( b \right) -f^{\left( 2k-1 \right)}\left( a \right) \right)+R_p
+}}</script><p>取 $\displaystyle f\left( x \right) =\dfrac{\ln x}{x}$ 即得</p>
+<script type="math/tex; mode=display">
+\sum_{k=1}^n \frac{\ln k}{k}=\alpha+\frac{1}{2}\ln^2 n+\mathcal{O}\left(\frac{\ln n}{n}\right)</script><p>其中, $\alpha$ 是某个常数. 同样取 $\displaystyle f\left( x \right) =\dfrac{1}{x}$ 即得</p>
+<script type="math/tex; mode=display">
+\sum_{k=1}^n \frac{1}{k}=\gamma+\ln n+\mathcal{O}\left(\frac{1}{n}\right)\\</script><p>其中 $\gamma$ 是 <strong>Euler–Mascheroni</strong> 常数.</p>
 <p>于是</p>
 <script type="math/tex; mode=display">
-x_{n}=\tan x_{n}=\tan(x_{n}-n\pi)\Rightarrow \arctan x_{n}=x_{n}-n\pi</script><script type="math/tex; mode=display">
-\Rightarrow n\to \infty ,x_{n}\to \frac{\pi}{2}+n\pi</script><script type="math/tex; mode=display">
-\lim\limits_{n\to \infty}(x_{n+1}-x_{n})=\left[(n+1)\pi +\frac{\pi}{2}-\left(n\pi+\frac{\pi}{2}\right)\right]=\pi</script><script type="math/tex; mode=display">
-\begin{aligned}
-&\lim\limits_{n \to \infty}x_{n}^{2}\sin (x_{n+1}-x_{n})\\
-=&\lim\limits_{n \to \infty}x_{n}^{2}\tan (x_{n+1}-x_{n})\cos (x_{n+1}-x_{n})\\
-=&\lim\limits_{n \to \infty}x_{n}^{2}\frac{\tan x_{n+1}-\tan x_{n}}{1+\tan x_{n+1}\tan x_{n}}\cdot\lim\limits_{n\to \infty}\cos (x_{n+1}-x_{n})\\
-=&-\lim\limits_{n \to \infty}x_{n}^{2}\frac{ x_{n+1}- x_{n}}{1+x_{n+1} x_{n}}\\
-=&-\pi
-\end{aligned}</script><p>其它解法见<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/383693246">https://www.zhihu.com/question/383693246</a></p>
-<hr>
-
+\begin{align} &\sum_{k=1}^{2n}\frac{(-1)^k\ln k}{k}\\ =&2\sum_{k=1}^{n}\frac{\ln(2k)}{2k} -\sum_{k=1}^{2n}\frac{\ln k}{k}\\ =&\sum_{k=1}^{n}\frac{\ln k}{k}+\ln2\sum_{k=1}^{n}\frac1{k} -\sum_{k=1}^{2n}\frac{\ln k}{k}\\ =&\alpha+\frac{1}{2}\ln^2 n+\mathcal{O}\left(\frac{\ln n}{n}\right) +\ln 2\left(\gamma+\ln n+\mathcal{O}\left(\frac1n\right)\right)\\ &-\alpha-\frac{1}{2}\ln^2 (2n)-\mathcal{O}\left(\frac{\ln(2n)}{2n}\right)\\ =&\gamma\ln 2-\frac{1}{2}\ln^2 2+\mathcal{O}\left(\frac{\ln n}{n}\right) \end{align}\\</script><p>令 $n\to\infty$ 即得</p>
+<script type="math/tex; mode=display">
+\bbox[#00FFFF,15px,border:2px solid red]{\color{red}{
+\sum_{k=1}^{\infty} \frac{(-1)^k\ln k}{k}=\gamma\ln 2-\frac{1}{2}\ln^2 2
+}}</script>
             </div>
             <hr>
             <div>
               <div class="post-metas mb-3">
                 
-                  <div class="post-meta mr-3">
-                    <i class="iconfont icon-category"></i>
-                    
-                      <a class="hover-with-bg" href="/categories/Math/">Math</a>
-                    
-                  </div>
-                
-                
-                  <div class="post-meta">
-                    <i class="iconfont icon-tags"></i>
-                    
-                      <a class="hover-with-bg" href="/tags/%E6%9E%81%E9%99%90/">极限</a>
-                    
-                      <a class="hover-with-bg" href="/tags/%E7%BA%A7%E6%95%B0/">级数</a>
-                    
-                  </div>
                 
               </div>
               
@@ -337,18 +353,12 @@ x_{n}=\tan x_{n}=\tan(x_{n}-n\pi)\Rightarrow \arctan x_{n}=x_{n}-n\pi</script><s
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/02/01/EM%E5%85%AC%E5%BC%8F%E7%9A%84%E5%BA%94%E7%94%A8/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile"></span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/01/31/Bernoulli%20Numbers%20(3)/">
-                        <span class="hidden-mobile">Bernoulli Numbers (3)</span>
+                      <a href="/2021/02/01/%E4%B8%8Etanx=x%E6%9C%89%E5%85%B3%E7%9A%84%E4%B8%80%E4%BA%9B%E9%A2%98/">
+                        <span class="hidden-mobile">与tanx=x有关的一些题</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -506,45 +516,6 @@ x_{n}=\tan x_{n}=\tan(x_{n}-n\pi)\Rightarrow \arctan x_{n}=x_{n}-n\pi</script><s
 
 
 
-
-  
-
-  
-    <!-- MathJax -->
-    <script>
-      MathJax = {
-        tex: {
-          inlineMath: [['$', '$'], ['\\(', '\\)']]
-        },
-        options: {
-          renderActions: {
-            findScript: [10, doc => {
-              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
-                const display = !!node.type.match(/; *mode=display/);
-                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-                const text = document.createTextNode('');
-                node.parentNode.replaceChild(text, node);
-                math.start = { node: text, delim: '', n: 0 };
-                math.end = { node: text, delim: '', n: 0 };
-                doc.math.push(math);
-              });
-            }, '', false],
-            insertedScript: [200, () => {
-              document.querySelectorAll('mjx-container').forEach(node => {
-                let target = node.parentNode;
-                if (target.nodeName.toLowerCase() === 'li') {
-                  target.parentNode.classList.add('has-jax');
-                }
-              });
-            }, '', false]
-          }
-        }
-      };
-    </script>
-
-    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-svg.js" ></script>
-
-  
 
 
 
