@@ -193,7 +193,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      155 字
+      412 字
     </span>
   
 
@@ -203,7 +203,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      2
+      7
        分钟
     </span>
   
@@ -255,10 +255,9 @@
 <script type="math/tex; mode=display">
 x=\tan x\Rightarrow \frac{\sin x}{x}-\cos x=0</script><p>Taylor 展开后得到</p>
 <script type="math/tex; mode=display">
-\frac13x^2-\frac{1}{30}x^4+\frac{1}{840}x^6+\cdots=0</script><p>又 $x&gt;0$, 故 $x_n$ 为</p>
+\frac13x^2-\frac{1}{30}x^4+\frac{1}{840}x^6+\cdots=0</script><p>又 $x&gt;0$ , 故 $x_n$ 为</p>
 <script type="math/tex; mode=display">
-\frac13-\frac{1}{30}x^2+\frac{1}{840}x^4+\cdots=0</script><p>的根.</p>
-<p>令 $x_n^2=t_n$, 则</p>
+\frac13-\frac{1}{30}x^2+\frac{1}{840}x^4+\cdots=0</script><p>的根.令 $x_n^2=t_n$ , 则</p>
 <script type="math/tex; mode=display">
 \frac13-\frac{1}{30}t_n+\frac{1}{840}t_n^2+\cdots=0</script><p>由高阶韦达定理有</p>
 <script type="math/tex; mode=display">
@@ -267,7 +266,46 @@ x=\tan x\Rightarrow \frac{\sin x}{x}-\cos x=0</script><p>Taylor 展开后得到<
 =&\frac{t_2t_3\cdots t_n+\cdots +t_1t_2t_3\cdots t_{n-1}}{t_1t_2\cdots t_n}\\
 =&-\frac{-1/30}{1/3}\\
 =&\frac{1}{10}
-\end{align*}</script>
+\end{align*}</script><hr>
+<div class="note note-info">
+            <p>把方程 $\tan x =x$ 的正根从小到大排成数列 $x_{n}$, 求$A,B,C$, 使得</p><script type="math/tex; mode=display">\lim\limits_{n\to \infty}n(x_{n}-An-B-Cn^{-1})=0</script>
+          </div>
+<p><strong>Solution:</strong></p>
+<p>易知 $x_{n}\in \left(n \pi ,n \pi +\dfrac{\pi}{2}\right)$ , 则</p>
+<script type="math/tex; mode=display">
+x_{n}=\tan x_{n}=\tan (x_{n}-n\pi)</script><script type="math/tex; mode=display">
+\lim\limits_{n\to \infty}(x_{n}-n\pi)=\lim\limits_{n\to \infty }\arctan x_{n}=\frac{\pi}{2}</script><script type="math/tex; mode=display">
+n\pi -An=0\Rightarrow A=\pi</script><script type="math/tex; mode=display">
+\lim\limits_{n\to \infty}(x_{n}-n\pi -B)=0 \Rightarrow B=\frac{\pi}{2}</script><script type="math/tex; mode=display">
+\begin{align*}
+C&=\lim\limits_{n\to \infty}n(\arctan x_{n}-\frac{\pi}{2})\\
+&=\lim\limits_{n\to \infty}-n\arctan \frac{1}{x_{n}}\\
+&=\lim\limits_{n\to \infty}\frac{-n}{\frac{\pi}{2}+n\pi}=-\frac{1}{\pi}
+\end{align*}</script><hr>
+<div class="note note-info">
+            <p>把方程 $\tan x =x$ 的正根从小到大排成数列$x_{n}$,求极限</p><script type="math/tex; mode=display">\lim\limits_{n \to \infty}x_{n}^{2}\sin (x_{n+1}-x_{n})</script>
+          </div>
+<p><strong>Solution:</strong></p>
+<p>先证明 $\lim\limits_{n\to \infty}(x_{n+1}-x_{n})=\pi$,过程如下:</p>
+<p>记 </p>
+<script type="math/tex; mode=display">
+f(x)=\tan x -x,x\in(n\pi ,n\pi +\frac{\pi}{2}),n=1,2,3,\cdots</script><p>$f’(x)=\sec^2 x -1&gt;0 ,$于是 $f(x)$ 在区间 $(n\pi ,n\pi +\frac{\pi}{2})$ 上单调递增.</p>
+<script type="math/tex; mode=display">
+f(n\pi)=-n\pi<0,x\to \left(n\pi+\frac{\pi}{2}\right),f(x)\to +\infty</script><p>$f(x)$ 在每个区间 $\left(n\pi,n\pi +\frac{\pi}{2}\right)$ 内有唯一零点 $x_{n}$, $x_{n}$ 是 $\tan x =x$ 的第 $n$ 个正根.</p>
+<p>于是</p>
+<script type="math/tex; mode=display">
+x_{n}=\tan x_{n}=\tan(x_{n}-n\pi)\Rightarrow \arctan x_{n}=x_{n}-n\pi</script><script type="math/tex; mode=display">
+\Rightarrow n\to \infty ,x_{n}\to \frac{\pi}{2}+n\pi</script><script type="math/tex; mode=display">
+\lim\limits_{n\to \infty}(x_{n+1}-x_{n})=\left[(n+1)\pi +\frac{\pi}{2}-\left(n\pi+\frac{\pi}{2}\right)\right]=\pi</script><script type="math/tex; mode=display">
+\begin{aligned}
+&\lim\limits_{n \to \infty}x_{n}^{2}\sin (x_{n+1}-x_{n})\\
+=&\lim\limits_{n \to \infty}x_{n}^{2}\tan (x_{n+1}-x_{n})\cos (x_{n+1}-x_{n})\\
+=&\lim\limits_{n \to \infty}x_{n}^{2}\frac{\tan x_{n+1}-\tan x_{n}}{1+\tan x_{n+1}\tan x_{n}}\cdot\lim\limits_{n\to \infty}\cos (x_{n+1}-x_{n})\\
+=&-\lim\limits_{n \to \infty}x_{n}^{2}\frac{ x_{n+1}- x_{n}}{1+x_{n+1} x_{n}}\\
+=&-\pi
+\end{aligned}</script><p>其它解法见<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/383693246">https://www.zhihu.com/question/383693246</a></p>
+<hr>
+
             </div>
             <hr>
             <div>
