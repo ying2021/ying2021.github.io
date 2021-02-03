@@ -1,0 +1,529 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="保持很多的热爱和一点点野心">
+  <meta name="author" content="欧阳珈樱">
+  <meta name="keywords" content="">
+  <title>Python-matplotlib画图 - 樱花味猫猫</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/gradient-light.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.3.0"></head>
+
+
+<body>
+  <header style="height: 100vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>樱花味猫猫</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/002.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Python-matplotlib画图">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      欧阳珈樱
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-02-03 10:54" pubdate>
+        2021年2月3日 上午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.8k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      49
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+            <div class="scroll-down-bar">
+              <i class="iconfont icon-arrowdown"></i>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Python-matplotlib画图</h1>
+            
+            <div class="markdown-body">
+              <h1 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h1><figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt<br><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><br>x = np.linspace(-<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">100</span>) <span class="hljs-comment"># 从(-1,1)均匀取100个点</span><br>y = x**<span class="hljs-number">2</span><br><br>plt.plot(x,y)<br>plt.show()<br></code></pre></div></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/02/03/x3tqiLvP8EZycX1.png" srcset="/img/loading.gif" alt=""></p>
+<h1 id="Figure-图像"><a href="#Figure-图像" class="headerlink" title="Figure 图像"></a>Figure 图像</h1><figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt<br><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><br>x = np.linspace(-<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">50</span>)<br>y1 = x ** <span class="hljs-number">2</span><br>y2 = x * <span class="hljs-number">2</span><br><span class="hljs-comment"># 这个是第一个figure对象,下面的内容都会在第一个figure中显示</span><br>plt.figure()<br>plt.plot(x,y1)<br><span class="hljs-comment"># 这里第二个figure对象</span><br>plt.figure(num = <span class="hljs-number">3</span>,figsize = (<span class="hljs-number">10</span>,<span class="hljs-number">5</span>))<br>plt.plot(x,y2)<br>plt.show()<br></code></pre></div></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/02/03/D3A2KVf8EsWLiNh.png" srcset="/img/loading.gif" alt=""></p>
+<figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt<br><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><br>x = np.linspace(-<span class="hljs-number">3</span>,<span class="hljs-number">3</span>,<span class="hljs-number">50</span>)<br>y1 = <span class="hljs-number">2</span>*x + <span class="hljs-number">1</span><br>y2 = x ** <span class="hljs-number">2</span><br><br>plt.figure(num = <span class="hljs-number">3</span>,figsize = (<span class="hljs-number">10</span>,<span class="hljs-number">5</span>))<br>plt.plot(x,y2)<br>plt.plot(x,y1,color=<span class="hljs-string">&#x27;red&#x27;</span>,linewidth=<span class="hljs-number">1.0</span>,linestyle=<span class="hljs-string">&#x27;--&#x27;</span>)<br>plt.show()<br></code></pre></div></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/02/03/YmKFzXOberV4JNQ.png" srcset="/img/loading.gif" alt=""></p>
+<h1 id="设置坐标轴"><a href="#设置坐标轴" class="headerlink" title="设置坐标轴"></a>设置坐标轴</h1><p>更改在图表上显示 $x,y$ 的取值范围：</p>
+<figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt<br><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><br>x = np.linspace(-<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">50</span>)<br>y = x *<span class="hljs-number">2</span><br><br>plt.plot(x,y)<br><span class="hljs-comment"># 在 plt.show()之前添加</span><br>plt.xlim((<span class="hljs-number">0</span>,<span class="hljs-number">2</span>))<br>plt.ylim((-<span class="hljs-number">2</span>,<span class="hljs-number">2</span>))<br>plt.show()<br></code></pre></div></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/02/03/8vSXrpi9zoTq5xJ.png" srcset="/img/loading.gif" alt=""></p>
+<hr>
+<p>给横纵坐标设置名称：</p>
+<figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt<br><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><br>x = np.linspace(-<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">50</span>)<br>y = x * <span class="hljs-number">2</span><br><br>plt.xlabel(<span class="hljs-string">&quot;x&#x27;slabel&quot;</span>) <span class="hljs-comment"># x轴上的名字</span><br>plt.ylabel(<span class="hljs-string">&quot;y&#x27;s;abel&quot;</span>) <span class="hljs-comment"># y轴上的名字</span><br>plt.plot(x,y,color=<span class="hljs-string">&#x27;green&#x27;</span>,linewidth = <span class="hljs-number">3</span>)<br>plt.show()<br></code></pre></div></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/02/03/4wVnzsm7cqIi8UH.png" srcset="/img/loading.gif" alt=""></p>
+<hr>
+<p>把坐标轴换成不同的单位：</p>
+<figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt<br><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><br>x = np.linspace(-<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">50</span>)<br>y = x * <span class="hljs-number">2</span><br><br>plt.xlabel(<span class="hljs-string">&quot;x&#x27;slabel&quot;</span>) <span class="hljs-comment"># x轴上的名字</span><br>plt.ylabel(<span class="hljs-string">&quot;y&#x27;s;abel&quot;</span>) <span class="hljs-comment"># y轴上的名字</span><br><br>new_ticks = np.linspace(-<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">5</span>)<br>plt.xticks(new_ticks)<br><span class="hljs-comment"># 在对应坐标处更换名称</span><br>plt.yticks([-<span class="hljs-number">2</span>,-<span class="hljs-number">1</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>],[<span class="hljs-string">&#x27;really bad&#x27;</span>,<span class="hljs-string">&#x27;b&#x27;</span>,<span class="hljs-string">&#x27;c&#x27;</span>,<span class="hljs-string">&#x27;d&#x27;</span>,<span class="hljs-string">&#x27;good&#x27;</span>])<br><br>plt.plot(x,y,color=<span class="hljs-string">&#x27;green&#x27;</span>,linewidth = <span class="hljs-number">3</span>)<br>plt.show()<br></code></pre></div></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/02/03/ZXeToSdEMuJl6Uv.png" srcset="/img/loading.gif" alt=""></p>
+<hr>
+<p>更换坐标原点，坐标轴</p>
+<figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt<br><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><br>x = np.linspace(-<span class="hljs-number">3</span>,<span class="hljs-number">3</span>,<span class="hljs-number">50</span>)<br>y1 = <span class="hljs-number">2</span>*x+<span class="hljs-number">1</span><br>y2 = x**<span class="hljs-number">2</span><br><br>plt.figure(figsize=(<span class="hljs-number">8</span>,<span class="hljs-number">5</span>))<br>plt.plot(x,y2)<br>plt.plot(x,y1,color=<span class="hljs-string">&#x27;red&#x27;</span>,linewidth=<span class="hljs-number">1.0</span>,linestyle=<span class="hljs-string">&#x27;--&#x27;</span>)<br><br>plt.xlim((-<span class="hljs-number">1</span>,<span class="hljs-number">2</span>))<br>plt.ylim((-<span class="hljs-number">2</span>,<span class="hljs-number">3</span>))<br>plt.xlabel(<span class="hljs-string">&quot;x&#x27;slabel&quot;</span>) <span class="hljs-comment"># x轴上的名字</span><br>plt.ylabel(<span class="hljs-string">&quot;y&#x27;s;abel&quot;</span>) <span class="hljs-comment"># y轴上的名字</span><br><br>new_ticks = np.linspace(-<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">5</span>)<br>plt.xticks(new_ticks)<br>plt.yticks([-<span class="hljs-number">2</span>,-<span class="hljs-number">1.8</span>,-<span class="hljs-number">1</span>,<span class="hljs-number">1.22</span>,<span class="hljs-number">3</span>,],<br>           [<span class="hljs-string">r&#x27;$really\ bad$&#x27;</span>,<span class="hljs-string">r&#x27;$bad\ \theta$&#x27;</span>,<span class="hljs-string">r&#x27;$normal$&#x27;</span>,<span class="hljs-string">r&#x27;$good$&#x27;</span>,<span class="hljs-string">r&#x27;$reall\ good$&#x27;</span>])<br><br>ax = plt.gca()<br>ax.spines[<span class="hljs-string">&#x27;right&#x27;</span>].set_color(<span class="hljs-string">&#x27;none&#x27;</span>)<br>ax.spines[<span class="hljs-string">&#x27;top&#x27;</span>].set_color(<span class="hljs-string">&#x27;none&#x27;</span>)<br>ax.xaxis.set_ticks_position(<span class="hljs-string">&#x27;bottom&#x27;</span>)<br>ax.yaxis.set_ticks_position(<span class="hljs-string">&#x27;left&#x27;</span>)<br>ax.spines[<span class="hljs-string">&#x27;bottom&#x27;</span>].set_position((<span class="hljs-string">&#x27;data&#x27;</span>,<span class="hljs-number">0</span>))<br>ax.spines[<span class="hljs-string">&#x27;left&#x27;</span>].set_position((<span class="hljs-string">&#x27;data&#x27;</span>,<span class="hljs-number">0</span>))<br><br>plt.show()<br></code></pre></div></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/02/03/X8Dm7ECc6r1qBxw.png" srcset="/img/loading.gif" alt=""></p>
+<h1 id="Legend图例"><a href="#Legend图例" class="headerlink" title="Legend图例"></a>Legend图例</h1><figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt<br><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><br>x = np.linspace(-<span class="hljs-number">3</span>,<span class="hljs-number">3</span>,<span class="hljs-number">50</span>)<br>y1 = <span class="hljs-number">2</span>*x+<span class="hljs-number">1</span><br>y2 = x**<span class="hljs-number">2</span><br><br>plt.figure()<br><br>plt.xlim((-<span class="hljs-number">1</span>,<span class="hljs-number">2</span>))<br>plt.ylim((-<span class="hljs-number">2</span>,<span class="hljs-number">3</span>))<br>plt.xlabel(<span class="hljs-string">&quot;x&#x27;slabel&quot;</span>) <span class="hljs-comment"># x轴上的名字</span><br>plt.ylabel(<span class="hljs-string">&quot;y&#x27;s;abel&quot;</span>) <span class="hljs-comment"># y轴上的名字</span><br><br>new_ticks = np.linspace(-<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">5</span>)<br>plt.xticks(new_ticks)<br>plt.yticks([-<span class="hljs-number">2</span>,-<span class="hljs-number">1.8</span>,-<span class="hljs-number">1</span>,<span class="hljs-number">1.22</span>,<span class="hljs-number">3</span>,],<br>           [<span class="hljs-string">r&#x27;$really\ bad$&#x27;</span>,<span class="hljs-string">r&#x27;$bad\ \theta$&#x27;</span>,<span class="hljs-string">r&#x27;$normal$&#x27;</span>,<span class="hljs-string">r&#x27;$good$&#x27;</span>,<span class="hljs-string">r&#x27;$reall\ good$&#x27;</span>])<br><br>l1, = plt.plot(x,y2,label=<span class="hljs-string">&#x27;up&#x27;</span>)<br>l2, = plt.plot(x,y1,color=<span class="hljs-string">&#x27;red&#x27;</span>,linewidth=<span class="hljs-number">1.0</span>,linestyle=<span class="hljs-string">&#x27;--&#x27;</span>,label=(<span class="hljs-string">&#x27;down&#x27;</span>))<br><br>plt.legend(handles=[l1,l2],labels=[<span class="hljs-string">&#x27;aaa&#x27;</span>,<span class="hljs-string">&#x27;bbb&#x27;</span>],loc=<span class="hljs-string">&#x27;best&#x27;</span>)<br><br>plt.show()<br></code></pre></div></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/02/03/wJ8FaKlHxNIotqW.png" srcset="/img/loading.gif" alt=""></p>
+<h1 id="Annotation标注"><a href="#Annotation标注" class="headerlink" title="Annotation标注"></a>Annotation标注</h1><figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt<br><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><br>x = np.linspace(-<span class="hljs-number">3</span>,<span class="hljs-number">3</span>,<span class="hljs-number">50</span>)<br>y = <span class="hljs-number">2</span>*x+<span class="hljs-number">1</span><br><br>plt.figure(num = <span class="hljs-number">1</span>,figsize=(<span class="hljs-number">8</span>,<span class="hljs-number">5</span>))<br>plt.plot(x,y)<br><br>ax = plt.gca()<br>ax.spines[<span class="hljs-string">&#x27;right&#x27;</span>].set_color(<span class="hljs-string">&#x27;none&#x27;</span>)<br>ax.spines[<span class="hljs-string">&#x27;top&#x27;</span>].set_color(<span class="hljs-string">&#x27;none&#x27;</span>)<br>ax.xaxis.set_ticks_position(<span class="hljs-string">&#x27;bottom&#x27;</span>)<br>ax.yaxis.set_ticks_position(<span class="hljs-string">&#x27;left&#x27;</span>)<br>ax.spines[<span class="hljs-string">&#x27;bottom&#x27;</span>].set_position((<span class="hljs-string">&#x27;data&#x27;</span>,<span class="hljs-number">0</span>))<br>ax.spines[<span class="hljs-string">&#x27;left&#x27;</span>].set_position((<span class="hljs-string">&#x27;data&#x27;</span>,<span class="hljs-number">0</span>))<br><br>x0 = <span class="hljs-number">1</span><br>y0 = <span class="hljs-number">2</span>*x0 + <span class="hljs-number">1</span><br>plt.plot([x0,x0],[<span class="hljs-number">0</span>,y0],<span class="hljs-string">&#x27;k--&#x27;</span>,linewidth = <span class="hljs-number">2.5</span>)<br>plt.scatter([x0],[y0],s = <span class="hljs-number">50</span>,color=<span class="hljs-string">&#x27;b&#x27;</span>)<br>plt.annotate(<span class="hljs-string">r&#x27;$2x+1 = %s$&#x27;</span>% y0,xy = (x0,y0),xycoords = <span class="hljs-string">&#x27;data&#x27;</span>,<br>             xytext=(+<span class="hljs-number">30</span>,-<span class="hljs-number">30</span>),textcoords = <span class="hljs-string">&#x27;offset points&#x27;</span>,fontsize = <span class="hljs-number">16</span><br>             ,arrowprops = <span class="hljs-built_in">dict</span>(arrowstyle=<span class="hljs-string">&#x27;-&gt;&#x27;</span>,connectionstyle=<span class="hljs-string">&quot;arc3,rad=.2&quot;</span>))<br><br>plt.text(-<span class="hljs-number">3.7</span>,<span class="hljs-number">3</span>,<span class="hljs-string">r&#x27;$this\ is\ the\ some\ text. \mu\ \sigma_i\ \alpha_t$&#x27;</span>,<br>         fontdict=&#123;<span class="hljs-string">&#x27;size&#x27;</span>:<span class="hljs-number">16</span>,<span class="hljs-string">&#x27;color&#x27;</span>:<span class="hljs-string">&#x27;r&#x27;</span>&#125;)<br><br>plt.show()<br></code></pre></div></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/02/03/lq43kjxhIXz9Esi.png" srcset="/img/loading.gif" alt=""></p>
+<h1 id="能见度"><a href="#能见度" class="headerlink" title="能见度"></a>能见度</h1><figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt<br><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><br>x = np.linspace(-<span class="hljs-number">3</span>,<span class="hljs-number">3</span>,<span class="hljs-number">50</span>)<br>y1 = <span class="hljs-number">0.1</span>*x<br>y2 = x**<span class="hljs-number">2</span><br><br>plt.figure()<br><span class="hljs-comment"># zorder控制绘图顺序</span><br>plt.plot(x,y1,linewidth = <span class="hljs-number">10</span>,zorder = <span class="hljs-number">2</span>,label = <span class="hljs-string">r&#x27;$y_1\ =\ 0.1*x$&#x27;</span>)<br>plt.plot(x,y2,linewidth = <span class="hljs-number">10</span>,zorder = <span class="hljs-number">1</span>,label = <span class="hljs-string">r&#x27;$y_2\ =\ x^&#123;2&#125;$&#x27;</span>)<br><br>plt.legend(loc = <span class="hljs-string">&#x27;lower right&#x27;</span>)<br><br>plt.show()<br></code></pre></div></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/02/03/ZRYVS2OW6IjKhpl.png" srcset="/img/loading.gif" alt=""></p>
+<hr>
+<p>如果改成：</p>
+<figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-comment"># zorder控制绘图顺序</span><br>plt.plot(x,y1,linewidth = <span class="hljs-number">10</span>,zorder = <span class="hljs-number">1</span>,label = <span class="hljs-string">r&#x27;$y_1\ =\ 0.1*x$&#x27;</span>)<br>plt.plot(x,y2,linewidth = <span class="hljs-number">10</span>,zorder = <span class="hljs-number">2</span>,label = <span class="hljs-string">r&#x27;$y_2\ =\ x^&#123;2&#125;$&#x27;</span>)<br></code></pre></div></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/02/03/fhN8rR1l2suaJ6d.png" srcset="/img/loading.gif" alt=""></p>
+<hr>
+<p>下面我们看一下这个图：</p>
+<figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt<br><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><br>x = np.linspace(-<span class="hljs-number">3</span>,<span class="hljs-number">3</span>,<span class="hljs-number">50</span>)<br>y1 = <span class="hljs-number">0.1</span>*x<br>y2 = x**<span class="hljs-number">2</span><br><br>plt.figure()<br><span class="hljs-comment">#zorder控制绘图顺序</span><br>plt.plot(x,y1,linewidth = <span class="hljs-number">10</span>,zorder = <span class="hljs-number">1</span>,label = <span class="hljs-string">r&#x27;$y_1\ =\ 0.1*x$&#x27;</span>)<br>plt.plot(x,y2,linewidth = <span class="hljs-number">10</span>,zorder = <span class="hljs-number">2</span>,label = <span class="hljs-string">r&#x27;$y_2\ =\ x^&#123;2&#125;$&#x27;</span>)<br><br>plt.ylim(-<span class="hljs-number">2</span>,<span class="hljs-number">2</span>)<br><br>ax = plt.gca()<br>ax.spines[<span class="hljs-string">&#x27;right&#x27;</span>].set_color(<span class="hljs-string">&#x27;none&#x27;</span>)<br>ax.spines[<span class="hljs-string">&#x27;top&#x27;</span>].set_color(<span class="hljs-string">&#x27;none&#x27;</span>)<br><br>ax.xaxis.set_ticks_position(<span class="hljs-string">&#x27;bottom&#x27;</span>)<br>ax.spines[<span class="hljs-string">&#x27;bottom&#x27;</span>].set_position((<span class="hljs-string">&#x27;data&#x27;</span>,<span class="hljs-number">0</span>))<br>ax.yaxis.set_ticks_position(<span class="hljs-string">&#x27;left&#x27;</span>)<br>ax.spines[<span class="hljs-string">&#x27;left&#x27;</span>].set_position((<span class="hljs-string">&#x27;data&#x27;</span>,<span class="hljs-number">0</span>))<br><br>plt.show()<br></code></pre></div></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/02/03/mNw2cPjTrASXv6D.png" srcset="/img/loading.gif" alt=""></p>
+<hr>
+<p>从上面看，我们可以看见我们轴上的坐标被掩盖住了，那么我们怎么去修改他呢？</p>
+<figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python">print(ax.get_xticklabels())<br>print(ax.get_yticklabels())<br><br><span class="hljs-keyword">for</span> label <span class="hljs-keyword">in</span> ax.get_xticklabels() + ax.get_yticklabels():<br>    label.set_fontsize(<span class="hljs-number">12</span>)<br>    label.set_bbox(<span class="hljs-built_in">dict</span>(facecolor = <span class="hljs-string">&#x27;white&#x27;</span>,edgecolor=<span class="hljs-string">&#x27;none&#x27;</span>,alpha = <span class="hljs-number">0.8</span>,zorder = <span class="hljs-number">2</span>))<br></code></pre></div></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/02/03/sUQ8MlbDcqJKX3L.png" srcset="/img/loading.gif" alt=""></p>
+<h1 id="Scatter散点图"><a href="#Scatter散点图" class="headerlink" title="Scatter散点图"></a>Scatter散点图</h1><figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt<br><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><br>n = <span class="hljs-number">1024</span><br>X = np.random.normal(<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,n)<br>Y = np.random.normal(<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,n)<br>T = np.arctan2(Y,X) <span class="hljs-comment"># for color later on</span><br><br>plt.scatter(X,Y,s = <span class="hljs-number">75</span>,c = T,alpha = <span class="hljs-number">.5</span>)<br><br>plt.xlim((-<span class="hljs-number">1.5</span>,<span class="hljs-number">1.5</span>))<br>plt.xticks([]) <span class="hljs-comment"># ignore xticks</span><br>plt.ylim((-<span class="hljs-number">1.5</span>,<span class="hljs-number">1.5</span>))<br>plt.yticks([]) <span class="hljs-comment"># ignore yticks</span><br>plt.show()<br></code></pre></div></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/02/03/EMYgpT1wQe4KLUx.png" srcset="/img/loading.gif" alt=""></p>
+<h1 id="Bar-柱状图"><a href="#Bar-柱状图" class="headerlink" title="Bar 柱状图"></a>Bar 柱状图</h1><figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt<br><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><br>n = <span class="hljs-number">12</span><br>X = np.arange(n)<br>Y1 = (<span class="hljs-number">1</span> - X/<span class="hljs-built_in">float</span>(n)) * np.random.uniform(<span class="hljs-number">0.5</span>,<span class="hljs-number">1.0</span>,n)<br>Y2 = (<span class="hljs-number">1</span> - X/<span class="hljs-built_in">float</span>(n)) * np.random.uniform(<span class="hljs-number">0.5</span>,<span class="hljs-number">1.0</span>,n)<br><span class="hljs-comment"># facecolor:表面的颜色;edgecolor:边框的颜色</span><br>plt.bar(X,+Y1,facecolor = <span class="hljs-string">&#x27;#9999ff&#x27;</span>,edgecolor = <span class="hljs-string">&#x27;white&#x27;</span>)<br>plt.bar(X,-Y2,facecolor = <span class="hljs-string">&#x27;#ff9999&#x27;</span>,edgecolor = <span class="hljs-string">&#x27;white&#x27;</span>)<br><span class="hljs-comment"># 描绘text在图表上</span><br><span class="hljs-comment"># plt.text(0 + 0.4, 0 + 0.05,&quot;huhu&quot;)</span><br><span class="hljs-keyword">for</span> x,y <span class="hljs-keyword">in</span> <span class="hljs-built_in">zip</span>(X,Y1):<br>    <span class="hljs-comment"># ha : horizontal alignment</span><br>    <span class="hljs-comment"># va : vertical alignment</span><br>    plt.text(x + <span class="hljs-number">0.01</span>,y+<span class="hljs-number">0.05</span>,<span class="hljs-string">&#x27;%.2f&#x27;</span>%y,ha = <span class="hljs-string">&#x27;center&#x27;</span>,va=<span class="hljs-string">&#x27;bottom&#x27;</span>)<br><br><span class="hljs-keyword">for</span> x,y <span class="hljs-keyword">in</span> <span class="hljs-built_in">zip</span>(X,Y2):<br>    <span class="hljs-comment"># ha : horizontal alignment</span><br>    <span class="hljs-comment"># va : vertical alignment</span><br>    plt.text(x+<span class="hljs-number">0.01</span>,-y-<span class="hljs-number">0.05</span>,<span class="hljs-string">&#x27;%.2f&#x27;</span>%(-y),ha=<span class="hljs-string">&#x27;center&#x27;</span>,va=<span class="hljs-string">&#x27;top&#x27;</span>)<br><br>plt.xlim(-<span class="hljs-number">.5</span>,n)<br>plt.yticks([])<br>plt.ylim(-<span class="hljs-number">1.25</span>,<span class="hljs-number">1.25</span>)<br>plt.yticks([])<br>plt.show()<br></code></pre></div></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/02/03/Mgy71mpeKsGJ2PH.png" srcset="/img/loading.gif" alt=""></p>
+<h1 id="Contours等高线图"><a href="#Contours等高线图" class="headerlink" title="Contours等高线图"></a>Contours等高线图</h1><figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt<br><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">f</span>(<span class="hljs-params">x,y</span>):</span><br>    <span class="hljs-comment"># the height function</span><br>    <span class="hljs-keyword">return</span> (<span class="hljs-number">1</span>-x/<span class="hljs-number">2</span> + x**<span class="hljs-number">5</span>+y**<span class="hljs-number">3</span>) * np.exp(-x **<span class="hljs-number">2</span> -y**<span class="hljs-number">2</span>)<br><br>n = <span class="hljs-number">256</span><br>x = np.linspace(-<span class="hljs-number">3</span>,<span class="hljs-number">3</span>,n)<br>y = np.linspace(-<span class="hljs-number">3</span>,<span class="hljs-number">3</span>,n)<br><span class="hljs-comment"># meshgrid函数用两个坐标轴上的点在平面上画网格。</span><br>X,Y = np.meshgrid(x,y)<br><br><span class="hljs-comment"># use plt.contourf to filling contours</span><br><span class="hljs-comment"># X Y and value for (X,Y) point</span><br><span class="hljs-comment"># 这里的8就是说明等高线分成多少个部分，如果是0则分成2半</span><br><span class="hljs-comment"># 则8是分成10半</span><br><span class="hljs-comment"># cmap找对应的颜色，如果高=0就找0对应的颜色值，</span><br>plt.contourf(X,Y,f(X,Y),<span class="hljs-number">8</span>,alpha = <span class="hljs-number">.75</span>,cmap = plt.cm.hot)<br><br><span class="hljs-comment"># use plt.contour to add contour lines</span><br>C = plt.contour(X,Y,f(X,Y),<span class="hljs-number">8</span>,colors = <span class="hljs-string">&#x27;black&#x27;</span>,linewidth = <span class="hljs-number">.5</span>)<br><br><span class="hljs-comment"># adding label</span><br>plt.clabel(C,inline = <span class="hljs-literal">True</span>,fontsize = <span class="hljs-number">10</span>)<br><br><span class="hljs-comment"># ignore ticks</span><br>plt.xticks([])<br>plt.yticks([])<br><br>plt.show()<br></code></pre></div></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/02/03/wxNSnFLCbpuY34z.png" srcset="/img/loading.gif" alt=""></p>
+<h1 id="3D数据"><a href="#3D数据" class="headerlink" title="3D数据"></a>3D数据</h1><figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt<br><span class="hljs-keyword">from</span> mpl_toolkits.mplot3d <span class="hljs-keyword">import</span> Axes3D<br><br>fig = plt.figure()<br>ax = Axes3D(fig)<br><span class="hljs-comment">#X Y value</span><br>X = np.arange(-<span class="hljs-number">4</span>,<span class="hljs-number">4</span>,<span class="hljs-number">0.25</span>)<br>Y = np.arange(-<span class="hljs-number">4</span>,<span class="hljs-number">4</span>,<span class="hljs-number">0.25</span>)<br>X,Y = np.meshgrid(X,Y)<br>R = np.sqrt(X**<span class="hljs-number">2</span> + Y**<span class="hljs-number">2</span>)<br><span class="hljs-comment">#hight value</span><br>Z = np.sin(R)<br><br>ax.plot_surface(X, Y, Z, rstride=<span class="hljs-number">1</span>, cstride=<span class="hljs-number">1</span>, cmap=plt.get_cmap(<span class="hljs-string">&#x27;rainbow&#x27;</span>))<br><span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">============= ================================================</span><br><span class="hljs-string">        Argument      Description</span><br><span class="hljs-string">        ============= ================================================</span><br><span class="hljs-string">        *X*, *Y*, *Z* Data values as 2D arrays</span><br><span class="hljs-string">        *rstride*     Array row stride (step size), defaults to 10</span><br><span class="hljs-string">        *cstride*     Array column stride (step size), defaults to 10</span><br><span class="hljs-string">        *color*       Color of the surface patches</span><br><span class="hljs-string">        *cmap*        A colormap for the surface patches.</span><br><span class="hljs-string">        *facecolors*  Face colors for the individual patches</span><br><span class="hljs-string">        *norm*        An instance of Normalize to map values to colors</span><br><span class="hljs-string">        *vmin*        Minimum value to map</span><br><span class="hljs-string">        *vmax*        Maximum value to map</span><br><span class="hljs-string">        *shade*       Whether to shade the facecolors</span><br><span class="hljs-string">        ============= ================================================</span><br><span class="hljs-string">&quot;&quot;&quot;</span><br><br><span class="hljs-comment"># I think this is different from plt12_contours</span><br>ax.contourf(X, Y, Z, zdir=<span class="hljs-string">&#x27;z&#x27;</span>, offset=-<span class="hljs-number">2</span>, cmap=plt.get_cmap(<span class="hljs-string">&#x27;rainbow&#x27;</span>))<br><span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">==========  ================================================</span><br><span class="hljs-string">        Argument    Description</span><br><span class="hljs-string">        ==========  ================================================</span><br><span class="hljs-string">        *X*, *Y*,   Data values as numpy.arrays</span><br><span class="hljs-string">        *Z*</span><br><span class="hljs-string">        *zdir*      The direction to use: x, y or z (default)</span><br><span class="hljs-string">        *offset*    If specified plot a projection of the filled contour</span><br><span class="hljs-string">                    on this position in plane normal to zdir</span><br><span class="hljs-string">        ==========  ================================================</span><br><span class="hljs-string">&quot;&quot;&quot;</span><br>ax.set_zlim(-<span class="hljs-number">2</span>, <span class="hljs-number">2</span>)<br>plt.show()<br></code></pre></div></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/02/03/XRzLQwUKainWMEI.png" srcset="/img/loading.gif" alt=""></p>
+<h1 id="多图合并展示"><a href="#多图合并展示" class="headerlink" title="多图合并展示"></a>多图合并展示</h1><figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt<br><br>plt.figure(figsize = (<span class="hljs-number">6</span>,<span class="hljs-number">5</span>))<br><br>ax1 = plt.subplot(<span class="hljs-number">3</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>)<br>ax1.set_title(<span class="hljs-string">&quot;ax1 title&quot;</span>)<br>plt.plot([<span class="hljs-number">0</span>,<span class="hljs-number">1</span>],[<span class="hljs-number">0</span>,<span class="hljs-number">1</span>])<br><br><span class="hljs-comment"># 这种情况下如果再数的话以334为标准了，</span><br><span class="hljs-comment"># 把上面的第一行看成是3个列</span><br>ax2 = plt.subplot(<span class="hljs-number">334</span>)<br>ax2.set_title(<span class="hljs-string">&quot;ax2 title&quot;</span>)<br><br>ax3 = plt.subplot(<span class="hljs-number">335</span>)<br>ax4 = plt.subplot(<span class="hljs-number">336</span>)<br>ax5 = plt.subplot(<span class="hljs-number">325</span>)<br>ax6 = plt.subplot(<span class="hljs-number">326</span>)<br><br>plt.show()<br><br></code></pre></div></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/02/03/TBeEwizNSKRMJQO.png" srcset="/img/loading.gif" alt=""></p>
+<hr>
+<figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt<br><br>plt.figure(figsize = (<span class="hljs-number">6</span>,<span class="hljs-number">4</span>))<br><span class="hljs-comment"># plt.subplot(n_rows,n_cols,plot_num)</span><br>plt.subplot(<span class="hljs-number">211</span>)<br><span class="hljs-comment"># figure splits into 2 rows, 1 col, plot to the 1st sub-fig</span><br>plt.plot([<span class="hljs-number">0</span>, <span class="hljs-number">1</span>], [<span class="hljs-number">0</span>, <span class="hljs-number">1</span>])<br><br>plt.subplot(<span class="hljs-number">234</span>)<br><span class="hljs-comment"># figure splits into 2 rows, 3 col, plot to the 4th sub-fig</span><br>plt.plot([<span class="hljs-number">0</span>, <span class="hljs-number">1</span>], [<span class="hljs-number">0</span>, <span class="hljs-number">2</span>])<br><br>plt.subplot(<span class="hljs-number">235</span>)<br><span class="hljs-comment"># figure splits into 2 rows, 3 col, plot to the 5th sub-fig</span><br>plt.plot([<span class="hljs-number">0</span>, <span class="hljs-number">1</span>], [<span class="hljs-number">0</span>, <span class="hljs-number">3</span>])<br><br>plt.subplot(<span class="hljs-number">236</span>)<br><span class="hljs-comment"># figure splits into 2 rows, 3 col, plot to the 6th sub-fig</span><br>plt.plot([<span class="hljs-number">0</span>, <span class="hljs-number">1</span>], [<span class="hljs-number">0</span>, <span class="hljs-number">4</span>])<br><br>plt.tight_layout()<br>plt.show()<br></code></pre></div></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/02/03/YzqtXQL7u6K5m9V.png" srcset="/img/loading.gif" alt=""></p>
+<h1 id="分格显示"><a href="#分格显示" class="headerlink" title="分格显示"></a>分格显示</h1><figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-comment"># method 1: subplot2grid</span><br><span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt<br>plt.figure()<br><span class="hljs-comment"># 第一个参数shape也就是我们网格的形状</span><br><span class="hljs-comment"># 第二个参数loc,位置,这里需要注意位置是从0开始索引的</span><br><span class="hljs-comment"># 第三个参数colspan跨多少列,默认是1</span><br><span class="hljs-comment"># 第四个参数rowspan跨多少行,默认是1</span><br>ax1 = plt.subplot2grid((<span class="hljs-number">3</span>,<span class="hljs-number">3</span>),(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>),colspan = <span class="hljs-number">3</span>,rowspan = <span class="hljs-number">1</span>)<br><span class="hljs-comment"># 如果为他设置一些属性的话，如plt.title,则用ax1的话</span><br><span class="hljs-comment"># ax1.set_title(),同理可设置其他属性</span><br>ax1.set_title(<span class="hljs-string">&quot;ax1_title&quot;</span>)<br><br>ax2 = plt.subplot2grid((<span class="hljs-number">3</span>,<span class="hljs-number">3</span>),(<span class="hljs-number">1</span>,<span class="hljs-number">0</span>),colspan = <span class="hljs-number">2</span>,rowspan = <span class="hljs-number">1</span>)<br>ax3 = plt.subplot2grid((<span class="hljs-number">3</span>,<span class="hljs-number">3</span>),(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>),colspan = <span class="hljs-number">1</span>,rowspan = <span class="hljs-number">2</span>)<br>ax4 = plt.subplot2grid((<span class="hljs-number">3</span>,<span class="hljs-number">3</span>),(<span class="hljs-number">2</span>,<span class="hljs-number">0</span>),colspan = <span class="hljs-number">1</span>,rowspan = <span class="hljs-number">1</span>)<br>ax5 = plt.subplot2grid((<span class="hljs-number">3</span>,<span class="hljs-number">3</span>),(<span class="hljs-number">2</span>,<span class="hljs-number">1</span>),colspan = <span class="hljs-number">1</span>,rowspan = <span class="hljs-number">1</span>)<br><br>plt.show()<br></code></pre></div></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/02/03/cVUOxP8pG9loQiv.png" srcset="/img/loading.gif" alt=""></p>
+<hr>
+<figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-comment"># method 2:gridspec</span><br><span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt<br><span class="hljs-keyword">import</span> matplotlib.gridspec <span class="hljs-keyword">as</span> gridspec<br><br>plt.figure()<br>gs = gridspec.GridSpec(<span class="hljs-number">3</span>,<span class="hljs-number">3</span>)<br><span class="hljs-comment"># use index from 0</span><br>ax1 = plt.subplot(gs[<span class="hljs-number">0</span>,:])<br>ax1.set_title(<span class="hljs-string">&quot;ax1 title&quot;</span>)<br><br>ax2 = plt.subplot(gs[<span class="hljs-number">1</span>,:<span class="hljs-number">2</span>])<br>ax2.plot([<span class="hljs-number">1</span>,<span class="hljs-number">2</span>],[<span class="hljs-number">3</span>,<span class="hljs-number">4</span>],<span class="hljs-string">&#x27;r&#x27;</span>)<br><br>ax3 = plt.subplot(gs[<span class="hljs-number">1</span>:,<span class="hljs-number">2</span>:])<br>ax4 = plt.subplot(gs[-<span class="hljs-number">1</span>,<span class="hljs-number">0</span>])<br>ax5 = plt.subplot(gs[-<span class="hljs-number">1</span>,-<span class="hljs-number">2</span>])<br><br>plt.show()<br></code></pre></div></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/02/03/VjEZ2wltF5OQ3xg.png" srcset="/img/loading.gif" alt=""></p>
+<hr>
+<figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-comment"># method 3 :easy to define structure</span><br><span class="hljs-comment"># 这种方式不能生成指定跨行列的那种</span><br><span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt<br><span class="hljs-comment"># (ax11,ax12),(ax13,ax14)代表了两行</span><br><span class="hljs-comment"># f就是figure对象,</span><br><span class="hljs-comment"># sharex：是否共享x轴</span><br><span class="hljs-comment"># sharey:是否共享y轴</span><br>f,((ax11,ax12),(ax13,ax14)) = plt.subplots(<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,sharex = <span class="hljs-literal">True</span>,sharey = <span class="hljs-literal">True</span>)<br>ax11.set_title(<span class="hljs-string">&quot;a11 title&quot;</span>)<br>ax12.scatter([<span class="hljs-number">1</span>,<span class="hljs-number">2</span>],[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>])<br><br>plt.show()<br></code></pre></div></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/02/03/nDG7ifVwZx31CKz.png" srcset="/img/loading.gif" alt=""></p>
+<h1 id="图中图"><a href="#图中图" class="headerlink" title="图中图"></a>图中图</h1><figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt<br><br>fig = plt.figure()<br>x = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>]<br>y = [<span class="hljs-number">1</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">2</span>,<span class="hljs-number">5</span>,<span class="hljs-number">8</span>,<span class="hljs-number">6</span>]<br><br><span class="hljs-comment"># below are all percentage</span><br>left, bottom, width, height = <span class="hljs-number">0.1</span>, <span class="hljs-number">0.1</span>, <span class="hljs-number">0.8</span>, <span class="hljs-number">0.8</span><br><span class="hljs-comment"># 使用plt.figure()显示的是一个空的figure</span><br><span class="hljs-comment"># 如果使用fig.add_axes会添加轴</span><br>ax1 = fig.add_axes([left, bottom, width, height])<span class="hljs-comment"># main axes</span><br>ax1.plot(x,y,<span class="hljs-string">&#x27;r&#x27;</span>)<br>ax1.set_xlabel(<span class="hljs-string">&#x27;x&#x27;</span>)<br>ax1.set_ylabel(<span class="hljs-string">&#x27;y&#x27;</span>)<br>ax1.set_title(<span class="hljs-string">&#x27;title&#x27;</span>)<br><br>ax2 = fig.add_axes([<span class="hljs-number">0.2</span>, <span class="hljs-number">0.6</span>, <span class="hljs-number">0.25</span>, <span class="hljs-number">0.25</span>])  <span class="hljs-comment"># inside axes</span><br>ax2.plot(y, x, <span class="hljs-string">&#x27;b&#x27;</span>)<br>ax2.set_xlabel(<span class="hljs-string">&#x27;x&#x27;</span>)<br>ax2.set_ylabel(<span class="hljs-string">&#x27;y&#x27;</span>)<br>ax2.set_title(<span class="hljs-string">&#x27;title inside 1&#x27;</span>)<br><br><span class="hljs-comment"># different method to add axes</span><br><span class="hljs-comment">####################################</span><br>plt.axes([<span class="hljs-number">0.6</span>, <span class="hljs-number">0.2</span>, <span class="hljs-number">0.25</span>, <span class="hljs-number">0.25</span>])<br>plt.plot(y[::-<span class="hljs-number">1</span>], x, <span class="hljs-string">&#x27;g&#x27;</span>)<br>plt.xlabel(<span class="hljs-string">&#x27;x&#x27;</span>)<br>plt.ylabel(<span class="hljs-string">&#x27;y&#x27;</span>)<br>plt.title(<span class="hljs-string">&#x27;title inside 2&#x27;</span>)<br><br>plt.show()<br></code></pre></div></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/02/03/tcjaJWSpHe6Z2Db.png" srcset="/img/loading.gif" alt=""></p>
+<h1 id="次坐标轴"><a href="#次坐标轴" class="headerlink" title="次坐标轴"></a>次坐标轴</h1><figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-comment"># 使用twinx是添加y轴的坐标轴</span><br><span class="hljs-comment"># 使用twiny是添加x轴的坐标轴</span><br><span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt<br><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><br>x = np.arange(<span class="hljs-number">0</span>,<span class="hljs-number">10</span>,<span class="hljs-number">0.1</span>)<br>y1 = <span class="hljs-number">0.05</span> * x ** <span class="hljs-number">2</span><br>y2 = -<span class="hljs-number">1</span> * y1<br><br>fig,ax1 = plt.subplots()<br><br>ax2 = ax1.twinx()<br>ax1.plot(x,y1,<span class="hljs-string">&#x27;g-&#x27;</span>)<br>ax2.plot(x,y2,<span class="hljs-string">&#x27;b-&#x27;</span>)<br><br>ax1.set_xlabel(<span class="hljs-string">&#x27;X data&#x27;</span>)<br>ax1.set_ylabel(<span class="hljs-string">&#x27;Y1 data&#x27;</span>,color = <span class="hljs-string">&#x27;g&#x27;</span>)<br>ax2.set_ylabel(<span class="hljs-string">&#x27;Y2 data&#x27;</span>,color = <span class="hljs-string">&#x27;b&#x27;</span>)<br><br>plt.show()<br></code></pre></div></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/02/03/a4yKBDIiOgSVnsf.png" srcset="/img/loading.gif" alt=""></p>
+<h1 id="Animation动画"><a href="#Animation动画" class="headerlink" title="Animation动画"></a>Animation动画</h1><figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><span class="hljs-keyword">from</span> matplotlib <span class="hljs-keyword">import</span> pyplot <span class="hljs-keyword">as</span> plt<br><span class="hljs-keyword">from</span> matplotlib <span class="hljs-keyword">import</span> animation<br><br>fig,ax = plt.subplots()<br><br>x = np.arange(<span class="hljs-number">0</span>,<span class="hljs-number">2</span>*np.pi,<span class="hljs-number">0.01</span>)<br><span class="hljs-comment"># 因为这里返回的是一个列表，但是我们只想要第一个值</span><br><span class="hljs-comment"># 所以这里需要加,号</span><br>line, = ax.plot(x,np.sin(x))<br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">animate</span>(<span class="hljs-params">i</span>):</span><br>    line.set_ydata(np.sin(x + i/<span class="hljs-number">10.0</span>))<span class="hljs-comment">#updata the data</span><br>    <span class="hljs-keyword">return</span> line,<br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">init</span>():</span><br>    line.set_ydata(np.sin(x))<br>    <span class="hljs-keyword">return</span> line,<br><br><br><span class="hljs-comment"># call the animator.  blit=True means only re-draw the parts that have changed.</span><br><span class="hljs-comment"># blit=True dose not work on Mac, set blit=False</span><br><span class="hljs-comment"># interval= update frequency</span><br><span class="hljs-comment"># frames帧数</span><br>ani = animation.FuncAnimation(fig=fig, func=animate, frames=<span class="hljs-number">100</span>, init_func=init,<br>                              interval=<span class="hljs-number">20</span>, blit=<span class="hljs-literal">False</span>)<br><br>plt.show()<br></code></pre></div></td></tr></table></figure>
+<p><img src="https://pic4.zhimg.com/v2-c2a851472cced8c36d9f4d09b2b6feeb_b.webp" srcset="/img/loading.gif" alt=""></p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Jx411L7LU?from=search&amp;seid=10851823289422999694">Matplotlib Python 画图教程 (莫烦Python)</a>
+<a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:2" class="footnote-text"><span><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/33270402">Python-matplotlib画图(莫烦笔记)</a>
+<a href="#fnref:2" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%AF%BE%E7%A8%8B/">计算机课程</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Python/">Python</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/02/01/EM%E5%85%AC%E5%BC%8F%E7%9A%84%E5%BA%94%E7%94%A8/">
+                        <span class="hidden-mobile">EM公式的应用</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      var inputArea = document.querySelector("#local-search-input");
+      inputArea.onclick = function () {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+        this.onclick = null
+      }
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+
+</body>
+</html>
