@@ -17,7 +17,7 @@
   <meta name="description" content="保持很多的热爱和一点点野心">
   <meta name="author" content="欧阳珈樱">
   <meta name="keywords" content="">
-  <title>Python-matplotlib画图 - 樱花味猫猫</title>
+  <title>Python-matplotlib画图(1) - 樱花味猫猫</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -166,7 +166,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Python-matplotlib画图">
+            <span class="h2" id="subtitle" title="Python-matplotlib画图(1)">
               
             </span>
 
@@ -193,7 +193,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      2.8k 字
+      2.9k 字
     </span>
   
 
@@ -203,7 +203,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      49
+      51
        分钟
     </span>
   
@@ -245,7 +245,7 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Python-matplotlib画图</h1>
+            <h1 style="display: none">Python-matplotlib画图(1)</h1>
             
             <div class="markdown-body">
               <h1 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h1><figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt<br><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><br>x = np.linspace(-<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">100</span>) <span class="hljs-comment"># 从(-1,1)均匀取100个点</span><br>y = x**<span class="hljs-number">2</span><br><br>plt.plot(x,y)<br>plt.show()<br></code></pre></div></td></tr></table></figure>
@@ -254,7 +254,7 @@
 <p><img src="https://i.loli.net/2021/02/03/D3A2KVf8EsWLiNh.png" srcset="/img/loading.gif" alt=""></p>
 <figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt<br><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><br>x = np.linspace(-<span class="hljs-number">3</span>,<span class="hljs-number">3</span>,<span class="hljs-number">50</span>)<br>y1 = <span class="hljs-number">2</span>*x + <span class="hljs-number">1</span><br>y2 = x ** <span class="hljs-number">2</span><br><br>plt.figure(num = <span class="hljs-number">3</span>,figsize = (<span class="hljs-number">10</span>,<span class="hljs-number">5</span>))<br>plt.plot(x,y2)<br>plt.plot(x,y1,color=<span class="hljs-string">&#x27;red&#x27;</span>,linewidth=<span class="hljs-number">1.0</span>,linestyle=<span class="hljs-string">&#x27;--&#x27;</span>)<br>plt.show()<br></code></pre></div></td></tr></table></figure>
 <p><img src="https://i.loli.net/2021/02/03/YmKFzXOberV4JNQ.png" srcset="/img/loading.gif" alt=""></p>
-<h1 id="设置坐标轴"><a href="#设置坐标轴" class="headerlink" title="设置坐标轴"></a>设置坐标轴</h1><p>更改在图表上显示 $x,y$ 的取值范围：</p>
+<h1 id="设置坐标轴"><a href="#设置坐标轴" class="headerlink" title="设置坐标轴"></a>设置坐标轴</h1><p>更改在图表上显示 x,y 的取值范围：</p>
 <figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt<br><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><br>x = np.linspace(-<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">50</span>)<br>y = x *<span class="hljs-number">2</span><br><br>plt.plot(x,y)<br><span class="hljs-comment"># 在 plt.show()之前添加</span><br>plt.xlim((<span class="hljs-number">0</span>,<span class="hljs-number">2</span>))<br>plt.ylim((-<span class="hljs-number">2</span>,<span class="hljs-number">2</span>))<br>plt.show()<br></code></pre></div></td></tr></table></figure>
 <p><img src="https://i.loli.net/2021/02/03/8vSXrpi9zoTq5xJ.png" srcset="/img/loading.gif" alt=""></p>
 <hr>
@@ -287,6 +287,8 @@
 <p>从上面看，我们可以看见我们轴上的坐标被掩盖住了，那么我们怎么去修改他呢？</p>
 <figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python">print(ax.get_xticklabels())<br>print(ax.get_yticklabels())<br><br><span class="hljs-keyword">for</span> label <span class="hljs-keyword">in</span> ax.get_xticklabels() + ax.get_yticklabels():<br>    label.set_fontsize(<span class="hljs-number">12</span>)<br>    label.set_bbox(<span class="hljs-built_in">dict</span>(facecolor = <span class="hljs-string">&#x27;white&#x27;</span>,edgecolor=<span class="hljs-string">&#x27;none&#x27;</span>,alpha = <span class="hljs-number">0.8</span>,zorder = <span class="hljs-number">2</span>))<br></code></pre></div></td></tr></table></figure>
 <p><img src="https://i.loli.net/2021/02/03/sUQ8MlbDcqJKX3L.png" srcset="/img/loading.gif" alt=""></p>
+<h1 id="饼图"><a href="#饼图" class="headerlink" title="饼图"></a>饼图</h1><figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt<br><br>labels = <span class="hljs-string">&#x27;Frogs&#x27;</span>,<span class="hljs-string">&#x27;Hogs&#x27;</span>,<span class="hljs-string">&#x27;Dogs&#x27;</span>,<span class="hljs-string">&#x27;Logs&#x27;</span> <span class="hljs-comment"># 自定义标签</span><br>sizes = [<span class="hljs-number">15</span>,<span class="hljs-number">30</span>,<span class="hljs-number">45</span>,<span class="hljs-number">10</span>]   <span class="hljs-comment"># 每个标签占多大</span><br>explode = (<span class="hljs-number">0</span>,<span class="hljs-number">0.1</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>)  <span class="hljs-comment"># 将某部分爆炸出来</span><br><br>plt.pie(sizes,explode=explode,labels=labels,autopct=<span class="hljs-string">&#x27;%1.1f%%&#x27;</span>,shadow=<span class="hljs-literal">False</span>,startangle=<span class="hljs-number">90</span>)<br>    <span class="hljs-comment"># autopct，圆里面的文本格式，%1.1f%%表示小数有1位，整数有一位的浮点数</span><br>    <span class="hljs-comment"># shadow，饼是否有阴影</span><br>    <span class="hljs-comment"># startangle，起始角度，0，表示从0开始逆时针转，为第一块。一般选择从90度开始比较好看</span><br>plt.axis(<span class="hljs-string">&#x27;equal&#x27;</span>)   <span class="hljs-comment"># 设置x，y轴刻度一致，这样饼图才能是圆的</span><br>plt.show()<br></code></pre></div></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/02/03/JfL8dwRg7nrp5G3.png" srcset="/img/loading.gif" alt=""></p>
 <h1 id="Scatter散点图"><a href="#Scatter散点图" class="headerlink" title="Scatter散点图"></a>Scatter散点图</h1><figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt<br><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><br>n = <span class="hljs-number">1024</span><br>X = np.random.normal(<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,n)<br>Y = np.random.normal(<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,n)<br>T = np.arctan2(Y,X) <span class="hljs-comment"># for color later on</span><br><br>plt.scatter(X,Y,s = <span class="hljs-number">75</span>,c = T,alpha = <span class="hljs-number">.5</span>)<br><br>plt.xlim((-<span class="hljs-number">1.5</span>,<span class="hljs-number">1.5</span>))<br>plt.xticks([]) <span class="hljs-comment"># ignore xticks</span><br>plt.ylim((-<span class="hljs-number">1.5</span>,<span class="hljs-number">1.5</span>))<br>plt.yticks([]) <span class="hljs-comment"># ignore yticks</span><br>plt.show()<br></code></pre></div></td></tr></table></figure>
 <p><img src="https://i.loli.net/2021/02/03/EMYgpT1wQe4KLUx.png" srcset="/img/loading.gif" alt=""></p>
 <h1 id="Bar-柱状图"><a href="#Bar-柱状图" class="headerlink" title="Bar 柱状图"></a>Bar 柱状图</h1><figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt<br><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><br>n = <span class="hljs-number">12</span><br>X = np.arange(n)<br>Y1 = (<span class="hljs-number">1</span> - X/<span class="hljs-built_in">float</span>(n)) * np.random.uniform(<span class="hljs-number">0.5</span>,<span class="hljs-number">1.0</span>,n)<br>Y2 = (<span class="hljs-number">1</span> - X/<span class="hljs-built_in">float</span>(n)) * np.random.uniform(<span class="hljs-number">0.5</span>,<span class="hljs-number">1.0</span>,n)<br><span class="hljs-comment"># facecolor:表面的颜色;edgecolor:边框的颜色</span><br>plt.bar(X,+Y1,facecolor = <span class="hljs-string">&#x27;#9999ff&#x27;</span>,edgecolor = <span class="hljs-string">&#x27;white&#x27;</span>)<br>plt.bar(X,-Y2,facecolor = <span class="hljs-string">&#x27;#ff9999&#x27;</span>,edgecolor = <span class="hljs-string">&#x27;white&#x27;</span>)<br><span class="hljs-comment"># 描绘text在图表上</span><br><span class="hljs-comment"># plt.text(0 + 0.4, 0 + 0.05,&quot;huhu&quot;)</span><br><span class="hljs-keyword">for</span> x,y <span class="hljs-keyword">in</span> <span class="hljs-built_in">zip</span>(X,Y1):<br>    <span class="hljs-comment"># ha : horizontal alignment</span><br>    <span class="hljs-comment"># va : vertical alignment</span><br>    plt.text(x + <span class="hljs-number">0.01</span>,y+<span class="hljs-number">0.05</span>,<span class="hljs-string">&#x27;%.2f&#x27;</span>%y,ha = <span class="hljs-string">&#x27;center&#x27;</span>,va=<span class="hljs-string">&#x27;bottom&#x27;</span>)<br><br><span class="hljs-keyword">for</span> x,y <span class="hljs-keyword">in</span> <span class="hljs-built_in">zip</span>(X,Y2):<br>    <span class="hljs-comment"># ha : horizontal alignment</span><br>    <span class="hljs-comment"># va : vertical alignment</span><br>    plt.text(x+<span class="hljs-number">0.01</span>,-y-<span class="hljs-number">0.05</span>,<span class="hljs-string">&#x27;%.2f&#x27;</span>%(-y),ha=<span class="hljs-string">&#x27;center&#x27;</span>,va=<span class="hljs-string">&#x27;top&#x27;</span>)<br><br>plt.xlim(-<span class="hljs-number">.5</span>,n)<br>plt.yticks([])<br>plt.ylim(-<span class="hljs-number">1.25</span>,<span class="hljs-number">1.25</span>)<br>plt.yticks([])<br>plt.show()<br></code></pre></div></td></tr></table></figure>
@@ -316,7 +318,8 @@
 <p><img src="https://pic4.zhimg.com/v2-c2a851472cced8c36d9f4d09b2b6feeb_b.webp" srcset="/img/loading.gif" alt=""></p>
 <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Jx411L7LU?from=search&amp;seid=10851823289422999694">Matplotlib Python 画图教程 (莫烦Python)</a>
 <a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:2" class="footnote-text"><span><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/33270402">Python-matplotlib画图(莫烦笔记)</a>
-<a href="#fnref:2" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>
+<a href="#fnref:2" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:3" class="footnote-text"><span><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/136854657">25个常用Matplotlib图的Python代码</a>
+<a href="#fnref:3" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>
             </div>
             <hr>
             <div>
@@ -333,7 +336,11 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
+                      <a class="hover-with-bg" href="/tags/%E7%BB%98%E5%9B%BE/">绘图</a>
+                    
                       <a class="hover-with-bg" href="/tags/Python/">Python</a>
+                    
+                      <a class="hover-with-bg" href="/tags/matplotlib/">matplotlib</a>
                     
                   </div>
                 
@@ -345,6 +352,12 @@
                 <div class="post-prevnext">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2021/02/03/Python-turtle%E7%94%BB%E5%9B%BE(1)/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Python-turtle画图(1)</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">

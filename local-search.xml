@@ -22,6 +22,39 @@
       
       <tag>{{ tag.name }}</tag>
       
+      <tag>{{ tag.name }}</tag>
+      
+      <tag>{{ tag.name }}</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>{{ post.title }}</title>
+    <link href="{{ [url, post.path] | urlJoin | uriencode }}"/>
+    <url>{{ [url, post.path] | urlJoin | uriencode }}</url>
+    
+    <content type="html"><![CDATA[{{ post.content | noControlChars | safe }}]]></content>
+    
+    
+    <categories>
+      
+      <category>{{ cate.name }}</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>{{ tag.name }}</tag>
+      
+      <tag>{{ tag.name }}</tag>
+      
+      <tag>{{ tag.name }}</tag>
+      
     </tags>
     
   </entry>
@@ -902,73 +935,6 @@
       
       <tag>{{ tag.name }}</tag>
       
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>{{ post.title }}</title>
-    <link href="{{ [url, post.path] | urlJoin | uriencode }}"/>
-    <url>{{ [url, post.path] | urlJoin | uriencode }}</url>
-    
-    <content type="html"><![CDATA[{{ post.content | noControlChars | safe }}]]></content>
-    
-    
-    <categories>
-      
-      <category>{{ cate.name }}</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>{{ tag.name }}</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>{{ post.title }}</title>
-    <link href="{{ [url, post.path] | urlJoin | uriencode }}"/>
-    <url>{{ [url, post.path] | urlJoin | uriencode }}</url>
-    
-    <content type="html"><![CDATA[{{ post.content | noControlChars | safe }}]]></content>
-    
-    
-    <categories>
-      
-      <category>{{ cate.name }}</category>
-      
-    </categories>
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>{{ post.title }}</title>
-    <link href="{{ [url, post.path] | urlJoin | uriencode }}"/>
-    <url>{{ [url, post.path] | urlJoin | uriencode }}</url>
-    
-    <content type="html"><![CDATA[{{ post.content | noControlChars | safe }}]]></content>
-    
-    
-    <categories>
-      
-      <category>{{ cate.name }}</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
       <tag>{{ tag.name }}</tag>
       
     </tags>
@@ -997,6 +963,25 @@
       <tag>{{ tag.name }}</tag>
       
     </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>{{ post.title }}</title>
+    <link href="{{ [url, post.path] | urlJoin | uriencode }}"/>
+    <url>{{ [url, post.path] | urlJoin | uriencode }}</url>
+    
+    <content type="html"><![CDATA[{{ post.content | noControlChars | safe }}]]></content>
+    
+    
+    <categories>
+      
+      <category>{{ cate.name }}</category>
+      
+    </categories>
+    
     
   </entry>
   
@@ -1060,25 +1045,6 @@
     <content type="html"><![CDATA[{{ post.content | noControlChars | safe }}]]></content>
     
     
-    
-    <tags>
-      
-      <tag>{{ tag.name }}</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>{{ post.title }}</title>
-    <link href="{{ [url, post.path] | urlJoin | uriencode }}"/>
-    <url>{{ [url, post.path] | urlJoin | uriencode }}</url>
-    
-    <content type="html"><![CDATA[{{ post.content | noControlChars | safe }}]]></content>
-    
-    
     <categories>
       
       <category>{{ cate.name }}</category>
@@ -1087,8 +1053,6 @@
     
     
     <tags>
-      
-      <tag>{{ tag.name }}</tag>
       
       <tag>{{ tag.name }}</tag>
       
@@ -1130,12 +1094,6 @@
     
     <content type="html"><![CDATA[{{ post.content | noControlChars | safe }}]]></content>
     
-    
-    <categories>
-      
-      <category>{{ cate.name }}</category>
-      
-    </categories>
     
     
     <tags>
@@ -1244,6 +1202,8 @@
       
       <tag>{{ tag.name }}</tag>
       
+      <tag>{{ tag.name }}</tag>
+      
     </tags>
     
   </entry>
@@ -1266,6 +1226,83 @@
     
     
     <tags>
+      
+      <tag>{{ tag.name }}</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>{{ post.title }}</title>
+    <link href="{{ [url, post.path] | urlJoin | uriencode }}"/>
+    <url>{{ [url, post.path] | urlJoin | uriencode }}</url>
+    
+    <content type="html"><![CDATA[{{ post.content | noControlChars | safe }}]]></content>
+    
+    
+    <categories>
+      
+      <category>{{ cate.name }}</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>{{ tag.name }}</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>{{ post.title }}</title>
+    <link href="{{ [url, post.path] | urlJoin | uriencode }}"/>
+    <url>{{ [url, post.path] | urlJoin | uriencode }}</url>
+    
+    <content type="html"><![CDATA[{{ post.content | noControlChars | safe }}]]></content>
+    
+    
+    <categories>
+      
+      <category>{{ cate.name }}</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>{{ tag.name }}</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>{{ post.title }}</title>
+    <link href="{{ [url, post.path] | urlJoin | uriencode }}"/>
+    <url>{{ [url, post.path] | urlJoin | uriencode }}</url>
+    
+    <content type="html"><![CDATA[{{ post.content | noControlChars | safe }}]]></content>
+    
+    
+    <categories>
+      
+      <category>{{ cate.name }}</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>{{ tag.name }}</tag>
       
       <tag>{{ tag.name }}</tag>
       

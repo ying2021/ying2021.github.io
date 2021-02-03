@@ -17,9 +17,25 @@
   <meta name="description" content="保持很多的热爱和一点点野心">
   <meta name="author" content="欧阳珈樱">
   <meta name="keywords" content="">
-  <title>标签 - 樱花味猫猫</title>
+  <title>Python-turtle画图(1) - 樱花味猫猫</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/gradient-light.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
 
 
 
@@ -51,7 +67,7 @@
 
 
 <body>
-  <header style="height: 80vh;">
+  <header style="height: 100vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -145,14 +161,64 @@
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('https://pic2.zhimg.com/80/v2-5e64a2888dcdf32ec009ce834383e54c_720w.jpg?source=1940ef5c') no-repeat center center;
+         style="background: url('/img/002.jpg') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="标签">
+            <span class="h2" id="subtitle" title="Python-turtle画图(1)">
               
             </span>
+
+            
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      欧阳珈樱
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-02-03 16:20" pubdate>
+        2021年2月3日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      94 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      1
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
 
             
           </div>
@@ -169,24 +235,95 @@
 
   <main>
     
-      <div class="container nopadding-x-md">
-        <div class="py-5" id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
+      
 
-<div class="text-center tagcloud">
-  <a href="/tags/Bernoulli-Numbers/" style="font-size: 22.5px; color: #779bd3">Bernoulli Numbers</a> <a href="/tags/Euler-Maclaurin-Summation-Formula/" style="font-size: 17.5px; color: #a4b0e5">Euler-Maclaurin Summation Formula</a> <a href="/tags/Frullani/" style="font-size: 15px; color: #bbe">Frullani</a> <a href="/tags/Generating-Function/" style="font-size: 17.5px; color: #a4b0e5">Generating Function</a> <a href="/tags/Hexo/" style="font-size: 17.5px; color: #a4b0e5">Hexo</a> <a href="/tags/LaTeX/" style="font-size: 15px; color: #bbe">LaTeX</a> <a href="/tags/Markdown/" style="font-size: 15px; color: #bbe">Markdown</a> <a href="/tags/Python/" style="font-size: 20px; color: #8ea5dc">Python</a> <a href="/tags/Tikz/" style="font-size: 17.5px; color: #a4b0e5">Tikz</a> <a href="/tags/Wallis/" style="font-size: 15px; color: #bbe">Wallis</a> <a href="/tags/Zeta-Function/" style="font-size: 15px; color: #bbe">Zeta Function</a> <a href="/tags/matplotlib/" style="font-size: 15px; color: #bbe">matplotlib</a> <a href="/tags/turtle/" style="font-size: 15px; color: #bbe">turtle</a> <a href="/tags/%E4%B8%8D%E7%AD%89%E5%BC%8F/" style="font-size: 15px; color: #bbe">不等式</a> <a href="/tags/%E4%BB%A3%E6%95%B0/" style="font-size: 17.5px; color: #a4b0e5">代数</a> <a href="/tags/%E5%88%86%E6%9E%90/" style="font-size: 22.5px; color: #779bd3">分析</a> <a href="/tags/%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0/" style="font-size: 25px; color: #6090c9">复变函数</a> <a href="/tags/%E6%97%A0%E7%A9%B7%E4%B9%98%E7%A7%AF/" style="font-size: 20px; color: #8ea5dc">无穷乘积</a> <a href="/tags/%E6%9E%81%E9%99%90/" style="font-size: 25px; color: #6090c9">极限</a> <a href="/tags/%E6%9F%AF%E8%A5%BF%E4%B9%98%E7%A7%AF/" style="font-size: 17.5px; color: #a4b0e5">柯西乘积</a> <a href="/tags/%E6%A4%AD%E5%9C%86%E7%A7%AF%E5%88%86/" style="font-size: 15px; color: #bbe">椭圆积分</a> <a href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/" style="font-size: 25px; color: #6090c9">概率论</a> <a href="/tags/%E7%A7%AF%E5%88%86/" style="font-size: 30px; color: #337ab7">积分</a> <a href="/tags/%E7%A7%AF%E5%88%86%E4%B8%8D%E7%AD%89%E5%BC%8F/" style="font-size: 15px; color: #bbe">积分不等式</a> <a href="/tags/%E7%BA%A7%E6%95%B0/" style="font-size: 27.5px; color: #4a85c0">级数</a> <a href="/tags/%E7%BB%98%E5%9B%BE/" style="font-size: 25px; color: #6090c9">绘图</a>
-</div>
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Python-turtle画图(1)</h1>
+            
+            <div class="markdown-body">
+              <h1 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h1><p>参见</p>
+<p><a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/library/turtle.html#">turtle —- 海龟绘图</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/a757291228/article/details/105884899">python图形绘制库turtle中文开发文档及示例大全</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/106388608">python中的画图神器——turtle模块</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/183797244">绘画大师——turtle库(超详细)</a></p>
+<h1 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h1><figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">import</span> turtle <span class="hljs-keyword">as</span> t<br>t.speed(<span class="hljs-number">0</span>)<br>colors = [<span class="hljs-string">&#x27;red&#x27;</span>, <span class="hljs-string">&#x27;purple&#x27;</span>, <span class="hljs-string">&#x27;blue&#x27;</span>, <span class="hljs-string">&#x27;green&#x27;</span>, <span class="hljs-string">&#x27;orange&#x27;</span>]<br><span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">150</span>):<br>    t.pencolor(colors[x % <span class="hljs-number">5</span>])<br>    t.width(x/<span class="hljs-number">10</span> + <span class="hljs-number">1</span>)<br>    t.forward(x)<br>    t.left(<span class="hljs-number">59</span>)<br>t.done()<br></code></pre></div></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/02/03/5fKnOydUuqQ8bcr.png" srcset="/img/loading.gif" alt=""></p>
 
-              </div>
             </div>
-          </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%AF%BE%E7%A8%8B/">计算机课程</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E7%BB%98%E5%9B%BE/">绘图</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Python/">Python</a>
+                    
+                      <a class="hover-with-bg" href="/tags/turtle/">turtle</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/02/03/Python-matplotlib%E7%94%BB%E5%9B%BE(1)/">
+                        <span class="hidden-mobile">Python-matplotlib画图(1)</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
         </div>
       </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
     
 
     
@@ -266,9 +403,15 @@
 
 
 
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
 
 
 
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
 
 
 
