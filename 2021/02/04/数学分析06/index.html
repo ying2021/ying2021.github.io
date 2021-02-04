@@ -17,7 +17,7 @@
   <meta name="description" content="保持很多的热爱和一点点野心">
   <meta name="author" content="欧阳珈樱">
   <meta name="keywords" content="">
-  <title>数学分析05 - 樱花味猫猫</title>
+  <title>数学分析06 - 樱花味猫猫</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -166,7 +166,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="数学分析05">
+            <span class="h2" id="subtitle" title="数学分析06">
               
             </span>
 
@@ -181,8 +181,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-02-03 21:16" pubdate>
-        2021年2月3日 晚上
+      <time datetime="2021-02-04 09:25" pubdate>
+        2021年2月4日 上午
       </time>
     </span>
   
@@ -193,7 +193,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      706 字
+      362 字
     </span>
   
 
@@ -203,7 +203,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      11
+      6
        分钟
     </span>
   
@@ -245,45 +245,61 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">数学分析05</h1>
+            <h1 style="display: none">数学分析06</h1>
             
             <div class="markdown-body">
               <div class="note note-info">
-            <p>设  $f(x)$ 在 $[0,\pi]$ 上连续,在 $(0,\pi)$ 内可导 ,且</p><script type="math/tex; mode=display">\int_0^\pi f(x)\cos x \,\mathrm dx=\int_0^\pi f(x)\sin x \,\mathrm dx=0</script><p>求证：存在 $\xi\in(0,\pi)$ 使得 $f’(\xi)=0$ .</p>
+            <p>设函数 $f$ 在 $[a,b]$ 上连续,且</p><script type="math/tex; mode=display">\int_{a}^{b} x^{n} f(x) \mathrm{d} x=b-a, \quad \int_{a}^{b} x^{k} f(x) \mathrm{d} x=0, \quad k=0,1, \cdots, n-1</script><p>试证:</p><p>$(1)$ 存在 $x_0\in[a,b]$ 使</p><script type="math/tex; mode=display">\left|f\left(x_{0}\right)\right|>\frac{2^{n}(n+1)}{(b-a)^{n}}</script><p>$(2)$ 存在 $x_1\in[a,b]$ 使</p><script type="math/tex; mode=display">\left|f\left(x_{1}\right)\right|=\frac{2^{n}(n+1)}{(b-a)^{n}}</script>
           </div>
-<p><strong>Solution : (*)</strong></p>
-<p>因为在 $(0,\pi)$ 内 $\sin x &gt; 0$ .所以条件</p>
+<p><strong>Solution:</strong></p>
+<p>$(1)$ 若</p>
 <script type="math/tex; mode=display">
-\displaystyle\int_0^\pi f(x)\sin x \,\mathrm dx=0</script><p>意味着 $f(x)$ 在 $(0,\pi)$ 内不可能恒正或恒负,因而必有零点.再证 $f(x)$ 在 $(0,\pi)$ 内的零 点不止一个.用反证法证 明之. 设 $a\in(0,\pi)$ 是 $f(x)$ 的唯一零点,则由零点存在定理知 $f(x)\sin(x-a)$ 恒正或恒负(除 $x=a$ 点),从而</p>
+x \in[a, b]\quad|f(x)| \leqslant \frac{2^{n}(n+1)}{(b-a)^{n}}</script><p>则</p>
 <script type="math/tex; mode=display">
-\int_0^\pi f(x)\sin(x-a)\,\mathrm dx\ne 0</script><p>但由假设条件</p>
+\begin{aligned}
+b-a &=\int_{a}^{b}\left(x-\frac{a+b}{2}\right)^{n} f(x) \mathrm{d} x \leqslant \int_{a}^{b}\left|x-\frac{a+b}{2}\right|^{n}|f(x)| \mathrm{d} x \\
+& \leqslant \frac{2^{n}(n+1)}{(b-a)^{n}} \int_{a}^{b}\left|x-\frac{a+b}{2}\right|^{n} \mathrm{~d} x=b-a
+\end{aligned}</script><p>因此</p>
 <script type="math/tex; mode=display">
-\int_0^\pi f(x)\sin(x-a)\,\mathrm dx=\cos a\int_0^\pi f(x)\sin x\,\mathrm dx-\sin a\int_0^\pi f(x)\cos x\,\mathrm dx=0</script><p>这一矛盾表明, $f(x)$ 在 $(0,\pi)$ 内的零点不止一个.于是由罗尔定理推出 $f’(x)$ 在 $(0,\pi)$ 内有零点.</p>
-<hr>
+\int_{0}^{1}\left|x-\frac{a+b}{2}\right|^{n}|f(x)| \mathrm{d} x=b-a</script><p>而</p>
+<script type="math/tex; mode=display">
+\frac{2^{n}(n+1)}{(b-a)^{n}} \int_{a}^{b}\left|x-\frac{a+b}{2}\right|^{n} \mathrm{~d} x=b-a</script><p>故</p>
+<script type="math/tex; mode=display">
+\int_{a}^{b}\left|x-\frac{a+b}{2}\right|^{n}\left(\frac{2^{n}(n+1)}{(b-a)^{n}}-|f(x)|\right) \mathrm{d} x=0</script><p>所以对于任意 $x\in[a,b]$</p>
+<script type="math/tex; mode=display">
+|f(x)|=\frac{2^{n}(n+1)}{(b-a)^{n}}</script><p>由连续性知</p>
+<script type="math/tex; mode=display">
+f(x)=\frac{2^{n}(n+1)}{(b-a)^{n}} \quad \text { 或者 } \quad f(x)=-\frac{2^{n}(n+1)}{(b-a)^{n}}</script><p>这样与条件</p>
+<script type="math/tex; mode=display">
+\int_{a}^{b} x^{k} f(x) \mathrm{d} x=0, \quad k=0,1, \cdots, n-1</script><p>矛盾.故存在 $x_0\in[a,b]$ 使</p>
+<script type="math/tex; mode=display">
+\left|f\left(x_{0}\right)\right|>\frac{2^{n}(n+1)}{(b-a)^{n}}</script><p>$(2)$ 先证存在 $x_2\in[a,b]$ 使</p>
+<script type="math/tex; mode=display">
+\left|f\left(x_{2}\right)\right|<\frac{2^{n}(n+1)}{(b-a)^{n}}</script><p>若不然,对任何 $x\in[a,b]$</p>
+<script type="math/tex; mode=display">
+|f(x)| \geqslant \frac{2^{n}(n+1)}{(b-a)^{n}}</script><p>成立.则</p>
+<script type="math/tex; mode=display">
+f(x) \geqslant \frac{2^{n}(n+1)}{(b-a)^{n}}</script><p>恒成立,或者</p>
+<script type="math/tex; mode=display">
+f(x) \leqslant-\frac{2^{n}(n+1)}{(b-a)^{n}}</script><p>恒成立,与</p>
+<script type="math/tex; mode=display">
+\int_{0}^{1} x^{k} f(x) \mathrm{d} x=0, \quad k=0,1, \cdots, n-1</script><p>矛盾.再由 $f(x)$ 的连续性及 $(1)$ 的结果,利用介值性定理存在 $x_1\in[a,b]$ 使  </p>
+<script type="math/tex; mode=display">
+\left|f\left(x_{1}\right)\right|=\frac{2^{n}(n+1)}{(b-a)^{n}}</script><hr>
 <div class="note note-info">
-            <p>设  $f(x)$ 在 $[0,\pi]$ 上连续,在 $(0,\pi)$ 内可导 ,且</p><script type="math/tex; mode=display">\int_0^\pi f(x)\cos x \,\mathrm dx=0</script><p>求证：存在 $\xi\in(0,\pi)$ 使得 $f’(\xi)=0$ .</p>
+            <p>设函数 $f$ 在 $[a,b]$ 上连续,且</p><script type="math/tex; mode=display">\int_{a}^{b} x^{n} f(x) \mathrm{d} x=b-a, \quad \int_{a}^{b} x^{k} f(x) \mathrm{d} x=0, \quad k=0,1, \cdots, n-1</script><p>试证: 存在 $x_0\in[a,b]$ 使</p><script type="math/tex; mode=display">\left|f\left(x_{0}\right)\right|\geqslant\frac{2^{n}(n+1)}{(b-a)^{n}}</script>
           </div>
-<p><strong>Solution 1 :</strong></p>
-<p>显然 $f(x)$ 只有两种可能</p>
-<p>$\displaystyle(1)\int_0^\pi f(x)\sin x \,\mathrm dx=0$</p>
-<p>采用 <strong>(*)</strong> 证明方法即可</p>
-<p>$\displaystyle(2)\int_0^\pi f(x)\sin x \,\mathrm dx \ne 0$</p>
-<p>不妨设</p>
+<p><strong>Solution:</strong></p>
+<p>若 $x\in[a,b]$ ,因为</p>
 <script type="math/tex; mode=display">
-\int_0^\pi f(x)\sin x \,\mathrm dx=C</script><p>令 $\displaystyle F(x)=f(x)-\frac{C}{2}$ , 则 $F(x)$ 在 $[0,\pi]$ 上连续,在 $(0,\pi)$ 内可导 ,且</p>
+\int_a^b x^nf(x){\rm d}x=b-a</script><p>则由积分中值定理,存在 $x_0\in[a,b]$ 使  </p>
 <script type="math/tex; mode=display">
-\int_{0}^{\pi} F(x) \sin x \,\mathrm d x=\int_{0}^{\pi} f(x) \sin x \,\mathrm d x-\int_{0}^{\pi} \frac{C}{2} \sin x \,\mathrm d x=C-C=0</script><script type="math/tex; mode=display">
-\int_{0}^{\pi} F(x) \cos x \,\mathrm d x=\int_{0}^{\pi} f(x) \cos x \,\mathrm d x-\int_{0}^{\pi} \frac{C}{2} \cos x \,\mathrm dx=0</script><p>再采用 <strong>(*)</strong> 证明方法可得：存在 $\xi\in(0,\pi)$ 使得 $F’(\xi)=0$, 即 $f’(\xi )=0$.</p>
-<p><strong>Solution 2 :</strong></p>
-<p>因为当 $0\leqslant x\leqslant \dfrac{\pi}{2}$ 时,有 $\cos x\geqslant 0$ . 所以由广义积分中值定理知,存在 $\xi_1\in\left(0,\dfrac\pi 2\right)$ 使得</p>
+\begin{aligned}
+b-a &=\int_{a}^{b}\left(x-\frac{a+b}{2}\right)^{n} f(x) \mathrm{d} x \leqslant \int_{a}^{b}\left|x-\frac{a+b}{2}\right|^{n}|f(x)| \mathrm{d} x \\
+&=\left|f\left(x_{0}\right)\right| \int_{a}^{b}\left|x-\frac{a+b}{2}\right|^{n} \mathrm{~d} x=\left|f\left(x_{0}\right)\right| \frac{(b-a)^{n+1}}{2^{n}(n+1)}
+\end{aligned}</script><p>因此  </p>
 <script type="math/tex; mode=display">
-\int_{0}^{\frac{\pi}{2}} f(x) \cos x \,\mathrm d x=f\left(\xi_{1}\right) \int_{0}^{\frac{\pi}{2}} \cos x \,\mathrm d x=f\left(\xi_{1}\right)</script><p>当 $\dfrac\pi 2\leqslant x\leqslant \pi$ 时,有 $\cos x\leqslant 0$ . 所以由广义积分中值定理知,存在 $\xi_2\in\left(\dfrac\pi 2,\pi\right)$ 使得</p>
-<script type="math/tex; mode=display">
-\int_{\frac{\pi}{2}}^{\pi} f(x) \cos x \,\mathrm d x=f\left(\xi_{2}\right) \int_{\frac{\pi}{2}}^{\pi} \cos x \,\mathrm d x=-f\left(\xi_{2}\right)</script><p>于是有</p>
-<script type="math/tex; mode=display">
-f\left(\xi_{1}\right)-f\left(\xi_{2}\right)=\int_{0}^{\frac{\pi}{2}} f(x) \cos x \,\mathrm d x+\int_{\frac{\pi}{2}}^{\pi} f(x) \cos x \,\mathrm d x=\int_{0}^{\pi} f(x) \cos x \,\mathrm d x=0</script><p>所以 $f(\xi_1)=f(\xi_2)$.又因为 $f(x)$ 在 $[\xi_1,\xi_2]$ 上连续,在 $(\xi_1,\xi_2)$ 内可导,所以由罗尔定理知,存在 $\xi\in(\xi_1,\xi_2)$ 使得</p>
-<script type="math/tex; mode=display">
-f'(\xi)=0</script><section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span><a href="">朱晓峰. 对一道数学竞赛命题的改进[J]. 高等数学研究, 2003, 6(004):25-26.</a>
+\left|f\left(x_{0}\right)\right|\geqslant\frac{2^{n}(n+1)}{(b-a)^{n}}</script><section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span><a href="">张士诚. 一道大学生数学竞赛题的推广[J]. 大学数学, 2016, 032(001):118-122.</a>
 <a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>
             </div>
             <hr>
@@ -314,9 +330,9 @@ f'(\xi)=0</script><section class="footnotes"><div class="footnote-list"><ol><li>
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/02/04/%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%9006/">
+                      <a href="/2021/02/04/Fourier%E5%88%86%E6%9E%90/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">数学分析06</span>
+                        <span class="hidden-mobile">Fourier分析</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -324,8 +340,8 @@ f'(\xi)=0</script><section class="footnotes"><div class="footnote-list"><ol><li>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/02/03/Python-turtle%E7%94%BB%E5%9B%BE(1)/">
-                        <span class="hidden-mobile">Python-turtle画图(1)</span>
+                      <a href="/2021/02/03/%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%9005/">
+                        <span class="hidden-mobile">数学分析05</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
